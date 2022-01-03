@@ -9,7 +9,7 @@ request.setCharacterEncoding("utf-8");
 <meta charset="UTF-8">
 <title>common header</title>
 <link rel="stylesheet" type="text/css"
-	href="/FW/views/CSS/commoncss.css">
+	href="/project3/views/CSS/commoncss.css">
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <style>
 
@@ -79,6 +79,7 @@ request.setCharacterEncoding("utf-8");
 	height: 70px;
 	text-align: center;
 	border: 3px solid black;
+	margin : 0 auto;
 }
 
 .up01 {

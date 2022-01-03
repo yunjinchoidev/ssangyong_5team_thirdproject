@@ -11,8 +11,7 @@ request.setCharacterEncoding("utf-8");
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
-<style>
-
+<style>해리포터
 </style>
 </head>
 <body>

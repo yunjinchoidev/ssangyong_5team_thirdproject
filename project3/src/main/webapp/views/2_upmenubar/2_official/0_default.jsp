@@ -21,6 +21,9 @@
 
 	<div class="contents">
 		<div class="cards">
+			
+			<h2> 공식 스토어</h2>
+		
 		</div>
 	</div>
 
