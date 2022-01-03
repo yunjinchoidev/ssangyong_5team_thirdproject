@@ -17,14 +17,14 @@ request.setCharacterEncoding("utf-8");
 .header {
 	background-color: #8D647C;
 	width: 100%;
-	height: 1800px;
+	height: 400px;
 	border: 3px solid black;
 }
 
 /*최상단 배너*/
 .headerlogo {
-	width: 800px;
-	height: 500px;
+	width: 300px;
+	height: 150px;
 	margin: 0 auto;
 	background-color: white;
 	border: 3px solid black;
@@ -33,23 +33,21 @@ request.setCharacterEncoding("utf-8");
 
 /*최상단 배너 이미지*/
 .headerlogo img {
-	width: 600px;
-	height: 400px;
+	width: 300px;
+	height: 150px;
 	border: 3px solid black;
-	margin-left: 100px;
-	margin-top: 50px;
 }
 
 
 /*S우측 상단 메뉴*/
 .rightupmenu {
-	font-size: 50px;
+	font-size: 20px;
 	text-align: right;
-	margin-top : 70px;
+	margin-top : 20px;
 	margin-bottom: 70px;
 	margin-left : 980px;
-	width : 900px;
-	height : 180px;
+	width : 350px;
+	height : 70px;
 	border: 3px solid black;
 	background-color: red;
 }
@@ -57,15 +55,12 @@ request.setCharacterEncoding("utf-8");
 .rightupmenu ul li {
 	display: inline-block;
 	border: 3px solid black;
-	
 }
 
 .rightupmenu a {
 	text-decoration: none;
 	background-color: white;
 	color: black;
-	font-size: 100x;
-	margin-bottom: 15px;
 }
 /*E우측 상단 메뉴*/
 
@@ -131,7 +126,7 @@ request.setCharacterEncoding("utf-8");
 
 			<!-- 최상단 메인 로고 -->
 			<div class="headerlogo">
-				<a href="/project3/views/2_upmenubar/1_aboutus/0_default.jsp"> <img src="/project3/views/Media/overreallogo.jpg">
+				<a href="/project3/views/2_upmenubar/1_aboutus/0_default.jsp"> <img src="/project3/views/Media/fvlogo.png">
 				</a>
 			</div>
 
