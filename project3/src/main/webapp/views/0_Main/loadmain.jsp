@@ -9,7 +9,7 @@ request.setCharacterEncoding("utf-8");
 <meta charset="UTF-8">
 <title>반지의제왕 메인</title>
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="/project/views/CSS/commoncss.css">
+<link rel="stylesheet" type="text/css" href="/project3/views/CSS/commoncss.css">
 <style>
 	body{
 		width:100%;
