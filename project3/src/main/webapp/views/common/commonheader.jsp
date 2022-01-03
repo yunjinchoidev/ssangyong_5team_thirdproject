@@ -17,7 +17,7 @@ request.setCharacterEncoding("utf-8");
 .header {
 	background-color: #8D647C;
 	width: 100%;
-	height: 500px;
+	height: 250px;
 	border: 3px solid black;
 }
 
@@ -26,8 +26,6 @@ request.setCharacterEncoding("utf-8");
 	width: 150px;
 	height: 150px;
 	margin: 0 auto;
-	background-color: white;
-	background-color: red;
 }
 
 /*최상단 배너 이미지*/
@@ -42,7 +40,6 @@ request.setCharacterEncoding("utf-8");
 	font-size: 20px;
 	text-align: center;
 	margin-top: 20px;
-	margin-bottom: 70px;
 	width: 400px;
 	height: 70px;
 	border: 3px solid black;
@@ -62,8 +59,8 @@ request.setCharacterEncoding("utf-8");
 }
 
 /*wrap01과 상단카테고리 거리 벌리기*/
-.wrap01{
-	margin-bottom: 60px;
+.wrap01 {
+	margin-bottom: 25px;
 }
 /*float 해제 작업*/
 .wrap01::after {
@@ -75,32 +72,30 @@ request.setCharacterEncoding("utf-8");
 
 /*S상단 카테고리*/
 .up { /*상단 카테고리 전체박스*/
-	font-size: 20px;
+	font-size: 15px;
 	background-color: red;
 	border: 1px soild;
-	width: 800px;
-	height: 270px;
+	width: 1400px;
+	height: 70px;
 	text-align: center;
 	border: 3px solid black;
-	margin : 0 auto;
 }
 
-.up01, .up02, .up03 {
+.up01 {
 	display: flex;
-	width: 700px;
-	hight: 100px;
+	width: 1380px;
+	height: 50px;
 	background-color: white;
 	margin-bottom: 20px;
-	margin-top: 20px;
-	margin-left: 50px;
+	margin-top: 10px;
+	margin-left: 10px;
 	border: 3px solid black;
 }
 
 .child {
 	flex: 1;
-	border: 1px soild blue;
-	padding: 10px;
 	border: 3px solid black;
+	padding-top: 10px;
 }
 
 .child a {
@@ -111,8 +106,11 @@ request.setCharacterEncoding("utf-8");
 .child:hover { /*개별 박스에 마우스 올렸을 때 배경색 변하게 처리*/
 	background-color: #A3E4DB;
 }
-/*E상단 카테고리*/
 
+.go {
+	float: right;
+}
+/*E상단 카테고리*/
 </style>
 <script type="text/javascript">
 	
@@ -158,8 +156,6 @@ request.setCharacterEncoding("utf-8");
 						<a href="/project3/views/2_upmenubar/3_personal/0_default.jsp">개인
 							장터</a>
 					</div>
-				</div>
-				<div class="up02">
 					<div class="child">
 						<a href="/project3/views/2_upmenubar/4_talent/0_default.jsp">재능
 							기부</a>
@@ -171,8 +167,6 @@ request.setCharacterEncoding("utf-8");
 					<div class="child">
 						<a href="/project3/views/2_upmenubar/6_freeboard/listArticles.jsp">자유게시판</a>
 					</div>
-				</div>
-				<div class="up03">
 					<div class="child">
 						<a href="/project3/views/2_upmenubar/7_lecture/0_default.jsp">강의
 							신청</a>
@@ -187,27 +181,18 @@ request.setCharacterEncoding("utf-8");
 							href="/project3/views/2_upmenubar/9_thismonthfantasy/0_default.jsp">이달의판타지
 						</a>
 					</div>
-				</div>
-			</div>
-
-			<!-- 판타지 분류 메뉴 -->
-			<!-- 공간만들기 -->
-			<br> <br> <br> <br> <br> <br>
-			<!-- 위의 up클래스 재활용 -->
-			<div class="up">
-				<!-- 위의 up01클래스 재활용 -->
-				<div class="up01">
-					<div class="child">
+					<div class="child go">
 						<a href="#">마블</a>
 					</div>
-					<div class="child">
+					<div class="child go">
 						<a href="#">해리포터</a>
 					</div>
-					<div class="child">
+					<div class="child go">
 						<a href="#">반지의 제왕</a>
 					</div>
 				</div>
 			</div>
+
 		</div>
 
 	</header>
