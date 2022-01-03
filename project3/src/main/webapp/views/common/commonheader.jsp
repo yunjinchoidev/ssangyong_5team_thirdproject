@@ -189,7 +189,7 @@ request.setCharacterEncoding("utf-8");
 						<a href="#">해리포터</a>
 					</div>
 					<div class="child go">
-						<a href="#">반지의 제왕</a>
+						<a href="/project3/views/0_Main/loadmain.jsp">반지의 제왕</a>
 					</div>
 				</div>
 			</div>
