@@ -17,39 +17,37 @@ request.setCharacterEncoding("utf-8");
 .header {
 	background-color: #8D647C;
 	width: 100%;
-	height: 400px;
+	height: 500px;
 	border: 3px solid black;
 }
 
 /*최상단 배너*/
 .headerlogo {
-	width: 300px;
+	width: 150px;
 	height: 150px;
 	margin: 0 auto;
 	background-color: white;
-	border: 3px solid black;
 	background-color: red;
 }
 
 /*최상단 배너 이미지*/
 .headerlogo img {
-	width: 300px;
+	width: 150px;
 	height: 150px;
 	border: 3px solid black;
 }
 
-
 /*S우측 상단 메뉴*/
 .rightupmenu {
 	font-size: 20px;
-	text-align: right;
-	margin-top : 20px;
+	text-align: center;
+	margin-top: 20px;
 	margin-bottom: 70px;
-	margin-left : 980px;
-	width : 350px;
-	height : 70px;
+	width: 400px;
+	height: 70px;
 	border: 3px solid black;
 	background-color: red;
+	float: right;
 }
 
 .rightupmenu ul li {
@@ -62,25 +60,35 @@ request.setCharacterEncoding("utf-8");
 	background-color: white;
 	color: black;
 }
+
+/*wrap01과 상단카테고리 거리 벌리기*/
+.wrap01{
+	margin-bottom: 60px;
+}
+/*float 해제 작업*/
+.wrap01::after {
+	content: '';
+	display: block;
+	clear: both;
+}
 /*E우측 상단 메뉴*/
 
-
 /*S상단 카테고리*/
-.up {/*상단 카테고리 전체박스*/
-	font-size: 50px;
+.up { /*상단 카테고리 전체박스*/
+	font-size: 20px;
 	background-color: red;
 	border: 1px soild;
-	margin-left: 395px;
-	width: 1100px;
-	hight: 900px;
+	width: 800px;
+	height: 270px;
 	text-align: center;
 	border: 3px solid black;
+	margin : 0 auto;
 }
 
 .up01, .up02, .up03 {
 	display: flex;
-	width: 1000px;
-	hight: 800px;
+	width: 700px;
+	hight: 100px;
 	background-color: white;
 	margin-bottom: 20px;
 	margin-top: 20px;
@@ -91,7 +99,7 @@ request.setCharacterEncoding("utf-8");
 .child {
 	flex: 1;
 	border: 1px soild blue;
-	padding: 20px;
+	padding: 10px;
 	border: 3px solid black;
 }
 
@@ -100,19 +108,11 @@ request.setCharacterEncoding("utf-8");
 	color: black;
 }
 
-.child:hover {/*개별 박스에 마우스 올렸을 때 배경색 변하게 처리*/
+.child:hover { /*개별 박스에 마우스 올렸을 때 배경색 변하게 처리*/
 	background-color: #A3E4DB;
 }
 /*E상단 카테고리*/
 
-
-.illust {
-	display: flex;
-}
-
-
-
-/*E상단 카테고리*/
 </style>
 <script type="text/javascript">
 	
@@ -124,41 +124,49 @@ request.setCharacterEncoding("utf-8");
 	<header>
 		<div class="header">
 
-			<!-- 최상단 메인 로고 -->
-			<div class="headerlogo">
-				<a href="/project3/views/2_upmenubar/1_aboutus/0_default.jsp"> <img src="/project3/views/Media/fvlogo.png">
-				</a>
-			</div>
+			<div class="wrap01">
+				<!-- 우측 상단 메뉴 -->
+				<div class="rightupmenu">
+					<ul>
+						<li><a href="#">로그인</a></li>
+						<li><a href="#">가입</a></li>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">고객센터</a></li>
+					</ul>
+				</div>
 
-			<!-- 우측 상단 메뉴 -->
-			<div class="rightupmenu">
-				<ul>
-					<li><a href="#">로그인</a></li>
-					<li><a href="#">가입</a></li>
-					<li><a href="#">마이페이지</a></li>
-					<li><a href="#">고객센터</a></li>
-				</ul>
+				<!-- 상단 메인 로고 -->
+				<div class="headerlogo">
+					<a href="/project3/views/2_upmenubar/1_aboutus/0_default.jsp">
+						<img src="/project3/views/Media/fvlogo.png">
+					</a>
+				</div>
 			</div>
 
 			<!-- 상단 메뉴 -->
 			<div class="up">
 				<div class="up01">
 					<div class="child">
-						<a href="/project3/views/2_upmenubar/1_aboutus/0_default.jsp">ABOUT US</a>
+						<a href="/project3/views/2_upmenubar/1_aboutus/0_default.jsp">ABOUT
+							US</a>
 					</div>
 					<div class="child">
-						<a href="/project3/views/2_upmenubar/2_official/0_default.jsp">공식 스토어</a>
+						<a href="/project3/views/2_upmenubar/2_official/0_default.jsp">공식
+							스토어</a>
 					</div>
 					<div class="child">
-						<a href="/project3/views/2_upmenubar/3_personal/0_default.jsp">개인 장터</a>
+						<a href="/project3/views/2_upmenubar/3_personal/0_default.jsp">개인
+							장터</a>
 					</div>
 				</div>
 				<div class="up02">
 					<div class="child">
-						<a href="/project3/views/2_upmenubar/4_talent/0_default.jsp">재능 기부</a>
+						<a href="/project3/views/2_upmenubar/4_talent/0_default.jsp">재능
+							기부</a>
 					</div>
 					<div class="child">
-						<a href="/project3/views/2_upmenubar/5_readingclub/0_default.jsp">독서 클럽</a>
+						<a href="/project3/views/2_upmenubar/5_readingclub/0_default.jsp">독서
+							클럽</a>
 					</div>
 					<div class="child">
 						<a href="/project3/views/2_upmenubar/6_freeboard/listArticles.jsp">자유게시판</a>
@@ -166,14 +174,18 @@ request.setCharacterEncoding("utf-8");
 				</div>
 				<div class="up03">
 					<div class="child">
-						<a href="/project3/views/2_upmenubar/7_lecture/0_default.jsp">강의 신청</a>
+						<a href="/project3/views/2_upmenubar/7_lecture/0_default.jsp">강의
+							신청</a>
 					</div>
 					<div class="child">
-						<a href="/project3/views/2_upmenubar/8_fancytrade/0_default.jsp">공상 매매<br>
+						<a href="/project3/views/2_upmenubar/8_fancytrade/0_default.jsp">공상
+							매매<br>
 						</a>
 					</div>
 					<div class="child">
-						<a href="/project3/views/2_upmenubar/9_thismonthfantasy/0_default.jsp">이달의 <br>판타지</a>
+						<a
+							href="/project3/views/2_upmenubar/9_thismonthfantasy/0_default.jsp">이달의판타지
+						</a>
 					</div>
 				</div>
 			</div>
