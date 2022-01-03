@@ -30,7 +30,7 @@ request.setCharacterEncoding("utf-8");
 		<div class="up">
 			<div class="up01">
 				<div class="child">
-					<a href="#">안녕하세요 최윤진입니ㄹㅁㄴㅇㄹ다.</a>
+					<a href="#">안녕하세요 최윤진ㄹㅁㄴㅇㄹㅁㄴㅇadfasdf입니ㄹㅁㄴㅇㄹ다.</a>
 				</div>
 				<div class="child">
 					<a href="#">세계관</a>
