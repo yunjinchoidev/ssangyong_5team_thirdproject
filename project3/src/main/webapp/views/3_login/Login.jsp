@@ -130,7 +130,7 @@ $().ready(function () {
 <body>
 <div id="title">
 <h1>FantasyVillage 로그인</h1>
-<h3>계정이 없으신가요? <a href="../join_Membership/join_Membership.jsp">회원가입</a></h3>
+<h3>계정이 없으신가요? <a href="../4_member/join_Membership.jsp">회원가입</a></h3>
 </div>
 <div id = "loginForm">
 	<form>
