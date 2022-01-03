@@ -23,6 +23,11 @@ request.setCharacterEncoding("utf-8");
 
 
 	<div class="contents">
+		<!-- S반지제왕 공통부분 삽입 -->
+		<jsp:include page="/views/5_loadofring/commonload.jsp">
+			<jsp:param name="name" value="go" />
+		</jsp:include>
+		<!-- E반지제왕 공통부분 삽입 -->
 		<div class="cards">
 			<h1>XXXX에 오신 여러분을 환영합니다.</h1>
 			<p>

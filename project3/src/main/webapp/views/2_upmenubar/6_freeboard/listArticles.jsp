@@ -17,7 +17,6 @@ request.setCharacterEncoding("UTF-8");
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 <style>
-
 .no-uline {
 	text-decoration: none;
 }
@@ -49,104 +48,112 @@ request.setCharacterEncoding("UTF-8");
 
 	<div class="contents">
 		<div class="cards">
-			<table align="center" border="1" width="80%">
-				<tr height="10" align="center" bgcolor="lightgreen">
-					<td>글번호</td>
-					<td>작성자</td>
-					<td>제목</td>
-					<td>작성일</td>
-				</tr>
-				<c:choose>
-					<c:when test="${empty articlesList}">
-						<tr height="10">
-							<td colspan="4">
-								<p align="center">
-									<b><span style="font-size: 9pt;">등록된 글이 없습니다.</span></b>
-								</p>
-							</td>
-						</tr>
-					</c:when>
-					<c:when test="${!empty articlesList}">
-						<c:forEach var="article" items="${articlesList }"
-							varStatus="articleNum">
-							<tr align="center">
-								<td width="5%">${articleNum.count}</td>
-								<td width="10%">${article.id }</td>
-								<td align='left' width="35%"><span
-									style="padding-right: 30px"></span> <c:choose>
-										<c:when test='${article.level > 1 }'>
-											<c:forEach begin="1" end="${article.level }" step="1">
-												<span style="padding-left: 10px"></span>
-											</c:forEach>
-											<span style="font-size: 12px;">[답변]</span>
-											<a class='cls1'
-												href="${contextPath}/freeboard/viewArticle.do?articleNO=${article.articleNO}">${article.title}</a>
-										</c:when>
-										<c:otherwise>
-											<a class='cls1'
-												href="${contextPath}/freeboard/viewArticle.do?articleNO=${article.articleNO}">${article.title }</a>
-										</c:otherwise>
-									</c:choose></td>
-								<td width="10%"><fmt:formatDate
-										value="${article.writeDate}" /></td>
-							</tr>
-						</c:forEach>
-					</c:when>
-				</c:choose>
-			</table>
-
-			<div class="cls2">
-				<c:if test="${totArticles != null }">
+			<div>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+			</div>
+			<div class="indivi">
+				<table align="center" border="1" width="80%">
+					<tr height="10" align="center" bgcolor="lightgreen">
+						<td>글번호</td>
+						<td>작성자</td>
+						<td>제목</td>
+						<td>작성일</td>
+					</tr>
 					<c:choose>
-						<c:when test="${totArticles >100 }">
-							<!-- 글 개수가 100 초과인경우 -->
-							<c:forEach var="page" begin="1" end="10" step="1">
-								<c:if test="${section >1 && page==1 }">
-									<a class="no-uline"
-										href="${contextPath }/freeboard/listArticles.do?section=${section-1}&pageNum=${(section-1)*10 +1 }">&nbsp;
-										pre </a>
-								</c:if>
-								<a class="no-uline"
-									href="${contextPath }/freeboard/listArticles.do?section=${section}&pageNum=${page}">${(section-1)*10 +page }
-								</a>
-								<c:if test="${page ==10 }">
-									<a class="no-uline"
-										href="${contextPath }/freeboard/listArticles.do?section=${section+1}&pageNum=${section*10+1}">&nbsp;
-										next</a>
-								</c:if>
-							</c:forEach>
+						<c:when test="${empty articlesList}">
+							<tr height="10">
+								<td colspan="4">
+									<p align="center">
+										<b><span style="font-size: 9pt;">등록된 글이 없습니다.</span></b>
+									</p>
+								</td>
+							</tr>
 						</c:when>
-						<c:when test="${totArticles ==100 }">
-							<!--등록된 글 개수가 100개인경우  -->
-							<c:forEach var="page" begin="1" end="10" step="1">
-								<a class="no-uline" href="#">${page } </a>
-							</c:forEach>
-						</c:when>
-
-						<c:when test="${totArticles< 100 }">
-							<!--등록된 글 개수가 100개 미만인 경우  -->
-							<c:forEach var="page" begin="1" end="${totArticles/10 +1}"
-								step="1">
-								<c:choose>
-									<c:when test="${page==pageNum }">
-										<a class="sel-page"
-											href="${contextPath }/freeboard/listArticles.do?section=${section}&pageNum=${page}">${page }
-										</a>
-									</c:when>
-									<c:otherwise>
-										<a class="no-uline"
-											href="${contextPath }/freeboard/listArticles.do?section=${section}&pageNum=${page}">${page }
-										</a>
-									</c:otherwise>
-								</c:choose>
+						<c:when test="${!empty articlesList}">
+							<c:forEach var="article" items="${articlesList }"
+								varStatus="articleNum">
+								<tr align="center">
+									<td width="5%">${articleNum.count}</td>
+									<td width="10%">${article.id }</td>
+									<td align='left' width="35%"><span
+										style="padding-right: 30px"></span> <c:choose>
+											<c:when test='${article.level > 1 }'>
+												<c:forEach begin="1" end="${article.level }" step="1">
+													<span style="padding-left: 10px"></span>
+												</c:forEach>
+												<span style="font-size: 12px;">[답변]</span>
+												<a class='cls1'
+													href="${contextPath}/freeboard/viewArticle.do?articleNO=${article.articleNO}">${article.title}</a>
+											</c:when>
+											<c:otherwise>
+												<a class='cls1'
+													href="${contextPath}/freeboard/viewArticle.do?articleNO=${article.articleNO}">${article.title }</a>
+											</c:otherwise>
+										</c:choose></td>
+									<td width="10%"><fmt:formatDate
+											value="${article.writeDate}" /></td>
+								</tr>
 							</c:forEach>
 						</c:when>
 					</c:choose>
-				</c:if>
-			</div>
-			<br> <br> <a class="cls1"
-				href="${contextPath}/freeboard/articleForm.do"><p class="cls2">글쓰기</p></a>
+				</table>
 
+				<div class="cls2">
+					<c:if test="${totArticles != null }">
+						<c:choose>
+							<c:when test="${totArticles >100 }">
+								<!-- 글 개수가 100 초과인경우 -->
+								<c:forEach var="page" begin="1" end="10" step="1">
+									<c:if test="${section >1 && page==1 }">
+										<a class="no-uline"
+											href="${contextPath }/freeboard/listArticles.do?section=${section-1}&pageNum=${(section-1)*10 +1 }">&nbsp;
+											pre </a>
+									</c:if>
+									<a class="no-uline"
+										href="${contextPath }/freeboard/listArticles.do?section=${section}&pageNum=${page}">${(section-1)*10 +page }
+									</a>
+									<c:if test="${page ==10 }">
+										<a class="no-uline"
+											href="${contextPath }/freeboard/listArticles.do?section=${section+1}&pageNum=${section*10+1}">&nbsp;
+											next</a>
+									</c:if>
+								</c:forEach>
+							</c:when>
+							<c:when test="${totArticles ==100 }">
+								<!--등록된 글 개수가 100개인경우  -->
+								<c:forEach var="page" begin="1" end="10" step="1">
+									<a class="no-uline" href="#">${page } </a>
+								</c:forEach>
+							</c:when>
+
+							<c:when test="${totArticles< 100 }">
+								<!--등록된 글 개수가 100개 미만인 경우  -->
+								<c:forEach var="page" begin="1" end="${totArticles/10 +1}"
+									step="1">
+									<c:choose>
+										<c:when test="${page==pageNum }">
+											<a class="sel-page"
+												href="${contextPath }/freeboard/listArticles.do?section=${section}&pageNum=${page}">${page }
+											</a>
+										</c:when>
+										<c:otherwise>
+											<a class="no-uline"
+												href="${contextPath }/freeboard/listArticles.do?section=${section}&pageNum=${page}">${page }
+											</a>
+										</c:otherwise>
+									</c:choose>
+								</c:forEach>
+							</c:when>
+						</c:choose>
+					</c:if>
+				</div>
+				<br> <br> <a class="cls1"
+					href="${contextPath}/freeboard/articleForm.do"><p class="cls2">글쓰기</p></a>
+			</div>
 		</div>
 	</div>
 

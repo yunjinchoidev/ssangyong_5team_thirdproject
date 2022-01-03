@@ -12,11 +12,10 @@ request.setCharacterEncoding("UTF-8");
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 <style>
-	.cardsmodi{
-	width:1600px;
-	height:1500px;
+.blank01 {
+	height: 50px;
 }
-	</style>
+</style>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
 	function readURL(input) {
@@ -45,36 +44,45 @@ request.setCharacterEncoding("UTF-8");
 	<!-- E헤더 삽입 -->
 
 	<div class="contents">
-		<div class="cards cardsmodi">
-			<h1 style="text-align: center">새글 쓰기</h1>
-			<form name="articleForm" method="post"
-				action="${contextPath}/freeboard/addArticle.do"
-				enctype="multipart/form-data">
-				<table border="0" align="center">
-					<tr>
-						<td align="right">글제목:</td>
-						<td colspan="2"><input type="text" size="67" maxlength="500"
-							name="title" /></td>
-					</tr>
-					<tr>
-						<td align="right" valign="top"><br>글내용:</td>
-						<td colspan=2><textarea name="content" rows="10" cols="65"
-								maxlength="4000"></textarea></td>
-					</tr>
-					<tr>
-						<td align="right">이미지파일 첨부:</td>
-						<td><input type="file" name="imageFileName"
-							onchange="readURL(this);" /></td>
-						<td><img id="preview" src="#" width=200 height=200 /></td>
-					</tr>
-					<tr>
-						<td align="right"></td>
-						<td colspan="2"><input type="submit" value="글쓰기" /> <input
-							type=button value="목록보기" onClick="backToList(this.form)" /></td>
-					</tr>
-				</table>
-			</form>
+		<div class="cards">
+			<div>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+			</div>
+			<div class="indivi">
+				<h1 style="text-align: center">새글 쓰기</h1>
+				<form name="articleForm" method="post"
+					action="${contextPath}/freeboard/addArticle.do"
+					enctype="multipart/form-data">
+					<table border="0" align="center">
+						<tr>
+							<td align="right">글제목:</td>
+							<td colspan="2"><input type="text" size="67" maxlength="500"
+								name="title" /></td>
+						</tr>
+						<tr>
+							<td align="right" valign="top"><br>글내용:</td>
+							<td colspan=2><textarea name="content" rows="10" cols="65"
+									maxlength="4000"></textarea></td>
+						</tr>
+						<tr>
+							<td align="right">이미지파일 첨부:</td>
+							<td><input type="file" name="imageFileName"
+								onchange="readURL(this);" /></td>
+							<td><img id="preview" src="#" width=200 height=200 /></td>
+						</tr>
+						<tr>
+							<td align="right"></td>
+							<td colspan="2"><input type="submit" value="글쓰기" /> <input
+								type=button value="목록보기" onClick="backToList(this.form)" /></td>
+						</tr>
+					</table>
+				</form>
 
+			</div>
 		</div>
 	</div>
 

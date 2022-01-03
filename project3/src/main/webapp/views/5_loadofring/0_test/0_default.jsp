@@ -23,17 +23,36 @@ request.setCharacterEncoding("utf-8");
 	<!-- E헤더 삽입 -->
 
 
-
 	<div class="contents">
+
 		<!-- S반지제왕 공통부분 삽입 -->
 		<jsp:include page="/views/5_loadofring/commonload.jsp">
 			<jsp:param name="name" value="go" />
 		</jsp:include>
 		<!-- E반지제왕 공통부분 삽입 -->
-		
+
+
 		<div class="cards">
 			<div class="indivi">
-				<img src="/project3/views/Media/iwantyou.jpg">
+				<h2>당신은.. 반지의 주인이 될 자격이 있습니까?</h2>
+				<h2>약 10분에 걸쳐 당신의 성향을 검사하겠습니다.</h2>
+				<h2>당신의 솔직한 답변을 기대합니다.</h2>
+
+				<form>
+					이름 : <input type="text"><br> 1. 당신은 누구와 함께 걷고 있습니까?<br>
+					<textarea cols="100" rows="7"></textarea>
+					<br> 2. 그 사람과 함께 숲속을 계속 걸어가다 보면 한 동물을 만나게 됩니다.<br> 그 동물은
+					무엇인가요?<br>
+					<textarea cols="100" rows="7"></textarea>
+					<br>
+					<textarea cols="100" rows="7"></textarea>
+					<br>
+					<textarea cols="100" rows="7"></textarea>
+					<br>
+					<textarea cols="100" rows="7"></textarea>
+					<br> <input type="submit" value="제출하기">
+				</form>
+
 			</div>
 		</div>
 	</div>

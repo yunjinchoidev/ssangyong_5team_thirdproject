@@ -15,9 +15,10 @@ request.setCharacterEncoding("utf-8");
 body {
 	width: 100%;
 }
-.cards{
-	width : 85%;
-	height : 1200px;
+
+.cards {
+	width: 85%;
+	height: 1200px;
 	background-color: #3FA796;
 	font-size: 15px;
 	margin: 0 auto;
@@ -28,7 +29,6 @@ body {
 	width: 300px;
 	height: 300px;
 }
-
 </style>
 </head>
 <body>
@@ -42,28 +42,11 @@ body {
 	<!-- 반지의 제왕 디테일 -->
 	<!-- 상단 메뉴 -->
 	<div class="contents">
-		<div class="up">
-			<div class="up01">
-				<div class="child">
-					<a href="#">반지 자격 테스트</a>
-				</div>
-				<div class="child">
-					<a href="#">세계관/캐릭터</a>
-				</div>
-				<div class="child">
-					<a href="#">거래</a>
-				</div>
-				<div class="child">
-					<a href="#">릴레이 서사</a>
-				</div>
-				<div class="child">
-					<a href="#">자랑하기</a>
-				</div>
-				<div class="child">
-					<a href="#">제왕 소식</a>
-				</div>
-			</div>
-		</div>
+		<!-- S반지제왕 공통부분 삽입 -->
+		<jsp:include page="/views/5_loadofring/commonload.jsp">
+			<jsp:param name="name" value="go" />
+		</jsp:include>
+		<!-- E반지제왕 공통부분 삽입 -->
 
 		<div class="cards">
 			<h2>반지 세계에 오신 여러분을 환영합니다.</h2>
