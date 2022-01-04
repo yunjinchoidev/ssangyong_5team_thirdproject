@@ -8,7 +8,7 @@
 <title>판타지빌리지-로그인</title>
 <style>
 body{
-background-color: #5D4283;
+background-color: #051f30;
 }
 
 h1{
@@ -113,7 +113,7 @@ left:795px;
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.3/dist/sweetalert2.all.min.js"></script>
 
 <script>
-
+/*
 $().ready(function () {
     $("#loginbtn").click(function () {
         Swal.fire({
@@ -123,7 +123,7 @@ $().ready(function () {
         });
     });
 });
-
+*/
 	
 </script>
 </head>
@@ -141,9 +141,9 @@ $().ready(function () {
 		<input type=text name = pass placeholder="비밀번호를 입력해주세요" style="width:250px;height:49px;">
 		<br><br>
 		<div id = "btn">
-		<button type="button" id="idbtn">아이디 찾기</button>
+		<a href="../7_find/IdFind.jsp"><button type="button" id="idbtn">아이디 찾기</button></a>
 		<button id="loginbtn">로그인</button>
-		<button type="button" id ="passbtn">비밀번호 찾기</button>
+		<a href="../7_find/PassFind.jsp"><button type="button" id ="passbtn">비밀번호 찾기</button></a>>
 		</div>
 	</form>
 	

@@ -8,7 +8,7 @@
 <title>판타지월드-회원가입</title>
 <style>
 body{
-background-color: #5D4283;
+background-color: #051f30;
 color:white;
 }
 
@@ -79,6 +79,7 @@ $().ready(function(){
 	
 	
 });
+
 </script>
 </head>
 <body>
@@ -128,7 +129,8 @@ $().ready(function(){
 				</tr>
 			</table>
 			<br>
-			<button style="position:absolute;left:170px;">회원가입</button>	
+			<a href="../3_login/Login.jsp"><button type= "button" style="position:absolute;left:80px;">취소</button>	</a>
+			<button style="position:absolute;left:220px;">회원가입</button>	
 		</form>
 		
 	</div>
