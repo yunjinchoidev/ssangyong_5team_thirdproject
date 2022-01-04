@@ -12,104 +12,99 @@ request.setCharacterEncoding("utf-8");
 	href="/project3/views/CSS/commoncss.css">
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <style>
+body {
+	font-family: "Back To The Fantasy";
+}
 
-/*헤더 전체 조정*/
+/*전체 헤더 영역 초기화*/
 .header {
-	background-color: #8D647C;
 	width: 100%;
-	height: 250px;
-	border: 3px solid black;
+	height: 200px;
+	background-color: black;
 }
 
-/*최상단 배너*/
-.headerlogo {
-	width: 150px;
-	height: 150px;
-	margin: 0 auto;
+/*header를 headup01과 headup02로 나눔*/
+.headup01 {
+	width: 100%;
+	height: 125px;
+	border: 1px solid white;
 }
 
-/*최상단 배너 이미지*/
-.headerlogo img {
-	width: 150px;
-	height: 150px;
-	border: 3px solid black;
+.headup02 {
+	width: 100%;
+	height: 75px;
 }
 
-/*S우측 상단 메뉴*/
-.rightupmenu {
-	font-size: 20px;
-	text-align: center;
-	margin-top: 20px;
-	width: 400px;
-	height: 70px;
-	border: 3px solid black;
+/*로고 크기 설정*/
+#logo {
+	width: 125px;
+	height: 125px;
+	margin-left: 50%;
+}
+
+/* 최우측 최상단 메뉴 */
+.headermenu01 {
+	width: 300px;
+	height: 50px;
+	display: inline-block;
+	margin-right: 30px;
+}
+
+.headermenu01 ul li {
+	display: inline-block;
+	color: white;
+	font-size: 25px;
+	padding-left: 10px;
+}
+
+.headermenu02 {
+	width: 300px;
+	height: 50px;
+	display: inline-block;
+	margin-top: 5px;
+}
+
+.headermenu02 img {
+	width: 60px;
+	height: 50px;
+	display: inline-block;
+	padding-left: 30px;
+}
+
+.headermenuwrap {
 	float: right;
 }
 
-.rightupmenu ul li {
-	display: inline-block;
-	border: 3px solid black;
+#acc {
+	margin-left: 60px;
 }
 
-.rightupmenu a {
-	text-decoration: none;
-	background-color: white;
-	color: black;
+.headup01:::after{
+   content:'';
+   display:block;
+   clear:both;
 }
 
-/*wrap01과 상단카테고리 거리 벌리기*/
-.wrap01 {
-	margin-bottom: 25px;
-}
-/*float 해제 작업*/
-.wrap01::after {
-	content: '';
-	display: block;
-	clear: both;
-}
-/*E우측 상단 메뉴*/
-
-/*S상단 카테고리*/
-.up { /*상단 카테고리 전체박스*/
-	font-size: 15px;
-	border: 1px soild;
-	width: 1400px;
-	height: 70px;
-	text-align: center;
-	border: 3px solid black;
-	margin : 0 auto;
-}
-
-.up01 {
-	display: flex;
-	width: 1380px;
-	height: 50px;
-	background-color: white;
-	margin-bottom: 20px;
-	margin-top: 10px;
-	margin-left: 10px;
-	border: 3px solid black;
-}
-
-.child {
-	flex: 1;
-	border: 3px solid black;
+.headup02{
 	padding-top: 10px;
 }
-
-.child a {
+.headup02box{
+	display :flex;
+	width : 50%;
+	padding-left: 30%;
+	font-size: 50px;
+}
+.headup02box div{
+	flex : 1;
+}
+.headup02box div a{
+	flex : 1;
+	color : white;
 	text-decoration: none;
-	color: black;
 }
 
-.child:hover { /*개별 박스에 마우스 올렸을 때 배경색 변하게 처리*/
-	background-color: #A3E4DB;
-}
 
-.go {
-	float: right;
-}
-/*E상단 카테고리*/
+
 </style>
 <script type="text/javascript">
 	
@@ -117,86 +112,34 @@ request.setCharacterEncoding("utf-8");
 </head>
 <body>
 
-	<!-- 헤더 시작 -->
 	<header>
 		<div class="header">
-
-			<div class="wrap01">
-				<!-- 우측 상단 메뉴 -->
-				<div class="rightupmenu">
-					<ul>
-						<li><a href="#">로그인</a></li>
-						<li><a href="#">가입</a></li>
-						<li><a href="#">마이페이지</a></li>
-						<li><a href="#">고객센터</a></li>
-					</ul>
-				</div>
-
-				<!-- 상단 메인 로고 -->
-				<div class="headerlogo">
-					<a href="/project3/views/2_upmenubar/1_aboutus/0_default.jsp">
-						<img src="/project3/views/Media/fvlogo.png">
-					</a>
-				</div>
-			</div>
-
-			<!-- 상단 메뉴 -->
-			<div class="up">
-				<div class="up01">
-					<div class="child">
-						<a href="/project3/views/2_upmenubar/1_aboutus/0_default.jsp">ABOUT
-							US</a>
+			<div class="headup01">
+				<img src="/project3/views/Media/logo2.png" id="logo">
+				<div class="headermenuwrap">
+					<div class="headermenu01">
+						<ul>
+							<li>서비스</li>
+							<li>스토어</li>
+							<li>이벤트</li>
+						</ul>
 					</div>
-					<div class="child">
-						<a href="/project3/views/2_upmenubar/2_official/0_default.jsp">공식
-							스토어</a>
-					</div>
-					<div class="child">
-						<a href="/project3/views/2_upmenubar/3_personal/0_default.jsp">개인
-							장터</a>
-					</div>
-					<div class="child">
-						<a href="/project3/views/2_upmenubar/4_talent/0_default.jsp">재능
-							기부</a>
-					</div>
-					<div class="child">
-						<a href="/project3/views/2_upmenubar/5_readingclub/0_default.jsp">독서
-							클럽</a>
-					</div>
-					<div class="child">
-						<a href="/project3/views/2_upmenubar/6_freeboard/listArticles.jsp">자유게시판</a>
-					</div>
-					<div class="child">
-						<a href="/project3/views/2_upmenubar/7_lecture/0_default.jsp">강의
-							신청</a>
-					</div>
-					<div class="child">
-						<a href="/project3/views/2_upmenubar/8_fancytrade/0_default.jsp">공상
-							매매<br>
-						</a>
-					</div>
-					<div class="child">
-						<a
-							href="/project3/views/2_upmenubar/9_thismonthfantasy/0_default.jsp">이달의판타지
-						</a>
-					</div>
-					<div class="child go">
-						<a href="#">마블</a>
-					</div>
-					<div class="child go">
-						<a href="#">해리포터</a>
-					</div>
-					<div class="child go">
-						<a href="/project3/views/0_Main/loadmain.jsp">반지의 제왕</a>
+					<br>
+					<div class="headermenu02">
+						<img src="/project3/views/Media/account2.png" id="acc"> <img
+							src="/project3/views/Media/shopping-cart2.png">
 					</div>
 				</div>
 			</div>
-
+			<div class="headup02">
+				<div class="headup02box">
+					<div><a href="#">Marvel</a></div>
+					<div><a href="#">HarryPotter</a></div>
+					<div><a href="#">TheLoadoftheRings</a></div>
+				</div>
+			</div>
 		</div>
-
 	</header>
-	<!-- 헤더 끝 -->
-
 
 
 </body>
