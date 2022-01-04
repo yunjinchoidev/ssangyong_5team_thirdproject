@@ -12,10 +12,6 @@ request.setCharacterEncoding("utf-8");
 	href="/project3/views/CSS/commoncss.css">
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <style>
-body {
-	font-family: "Back To The Fantasy";
-}
-
 /*전체 헤더 영역 초기화*/
 .header {
 	width: 100%;
@@ -27,7 +23,6 @@ body {
 .headup01 {
 	width: 100%;
 	height: 125px;
-	border: 1px solid white;
 }
 
 .headup02 {
@@ -39,7 +34,7 @@ body {
 #logo {
 	width: 125px;
 	height: 125px;
-	margin-left: 50%;
+	margin-left: 900px;
 }
 
 /* 최우측 최상단 메뉴 */
@@ -55,6 +50,12 @@ body {
 	color: white;
 	font-size: 25px;
 	padding-left: 10px;
+	text-decoration: none;
+}
+
+.headermenu01 ul li a{
+	text-decoration: none;
+	color: white;
 }
 
 .headermenu02 {
@@ -103,8 +104,6 @@ body {
 	text-decoration: none;
 }
 
-
-
 </style>
 <script type="text/javascript">
 	
@@ -115,19 +114,19 @@ body {
 	<header>
 		<div class="header">
 			<div class="headup01">
-				<img src="/project3/views/Media/logo2.png" id="logo">
+				<a href="#"><img src="/project3/views/Media/logo2.png" id="logo"></a>
 				<div class="headermenuwrap">
 					<div class="headermenu01">
 						<ul>
-							<li>서비스</li>
-							<li>스토어</li>
-							<li>이벤트</li>
+							<li><a href="#">서비스</a></li>
+							<li><a href="#">스토어</a></li>
+							<li><a href="#">이벤트</a></li>
 						</ul>
 					</div>
 					<br>
 					<div class="headermenu02">
-						<img src="/project3/views/Media/account2.png" id="acc"> <img
-							src="/project3/views/Media/shopping-cart2.png">
+						<a href="#"><img src="/project3/views/Media/account2.png" id="acc"></a>
+						 <a href="#"><img src="/project3/views/Media/shopping-cart2.png"></a>
 					</div>
 				</div>
 			</div>
@@ -135,7 +134,7 @@ body {
 				<div class="headup02box">
 					<div><a href="#">Marvel</a></div>
 					<div><a href="#">HarryPotter</a></div>
-					<div><a href="#">TheLoadoftheRings</a></div>
+					<div><a href="#">The Load</a></div>
 				</div>
 			</div>
 		</div>

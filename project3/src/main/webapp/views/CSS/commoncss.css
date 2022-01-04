@@ -5,15 +5,9 @@
 }
 
 body{
-	font-family: "AppleSDGothicNeoB00";
+	font-family: "Back To The Fantasy", "AppleSDGothicNeoB00", "Malgun Gothic", serif;
 	width:100%;
 }
-
-
-.child a{
-	text-decoration: none;		
-}
-
 
 .contents {
 	width: 100%;

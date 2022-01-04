@@ -24,9 +24,11 @@ request.setCharacterEncoding("utf-8");
 
 	<div class="contents">
 		<div class="cards">
-			<h1>XXXX에 오신 여러분을 환영합니다.</h1>
+			<br>
+			<h1>판타지 빌리지에 오신 여러분을 환영합니다.</h1>
 			<p>
-				이 곳은 당신의 두 번째 인격을 위한 공간입니다. <br> 당신의 끼와 열정을 보여주십시오, <br>
+				이 곳은 당신의 두 번째 인격을 위한 공간입니다. <br> 
+				당신의 끼와 열정을 보여주십시오, <br>
 			</p>
 			<img src="/project3/views/Media/iwantyou.jpg">
 		</div>
