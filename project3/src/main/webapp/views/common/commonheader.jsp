@@ -43,7 +43,6 @@ request.setCharacterEncoding("utf-8");
 	width: 400px;
 	height: 70px;
 	border: 3px solid black;
-	background-color: red;
 	float: right;
 }
 
@@ -73,7 +72,6 @@ request.setCharacterEncoding("utf-8");
 /*S상단 카테고리*/
 .up { /*상단 카테고리 전체박스*/
 	font-size: 15px;
-	background-color: red;
 	border: 1px soild;
 	width: 1400px;
 	height: 70px;
