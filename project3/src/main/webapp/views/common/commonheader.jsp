@@ -11,7 +11,9 @@ request.setCharacterEncoding("utf-8");
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
-<link href="https: //fonts.googleapis.com/css2? family= Parisienne & display=swap" rel="stylesheet">
+<link
+	href="https: //fonts.googleapis.com/css2? family= Parisienne & display=swap"
+	rel="stylesheet">
 <style>
 /*전체 헤더 영역 초기화*/
 .header {
@@ -54,7 +56,7 @@ request.setCharacterEncoding("utf-8");
 	text-decoration: none;
 }
 
-.headermenu01 ul li a{
+.headermenu01 ul li a {
 	text-decoration: none;
 	color: white;
 }
@@ -81,29 +83,68 @@ request.setCharacterEncoding("utf-8");
 	margin-left: 60px;
 }
 
-.headup01:::after{
-   content:'';
-   display:block;
-   clear:both;
+.headup01:::after {
+	content: '';
+	display: block;
+	clear: both;
 }
 
-.headup02{
+.headup02 {
 	padding-top: 10px;
 }
-.headup02box{
-	display :flex;
-	width : 50%;
+
+.headup02box {
+	display: flex;
+	width: 50%;
 	padding-left: 30%;
 	font-size: 50px;
 }
-.headup02box div{
-	flex : 1;
+
+.headup02box div {
+	flex: 1;
 }
-.headup02box div a{
-	flex : 1;
-	color : white;
+
+.headup02box div a {
+	flex: 1;
+	color: white;
 	text-decoration: none;
 }
+
+#left {
+	width: 500px;
+	height: 50px;
+	display: inline-block;
+}
+
+#right {
+	width: 500px;
+	height: 50px;
+	display: inline-block;
+}
+
+.head2wrap {
+	visibility: hidden;
+}
+
+.headup02{
+	width:100%;	
+}
+.headup02 img {
+	display: inline-block;
+}
+
+.wrap{
+	display:flex;
+	width:100%;
+}
+
+.child{
+	flex:1;
+	text-decoration: none;
+	font-size: 50px;
+	color : white;
+}
+
 
 </style>
 <script type="text/javascript">
@@ -126,16 +167,25 @@ request.setCharacterEncoding("utf-8");
 					</div>
 					<br>
 					<div class="headermenu02">
-						<a href="#"><img src="/project3/views/Media/account2.png" id="acc"></a>
-						 <a href="#"><img src="/project3/views/Media/shopping-cart2.png"></a>
+						<a href="#"><img src="/project3/views/Media/account2.png"
+							id="acc"></a> <a href="#"><img
+							src="/project3/views/Media/shopping-cart2.png"></a>
 					</div>
 				</div>
 			</div>
 			<div class="headup02">
-				<div class="headup02box">
-					<div><a href="#">Marvel</a></div>
-					<div><a href="#">HarryPotter</a></div>
-					<div><a href="#">The Load</a></div>
+				<div class="wrap" >
+					<div class="child">
+						<img src="/project3/views/Media/go1.png" id="left">
+					</div>
+					<div class="child">
+						<a href="#">Marvel</a>
+						<a href="#">HarryPotter</a>
+						<a href="#">The Load</a>
+					</div>
+					<div class="child">
+						<img src="/project3/views/Media/go2.png" id="right">
+					</div>
 				</div>
 			</div>
 		</div>
