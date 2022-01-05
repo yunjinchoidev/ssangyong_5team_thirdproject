@@ -128,3 +128,9 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,java,windows
 >>>>>>> branch 'develop' of https://github.com/yunjinchoidev/ssangyong_5team_thirdproject.git
+/event/
+/fantasy/
+/payment/
+/service/
+/store/
+/support/

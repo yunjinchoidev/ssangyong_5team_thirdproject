@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%request.setCharacterEncoding("utf-8"); %>
+    <%request.setCharacterEncoding("utf-8");%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>해리포터-메인페이지</title>
+<title>마블-메인페이지</title>
 <style>
 body{
 background-color: #111111;
@@ -24,7 +24,6 @@ border-bottom-left-radius: 5px;
 border-top-right-radius: 5px;
 border-bottom-right-radius: 5px;
 }
-
 button:hover{
 font-style: italic;
 color:white;
@@ -38,20 +37,19 @@ border-top-right-radius: 5px;
 border-bottom-right-radius: 5px;
 }
 
-#potterLogo{
+#marvelLogo{
 position:absolute;
 left:500px;
 top: 300px;
 }
 
-
-#potterBanner{
+#marvelBanner{
 position: absolute;
 top:1000px;
 left:300px;
 }
 
-#potterBannerText{
+#marvelBannerText{
 color:white;
 font-size:20pt;
 position:absolute;
@@ -59,13 +57,13 @@ top:1350px;
 left:850px;
 }
 
-#potterShop{
+#marvelShop{
 position: absolute;
 top:1700px;
 left:800px;
 }
 
-#potterShopText{
+#mavelShopText{
 color:white;
 font-size:20pt;
 position:absolute;
@@ -73,13 +71,13 @@ top:1900px;
 left:450px;
 }
 
-#potterBoard{
+#mavelBoard{
 position: absolute;
 top:2400px;
 left:300px;
 }
 
-#potterBoardText{
+#mavelBoardText{
 color:white;
 font-size:20pt;
 position:absolute;
@@ -87,59 +85,44 @@ top:2700px;
 left:850px;
 }
 
-#bottom{
-position:absolute;
-top:3300px;
-left:20px;
-}
-
-
 </style>
-
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
    <script>
    AOS.init();
    </script>
-   <div id="potterLogo">
-   <img src="media/potterLogo.png">
+   <div id="marvelLogo">
+   <img src="marvelmedia/marvellogo.png">
    </div>
-<div id="marvelLogo">
-<img src="marvelmedia/marvellogo.png">
+   
+<!-- 마블캐릭터 -->
+<div id="marvelBanner" data-aos="fade-up">
+<img src="marvelmedia/marvelbanner.png" width="800px" height="400px">
 </div>
-
-<!-- 해리포터 기숙사 -->
-<div id="potterBanner" data-aos="fade-up">
-<img src="media/potterBanner.png" width="800px" height="400px">
-</div>
-<div id="potterBannerText" data-aos="fade-up">
-<h1>기숙사는 선택 하셨나요?</h1>
-<button type="button" style="position: absolute;">기숙사 선택</button>
+<div id="marvelBannerText" data-aos="fade-up">
+<h1>좋아하는 캐릭터를 선택해주세요!</h1>
+<button type="button" style="position: absolute;">캐릭터 선택</button>
 </div>
 
 <!-- 스토어 이동 -->
 <div id="marvelShop" data-aos="fade-up">
-<img src="media/potterShop.png" width="600px" height="400px">
+<img src="marvelmedia\marvelshop.png" width="600px" height="400px">
 </div>
-<div id="potterShopText" data-aos="fade-up">
-<h1>지팡이는 준비 하셨나요?</h1>
+<div id="marvelShopText" data-aos="fade-up">
+<h1>쇼핑할 준비는 되셨나요?</h1>
 <button type="button" style="position: absolute;">스토어 이동</button>
 </div>
 
-<div id="potterBoard" data-aos="fade-up">
-<img src="media/potterRestRoom.jpg" width="600px" height="400px">
+<div id="marvelBoard" data-aos="fade-up">
+<img src="marvelmedia\marvelboard.png" width="600px" height="400px">
 </div>
-<div id="potterBoardText" data-aos="fade-up">
-<h1>이야기는 나누셨나요?</h1>
+<div id="mavelBoardText" data-aos="fade-up">
+<h1>마블에 관련된 이야기를 나누어볼까요?</h1>
 <button type="button" style="position: absolute;">게시판 이동</button>
 </div>
-
-<div id="bottom" data-aos="fade-up">
-<img src="media/hogwarts.png" width="1850px" height="600px">
 </div>
 </body>
 </html>
