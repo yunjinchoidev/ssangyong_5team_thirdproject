@@ -11,6 +11,7 @@ request.setCharacterEncoding("utf-8");
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
+
 <style>
 body {
 	width: 100%;
@@ -30,7 +31,12 @@ body {
 	height: 300px;
 }
 </style>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js%22%3E"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js%22%3E"> </script>
+
 </head>
+
 <body>
 	<!-- S헤더 삽입 -->
 	<jsp:include page="/views/common/commonheader.jsp">

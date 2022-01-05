@@ -11,6 +11,7 @@ request.setCharacterEncoding("utf-8");
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
+<link href="https: //fonts.googleapis.com/css2? family= Parisienne & display=swap" rel="stylesheet">
 <style>
 /*전체 헤더 영역 초기화*/
 .header {

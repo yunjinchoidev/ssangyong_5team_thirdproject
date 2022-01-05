@@ -1,12 +1,18 @@
 @charset "UTF-8";
 
 *{
-	
+	font-family: "Back To the Fantasy";
 }
 
 body{
-	font-family: "Back To The Fantasy", "AppleSDGothicNeoB00", "Malgun Gothic", serif;
 	width:100%;
+}
+
+@font-face {
+    font-family: 'Hahmlet-Black';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-Black.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .contents {
