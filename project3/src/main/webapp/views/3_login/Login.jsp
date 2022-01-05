@@ -107,25 +107,46 @@ border:none;
 position:fixed;
 left:795px;
 }
+
+.swal-button {
+  padding: 7px 19px;
+  border-radius: 2px;
+  background-color: #4962B3;
+  font-size: 12px;
+  border: 1px solid #3e549a;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
+
 </style>
 
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.3/dist/sweetalert2.all.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-/*
-$().ready(function () {
-    $("#loginbtn").click(function () {
-        Swal.fire({
-            icon: 'success',
-            title: 'Alert가 실행되었습니다.',
-            text: '이곳은 내용이 나타나는 곳입니다.',
-        });
-    });
+
+$(document).ready(function() {
+	$('#loginbtn').on("click", function(){
+		Swal.fire({
+			  title: '로그인',
+			  text: "로그인 하시겠습니까?",
+			  icon: 'confirm',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: '확인',
+			  cancelButtonText: '취소'
+			}).then((result) => {
+			  if (result.value) {
+	              $('form').submit();
+			  }
+			})
+	});
+
 });
-*/
-	
+
 </script>
+		
+		
 </head>
 <body>
 <div id="title">
@@ -142,11 +163,10 @@ $().ready(function () {
 		<br><br>
 		<div id = "btn">
 		<a href="../7_find/IdFind.jsp"><button type="button" id="idbtn">아이디 찾기</button></a>
-		<button id="loginbtn">로그인</button>
+		<button type="button" id="loginbtn">로그인</button>
 		<a href="../7_find/PassFind.jsp"><button type="button" id ="passbtn">비밀번호 찾기</button></a>>
 		</div>
 	</form>
-	
-</div>
+	</div>
 </body>
 </html>
