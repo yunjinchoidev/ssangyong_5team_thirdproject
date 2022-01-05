@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+/member/
+/block/
+/board/
+/boardCategory/
+/comment/
+/report/
+=======
 # Created by https://www.toptal.com/developers/gitignore/api/eclipse,java,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=eclipse,java,windows
 
@@ -119,3 +127,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,java,windows
+>>>>>>> branch 'develop' of https://github.com/yunjinchoidev/ssangyong_5team_thirdproject.git
