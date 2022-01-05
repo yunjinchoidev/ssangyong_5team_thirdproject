@@ -8,17 +8,20 @@ request.setCharacterEncoding("utf-8");
 <head>
 <meta charset="UTF-8">
 <title>common header</title>
-<link rel="stylesheet" type="text/css"
-	href="/project3/views/CSS/commoncss.css">
+<link href="https: //fonts.googleapis.com/css2? family= Parisienne & display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/project3/views/CSS/commoncss.css">
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <link
 	href="https: //fonts.googleapis.com/css2? family= Parisienne & display=swap"
 	rel="stylesheet">
 <style>
 /*전체 헤더 영역 초기화*/
+
+body{
+}
 .header {
 	width: 100%;
-	height: 200px;
+	height: 200x;
 	background-color: black;
 }
 
@@ -89,61 +92,34 @@ request.setCharacterEncoding("utf-8");
 	clear: both;
 }
 
-.headup02 {
-	padding-top: 10px;
-}
 
-.headup02box {
-	display: flex;
-	width: 50%;
-	padding-left: 30%;
-	font-size: 50px;
-}
-
-.headup02box div {
-	flex: 1;
-}
-
-.headup02box div a {
-	flex: 1;
-	color: white;
-	text-decoration: none;
-}
-
-#left {
-	width: 500px;
-	height: 50px;
-	display: inline-block;
-}
-
-#right {
-	width: 500px;
-	height: 50px;
-	display: inline-block;
-}
-
-.head2wrap {
-	visibility: hidden;
-}
-
+/*헤더 두번째 박스*/
 .headup02{
-	width:100%;	
-}
-.headup02 img {
-	display: inline-block;
-}
-
-.wrap{
-	display:flex;
 	width:100%;
+	height: 75px;
+	margin-top: 10px;
 }
 
-.child{
-	flex:1;
-	text-decoration: none;
-	font-size: 50px;
-	color : white;
+.tab{
+	width:100%;
+	height : 100%;
+	text-align: center;
+	margin : 0;
+	padding: 0; 
+
 }
+
+.fansort{
+	color : white;
+	font-size: 30px;
+}
+
+.tab img{
+	
+}
+
+
+
 
 
 </style>
@@ -156,7 +132,7 @@ request.setCharacterEncoding("utf-8");
 	<header>
 		<div class="header">
 			<div class="headup01">
-				<a href="#"><img src="/project3/views/Media/logo2.png" id="logo"></a>
+				<a href="#"><img src="/project3/views/Media/logo3.png" id="logo"></a>
 				<div class="headermenuwrap">
 					<div class="headermenu01">
 						<ul>
@@ -174,19 +150,22 @@ request.setCharacterEncoding("utf-8");
 				</div>
 			</div>
 			<div class="headup02">
-				<div class="wrap" >
-					<div class="child">
-						<img src="/project3/views/Media/go1.png" id="left">
-					</div>
-					<div class="child">
-						<a href="#">Marvel</a>
-						<a href="#">HarryPotter</a>
-						<a href="#">The Load</a>
-					</div>
-					<div class="child">
-						<img src="/project3/views/Media/go2.png" id="right">
-					</div>
-				</div>
+				<table class="tab">
+					<colgroup>
+							<col style="width: 26%;">
+							<col style="width: 16%;">
+							<col style="width: 16%;">
+							<col style="width: 16%;">
+							<col style="width: 26%;">
+						</colgroup>
+					<tr>
+						<td><img src="/project3/views/Media/leftbong.png"></td>
+						<td class="fansort">Marvel</td>
+						<td class="fansort">HarryPotter</td>
+						<td class="fansort">The Load</td>
+						<td><img src="/project3/views/Media/rightbong.png"></td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</header>

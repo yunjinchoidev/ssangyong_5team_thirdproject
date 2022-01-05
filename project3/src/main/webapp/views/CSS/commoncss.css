@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 *{
-	font-family: "Back To the Fantasy";
 }
 
 body{
 	width:100%;
+	font-family: 'Parisienne', 'Hahmlet-Black', cursive;
 }
 
 @font-face {
