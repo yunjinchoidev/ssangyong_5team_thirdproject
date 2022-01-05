@@ -11,6 +11,7 @@ request.setCharacterEncoding("utf-8");
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
+
 <style>
 body {
 	width: 100%;
@@ -30,8 +31,18 @@ body {
 	height: 300px;
 }
 </style>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
+
 <body>
+
+
+<script>
+AOS.init();
+</script>
 	<!-- S헤더 삽입 -->
 	<jsp:include page="/views/common/commonheader.jsp">
 		<jsp:param name="name" value="go" />
@@ -39,15 +50,19 @@ body {
 	<!-- E헤더 삽입 -->
 
 
-
+	<div>
+	
+	</div>
 
 	
 
 	<!-- 반지의 제왕 디테일 -->
 	<!-- 상단 메뉴 -->
-	<div class="contents">
-		<div class="cards">
-			<h2>반지 세계에 오신 여러분을 환영합니다.</h2>
+	<div class="contents" >
+		
+		<div class="cards" >
+			<h2 >반지 세계에 오신 여러분을 환영합니다.</h2>
+			
 		</div>
 	</div>
 
