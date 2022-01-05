@@ -44,6 +44,7 @@ left:500px;
 top: 300px;
 }
 
+
 #potterBanner{
 position: absolute;
 top:1000px;
@@ -92,7 +93,13 @@ top:3300px;
 left:20px;
 }
 
+
 </style>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
 <body>
 <audio autoplay loop controls>
@@ -104,33 +111,38 @@ left:20px;
 <img src="media/potterLogo.png">
 </div>
 
+<script>
+AOS.init();
+</script>
+
 <!-- 해리포터 기숙사 -->
-<div id="potterBanner">
+<div id="potterBanner" data-aos="fade-up">
 <img src="media/potterBanner.png" width="800px" height="400px">
 </div>
-<div id="potterBannerText">
+<div id="potterBannerText" data-aos="fade-up">
 <h1>기숙사는 선택 하셨나요?</h1>
 <button type="button" style="position: absolute;">기숙사 선택</button>
 </div>
 
+
 <!-- 스토어 이동 -->
-<div id="potterShop">
+<div id="potterShop" data-aos="fade-up">
 <img src="media/potterShop.png" width="600px" height="400px">
 </div>
-<div id="potterShopText">
+<div id="potterShopText" data-aos="fade-up">
 <h1>지팡이는 준비 하셨나요?</h1>
 <button type="button" style="position: absolute;">스토어 이동</button>
 </div>
 
-<div id="potterBoard">
+<div id="potterBoard" data-aos="fade-up">
 <img src="media/potterRestRoom.jpg" width="600px" height="400px">
 </div>
-<div id="potterBoardText">
+<div id="potterBoardText" data-aos="fade-up">
 <h1>이야기는 나누셨나요?</h1>
 <button type="button" style="position: absolute;">게시판 이동</button>
 </div>
 
-<div id="bottom">
+<div id="bottom" data-aos="fade-up">
 <img src="media/hogwarts.png" width="1850px" height="600px">
 </div>
 </body>
