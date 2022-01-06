@@ -120,20 +120,21 @@ top:2500px;
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 <script>
 
-$(document).ready(function(){  
-	  
+$(document).ready(function() {
+	
 
-	});
+});
 
 </script>
 
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -154,12 +155,14 @@ $(document).ready(function(){
 </div>
 
 <!-- 그리핀도르 -->
-<form>
+<form action="choiceGryffindor.jsp">
 <div id="gryffindor" data-aos="fade-right">
 <div id="gryffindorLogo">
+<a href="choiceGryffindor.jsp">
 <button id="btngry" name="dorm" value="gryffindor">
 <img src="media/gryffindor.png" width="300px" height="300px">
 </button>
+</a>
 </div>
 <div id="gryh41">
 <h1 style="color:red;">GRYFFINDOR</h1>
@@ -170,9 +173,10 @@ $(document).ready(function(){
 <h4 style="font-style: italic;">"그 이름에 걸맞는 용기를 가진 아이들은, 누구나 가르치도록 하세"</h4>
 </div>
 </div>
-
+</form>
 
 <!-- 슬리데린 -->
+<form>
 <div id="slytherin" data-aos="fade-left">
 <button id="btnSly" name="dorm" value="slytherin"><img src="media/slytherin.png" width="300px" height="300px"></button>
 <div id="slyh41">
@@ -184,9 +188,10 @@ $(document).ready(function(){
 <h4 style="font-style: italic;">"가장 순수한 혈통을 지닌 이들만 가르치도록하세"</h4>
 </div>
 </div>
-
+</form>
 
 <!-- 래번클로 -->
+<form>
 <div id="ravenclaw" data-aos="fade-right">
 <div id="ravenclawLogo">
 <button id="btnRaven" name="dorm" value="gryffindor">
@@ -202,8 +207,10 @@ $(document).ready(function(){
 <h4 style="font-style: italic;">"가장 똑똑한 아이들만 가르치도록 하세"</h4>
 </div>
 </div>
+</form>
 
 <!-- 후플푸프 -->
+<form>
 <div id="hufflepuff" data-aos="fade-left">
 <button id="btnHuf" name="dorm" value="hufflepuff"><img src="media/hufflepuff.png" width="300px" height="300px"></button>
 <div id="slyh41">
@@ -216,6 +223,7 @@ $(document).ready(function(){
 </div>
 </div>
 </form>
+
 
 <div id="footer">
 	<!-- S푸터 삽입 -->
