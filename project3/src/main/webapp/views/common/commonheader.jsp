@@ -147,12 +147,8 @@ body{
 					</div>
 					<br>
 					<div class="headermenu02">
-<<<<<<< HEAD
 						<a href="/project3/views/3_login/Login.jsp"><img src="/project3/views/Media/account3.png"
-=======
-						<a href="#"><img src="/project3/views/Media/account2.png"
->>>>>>> branch 'develop' of https://github.com/yunjinchoidev/ssangyong_5team_thirdproject.git
-							id="acc"></a> <a href="#"><img
+						<a href="#"><img src="/project3/views/Media/account2.png" id="acc"></a> <a href="#"><img
 							src="/project3/views/Media/shopping-cart2.png"></a>
 					</div>
 				</div>
