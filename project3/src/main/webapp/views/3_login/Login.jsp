@@ -6,8 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>판타지빌리지-로그인</title>
-<link rel="stylesheet" type="text/css"
-	href="/project3/views/CSS/commoncss.css">
 <style>
 body{
 background-color: #051f30;
@@ -20,25 +18,27 @@ color:white;
 
 h3{
 color:white;
-position:absolute;
 left:180px;
 }
 
 #title{
 position:absolute;
 left:650px;
-top:120px;
+top:200px;
 }
+
+#titleh3{
+position: absolute;
+left:250px;
+top:200px;
+}
+
 
 #loginForm{
 position:absolute;
-left:850px;
-top: 380px;
-}
+left:800px;
+top: 500px;
 
-img{
-position: fixed;
-left:796px;
 }
 
 #idbtn{
@@ -106,7 +106,6 @@ border:none;
 }
 
 #btn{
-position:fixed;
 left:795px;
 }
 
@@ -119,7 +118,14 @@ left:795px;
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
 }
 
+#footer{
+position:absolute;
+width:100%;
+height:200px;
+top:800px;
+}
 </style>
+
 
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -148,12 +154,17 @@ $(document).ready(function() {
 
 </script>
 		
-		
-</head>
 <body>
+<jsp:include page="/views/common/commonheader.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E헤더 삽입 -->
+
 <div id="title">
 <h1>FantasyVillage 로그인</h1>
+<div id="titleh3">
 <h3>계정이 없으신가요? <a href="../4_member/join_Membership.jsp">회원가입</a></h3>
+</div>
 </div>
 <div id = "loginForm">
 	<form>
@@ -169,6 +180,16 @@ $(document).ready(function() {
 		<a href="../7_find/PassFind.jsp"><button type="button" id ="passbtn">비밀번호 찾기</button></a>>
 		</div>
 	</form>
+	</div>	
+	
+	
+	<div id="footer">
+	<!-- S푸터 삽입 -->
+	<jsp:include page="/views/common/commonfooter.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E푸터 삽입 -->
 	</div>
+	
 </body>
 </html>

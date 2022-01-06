@@ -30,7 +30,6 @@ request.setCharacterEncoding("utf-8");
 	display: inline-block;
 	width: 300px;
 	height: 300px;
-	margin-top: 30px;
 }
 
 /*5조 설명 박스 꾸미기*/
@@ -57,15 +56,15 @@ request.setCharacterEncoding("utf-8");
 	<footer>
 		<div class="footer">
 			<div class="footerlogo">
-				<a href="#"> <img src="/project3/views/Media/logo3.png"></a>
+				<a href="#"> <img src="/project3/views/Media/fvlogo.png"></a>
 			</div>
 			<div class="bottom">
 				<ul>
 					<li>쌍용 3번째 프로젝트</li>
 					<li>제작 : <5조> 마혜민, 장훈주, 최윤진</li>
 					<li>프로젝트 기간 : 21.12.30 ~ 22.1.21</li>
-					<li>연락처 : 010-XXXX-XXXX</li>
-					<li>영업시간 : 24시간 연중무휴</li>
+					<li>연락처 : XXX-XXXX-XXXX</li>
+					<li>영업시간 : XXXXXX</li>
 				</ul>
 			</div>
 		</div>
