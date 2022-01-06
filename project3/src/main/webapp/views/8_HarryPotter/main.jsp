@@ -132,7 +132,9 @@ top:3800px;
 </div>
 <div id="potterBannerText" data-aos="fade-up">
 <h1>기숙사는 선택 하셨나요?</h1>
+<a href="choiceDorm.jsp">
 <button type="button" style="position: absolute;">기숙사 선택</button>
+</a>
 </div>
 
 <!-- 스토어 이동 -->
