@@ -147,9 +147,9 @@ body{
 					</div>
 					<br>
 					<div class="headermenu02">
-						<a href="/project3/views/3_login/Login.jsp"><img src="/project3/views/Media/account3.png"
-						<a href="#"><img src="/project3/views/Media/account2.png" id="acc"></a> <a href="#"><img
-							src="/project3/views/Media/shopping-cart2.png"></a>
+						<a href="/project3/views/3_login/Login.jsp"><img src="/project3/views/Media/account3.png"></a>
+						<a href="#"><img src="/project3/views/Media/account2.png" id="acc"></a> 
+						<a href="#"><img src="/project3/views/Media/shopping-cart2.png"></a>
 					</div>
 				</div>
 			</div>
