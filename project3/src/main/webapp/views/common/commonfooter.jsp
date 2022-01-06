@@ -56,7 +56,7 @@ request.setCharacterEncoding("utf-8");
 	<footer>
 		<div class="footer">
 			<div class="footerlogo">
-				<a href="#"> <img src="/project3/views/Media/fvlogo.png"></a>
+				<a href="#"> <img src="/project3/views/Media/logo.png"></a>
 			</div>
 			<div class="bottom">
 				<ul>
