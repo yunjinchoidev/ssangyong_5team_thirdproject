@@ -87,7 +87,6 @@ left:60px;
 </style>
 </head>
 <body>
-<h1>FantasyVillage 비밀번호찾기</h1>
 <div id="findId">
 	<form>
 		<table>
