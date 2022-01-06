@@ -62,6 +62,7 @@ border:none;
 </style>
 
 <script src="/javaexp/a00_com/jquery-3.6.0.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
 $().ready(function(){
@@ -76,6 +77,23 @@ $().ready(function(){
 			$("#seldirect").hide();
 		}	
 	})
+	
+	$('#joinBtn').on("click", function(){
+		Swal.fire({
+			  title: '회원가입',
+			  text: "회원가입 하시겠습니까?",
+			  icon: 'confirm',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: '확인',
+			  cancelButtonText: '취소'
+			}).then((result) => {
+			  if (result.value) {
+	              $('form').submit();
+			  }
+			})
+	});
 	
 	
 });
@@ -130,7 +148,7 @@ $().ready(function(){
 			</table>
 			<br>
 			<a href="../3_login/Login.jsp"><button type= "button" style="position:absolute;left:80px;">취소</button>	</a>
-			<button style="position:absolute;left:220px;">회원가입</button>	
+			<button type="button" id="joinBtn" style="position:absolute;left:220px;">회원가입</button>	
 		</form>
 		
 	</div>
