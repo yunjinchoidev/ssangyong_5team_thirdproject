@@ -18,26 +18,29 @@ color:white;
 
 h3{
 color:white;
-position:absolute;
 left:180px;
 }
 
 #title{
 position:absolute;
-left:650px;
-top:120px;
+left:600px;
+top:200px;
 }
+
+#titleh3{
+position: absolute;
+left:200px;
+top:200px;
+}
+
 
 #loginForm{
 position:absolute;
-left:850px;
-top: 380px;
+left:750px;
+top: 500px;
+
 }
 
-img{
-position: fixed;
-left:796px;
-}
 
 #idbtn{
 width:100px;
@@ -104,7 +107,6 @@ border:none;
 }
 
 #btn{
-position:fixed;
 left:795px;
 }
 
@@ -117,7 +119,14 @@ left:795px;
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
 }
 
+#footer{
+position:absolute;
+width:100%;
+height:200px;
+top:800px;
+}
 </style>
+
 
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -146,19 +155,26 @@ $(document).ready(function() {
 
 </script>
 		
-		
-</head>
 <body>
+<jsp:include page="/views/common/commonheader.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E헤더 삽입 -->
+
 <div id="title">
 <h1>FantasyVillage 로그인</h1>
+<div id="titleh3">
 <h3>계정이 없으신가요? <a href="../4_member/join_Membership.jsp">회원가입</a></h3>
+</div>
 </div>
 <div id = "loginForm">
 	<form>
-		<img src="./img/user.png" width="55px" height="54px" style="background-color:lightgray">
+		<img src="./img/user.png" id="userImg" width="55px" height="54px" style="background-color:lightgray;
+		position:relative; top:22px; left:5px;">
 		<input type=text name = id placeholder="아이디를 입력해주세요" style="width:250px;height:49px;">
 		<br><br>
-		<img src="./img/key.png" width="55px" height="54px" style="background-color:lightgray">
+		<img src="./img/key.png" width="55px" height="54px" style="background-color:lightgray;
+		position:relative; top:22px; left:5px;">
 		<input type=text name = pass placeholder="비밀번호를 입력해주세요" style="width:250px;height:49px;">
 		<br><br>
 		<div id = "btn">
@@ -167,6 +183,16 @@ $(document).ready(function() {
 		<a href="../7_find/PassFind.jsp"><button type="button" id ="passbtn">비밀번호 찾기</button></a>>
 		</div>
 	</form>
+	</div>	
+	
+	
+	<div id="footer">
+	<!-- S푸터 삽입 -->
+	<jsp:include page="/views/common/commonfooter.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E푸터 삽입 -->
 	</div>
+	
 </body>
 </html>

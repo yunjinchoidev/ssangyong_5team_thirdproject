@@ -83,16 +83,23 @@ top:550px;
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-$(document).ready(function() {
-		
-    });
+
+$(document).ready(function(){  
+	  
+
+	});
 
 </script>
 </head>
 
 <body>
 
+<jsp:include page="/views/common/commonheader.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E헤더 삽입 -->
 
+<!-- 모자 영역 -->
 <div id="hat">
 <span class="hint--right" aria-label="너는 어느 기숙사가 좋을까..."><img src="media/magic_hat.png" width="350px" height="300px"></span>
 </div>

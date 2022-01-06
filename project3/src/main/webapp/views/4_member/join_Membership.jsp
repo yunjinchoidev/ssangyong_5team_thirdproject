@@ -19,15 +19,15 @@ font-size: 40pt;
 
 #title{
 position:absolute;
-width:600px;
-left:600px;
-top:100px;
+width:650px;
+left:650px;
+top:200px;
 }
 
 #inputMember{
 position:absolute;
-left:700px;
-top:300px;
+left:750px;
+top:400px;
 }
 
 input[type=text]{
@@ -59,9 +59,17 @@ background-color:#3F3F3F;
 color : white;
 border:none;
 }
+
+#footer{
+position:absolute;
+width:100%;
+height:200px;
+top:900px;
+}
 </style>
 
 <script src="/javaexp/a00_com/jquery-3.6.0.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
 $().ready(function(){
@@ -77,12 +85,34 @@ $().ready(function(){
 		}	
 	})
 	
+	$('#joinBtn').on("click", function(){
+		Swal.fire({
+			  title: '회원가입',
+			  text: "회원가입 하시겠습니까?",
+			  icon: 'confirm',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: '확인',
+			  cancelButtonText: '취소'
+			}).then((result) => {
+			  if (result.value) {
+	              $('form').submit();
+			  }
+			})
+	});
+	
 	
 });
 
 </script>
 </head>
 <body>
+	<jsp:include page="/views/common/commonheader.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E헤더 삽입 -->
+	
 	<div id="title">
 	<h1>FantasyVillage 회원가입</h1>
 	<hr>
@@ -130,9 +160,19 @@ $().ready(function(){
 			</table>
 			<br>
 			<a href="../3_login/Login.jsp"><button type= "button" style="position:absolute;left:80px;">취소</button>	</a>
-			<button style="position:absolute;left:220px;">회원가입</button>	
+			<button type="button" id="joinBtn" style="position:absolute;left:220px;">회원가입</button>	
 		</form>
 		
 	</div>
+	
+	
+	<div id="footer">
+	<!-- S푸터 삽입 -->
+	<jsp:include page="/views/common/commonfooter.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E푸터 삽입 -->
+	</div>
+	
 </body>
 </html>
