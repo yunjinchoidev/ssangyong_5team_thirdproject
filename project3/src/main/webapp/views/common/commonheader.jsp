@@ -132,11 +132,8 @@ body{
 	<header>
 		<div class="header">
 			<div class="headup01">
-<<<<<<< HEAD
 				<a href="/project3/views/0_Main/aboutus.jsp"><img src="/project3/views/Media/logo5.png" id="logo"></a>
-=======
 				<a href="#"><img src="/project3/views/Media/logo3.png" id="logo"></a>
->>>>>>> branch 'develop' of https://github.com/yunjinchoidev/ssangyong_5team_thirdproject.git
 				<div class="headermenuwrap">
 					<div class="headermenu01">
 						<ul>
