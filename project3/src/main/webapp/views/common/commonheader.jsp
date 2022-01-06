@@ -38,9 +38,9 @@ body{
 
 /*로고 크기 설정*/
 #logo {
-	width: 125px;
+	width: 250px;
 	height: 125px;
-	margin-left: 900px;
+	margin-left: 850px;
 }
 
 /* 최우측 최상단 메뉴 */
@@ -113,6 +113,13 @@ body{
 	color : white;
 	font-size: 30px;
 }
+.fansort a{
+	color : white;
+	font-size: 30px;
+	text-decoration: none;
+}
+
+
 
 .tab img{
 	
@@ -132,7 +139,7 @@ body{
 	<header>
 		<div class="header">
 			<div class="headup01">
-				<a href="#"><img src="/project3/views/Media/logo3.png" id="logo"></a>
+				<a href="/project3/views/0_Main/aboutus.jsp"><img src="/project3/views/Media/logo3.png" id="logo"></a>
 				<div class="headermenuwrap">
 					<div class="headermenu01">
 						<ul>
@@ -143,7 +150,7 @@ body{
 					</div>
 					<br>
 					<div class="headermenu02">
-						<a href="#"><img src="/project3/views/Media/account2.png"
+						<a href="/project3/views/3_login/Login.jsp"><img src="/project3/views/Media/account2.png"
 							id="acc"></a> <a href="#"><img
 							src="/project3/views/Media/shopping-cart2.png"></a>
 					</div>
@@ -160,9 +167,9 @@ body{
 						</colgroup>
 					<tr>
 						<td><img src="/project3/views/Media/leftbong.png"></td>
-						<td class="fansort">Marvel</td>
-						<td class="fansort">HarryPotter</td>
-						<td class="fansort">The Load</td>
+						<td class="fansort"><a href="/project3/views/9_Marvel/marvelmain.jsp">Marvel</a></td>
+						<td class="fansort"><a href="/project3/views/8_HarryPotter/main.jsp">HarryPotter</a></td>
+						<td class="fansort"><a href="/project3/views/5_LoadOfRing/loadmain.jsp">The Load</a></td>
 						<td><img src="/project3/views/Media/rightbong.png"></td>
 					</tr>
 				</table>

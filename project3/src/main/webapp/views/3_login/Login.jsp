@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>판타지빌리지-로그인</title>
+<link rel="stylesheet" type="text/css"
+	href="/project3/views/CSS/commoncss.css">
 <style>
 body{
 background-color: #051f30;
