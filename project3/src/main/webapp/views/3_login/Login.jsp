@@ -23,23 +23,24 @@ left:180px;
 
 #title{
 position:absolute;
-left:650px;
+left:600px;
 top:200px;
 }
 
 #titleh3{
 position: absolute;
-left:250px;
+left:200px;
 top:200px;
 }
 
 
 #loginForm{
 position:absolute;
-left:800px;
+left:750px;
 top: 500px;
 
 }
+
 
 #idbtn{
 width:100px;
@@ -168,10 +169,12 @@ $(document).ready(function() {
 </div>
 <div id = "loginForm">
 	<form>
-		<img src="./img/user.png" width="55px" height="54px" style="background-color:lightgray">
+		<img src="./img/user.png" id="userImg" width="55px" height="54px" style="background-color:lightgray;
+		position:relative; top:22px; left:5px;">
 		<input type=text name = id placeholder="아이디를 입력해주세요" style="width:250px;height:49px;">
 		<br><br>
-		<img src="./img/key.png" width="55px" height="54px" style="background-color:lightgray">
+		<img src="./img/key.png" width="55px" height="54px" style="background-color:lightgray;
+		position:relative; top:22px; left:5px;">
 		<input type=text name = pass placeholder="비밀번호를 입력해주세요" style="width:250px;height:49px;">
 		<br><br>
 		<div id = "btn">

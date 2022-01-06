@@ -69,14 +69,14 @@ border:none;
 #findId{
 position: absolute;
 left:720px;
-top: 380px;
+top: 480px;
 }
 
 h1{
 font-size: 50pt;
 color:white;
 position: absolute;
-top: 150px;
+top: 250px;
 left:600px;
 }
 
@@ -85,9 +85,48 @@ position: absolute;
 left:60px;
 }
 
+#footer{
+position:absolute;
+width:100%;
+height:200px;
+top:800px;
+}
 </style>
+
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+$(document).ready(function() {
+	$('#confirmBtn').on("click", function(){
+		Swal.fire({
+			  title: 'ID찾기',
+			  text: "ID를 찾으시겠습니까?",
+			  icon: 'confirm',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: '확인',
+			  cancelButtonText: '취소'
+			}).then((result) => {
+			  if (result.value) {
+	              $('form').submit();
+			  }
+			})
+	});
+
+});
+
+</script>
 </head>
 <body>
+
+<jsp:include page="/views/common/commonheader.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E헤더 삽입 -->
+
 <h1>FantasyVillage ID찾기</h1>
 <div id="findId">
 	<form>
@@ -104,9 +143,17 @@ left:60px;
 		<br>
 		<div id="btnDiv">
 		<a href="../3_login/Login.jsp"><button id="cancelBtn" type= "button" style="position:absolute;left:80px;">취소</button>	</a>
-		<button id="confirmBtn">확인</button>
+		<button type="button" id="confirmBtn">확인</button>
 		</div>
 	</form>
 </div>
+
+<div id="footer">
+	<!-- S푸터 삽입 -->
+	<jsp:include page="/views/common/commonfooter.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E푸터 삽입 -->
+	</div>
 </body>
 </html>

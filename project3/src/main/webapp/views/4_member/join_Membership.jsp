@@ -19,15 +19,15 @@ font-size: 40pt;
 
 #title{
 position:absolute;
-width:600px;
-left:600px;
-top:100px;
+width:650px;
+left:650px;
+top:200px;
 }
 
 #inputMember{
 position:absolute;
-left:700px;
-top:300px;
+left:750px;
+top:400px;
 }
 
 input[type=text]{
@@ -58,6 +58,13 @@ height:30px;
 background-color:#3F3F3F;
 color : white;
 border:none;
+}
+
+#footer{
+position:absolute;
+width:100%;
+height:200px;
+top:900px;
 }
 </style>
 
@@ -101,6 +108,11 @@ $().ready(function(){
 </script>
 </head>
 <body>
+	<jsp:include page="/views/common/commonheader.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E헤더 삽입 -->
+	
 	<div id="title">
 	<h1>FantasyVillage 회원가입</h1>
 	<hr>
@@ -152,5 +164,15 @@ $().ready(function(){
 		</form>
 		
 	</div>
+	
+	
+	<div id="footer">
+	<!-- S푸터 삽입 -->
+	<jsp:include page="/views/common/commonfooter.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E푸터 삽입 -->
+	</div>
+	
 </body>
 </html>
