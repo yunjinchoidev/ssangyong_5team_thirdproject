@@ -14,7 +14,7 @@ request.setCharacterEncoding("utf-8");
 
 /*푸터 전체 배경 색깔 지정, height를 일부러 넣어줌(주의)*/
 .footer {
-	background-color: #1B1332;
+	background-color: ##2c3e50;
 	width: 100%;
 	height: 300px;
 }
