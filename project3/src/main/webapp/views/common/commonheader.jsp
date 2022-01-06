@@ -119,6 +119,12 @@ body {
 .tab img {
    
 }
+
+.fansort a{
+	text-decoration: none;
+	color : white;
+}
+
 </style>
 <script type="text/javascript">
    
@@ -130,20 +136,20 @@ body {
       <div class="header">
          <div class="headup01">
             <a href="/project3/views/0_Main/aboutus.jsp"> <img
-                  src="/project3/views/Media/logo5.png" id="logo"></a>
+                  src="/project3/views/Media/logo.png" id="logo"></a>
                <div class="headermenuwrap">
                   <div class="headermenu01">
                      <ul>
-                        <li><a href="#">서비스</a></li>
-                        <li><a href="#">스토어</a></li>
-                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#"><a href="#">서비스</a></a></li>
+                        <li><a href="#"><a href="#">스토어</a></li>
+                        <li><a href="#"><a href="#">이벤트</a></li>
                      </ul>
                   </div>
                   <br>
                   <div class="headermenu02">
                      <a href="/project3/views/3_login/Login.jsp"><img
                         src="/project3/views/Media/account3.png"></a> 
-                        <a href="#"><img
+                        <a href="/project3/views/3_login/Login.jsp"><img
                         src="/project3/views/Media/shopping-cart2.png"></a>
                   </div>
                </div>
@@ -159,9 +165,9 @@ body {
                </colgroup>
                <tr>
                   <td><img src="/project3/views/Media/leftbong.png"></td>
-                  <td class="fansort">Marvel</td>
-                  <td class="fansort">HarryPotter</td>
-                  <td class="fansort">The Load</td>
+                  <td class="fansort"><a href="/project3/views/9_Marvel/marvelmain.jsp">Marvel</a></td>
+                  <td class="fansort"><a href="/project3/views/8_HarryPotter/main.jsp">HarryPotter</a></td>
+                  <td class="fansort"><a href="/project3/views/5_LoadOfRing/loadmain.jsp">The Load</a></td>
                   <td><img src="/project3/views/Media/rightbong.png"></td>
                </tr>
             </table>
