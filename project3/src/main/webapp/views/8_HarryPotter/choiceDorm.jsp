@@ -176,9 +176,12 @@ $(document).ready(function() {
 </form>
 
 <!-- 슬리데린 -->
-<form>
+<form action="choiceSlytherin.jsp">
 <div id="slytherin" data-aos="fade-left">
-<button id="btnSly" name="dorm" value="slytherin"><img src="media/slytherin.png" width="300px" height="300px"></button>
+<a href="choiceSlytherin.jsp">
+<button id="btnSly" name="dorm" value="slytherin">
+<img src="media/slytherin.png" width="300px" height="300px"></button>
+</a>
 <div id="slyh41">
 <h1 style="color:green;">SLYTHERIN</h1>
 <h4 >창립자:살라자르 슬리데린</h4>
@@ -191,12 +194,14 @@ $(document).ready(function() {
 </form>
 
 <!-- 래번클로 -->
-<form>
+<form action="choiceRavenclaw.jsp">
 <div id="ravenclaw" data-aos="fade-right">
 <div id="ravenclawLogo">
-<button id="btnRaven" name="dorm" value="gryffindor">
+<a href="choiceRavenclaw.jsp">
+<button id="btnRaven" name="dorm" value="ravenclaw">
 <img src="media/ravenclaw.png" width="300px" height="300px">
 </button>
+</a>
 </div>
 <div id="gryh41">
 <h1 style="color:SkyBlue;">RAVENCLAW</h1>
@@ -210,9 +215,12 @@ $(document).ready(function() {
 </form>
 
 <!-- 후플푸프 -->
-<form>
+<form action="choiceHufflepuff.jsp">
 <div id="hufflepuff" data-aos="fade-left">
-<button id="btnHuf" name="dorm" value="hufflepuff"><img src="media/hufflepuff.png" width="300px" height="300px"></button>
+<a href="choiceHufflepuff.jsp">
+<button id="btnHuf" name="dorm" value="hufflepuff">
+<img src="media/hufflepuff.png" width="300px" height="300px"></button>
+</a>
 <div id="slyh41">
 <h1 style="color:yellow;">HUFFLEPUFF</h1>
 <h4 >창립자:헬가 후플푸프</h4>
