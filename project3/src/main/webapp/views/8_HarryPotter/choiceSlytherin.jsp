@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>기숙사 - 그리핀도르</title>
+<title>Insert title here</title>
 
 <style>
 button{
@@ -92,15 +92,15 @@ $(document).ready(function(){
 <canvas id="canvas"></canvas>
 
 <!-- 그리핀도르 배경 이미지 -->
-<img src="media/gryffindorBack.png" width="100%" height="100%">
+<img src="media/slyBack.jpg" width="100%" height="100%">
 
 <div id="tex">
 <h2 style="position:absolute;top:20px;left:130px;font-size:30px">
 	WelCome To
 </h2>
 
-<h1 style="position:absolute;top:100px;left:50px;font-size:50px;">
-GRYFFINDOR
+<h1 style="position:absolute;top:100px;left:60px;font-size:50px;">
+SLYTHERIN
 </h1>
 <h2 style="position:absolute;top:200px;left:150px;font-size:30px">
 사용자닉네임
