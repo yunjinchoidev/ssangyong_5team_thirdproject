@@ -93,6 +93,12 @@ top:3300px;
 left:20px;
 }
 
+#footer{
+position:absolute;
+width:100%;
+height:200px;
+top:3800px;
+}
 
 </style>
 
@@ -102,15 +108,23 @@ left:20px;
 
 </head>
 <body>
+
+<jsp:include page="/views/common/commonheader.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E헤더 삽입 -->
+	
    <script>
    AOS.init();
    </script>
-   <div id="potterLogo">
+   <div id="potterLogo" 
+     data-aos="fade-zoom-in" 
+     data-aos-easing="ease-in-back"
+     data-aos-delay="10"
+     data-aos-offset="0">
    <img src="media/potterLogo.png">
    </div>
-<div id="marvelLogo">
-<img src="marvelmedia/marvellogo.png">
-</div>
+
 
 <!-- 해리포터 기숙사 -->
 <div id="potterBanner" data-aos="fade-up">
@@ -122,7 +136,7 @@ left:20px;
 </div>
 
 <!-- 스토어 이동 -->
-<div id="marvelShop" data-aos="fade-up">
+<div id="potterShop" data-aos="fade-up">
 <img src="media/potterShop.png" width="600px" height="400px">
 </div>
 <div id="potterShopText" data-aos="fade-up">
@@ -141,5 +155,14 @@ left:20px;
 <div id="bottom" data-aos="fade-up">
 <img src="media/hogwarts.png" width="1850px" height="600px">
 </div>
+
+	<div id="footer">
+	<!-- S푸터 삽입 -->
+	<jsp:include page="/views/common/commonfooter.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E푸터 삽입 -->
+	</div>
+	
 </body>
 </html>
