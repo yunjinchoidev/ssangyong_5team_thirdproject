@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>기숙사 - 그리핀도르</title>
 
 <style>
 button{
