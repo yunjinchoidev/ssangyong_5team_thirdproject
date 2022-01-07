@@ -44,12 +44,12 @@ body {
 #logo {
    width: 125px;
    height: 125px;
-   margin-left: 900px;
+   padding-left: 890px;
 }
 
 /* 최우측 최상단 메뉴 */
 .headermenu01 {
-   width: 300px;
+   width: 320px;
    height: 50px;
    display: inline-block;
    margin-right: 30px;
@@ -58,14 +58,14 @@ body {
 .headermenu01 ul li {
    display: inline-block;
    color: white;
-   font-size: 25px;
-   padding-left: 10px;
+   font-size: 23px;
    text-decoration: none;
 }
 
 .headermenu01 ul li a {
    text-decoration: none;
    color: white;
+   padding-right: 10px;
 }
 
 .headermenu02 {
@@ -79,7 +79,14 @@ body {
    width: 60px;
    height: 50px;
    display: inline-block;
-   padding-left: 30px;
+   text-align: right;
+}
+
+#account{
+	padding-left: 100px;
+}
+#shoppingcart{
+	padding-left: 30px;
 }
 
 .headermenuwrap {
@@ -140,7 +147,7 @@ body {
                <div class="headermenuwrap">
                   <div class="headermenu01">
                      <ul>
-                        <li><a href="#"><a href="#">서비스</a></a></li>
+                        <li><a href="/project3/views/2_service/1_official/0_default.jsp"><a href="#">서비스</a></a></li>
                         <li><a href="#"><a href="#">스토어</a></li>
                         <li><a href="#"><a href="#">이벤트</a></li>
                      </ul>
@@ -148,9 +155,9 @@ body {
                   <br>
                   <div class="headermenu02">
                      <a href="/project3/views/3_login/Login.jsp"><img
-                        src="/project3/views/Media/account3.png"></a> 
+                        src="/project3/views/Media/account3.png" id="account"></a> 
                         <a href="/project3/views/3_login/Login.jsp"><img
-                        src="/project3/views/Media/shopping-cart2.png"></a>
+                        src="/project3/views/Media/shopping-cart2.png" id="shoppingcart"></a>
                   </div>
                </div>
          </div>
