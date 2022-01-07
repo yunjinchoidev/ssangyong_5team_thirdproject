@@ -5,12 +5,12 @@
 
 body{
 	width:100%;
-	font-family: 'Parisienne', 'Hahmlet-Black', cursive;
+	font-family: '국립박물관문화재단클래식B', 'Hahmlet-Black', cursive;
 }
 
 @font-face {
-    font-family: 'Hahmlet-Black';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-Black.woff2') format('woff2');
+    font-family: '국립박물관문화재단클래식B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식B.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }

@@ -64,7 +64,7 @@ request.setCharacterEncoding("utf-8");
 					<li>제작 : <5조> 마혜민, 장훈주, 최윤진</li>
 					<li>프로젝트 기간 : 21.12.30 ~ 22.1.21</li>
 					<li>연락처 : XXX-XXXX-XXXX</li>
-					<li>영업시간 : XXXXXX</li>
+					<li>영업시간 : 연중무휴</li>
 				</ul>
 			</div>
 		</div>
