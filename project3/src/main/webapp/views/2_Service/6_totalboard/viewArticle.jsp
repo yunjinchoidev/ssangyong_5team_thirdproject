@@ -89,6 +89,12 @@ request.setCharacterEncoding("UTF-8");
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 
+	<!-- S서비스메뉴 삽입 -->
+	<jsp:include page="/views/2_Service/menu.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E서비스 메뉴삽입 -->
+	
 	<div class="contents">
 		<div class="cards">
 			<div class="indivi">

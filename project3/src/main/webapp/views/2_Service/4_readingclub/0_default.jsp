@@ -35,31 +35,15 @@ body{
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 
+	<!-- S서비스메뉴 삽입 -->
+	<jsp:include page="/views/2_Service/menu.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E서비스 메뉴삽입 -->
+
 
 	<div class="contents">
 		<div class="cards">
-			<div class="indivi">
-				<div>
-					<h1>재능기부</h1>
-					<p>당신의 재능이 누군가에겐 필요합니다.</p>
-					<p>당신이 가진 선한 영향력이 아이의 인생을 바꿀 수 있습니다</p>
-				</div>
-				<div class="donabox01">
-						<img src="dona01.jpg">
-						<img src="dona02.jpg">
-						<img src="dona03.jpg">
-				</div>
-				
-				<div>
-					<div>기부하기</div>
-					<div>기부받기(개인)</div>
-					<div>기부받기(단체)</div>
-					<div>봉사 시간 문의</div>
-					<div>봉사 시간 문의</div>
-					
-				</div>
-				
-			</div>
 		</div>
 	</div>
 

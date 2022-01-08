@@ -147,7 +147,7 @@ body {
                <div class="headermenuwrap">
                   <div class="headermenu01">
                      <ul>
-                        <li><a href="/project3/views/2_Service/0_default.jsp">서비스</a></li>
+                        <li><a href="/project3/views/2_Service/1_talentdona/0_default.jsp">서비스</a></li>
                         <li><a href="/project3/views/10_Store/0_default.jsp">스토어</a></li>
                         <li><a href="/project3/views/11_Event/0_default.jsp">이벤트</a></li>
                      </ul>

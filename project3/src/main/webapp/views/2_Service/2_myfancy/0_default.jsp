@@ -9,26 +9,22 @@ request.setCharacterEncoding("utf-8");
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css"
+	href="/project3/views/CSS/commoncss.css">
 <style>
-#Servicemenu{
-	background-color: #EAEAEA;		
-	width:100%;
-	height: 50px;
+
+body{
+	border : 3px solid;
+}
+.donabox01{
+	display: flex;
 }
 
-#Servicemenu ul{
-	margin: 0;
-	padding: 0;
-	text-align : center;
-	width:700px;
-	padding-left: 600px;
-	
-}
-#Servicemenu ul li{
-	display: inline-block;
-	font-size: 23px;
-	padding-left: 20px;
-	padding-top: 10px;
+.donabox01 img{
+	width: 100px;
+	height: 100px;
+	border: 3px solid;
+	flex : 1;
 }
 </style>
 </head>
@@ -38,18 +34,17 @@ request.setCharacterEncoding("utf-8");
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
-	<div id="Servicemenu">
-		<ul>
-			<li>재능기부</li>
-			<li>나의공상</li>
-			<li>나의 판타스틱</li>
-			<li>독서 클럽</li>
-			<li>전체게시판</li>
-		</ul>
-	</div>
+
+	<!-- S서비스메뉴 삽입 -->
+	<jsp:include page="/views/2_Service/menu.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E서비스 메뉴삽입 -->
+
 
 	<div class="contents">
-		<div class="cards"></div>
+		<div class="cards">
+		</div>
 	</div>
 
 
