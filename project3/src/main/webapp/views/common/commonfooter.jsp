@@ -48,6 +48,11 @@ request.setCharacterEncoding("utf-8");
 .bottom ul {
 	list-style: none;
 }
+
+.bottom a{
+	text-decoration: none;
+	color : white;
+}
 </style>
 
 
@@ -56,7 +61,7 @@ request.setCharacterEncoding("utf-8");
 	<footer>
 		<div class="footer">
 			<div class="footerlogo">
-				<a href="#"> <img src="/project3/views/Media/footerFantasylogo.png"></a>
+				<a href="/project3/views/0_Main/aboutus.jsp"> <img src="/project3/views/Media/footerFantasylogo.png"></a>
 			</div>
 			<div class="bottom">
 				<ul>
@@ -65,6 +70,7 @@ request.setCharacterEncoding("utf-8");
 					<li>프로젝트 기간 : 21.12.30 ~ 22.1.21</li>
 					<li>연락처 : XXX-XXXX-XXXX</li>
 					<li>영업시간 : 연중무휴</li>
+					<li><a href="/project3/views/0_Main/sitemap.jsp">사이트맵 바로가기</a></li>
 				</ul>
 			</div>
 		</div>
