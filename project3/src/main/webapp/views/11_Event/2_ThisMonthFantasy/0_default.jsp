@@ -28,7 +28,9 @@ request.setCharacterEncoding("utf-8");
 	
 
 	<div class="contents">
-		<div class="cards"></div>
+		<div class="cards">
+		a
+		</div>
 	</div>
 
 

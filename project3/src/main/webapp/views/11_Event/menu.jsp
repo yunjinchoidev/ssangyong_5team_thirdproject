@@ -14,6 +14,10 @@ request.setCharacterEncoding("utf-8");
 	background-color: #EAEAEA;		
 	width:100%;
 	height: 50px;
+	position: fixed;
+	top:200px;
+	right:0;
+	left: 0;
 }
 #eventmenu ul{
 	margin: 0;
@@ -40,13 +44,9 @@ request.setCharacterEncoding("utf-8");
 	
 	<div id="eventmenu">
 		<ul>
-			<li><a href="#">신춘문예</a></li>
-			<li><a href="#">이달의 판타지</a></li>
+			<li><a href="/project3/views/11_Event/1_LiteracyContest/0_default.jsp">신춘문예</a></li>
+			<li><a href="/project3/views/11_Event/2_ThisMonthFantasy/0_default.jsp">이달의 판타지</a></li>
 		</ul>
-	</div>
-
-	<div class="contents">
-		<div class="cards"></div>
 	</div>
 
 

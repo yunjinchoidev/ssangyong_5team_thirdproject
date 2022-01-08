@@ -22,14 +22,16 @@ request.setCharacterEncoding("utf-8");
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 
+	<!-- S반지제왕 메뉴 삽입 -->
+	<jsp:include page="/views/5_LoadOfRing/menu.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E반지제왕 메뉴 삽입 -->
 
 
 	<div class="contents">
-		
 		<div class="cards">
-			<div class="indivi">
-				<img src="/project3/views/Media/iwantyou.jpg">
-			</div>
+			<
 		</div>
 	</div>
 

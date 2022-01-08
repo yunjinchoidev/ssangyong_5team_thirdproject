@@ -45,8 +45,8 @@ body{
 	<div class="contents">
 		<div class="cards">
 		<h1>독서클럽</h1>
+		<p> 동료들과 판타지를 읽어보세요 </p>
 		<div>
-			<img src="#">
 			<img src="#">
 			<img src="#">
 			<img src="#">
@@ -57,17 +57,15 @@ body{
 			<img src="#">
 			<img src="#">
 			<img src="#">
-			<img src="#">
 		</div>
 		<div>
-			<img src="#">
 			<img src="#">
 			<img src="#">
 			<img src="#">
 			<img src="#">
 		</div>
 
-
+		<a href="#">글 등록하기</a>
 		
 		</div>
 	</div>

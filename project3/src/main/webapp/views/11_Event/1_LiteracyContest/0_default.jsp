@@ -28,7 +28,18 @@ request.setCharacterEncoding("utf-8");
 	
 
 	<div class="contents">
-		<div class="cards"></div>
+		<div class="cards">
+			<h1>당신의 상상력을 공모하십시오.</h1>
+			<p> 제 1회 판타지 빌리지 신춘문예</p>
+			<p> 톨킨같은 유명한 판타지 작가가 되고 싶습니까? <br>
+				판타지 빌리지에서 주최하는 신춘문예 입상은 그 시작점으로 분명 훌륭한 선택입니다.
+				당신의 끼와 재능을 온전히 원고지에 담아 보내주십시오<br>
+				<br><br>
+				당신의</p>
+				
+		
+		
+		</div>
 	</div>
 
 
