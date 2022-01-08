@@ -12,19 +12,11 @@ request.setCharacterEncoding("utf-8");
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 <style>
-
-body{
-	border : 3px solid;
-}
-.donabox01{
-	display: flex;
-}
-
-.donabox01 img{
-	width: 100px;
-	height: 100px;
-	border: 3px solid;
-	flex : 1;
+#talentlisttab{
+	width:800px;
+	height: 800px;
+	border : 2px solid black;
+	margin: 0 auto;
 }
 </style>
 </head>
@@ -44,17 +36,17 @@ body{
 
 	<div class="contents">
 		<div class="cards">
-				<ul>
-					<li>#####</li>
-					<li>#####</li>
-					<li>#####</li>
-					<li>#####</li>
-					<li>#####</li>
-					<li>#####</li>
-					<li>#####</li>
-					<li>#####</li>
-					<li>#####</li>
-				</ul>
+			<br>
+			<h1>재능 나눠 주기 / 재능 기부 행사 참여하기(아이)</h1>
+				<table id="talentlisttab" border>
+					<tr><td>번호</td><td>진행상태</td><td>제목</td></tr>
+					<tr><td>##</td><td>##</td><td>##</td></tr>
+					<tr><td>##</td><td>##</td><td>##</td></tr>
+					<tr><td>##</td><td>##</td><td>##</td></tr>
+					<tr><td>##</td><td>##</td><td>##</td></tr>
+					<tr><td>##</td><td>##</td><td>##</td></tr>
+					<tr><td>##</td><td>##</td><td>##</td></tr>
+				</table>
 			</div>
 		</div>
 

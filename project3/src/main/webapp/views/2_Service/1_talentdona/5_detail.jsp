@@ -13,23 +13,18 @@ request.setCharacterEncoding("utf-8");
 	href="/project3/views/CSS/commoncss.css">
 <style>
 
-body{
-	border : 3px solid;
-}
-
-#detailtalentdonatab{
-	border : 3px solid blue;
+#detailtalentdonatab {
+	border: 3px solid blue;
 	text-align: center;
-	width:40%;
+	width: 40%;
 	height: 600px;
 	font-size: 20px;
-	margin : 0 auto;
+	margin: 0 auto;
 }
 
-p{
-	font-size: 30px;
+p {
+	font-size: 20px;
 }
-
 </style>
 </head>
 <body>
@@ -48,17 +43,37 @@ p{
 
 	<div class="contents">
 		<div class="cards">
+		
 			<p>재능 기부 신청 상세 페이지</p>
+		
+		
 			<table id="detailtalentdonatab" border>
-				<tr><td>재능 기부 기간</td><td>####</td><td>봉사 시간</td><td>####</td></tr>
-				<tr><td>모집 기간</td><td>####</td><td>활동요일</td><td>####</td></tr>
-				<tr><td>봉사 장소</td><td>####</td><td>재능 구분</td><td>####</td><tr>
-				<tr><td>모집인원</td><td>####</td><td>신청인원</td><td>####</td></tr>
-				<tr><td>활동구분</td><td>####</td><td>첨부파일</td><td>####</td></tr>
-			</table>
-			<p>######################################<br>
-			##################################<br></p>
+					<tr>
+						<th scope="row" colspan="2">지원 자격 조건</th>
+					</tr>
+					<tr>
+						<th scope="row">봉사자연령</th>
+						<td>####</td>
+					</tr>
+					<tr>
+						<th scope="row">봉사자성별</th>
+						<td>####</td>
+					</tr>
+					<tr>
+						<th scope="row">자격요건</th>
+						<td>-</td>
+					</tr>
+					<tr>
+						<th scope="row">사전교육</th>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td colspan="2"><textarea cols="70" rows="20"></textarea></td>
+					</tr>
+				</tbody>
+				</table>
 			<input type="button" value="목록으로">
+			
 		</div>
 	</div>
 

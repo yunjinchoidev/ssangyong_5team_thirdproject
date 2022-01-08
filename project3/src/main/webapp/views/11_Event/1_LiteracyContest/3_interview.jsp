@@ -44,9 +44,9 @@ request.setCharacterEncoding("utf-8");
 			</div>
 			
 			<ul>
-				<li><a href="1_apply.jsp">공모하기(apply)</a></li>
-				<li><a href="2_lastwinner.jsp">지난 해 최우승작</a></li>
-				<li><a href="3_interview.jsp">우승자 인터뷰</a></li>
+				<li><a href="#">공모하기(apply)</a></li>
+				<li><a href="#">지난 해 최우승작</a></li>
+				<li><a href="#">우승자 인터뷰</a></li>
 			</ul>
 
 

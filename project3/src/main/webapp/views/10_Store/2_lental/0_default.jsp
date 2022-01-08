@@ -30,48 +30,16 @@ request.setCharacterEncoding("utf-8");
 
 	<div class="contents">
 		<div class="cards">
-			<div class="wrap">
 				<div class="offex">
 					<h2>공식 스토어</h2>
 					<p>이 곳에서 판매하는 제품들은 엄격한 공정을 거쳐 엄선된 것들입니다.</p>
 				</div>
+				<ul>
+					<li><a href="#">마블 렌탈 스토어 바로가기</a></li>
+					<li><a href="#">해리포터 렌탈 스토어 바로가기</a></li>
+					<li><a href="#">반지의제왕 렌탈 스토어 바로가기</a></li>
+				</ul>
 
-				<div class="offup">
-					<div class="offup01">
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/h01.jpg"></a>
-						</div>
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/h02.jpg"></a>
-						</div>
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/h03.jpg"></a>
-						</div>
-					</div>
-					<div class="offup01">
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/m01.jpg"></a>
-						</div>
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/m02.jpg"></a>
-						</div>
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/m03.jpg"></a>
-						</div>
-					</div>
-					<div class="offup01">
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/l01.jpg"></a>
-						</div>
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/l02.jpg"></a>
-						</div>
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/l03.jpg"></a>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 
