@@ -44,7 +44,6 @@ body{
 
 	<div class="contents">
 		<div class="cards">
-			<div class="indivi">
 				<div>
 					<h1>재능기부</h1>
 					<p>당신의 재능이 누군가에겐 필요합니다.</p>
@@ -58,14 +57,12 @@ body{
 				
 				<div>
 					<ul>
-						<li><a href="#">재능 나누러 가기 (기부자)</a>
-						<li><a href="#">참여 가능한 행사(참여자)</a>
-						<li><a href="#">재능 기부 목록으로 이동</a>
+						<li><a href="1_list.jsp">재능 기부 참여 하기(목록으로 이동)</a>
+						<li><a href="">재능을 나누고 싶어요(신청서 작성)</a>
 						<li><a href="#">재능 기부 후기 게시판</a>
 					</ul>
 				</div>
 				
-			</div>
 		</div>
 	</div>
 

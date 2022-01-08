@@ -45,17 +45,18 @@ body{
 
 	<div class="contents">
 		<div class="cards">
-			<p>공상 하다</p>
-			<div class="myfancywrap">
-				<div><img src=""></div>
-				<div><img src=""></div>
-				<div><img src=""></div>
-			</div>
+			<p> 공상들..</p>
+			<table>
+				<tr><td>1</td><td>####</td></tr>
+				<tr><td>2</td><td>####</td></tr>
+				<tr><td>3</td><td>####</td></tr>
+				<tr><td>4</td><td>####</td></tr>
+				<tr><td>5</td><td>####</td></tr>
+			</table>
 			
-			<ul>
-				<li> <a href="1_write.jsp">나의 공상 기록하기</a></li>
-				<li> <a href="2_list.jsp">공상 빌리지 </a></li>
-			</ul>
+			<input type="button" value="나의 공상 메인으로">
+			<input type="button" value="글 쓰기">
+			
 		</div>
 	</div>
 

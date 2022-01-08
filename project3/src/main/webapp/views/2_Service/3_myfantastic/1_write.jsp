@@ -27,6 +27,12 @@ body{
 	border: 3px solid;
 	flex : 1;
 }
+
+#myfancywritetab{
+	margin : 0 auto;
+	width : 50%;
+	
+}
 </style>
 </head>
 <body>
@@ -45,17 +51,17 @@ body{
 
 	<div class="contents">
 		<div class="cards">
-			<p>공상 하다</p>
-			<div class="myfancywrap">
-				<div><img src=""></div>
-				<div><img src=""></div>
-				<div><img src=""></div>
-			</div>
+			<p>나의 판타스틱 기록하기 </p>
+			<table border id="myfancywritetab">
+				<tr><td>글 제목</td><td>####</td><tr>
+				<tr><td>내용</td><td><textarea rows="20" cols="40"></textarea></td>
+			</table>
+			<input type="button" value="등록하기">
 			
 			<ul>
-				<li> <a href="1_write.jsp">나의 공상 기록하기</a></li>
-				<li> <a href="2_list.jsp">공상 빌리지 </a></li>
+				<li> <a href="2_list.jsp">목록으로</a></li>
 			</ul>
+			
 		</div>
 	</div>
 

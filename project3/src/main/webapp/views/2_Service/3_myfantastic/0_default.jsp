@@ -16,11 +16,12 @@ request.setCharacterEncoding("utf-8");
 body{
 	border : 3px solid;
 }
-.donabox01{
+.myfancywrap{
 	display: flex;
+	padding-left: 320px;
 }
 
-.donabox01 img{
+.myfancywrap img{
 	width: 100px;
 	height: 100px;
 	border: 3px solid;
@@ -44,6 +45,23 @@ body{
 
 	<div class="contents">
 		<div class="cards">
+			<p>나의 판타스틱</p>
+			<div class="myfancywrap">
+				<div><img src=""></div>
+				<div><img src=""></div>
+				<div><img src=""></div>
+			</div>
+			<p>#############################################<br>
+			#############################################<br>
+			#############################################<br>
+			#############################################<br>
+			#############################################<br>
+			#############################################<br></p>
+			
+			<ul>
+				<li> <a href="1_write.jsp">나의 판타스틱 자랑하기</a></li>
+				<li> <a href="2_list.jsp">판타스틱 빌리지 </a></li>
+			</ul>
 		</div>
 	</div>
 

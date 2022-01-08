@@ -16,12 +16,11 @@ request.setCharacterEncoding("utf-8");
 body{
 	border : 3px solid;
 }
-.myfancywrap{
+.donabox01{
 	display: flex;
-	padding-left: 320px;
 }
 
-.myfancywrap img{
+.donabox01 img{
 	width: 100px;
 	height: 100px;
 	border: 3px solid;
@@ -45,17 +44,27 @@ body{
 
 	<div class="contents">
 		<div class="cards">
-			<p>공상 하다</p>
-			<div class="myfancywrap">
-				<div><img src=""></div>
-				<div><img src=""></div>
-				<div><img src=""></div>
+			<div class="indivi">
+				<div>
+					<h1>재능기부</h1>
+					<p>당신의 재능이 누군가에겐 필요합니다.</p>
+					<p>당신이 가진 선한 영향력이 아이의 인생을 바꿀 수 있습니다</p>
+				</div>
+				<div class="donabox01">
+						<img src="dona01.jpg">
+						<img src="dona02.jpg">
+						<img src="dona03.jpg">
+				</div>
+				
+				<div>
+					<ul>
+						<li><a href="#">재능 나누러 가기 (기부자)</a>
+						<li><a href="#">재능 기부 목록으로 이동</a>
+						<li><a href="#">재능 기부 후기 게시판</a>
+					</ul>
+				</div>
+				
 			</div>
-			
-			<ul>
-				<li> <a href="1_write.jsp">나의 공상 기록하기</a></li>
-				<li> <a href="2_list.jsp">공상 빌리지 </a></li>
-			</ul>
 		</div>
 	</div>
 
