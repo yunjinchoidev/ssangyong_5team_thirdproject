@@ -46,7 +46,7 @@ request.setCharacterEncoding("UTF-8");
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 	<!-- S반지제왕 메뉴 삽입 -->
-	<jsp:include page="/views/5_LoadOfRing/menu.jsp">
+	<jsp:include page="/views/5_LordOfRing/menu.jsp">
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E반지제왕 메뉴 삽입 -->

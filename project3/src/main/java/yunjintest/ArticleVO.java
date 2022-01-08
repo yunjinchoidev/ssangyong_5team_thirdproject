@@ -2,7 +2,7 @@ package yunjintest;
 
 import java.util.Date;
 
-public class T_board {
+public class ArticleVO {
 
 	
 	private int boPostKey;
@@ -18,11 +18,11 @@ public class T_board {
 	private int boViews;
 	private int boParWritNum;
 	private String boContent;
-	public T_board() {
+	public ArticleVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public T_board(int boPostKey, int mKey, int boFileNum, String boWriter, String boWriterPass, String boWriterEmail,
+	public ArticleVO(int boPostKey, int mKey, int boFileNum, String boWriter, String boWriterPass, String boWriterEmail,
 			Date boPostDate, String boTitle, Date boModifyDate, String boWriterIp, int boViews, int boParWritNum,
 			String boContent) {
 		super();

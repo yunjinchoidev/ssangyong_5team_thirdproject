@@ -20,6 +20,11 @@ request.setCharacterEncoding("UTF-8");
 	width:1600px;
 	height:1500px;
 }
+
+.lordtab{
+	width:70%;
+	height: 500px;
+}
 </style>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
@@ -95,35 +100,40 @@ request.setCharacterEncoding("UTF-8");
 	</jsp:include>
 	<!-- E서비스 메뉴삽입 -->
 	
+	
+	
+	
 	<div class="contents">
 		<div class="cards">
-			<div class="indivi">
 				<div>
 					<br><br><br><br><br>
 				</div>
 				<form name="frmArticle" method="post" action="${contextPath}"
 					enctype="multipart/form-data">
-					<table border=0 align="center" class="tab">
+					<table border="3" align="center" class="lordtab" >
 						<tr>
 							<td width=150 align="center" bgcolor=#FF9933>글번호</td>
 							<td><input type="text" value="${article.articleNO }"
 								disabled /> <input type="hidden" name="articleNO"
 								value="${article.articleNO}" /></td>
 						</tr>
+						
 						<tr>
 							<td width="150" align="center" bgcolor="#FF9933">작성자 아이디</td>
 							<td><input type=text value="${article.id }" name="writer"
 								disabled /></td>
 						</tr>
+						
 						<tr>
 							<td width="150" align="center" bgcolor="#FF9933">제목</td>
 							<td><input type=text value="${article.title }" name="title"
 								id="i_title" disabled /></td>
 						</tr>
+						
 						<tr>
 							<td width="150" align="center" bgcolor="#FF9933">내용</td>
-							<td><textarea rows="20" cols="60" name="content"
-									id="i_content" disabled />${article.content}</textarea></td>
+							<td><textarea rows="20" cols="60" name="content" id="i_content" disabled /> 
+							${article.content}</textarea></td>
 						</tr>
 
 						<c:if
@@ -147,6 +157,7 @@ request.setCharacterEncoding("UTF-8");
 								value="<fmt:formatDate value="${article.writeDate}" />" disabled />
 							</td>
 						</tr>
+
 						<tr id="tr_btn_modify">
 							<td colspan="2" align="center"><input type=button
 								value="수정반영하기" onClick="fn_modify_article(frmArticle)">
@@ -158,17 +169,16 @@ request.setCharacterEncoding("UTF-8");
 							<td colspan="2" align="center"><input type=button
 								value="수정하기" onClick="fn_enable(this.form)"> <input
 								type=button value="삭제하기"
-								onClick="fn_remove_article('${contextPath}/freeboard/removeArticle.do', ${article.articleNO})">
+								onClick="fn_remove_article('${contextPath}/views/5_LoadOfRing/4_loadboard/removeArticle.do', ${article.articleNO})">
 								<input type=button value="리스트로 돌아가기"
 								onClick="backToList(this.form)"> <input type=button
 								value="답글쓰기"
-								onClick="fn_reply_form('${contextPath}/freeboard/replyForm.do', ${article.articleNO})">
+								onClick="fn_reply_form('${contextPath}/yunjinTest/replyForm.do', ${article.articleNO})">
 							</td>
 						</tr>
 					</table>
 				</form>
 
-			</div>
 		</div>
 	</div>
 

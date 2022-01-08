@@ -183,7 +183,7 @@ body {
                   <td><img src="/project3/views/Media/leftbong.png"></td>
                   <td class="fansort"><a href="/project3/views/9_Marvel/marvelmain.jsp">Marvel</a></td>
                   <td class="fansort"><a href="/project3/views/8_HarryPotter/main.jsp">HarryPotter</a></td>
-                  <td class="fansort"><a href="/project3/views/5_LoadOfRing/main.jsp"><img src="/project3/views/Media/lordtitle.png" id="lordtitle"></a></td>
+                  <td class="fansort"><a href="/project3/views/5_LordOfRing/main.jsp"><img src="/project3/views/Media/lordtitle.png" id="lordtitle"></a></td>
                   <td><img src="/project3/views/Media/rightbong.png"></td>
                </tr>
             </table>
