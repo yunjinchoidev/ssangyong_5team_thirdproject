@@ -142,14 +142,14 @@ body {
    <header>
       <div class="header">
          <div class="headup01">
-            <a href="/project3/views/0_Main/aboutus.jsp"> <img
-                  src="/project3/views/Media/logo.png" id="logo"></a>
+            <a href="/project3/views/0_Main/aboutus.jsp"> 
+            <img src="/project3/views/Media/logo.png" id="logo"></a>
                <div class="headermenuwrap">
                   <div class="headermenu01">
                      <ul>
-                        <li><a href="/project3/views/2_service/1_official/0_default.jsp"><a href="#">서비스</a></a></li>
-                        <li><a href="#"><a href="#">스토어</a></li>
-                        <li><a href="#"><a href="#">이벤트</a></li>
+                        <li><a href="/project3/views/2_Service/0_default.jsp">서비스</a></li>
+                        <li><a href="/project3/views/10_Store/0_default.jsp">스토어</a></li>
+                        <li><a href="/project3/views/11_Event/0_default.jsp">이벤트</a></li>
                      </ul>
                   </div>
                   <br>
