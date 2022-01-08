@@ -89,7 +89,7 @@ p{
 				
 				<table class="donabox02" border="3">
 					<tr><td><a href="1_list.jsp">참여 가능한 재능 기부 행사<br>(15세 미만 청소년)</a></td>
-						<td><a href="2_apply.jsp">재능을 나누고 싶어요<br>(신청서 작성)</a></td></tr>
+						<td><a href="2_apply.jsp">재능을 나누고 싶어요<br>(재능 기부자 등록)</a></td></tr>
 					<tr><td><a href="3_review.jsp">재능 기부 후기 게시판</a></td>
 						<td><a href="4_positive.jsp">당신이 꽃 피운 세상</a></td></tr>
 				</table>

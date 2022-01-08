@@ -13,20 +13,6 @@ request.setCharacterEncoding("utf-8");
 	href="/project3/views/CSS/commoncss.css">
 <style>
 
-body{
-	border : 3px solid;
-}
-.myfancywrap{
-	display: flex;
-	padding-left: 320px;
-}
-
-.myfancywrap img{
-	width: 100px;
-	height: 100px;
-	border: 3px solid;
-	flex : 1;
-}
 </style>
 </head>
 <body>
@@ -47,9 +33,9 @@ body{
 		<div class="cards">
 			<p>공상 하다</p>
 			<div class="myfancywrap">
-				<div><img src=""></div>
-				<div><img src=""></div>
-				<div><img src=""></div>
+				<img src="example.jpg" style="width: 300px; height: 300px">
+				<img src="example.jpg" style="width: 300px; height: 300px">
+				<img src="example.jpg" style="width: 300px; height: 300px">
 			</div>
 			
 			<ul>

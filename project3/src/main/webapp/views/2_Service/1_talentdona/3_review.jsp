@@ -12,19 +12,11 @@ request.setCharacterEncoding("utf-8");
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 <style>
-
-body{
-	border : 3px solid;
-}
-.donabox01{
-	display: flex;
-}
-
-.donabox01 img{
-	width: 100px;
-	height: 100px;
-	border: 3px solid;
-	flex : 1;
+#talentreviewtab{
+	width:800px;
+	height: 800px;
+	border : 2px solid black;
+	margin: 0 auto;
 }
 </style>
 </head>
@@ -44,27 +36,15 @@ body{
 
 	<div class="contents">
 		<div class="cards">
-			<div class="indivi">
-				<div>
-					<h1>재능기부</h1>
-					<p>당신의 재능이 누군가에겐 필요합니다.</p>
-					<p>당신이 가진 선한 영향력이 아이의 인생을 바꿀 수 있습니다</p>
-				</div>
-				<div class="donabox01">
-						<img src="dona01.jpg">
-						<img src="dona02.jpg">
-						<img src="dona03.jpg">
-				</div>
-				
-				<div>
-					<ul>
-						<li><a href="#">재능 나누러 가기 (기부자)</a>
-						<li><a href="#">재능 기부 목록으로 이동</a>
-						<li><a href="#">재능 기부 후기 게시판</a>
-					</ul>
-				</div>
-				
-			</div>
+					<table id="talentreviewtab" border>
+					<tr><td>번호</td><td>진행상태</td><td>제목</td></tr>
+					<tr><td>##</td><td>##</td><td>##</td></tr>
+					<tr><td>##</td><td>##</td><td>##</td></tr>
+					<tr><td>##</td><td>##</td><td>##</td></tr>
+					<tr><td>##</td><td>##</td><td>##</td></tr>
+					<tr><td>##</td><td>##</td><td>##</td></tr>
+					<tr><td>##</td><td>##</td><td>##</td></tr>
+				</table>
 		</div>
 	</div>
 
