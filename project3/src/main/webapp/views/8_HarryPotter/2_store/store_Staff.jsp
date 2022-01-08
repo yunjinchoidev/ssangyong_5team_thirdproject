@@ -44,12 +44,12 @@ border-bottom-right-radius: 5px;
 
 /* 좌측 메뉴바 영역 */
 #menubar{
-position: absolute;
-top:300px;
+position: fixed;
+top:350px;
 left:150px;
 width:200px;
-height:800px;
-border: solid red;
+height:400px;
+border: solid grey;
 }
 
 /* 지팡이 메뉴 버튼 */
@@ -79,7 +79,6 @@ top: 300px;
 left: 500px;
 width:1200px;
 height:1200px;
-border: solid red;
 }
 
 /* 딱총나무 지팡이 */
@@ -195,8 +194,7 @@ color:white;
 #footer{
 position:absolute;
 width:100%;
-height:200px;
-top:3800px;
+top:1500px;
 }
 </style>
 
@@ -211,6 +209,10 @@ top:3800px;
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 
+<script>
+AOS.init();
+</script>
+   
 <div id="menubar">
 <h1>메뉴</h1>
 <button type="button" id="menustaff">지팡이</button>
@@ -220,7 +222,7 @@ top:3800px;
 
 <div id="product">
 
-<div id="prod1">
+<div id="prod1" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
 <img id="staff1" src="../media/딱총1.png" width="200px" height="200px">
 <div id="prod1Info">
@@ -229,7 +231,7 @@ top:3800px;
 </div>
 </div>
 
-<div id="prod2">
+<div id="prod2" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
 <img id="staff2" src="../media/호랑가시.png" width="200px" height="200px">
 <div id="prod2Info">
@@ -238,7 +240,7 @@ top:3800px;
 </div>
 </div>
 
-<div id="prod3">
+<div id="prod3" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
 <img id="staff3" src="../media/포도나무.png" width="200px" height="200px">
 <div id="prod3Info">
@@ -247,7 +249,7 @@ top:3800px;
 </div>
 </div>
 
-<div id="prod4">
+<div id="prod4" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
 <img id="staff2" src="../media/호두나무.png" width="200px" height="200px">
 <div id="prod2Info">
@@ -256,7 +258,7 @@ top:3800px;
 </div>
 </div>
 
-<div id="prod5">
+<div id="prod5" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
 <img id="staff5" src="../media/느릅나무.png" width="200px" height="200px">
 <div id="prod5Info">
@@ -265,7 +267,7 @@ top:3800px;
 </div>
 </div>
 
-<div id="prod6">
+<div id="prod6" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
 <img id="staff6" src="../media/주목나무.png" width="200px" height="200px">
 <div id="prod6Info">
