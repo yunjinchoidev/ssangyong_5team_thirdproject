@@ -57,12 +57,12 @@ body{
 				</div>
 				
 				<div>
-					<div>기부하기</div>
-					<div>기부받기(개인)</div>
-					<div>기부받기(단체)</div>
-					<div>봉사 시간 문의</div>
-					<div>봉사 시간 문의</div>
-					
+					<ul>
+						<li><a href="#">재능 나누러 가기 (기부자)</a>
+						<li><a href="#">참여 가능한 행사(참여자)</a>
+						<li><a href="#">재능 기부 목록으로 이동</a>
+						<li><a href="#">재능 기부 후기 게시판</a>
+					</ul>
 				</div>
 				
 			</div>

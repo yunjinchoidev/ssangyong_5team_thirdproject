@@ -16,16 +16,20 @@ request.setCharacterEncoding("utf-8");
 body{
 	border : 3px solid;
 }
-.donabox01{
-	display: flex;
+
+#detailtalentdonatab{
+	border : 3px solid blue;
+	text-align: center;
+	width:40%;
+	height: 600px;
+	font-size: 20px;
+	margin : 0 auto;
 }
 
-.donabox01 img{
-	width: 100px;
-	height: 100px;
-	border: 3px solid;
-	flex : 1;
+p{
+	font-size: 30px;
 }
+
 </style>
 </head>
 <body>
@@ -44,9 +48,17 @@ body{
 
 	<div class="contents">
 		<div class="cards">
-			<ul>
-			
-			</ul>
+			<p>재능 기부 신청 상세 페이지</p>
+			<table id="detailtalentdonatab" border>
+				<tr><td>재능 기부 기간</td><td>####</td><td>봉사 시간</td><td>####</td></tr>
+				<tr><td>모집 기간</td><td>####</td><td>활동요일</td><td>####</td></tr>
+				<tr><td>봉사 장소</td><td>####</td><td>재능 구분</td><td>####</td><tr>
+				<tr><td>모집인원</td><td>####</td><td>신청인원</td><td>####</td></tr>
+				<tr><td>활동구분</td><td>####</td><td>첨부파일</td><td>####</td></tr>
+			</table>
+			<p>######################################<br>
+			##################################<br></p>
+			<input type="button" value="목록으로">
 		</div>
 	</div>
 

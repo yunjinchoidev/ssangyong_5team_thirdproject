@@ -44,11 +44,19 @@ body{
 
 	<div class="contents">
 		<div class="cards">
-			<ul>
-			
-			</ul>
+				<ul>
+					<li>#####</li>
+					<li>#####</li>
+					<li>#####</li>
+					<li>#####</li>
+					<li>#####</li>
+					<li>#####</li>
+					<li>#####</li>
+					<li>#####</li>
+					<li>#####</li>
+				</ul>
+			</div>
 		</div>
-	</div>
 
 
 

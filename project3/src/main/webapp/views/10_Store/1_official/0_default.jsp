@@ -13,35 +13,16 @@ request.setCharacterEncoding("utf-8");
 	href="/project3/views/CSS/commoncss.css">
 <style>
 
-.wrap{
-	margin : 0 auto;
-}
-/*상품 3개씩 묶어주는 박스*/
-.offup {
-	width : 85%;
-	margin: 0 auto;
-	border : 1px solid;
-}
-.offup01 {
-	width: 80%;
-	display: flex;
-	margin : 0 auto;
-}
-
-/*33% 차지하게*/
-.offchild {
-	flex: 1;
-}
-.offchild img {
-	width : 100px;
-	height: 100px;
-	padding: 20px;
-}
 </style>
 </head>
 <body>
 	<!-- S헤더 삽입 -->
 	<jsp:include page="/views/common/commonheader.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E헤더 삽입 -->
+	<!-- S헤더 삽입 -->
+	<jsp:include page="/views/10_Store/menu.jsp">
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
