@@ -22,11 +22,14 @@ request.setCharacterEncoding("utf-8");
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 
+	<!-- S반지제왕 메뉴 삽입 -->
+	<jsp:include page="/views/5_LoadOfRing/menu.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
+	<!-- E반지제왕 메뉴 삽입 -->
+
 
 	<div class="contents">
-
-
-
 		<div class="cards">
 			<div class="indivi">
 				<h2>당신은.. 반지의 주인이 될 자격이 있습니까?</h2>

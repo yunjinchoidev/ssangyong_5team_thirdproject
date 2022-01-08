@@ -29,6 +29,8 @@ body{
 	font-size: 15px;
 	margin: 0 auto;
 	text-align: center;
+	padding-top: 100px;
+	margin-top: 200px;
 }
 
 .cards img {

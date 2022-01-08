@@ -14,6 +14,11 @@ request.setCharacterEncoding("utf-8");
 	background-color: #EAEAEA;		
 	width:100%;
 	height: 50px;
+	position: fixed;
+	  top: 200px;
+	  left: 0;
+	  right: 0;
+	z-index: 99;
 }
 
 #Servicemenu ul{
@@ -49,7 +54,7 @@ request.setCharacterEncoding("utf-8");
 	<div id="Servicemenu">
 		<ul>
 			<li><a href="/project3/views/2_Service/1_talentdona/0_default.jsp">재능기부</a></li>
-			<li><a href="/project3/views/2_Service/2_myfancy/0_default.jsp">나의공상</a></li>
+			<li><a href="/project3/views/2_Service/2_myfancy/0_default.jsp">공상하다</a></li>
 			<li><a href="/project3/views/2_Service/3_myfantastic/0_default.jsp">나의 판타스틱</a></li>
 			<li><a href="/project3/views/2_Service/4_readingclub/0_default.jsp">독서 클럽</a></li>
 			<li><a href="/project3/views/2_Service/5_storytrade/0_default.jsp">스토리매매</a></li>

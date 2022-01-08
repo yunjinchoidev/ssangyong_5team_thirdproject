@@ -27,6 +27,11 @@ body {
    width: 100%;
    height: 200x;
    background-color: black;
+    position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+   z-index:99;
 }
 
 /*header를 headup01과 headup02로 나눔*/
@@ -132,6 +137,10 @@ body {
 	color : white;
 }
 
+#lordtitle{
+	width: 240px;
+	height: 50px;
+}
 </style>
 <script type="text/javascript">
    
@@ -174,7 +183,7 @@ body {
                   <td><img src="/project3/views/Media/leftbong.png"></td>
                   <td class="fansort"><a href="/project3/views/9_Marvel/marvelmain.jsp">Marvel</a></td>
                   <td class="fansort"><a href="/project3/views/8_HarryPotter/main.jsp">HarryPotter</a></td>
-                  <td class="fansort"><a href="/project3/views/5_LoadOfRing/loadmain.jsp">The Load</a></td>
+                  <td class="fansort"><a href="/project3/views/5_LoadOfRing/main.jsp"><img src="/project3/views/Media/lordtitle.png" id="lordtitle"></a></td>
                   <td><img src="/project3/views/Media/rightbong.png"></td>
                </tr>
             </table>
