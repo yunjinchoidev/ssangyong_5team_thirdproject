@@ -92,7 +92,7 @@ $(document).ready(function(){
 <canvas id="canvas"></canvas>
 
 <!-- 그리핀도르 배경 이미지 -->
-<img src="media/gryffindorBack.png" width="100%" height="100%">
+<img src="../media/gryffindorBack.png" width="100%" height="100%">
 
 <div id="tex">
 <h2 style="position:absolute;top:20px;left:130px;font-size:30px">
@@ -108,7 +108,7 @@ GRYFFINDOR
 </div>
 
 <div id="btnDiv">
-<a href="main.jsp">
+<a href="../main.jsp">
 <button id="mainBtn">메인화면</button>
 </a>
 <br>

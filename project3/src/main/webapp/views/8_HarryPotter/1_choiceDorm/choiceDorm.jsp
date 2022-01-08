@@ -151,7 +151,7 @@ $(document).ready(function() {
 <h1 id="tex1">기숙사를 선택해주세요</h1>  
 <!-- 모자 영역 -->
 <div id="hat" data-aos="zoom-in">
-<span class="hint--right" aria-label="너는 어느 기숙사가 좋을까..."><img src="media/magic_hat.png" width="350px" height="300px"></span>
+<span class="hint--right" aria-label="너는 어느 기숙사가 좋을까..."><img src="../media/magic_hat.png" width="350px" height="300px"></span>
 </div>
 
 <!-- 그리핀도르 -->
@@ -160,7 +160,7 @@ $(document).ready(function() {
 <div id="gryffindorLogo">
 <a href="choiceGryffindor.jsp">
 <button id="btngry" name="dorm" value="gryffindor">
-<img src="media/gryffindor.png" width="300px" height="300px">
+<img src="../media/gryffindor.png" width="300px" height="300px">
 </button>
 </a>
 </div>
@@ -180,7 +180,7 @@ $(document).ready(function() {
 <div id="slytherin" data-aos="fade-left">
 <a href="choiceSlytherin.jsp">
 <button id="btnSly" name="dorm" value="slytherin">
-<img src="media/slytherin.png" width="300px" height="300px"></button>
+<img src="../media/slytherin.png" width="300px" height="300px"></button>
 </a>
 <div id="slyh41">
 <h1 style="color:green;">SLYTHERIN</h1>
@@ -199,7 +199,7 @@ $(document).ready(function() {
 <div id="ravenclawLogo">
 <a href="choiceRavenclaw.jsp">
 <button id="btnRaven" name="dorm" value="ravenclaw">
-<img src="media/ravenclaw.png" width="300px" height="300px">
+<img src="../media/ravenclaw.png" width="300px" height="300px">
 </button>
 </a>
 </div>
@@ -219,7 +219,7 @@ $(document).ready(function() {
 <div id="hufflepuff" data-aos="fade-left">
 <a href="choiceHufflepuff.jsp">
 <button id="btnHuf" name="dorm" value="hufflepuff">
-<img src="media/hufflepuff.png" width="300px" height="300px"></button>
+<img src="../media/hufflepuff.png" width="300px" height="300px"></button>
 </a>
 <div id="slyh41">
 <h1 style="color:yellow;">HUFFLEPUFF</h1>

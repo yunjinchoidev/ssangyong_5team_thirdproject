@@ -9,7 +9,7 @@
 
 <style>
 button{
-background-color: #ECE6CC;
+background-color: #8FCEFF;
 color:black;
 width:100px;
 height:50px;
@@ -91,8 +91,8 @@ $(document).ready(function(){
 
 <canvas id="canvas"></canvas>
 
-<!-- 그리핀도르 배경 이미지 -->
-<img src="media/huffleBack.jpg" width="100%" height="100%">
+<!-- 래번클로 배경 이미지 -->
+<img src="../media/ravenBack.jpg" width="100%" height="100%">
 
 <div id="tex">
 <h2 style="position:absolute;top:20px;left:130px;font-size:30px">
@@ -100,7 +100,7 @@ $(document).ready(function(){
 </h2>
 
 <h1 style="position:absolute;top:100px;left:60px;font-size:50px;">
-HUFFLEPUFF
+RAVENCLAW
 </h1>
 <h2 style="position:absolute;top:200px;left:150px;font-size:30px">
 사용자닉네임
@@ -109,7 +109,7 @@ HUFFLEPUFF
 
 <div id="btnDiv">
 <a href="main.jsp">
-<button id="mainBtn">메인화면</button>
+<button id="../mainBtn">메인화면</button>
 </a>
 <br>
 <button id="storeBtn">스토어</button>

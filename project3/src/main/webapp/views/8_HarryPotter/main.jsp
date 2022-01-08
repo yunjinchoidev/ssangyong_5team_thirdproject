@@ -93,6 +93,7 @@ top:3300px;
 left:20px;
 }
 
+
 #footer{
 position:absolute;
 width:100%;
@@ -132,7 +133,7 @@ top:3800px;
 </div>
 <div id="potterBannerText" data-aos="fade-up">
 <h1>기숙사는 선택 하셨나요?</h1>
-<a href="choiceDorm.jsp">
+<a href="1_choiceDorm/choiceDorm.jsp">
 <button type="button" style="position: absolute;">기숙사 선택</button>
 </a>
 </div>
