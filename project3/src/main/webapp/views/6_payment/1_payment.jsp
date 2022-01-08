@@ -16,15 +16,20 @@ request.setCharacterEncoding("utf-8");
 body{
 	border : 3px solid;
 }
-.donabox01{
-	display: flex;
+
+p{
+	font-size: 20px;
 }
 
-.donabox01 img{
-	width: 100px;
-	height: 100px;
-	border: 3px solid;
-	flex : 1;
+#shoppingcarttab{
+	margin : 0 auto;
+	border : 3px solid;
+	width : 70%;
+}
+
+#paymenttab{
+	margin : 0 auto;
+	width : 40%;
 }
 </style>
 </head>
@@ -35,31 +40,26 @@ body{
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 
-
 	<div class="contents">
 		<div class="cards">
-			<div class="indivi">
-				<div>
-					<h1>장바구니</h1>
-					<p>당신의 재능이 누군가에겐 필요합니다.</p>
-					<p>당신이 가진 선한 영향력이 아이의 인생을 바꿀 수 있습니다</p>
-				</div>
-				<div class="donabox01">
-						<img src="dona01.jpg">
-						<img src="dona02.jpg">
-						<img src="dona03.jpg">
-				</div>
-				
-				<div>
-					<div>기부하기</div>
-					<div>기부받기(개인)</div>
-					<div>기부받기(단체)</div>
-					<div>봉사 시간 문의</div>
-					<div>봉사 시간 문의</div>
-					
-				</div>
-				
-			</div>
+			<p>장바구니</p>
+			
+			<p> 배송지 선택</p>
+			<table border="2" id="paymenttab">
+				<tr><td>배송지 선택</td><td>#####</td></tr>
+				<tr><td>주문인</td><td>#####</td></tr>
+				<tr><td>주문인</td><td>#####</td></tr>
+				<tr><td>받는 사람</td><td>#####</td></tr>
+				<tr><td>주소</td><td>#####</td></tr>
+				<tr><td>휴대전화번호</td><td>#####</td></tr>
+			</table>
+			
+			
+			<ul>
+				<li><a href="1_payment.jsp">결제하기</a></li>
+				<li><a href="/project3/views/0_Main/aboutus.jsp">메인 페이지로 이동</a></li>
+			</ul>
+								
 		</div>
 	</div>
 

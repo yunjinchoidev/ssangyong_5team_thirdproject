@@ -26,6 +26,16 @@ body{
 	border: 3px solid;
 	flex : 1;
 }
+
+#talentapplytab{
+	width:70%;
+	height: 400px;
+	margin : 0 auto;
+}
+
+h1{
+	padding-top: 40px;
+}
 </style>
 </head>
 <body>
@@ -44,27 +54,18 @@ body{
 
 	<div class="contents">
 		<div class="cards">
-			<div class="indivi">
-				<div>
-					<h1>재능기부</h1>
-					<p>당신의 재능이 누군가에겐 필요합니다.</p>
-					<p>당신이 가진 선한 영향력이 아이의 인생을 바꿀 수 있습니다</p>
-				</div>
-				<div class="donabox01">
-						<img src="dona01.jpg">
-						<img src="dona02.jpg">
-						<img src="dona03.jpg">
-				</div>
-				
-				<div>
-					<ul>
-						<li><a href="#">재능 나누러 가기 (기부자)</a>
-						<li><a href="#">재능 기부 목록으로 이동</a>
-						<li><a href="#">재능 기부 후기 게시판</a>
-					</ul>
-				</div>
-				
-			</div>
+			<h1> 신청서 작성</h1>
+			<form>
+			<table id="talentapplytab" border>
+				<tr><td>신청자</td><td><input type="text"></td></tr> 
+				<tr><td>재능</td><td><input type="text"></td></tr> 
+				<tr><td>신청일</td><td><input type="text"></td></tr> 
+				<tr><td>참여 가능한 시간대</td><td><input type="text"></td></tr> 
+				<tr><td>이메일 수신 여부</td><td><input type="text"></td></tr> 
+			</table>
+			<input type="submit" value="제출하기" onclick="location.href='1_list.jsp'">
+			<input type="button" value="돌아가기" onclick="location.href='0_default.jsp'">
+			</form>
 		</div>
 	</div>
 

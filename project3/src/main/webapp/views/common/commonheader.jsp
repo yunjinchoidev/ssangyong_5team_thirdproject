@@ -156,7 +156,7 @@ body {
                   <div class="headermenu02">
                      <a href="/project3/views/3_login/Login.jsp"><img
                         src="/project3/views/Media/account3.png" id="account"></a> 
-                        <a href="/project3/views/3_login/Login.jsp"><img
+                        <a href="/project3/views/6_payment/0_shoppingcart.jsp"><img
                         src="/project3/views/Media/shopping-cart2.png" id="shoppingcart"></a>
                   </div>
                </div>

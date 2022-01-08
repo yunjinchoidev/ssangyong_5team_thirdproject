@@ -14,10 +14,19 @@ request.setCharacterEncoding("utf-8");
 <style>
 
 body{
-	border : 3px solid;
 }
+
+h1{
+	font-size: 50px;
+}
+p{
+	font-size: 30px;
+}
+
 .donabox01{
 	display: flex;
+	width:70%;
+	margin : 0 auto;
 }
 
 .donabox01 img{
@@ -26,6 +35,28 @@ body{
 	border: 3px solid;
 	flex : 1;
 }
+
+
+.donabox02{
+	width:80%;
+	height: 300px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.donabox02 a{
+	font-size: 40px;
+	padding: 20px;
+	margin: 0 auto;
+	text-decoration: none;
+	color : black;
+}
+
+.donabox02 td:hover{
+	background-color: #F0D9FF;
+}
+
+
 </style>
 </head>
 <body>
@@ -45,26 +76,26 @@ body{
 	<div class="contents">
 		<div class="cards">
 				<div>
-					<h1>재능기부</h1>
+					<h1> 재능 기부</h1>
 					<p>당신의 재능이 누군가에겐 필요합니다.</p>
 					<p>당신이 가진 선한 영향력이 아이의 인생을 바꿀 수 있습니다</p>
 				</div>
+				
 				<div class="donabox01">
 						<img src="dona01.jpg">
 						<img src="dona02.jpg">
 						<img src="dona03.jpg">
 				</div>
 				
-				<div>
-					<ul>
-						<li><a href="1_list.jsp">재능 기부 참여 하기(목록으로 이동)</a>
-						<li><a href="">재능을 나누고 싶어요(신청서 작성)</a>
-						<li><a href="#">재능 기부 후기 게시판</a>
-					</ul>
+				<table class="donabox02" border="3">
+					<tr><td><a href="1_list.jsp">참여 가능한 재능 기부 행사<br>(15세 미만 청소년)</a></td>
+						<td><a href="2_apply.jsp">재능을 나누고 싶어요<br>(신청서 작성)</a></td></tr>
+					<tr><td><a href="3_review.jsp">재능 기부 후기 게시판</a></td>
+						<td><a href="4_positive">당신이 꽃 피운 세상</a></td></tr>
+				</table>
+						
 				</div>
-				
 		</div>
-	</div>
 
 
 
