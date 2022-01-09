@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>지팡이-딱총나무 지팡이</title>
+<title>지팡이-주목나무 지팡이</title>
 <style>
 body{
 background-color: #111111;
@@ -111,16 +111,16 @@ $(document).ready(function() {
 	
 <!-- 상품 사진 -->
 <div id=prodpic>
-<img src="../../media/딱총1.png" width="500px" height="500px"
+<img src="../../media/주목나무.png" width="500px" height="500px"
 style="position: absolute; top:50px;left:80px">
 </div>
 
 <div id=prodInfo>
-<h1>딱총나무 지팡이</h1>
+<h1>주목나무 지팡이</h1>
 <hr>
 <h1>23000원</h1>
 <hr>
-<h1>사용자: 덤블도어</h1>
+<h1>사용자: 볼드모트</h1>
 <form>
 <input type="text" name="cnt" placeholder="수량을 입력해주세요"
 style="width:150px;height:30px">

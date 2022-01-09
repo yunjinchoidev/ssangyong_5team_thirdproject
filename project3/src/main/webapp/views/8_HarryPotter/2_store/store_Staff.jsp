@@ -215,7 +215,9 @@ AOS.init();
    
 <div id="menubar">
 <h1>메뉴</h1>
+<a href="store_Staff.jsp">
 <button type="button" id="menustaff">지팡이</button>
+</a>
 <button type="button" id="menustick">빗자루</button>
 <button type="button" id="menuuniform">유니폼</button>
 </div>
@@ -224,7 +226,9 @@ AOS.init();
 
 <div id="prod1" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
+<a href="1_staffDetail/staff1_Detail.jsp">
 <img id="staff1" src="../media/딱총1.png" width="200px" height="200px">
+</a>
 <div id="prod1Info">
 <h3>딱총나무 지팡이</h3>
 <h3 style="position:absolute;left:30px; ">23000원</h3>
@@ -233,7 +237,9 @@ AOS.init();
 
 <div id="prod2" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
+<a href="1_staffDetail/staff2_Detail.jsp">
 <img id="staff2" src="../media/호랑가시.png" width="200px" height="200px">
+</a>
 <div id="prod2Info">
 <h3>호랑가시나무 지팡이</h3>
 <h3 style="position:absolute;left:30px; ">26000원</h3>
@@ -242,7 +248,9 @@ AOS.init();
 
 <div id="prod3" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
+<a href="1_staffDetail/staff3_Detail.jsp">
 <img id="staff3" src="../media/포도나무.png" width="200px" height="200px">
+</a>
 <div id="prod3Info">
 <h3>포도나무 지팡이</h3>
 <h3 style="position:absolute;left:30px; ">22000원</h3>
@@ -251,7 +259,9 @@ AOS.init();
 
 <div id="prod4" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
+<a href="1_staffDetail/staff4_Detail.jsp">
 <img id="staff2" src="../media/호두나무.png" width="200px" height="200px">
+</a>
 <div id="prod2Info">
 <h3>호두나무 지팡이</h3>
 <h3 style="position:absolute;left:30px; ">23000원</h3>
@@ -260,7 +270,9 @@ AOS.init();
 
 <div id="prod5" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
+<a href="1_staffDetail/staff5_Detail.jsp">
 <img id="staff5" src="../media/느릅나무.png" width="200px" height="200px">
+</a>
 <div id="prod5Info">
 <h3>느릅나무 지팡이</h3>
 <h3 style="position:absolute;left:30px; ">29000원</h3>
@@ -269,7 +281,9 @@ AOS.init();
 
 <div id="prod6" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
+<a href="1_staffDetail/staff6_Detail.jsp">
 <img id="staff6" src="../media/주목나무.png" width="200px" height="200px">
+</a>
 <div id="prod6Info">
 <h3>주목나무 지팡이</h3>
 <h3 style="position:absolute;left:30px; ">26000원</h3>
