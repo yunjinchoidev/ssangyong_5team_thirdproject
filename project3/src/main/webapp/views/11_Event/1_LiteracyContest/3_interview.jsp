@@ -43,10 +43,10 @@ request.setCharacterEncoding("utf-8");
 				<img src="example.jpg" style="width:300px; height:300px">
 			</div>
 			
+			
+			
 			<ul>
-				<li><a href="#">공모하기(apply)</a></li>
-				<li><a href="#">지난 해 최우승작</a></li>
-				<li><a href="#">우승자 인터뷰</a></li>
+				<li><a href="0_defalt.jsp">신춘 문예 메인 화면으로</a></li>
 			</ul>
 
 
