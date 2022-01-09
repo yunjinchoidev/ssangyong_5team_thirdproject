@@ -29,23 +29,22 @@ request.setCharacterEncoding("utf-8");
 
 	<div class="contents">
 		<div class="cards">
-			<h1>작년의 우승자들</h1>
-			<p> ㅏㅈ년에 
-			
+			<h1>제 1회 우승자들 우승자들</h1>
+			<div>
+				<img src="example.jpg" style="width:300px; height:300px">
+				<img src="example.jpg" style="width:300px; height:300px">
+				<img src="example.jpg" style="width:300px; height:300px">
+			</div>
 			<div>
 				<img src="example.jpg" style="width:300px; height:300px">
 				<img src="example.jpg" style="width:300px; height:300px">
 				<img src="example.jpg" style="width:300px; height:300px">
 			</div>
 
-			<div>
-				<img src="example.jpg" style="width:300px; height:300px">
-			</div>
 			
 			<ul>
-				<li><a href="#">공모하기(apply)</a></li>
-				<li><a href="#">지난 해 최우승작</a></li>
-				<li><a href="#">우승자 인터뷰</a></li>
+				<li><a href="0_default.jsp">신춘문예 메인으로</a></li>
+				<li><a href="1_apply.jsp">공모하기(apply)</a></li>
 			</ul>
 
 
