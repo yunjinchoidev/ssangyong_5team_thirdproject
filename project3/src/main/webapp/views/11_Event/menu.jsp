@@ -39,6 +39,10 @@ request.setCharacterEncoding("utf-8");
 	text-decoration: none;
 	color : black;
 }
+
+#eventmenu ul li a:hover{
+	background-color: #C8C2BC;
+}
 </style>
 </head>
 <body>

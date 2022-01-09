@@ -35,16 +35,25 @@ request.setCharacterEncoding("utf-8");
 	padding-left: 20px;
 	padding-top: 10px;
 }
+
+#Storemenu ul li a{
+	text-decoration: none;
+	color: black;
+}
+
+#Storemenu ul li a:hover{
+	background-color: #C8C2BC;
+}
 </style>
 </head>
 <body>
 	<!-- E헤더 삽입 -->
 	<div id="Storemenu">
 		<ul>
-			<li>공식스토어</li>
-			<li>렌탈</li>
-			<li>1:1 매매</li>
-			<li>강의</li>
+			<li><a href="/project3/views/10_Store/1_official/0_default.jsp">공식스토어</a></li>
+			<li><a href="/project3/views/10_Store/2_lental/0_default.jsp">렌탈</a></li>
+			<li><a href="/project3/views/10_Store/3_personal/0_default.jsp">1:1 매매</a></li>
+			<li><a href="/project3/views/10_Store/4_lecture/0_default.jsp">강의</a></li>
 		</ul>
 	</div>
 </body>
