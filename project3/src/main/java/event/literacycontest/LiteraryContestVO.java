@@ -3,86 +3,105 @@ package event.literacycontest;
 import java.sql.Date;
 
 public class LiteraryContestVO {
-	private String liberKey;
-	private String liberTitle;
-	private String liberContents;
-	private String liberSort;
-	private String liberCareer;
-	private int liberProductionDate;
-	private Date liberSubmissionDate;
+	private int literKey;
+	private String literTitle;
+	private String literContents;
+	private String literSort;
+	private String literCareer;
+	private int literProductionDate;
+	private Date literSubmissionDate;
 	private int mKey;
 	private int fileKey;
 	public LiteraryContestVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public LiteraryContestVO(String liberKey, String liberTitle, String liberContents, String liberSort,
-			String liberCareer, int liberProductionDate, Date liberSubmissionDate, int mKey, int fileKey) {
+	public LiteraryContestVO(int literKey, String literTitle, String literContents, String literSort,
+			String literCareer, int literProductionDate, Date literSubmissionDate, int mKey, int fileKey) {
 		super();
-		this.liberKey = liberKey;
-		this.liberTitle = liberTitle;
-		this.liberContents = liberContents;
-		this.liberSort = liberSort;
-		this.liberCareer = liberCareer;
-		this.liberProductionDate = liberProductionDate;
-		this.liberSubmissionDate = liberSubmissionDate;
+		this.literKey = literKey;
+		this.literTitle = literTitle;
+		this.literContents = literContents;
+		this.literSort = literSort;
+		this.literCareer = literCareer;
+		this.literProductionDate = literProductionDate;
+		this.literSubmissionDate = literSubmissionDate;
 		this.mKey = mKey;
 		this.fileKey = fileKey;
 	}
-	public LiteraryContestVO(String liberKey, String liberTitle, String liberContents, String liberSort,
-			String liberCareer) {
+	
+	
+	public LiteraryContestVO(String literTitle, String literContents, String literSort, String literCareer,
+			int literProductionDate) {
 		super();
-		this.liberKey = liberKey;
-		this.liberTitle = liberTitle;
-		this.liberContents = liberContents;
-		this.liberSort = liberSort;
-		this.liberCareer = liberCareer;
+		this.literTitle = literTitle;
+		this.literContents = literContents;
+		this.literSort = literSort;
+		this.literCareer = literCareer;
+		this.literProductionDate = literProductionDate;
 	}
-	
-	
-	
-	
-	public String getLiberKey() {
-		return liberKey;
+	public LiteraryContestVO(int literKey, String literTitle, String literContents, String literSort,
+			String literCareer, int literProductionDate) {
+		super();
+		this.literKey = literKey;
+		this.literTitle = literTitle;
+		this.literContents = literContents;
+		this.literSort = literSort;
+		this.literCareer = literCareer;
+		this.literProductionDate = literProductionDate;
 	}
-	public void setLiberKey(String liberKey) {
-		this.liberKey = liberKey;
+	public LiteraryContestVO(int literKey, String literTitle, String literContents, String literSort,
+			String literCareer, int literProductionDate, java.util.Date _literSubmissionDate) {
+		super();
+		this.literKey = literKey;
+		this.literTitle = literTitle;
+		this.literContents = literContents;
+		this.literSort = literSort;
+		this.literCareer = literCareer;
+		this.literProductionDate = literProductionDate;
+		this.literSubmissionDate = (Date) _literSubmissionDate;
 	}
-	public String getLiberTitle() {
-		return liberTitle;
+	public int getLiterKey() {
+		return literKey;
 	}
-	public void setLiberTitle(String liberTitle) {
-		this.liberTitle = liberTitle;
+	public void setLiterKey(int literKey) {
+		this.literKey = literKey;
 	}
-	public String getLiberContents() {
-		return liberContents;
+	public String getLiterTitle() {
+		return literTitle;
 	}
-	public void setLiberContents(String liberContents) {
-		this.liberContents = liberContents;
+	public void setLiterTitle(String literTitle) {
+		this.literTitle = literTitle;
 	}
-	public String getLiberSort() {
-		return liberSort;
+	public String getLiterContents() {
+		return literContents;
 	}
-	public void setLiberSort(String liberSort) {
-		this.liberSort = liberSort;
+	public void setLiterContents(String literContents) {
+		this.literContents = literContents;
 	}
-	public String getLiberCareer() {
-		return liberCareer;
+	public String getLiterSort() {
+		return literSort;
 	}
-	public void setLiberCareer(String liberCareer) {
-		this.liberCareer = liberCareer;
+	public void setLiterSort(String literSort) {
+		this.literSort = literSort;
 	}
-	public int getLiberProductionDate() {
-		return liberProductionDate;
+	public String getLiterCareer() {
+		return literCareer;
 	}
-	public void setLiberProductionDate(int liberProductionDate) {
-		this.liberProductionDate = liberProductionDate;
+	public void setLiterCareer(String literCareer) {
+		this.literCareer = literCareer;
 	}
-	public Date getLiberSubmissionDate() {
-		return liberSubmissionDate;
+	public int getLiterProductionDate() {
+		return literProductionDate;
 	}
-	public void setLiberSubmissionDate(Date liberSubmissionDate) {
-		this.liberSubmissionDate = liberSubmissionDate;
+	public void setLiterProductionDate(int literProductionDate) {
+		this.literProductionDate = literProductionDate;
+	}
+	public Date getLiterSubmissionDate() {
+		return literSubmissionDate;
+	}
+	public void setLiterSubmissionDate(Date literSubmissionDate) {
+		this.literSubmissionDate = literSubmissionDate;
 	}
 	public int getmKey() {
 		return mKey;
@@ -96,7 +115,5 @@ public class LiteraryContestVO {
 	public void setFileKey(int fileKey) {
 		this.fileKey = fileKey;
 	}
-
-	
 
 }

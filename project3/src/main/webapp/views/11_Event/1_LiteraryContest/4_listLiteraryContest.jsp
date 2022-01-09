@@ -59,29 +59,34 @@ request.setCharacterEncoding("UTF-8");
          <td width="7%" ><b>작품분류</b></td>
          <td width="7%"><b>경력</b></td>
          <td width="7%" ><b>제작기간</b></td>
+         <td width="7%" ><b>수정</b></td>
+         <td width="7%" ><b>삭제</b></td>
    </tr>
 
 <c:choose>
-    <c:when test="${empty  LiteraryContestList}" >
+    <c:when test="${empty  literaryContestList}" >
       <tr>
         <td colspan=5>
           <b>등록된 회원이 없습니다.</b>
        </td>  
       </tr>
    </c:when>  
-   <c:when test="${!empty LiteraryContestList}" >
-      <c:forEach  var="mem" items="${LiteraryContestList }" >
+   <c:when test="${!empty literaryContestList}" >
+      <c:forEach  var="mem" items="${literaryContestList }" >
         <tr align="center">
-          <td>${mem.liberKey }</td>
-          <td>${mem.liberTitle }</td>
-          <td>${mem.liberContents }</td>
-          <td>${mem.liberSort}</td>     
-          <td>${mem.liberCareer }</td>     
+          <td>${mem.literKey }</td>
+          <td>${mem.literTitle }</td>
+          <td>${mem.literContents }</td>
+          <td>${mem.literSort}</td>     
+          <td>${mem.literCareer }</td>     
+          <td>${mem.literProductionDate }</td>     
+          <td><a href="${contextPath}/literaryContest/modLiteraryContestsForm.do?literKey=${mem.literKey }">수정</a></td>
+		   <td><a href="${contextPath}/literaryContest/delLiteraryContests.do?literKey=${mem.literKey }">삭제</a></td>
        </tr>
      </c:forEach>
 </c:when>
 </c:choose>
    </table>  
- <a href="${contextPath}/LiteraryContest/LiteraryContestForm.do"><p class="cls2">회원 가입하기</p></a>
+ <a href="${contextPath}/literaryContest/literaryContestForm.do"><p class="cls2">회원 가입하기</p></a>
 </body>
 </html>

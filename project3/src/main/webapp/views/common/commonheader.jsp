@@ -158,7 +158,7 @@ body {
                      <ul>
                         <li><a href="/project3/views/2_Service/1_talentdona/0_default.jsp">서비스</a></li>
                         <li><a href="/project3/views/10_Store/1_official/0_default.jsp">스토어</a></li>
-                        <li><a href="/project3/views/11_Event/1_LiteracyContest/0_default.jsp">이벤트</a></li>
+                        <li><a href="/project3/views/11_Event/1_LiteraryContest/0_default.jsp">이벤트</a></li>
                      </ul>
                   </div>
                   <br>

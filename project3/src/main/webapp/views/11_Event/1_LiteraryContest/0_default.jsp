@@ -56,10 +56,10 @@ request.setCharacterEncoding("utf-8");
 			
 			<table class="litertab" border="3">
 					<tr><td><a href="1_apply.jsp">공모하기(apply)</a></td>
-						<td><a href="2_lastwinner.jsp">지난 해 최우승작</a></td></tr>
-					<tr><td><a href="3_interview.jsp">우승자 인터뷰</a></td>
-						<td><a href="3_interview.jsp">문의하기</a></td></tr>
-					<tr><td><a href="${contextPath}/LiteraryContest/listLiteraryContest.do">지원현황</a></td>
+						<td><a href="2_lastWinner.jsp">지난 해 최우승작</a></td></tr>
+					<tr><td><a href="3_interView.jsp">우승자 인터뷰</a></td>
+						<td><a href="3_interView.jsp">문의하기</a></td></tr>
+					<tr><td><a href="${contextPath}/literaryContest/listLiteraryContest.do">지원현황</a></td>
 						<td></a></td></tr>
 			</table>
 
