@@ -31,12 +31,12 @@ public class LiteraryContestDAO {
 		List<LiteraryContestVO> LiteraryContestList = new ArrayList<LiteraryContestVO>();
 		try {
 			conn = dataFactory.getConnection();
-			String query = "select * from  LiteraryContest";
+			String query = "select * from  literarycontest order by liberKey";
 			System.out.println(query);
 			pstmt = conn.prepareStatement(query);
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
-				int liberKey = rs.getInt("liberKey");
+				String liberKey = rs.getString("liberKey");
 				String liberTitle = rs.getString("liberTitle");
 				String liberContents = rs.getString("liberContents");
 				String liberSort = rs.getString("liberSort");
@@ -63,26 +63,21 @@ public class LiteraryContestDAO {
 	public void addLiteraryContest(LiteraryContestVO m) {
 		try {
 			conn = dataFactory.getConnection();
-			int liberKey = m.getLiberKey();
+			String liberKey = m.getLiberKey();
 			String liberTitle = m.getLiberTitle();
 			String liberContents = m.getLiberContents();
 			String liberSort = m.getLiberSort();
 			String liberCareer = m.getLiberCareer();
-			int liberProductionDate = m.getLiberProductionDate();
-			Date liberSubmissionDate = m.getLiberSubmissionDate();
-			int mKey = m.getmKey();
-			int fileKey = m.getFileKey();
 			
-			String query = "INSERT INTO LiteraryContest(liberTitle,liberContents, liberSort, liberCareer,liberProductionDate,liberSubmissionDate," + " VALUES(?, ? ,? ,?,?,?)";
+			String query = "INSERT INTO literarycontest(liberKey, liberTitle,liberContents, liberSort, liberCareer)" + " VALUES(?, ? ,? ,?,?)";
 			System.out.println(query);
 			pstmt = conn.prepareStatement(query);
 			
-			pstmt.setString(1, liberTitle);
-			pstmt.setString(2, liberContents);
-			pstmt.setString(3, liberSort);
-			pstmt.setString(4, liberCareer);
-			pstmt.setInt(5, liberProductionDate);
-			pstmt.setDate(6, liberSubmissionDate);
+			pstmt.setString(1, liberKey);
+			pstmt.setString(2, liberTitle);
+			pstmt.setString(3, liberContents);
+			pstmt.setString(4, liberSort);
+			pstmt.setString(5, liberCareer);
 			pstmt.executeUpdate();
 			pstmt.close();
 			conn.close();
@@ -90,5 +85,4 @@ public class LiteraryContestDAO {
 			e.printStackTrace();
 		}
 	}
-	
 }

@@ -59,7 +59,7 @@ request.setCharacterEncoding("utf-8");
 						<td><a href="2_lastwinner.jsp">지난 해 최우승작</a></td></tr>
 					<tr><td><a href="3_interview.jsp">우승자 인터뷰</a></td>
 						<td><a href="3_interview.jsp">문의하기</a></td></tr>
-					<tr><td><a href="4_listliteraryContest.jsp">지원현황</a></td>
+					<tr><td><a href="${contextPath}/LiteraryContest/listLiteraryContest.do">지원현황</a></td>
 						<td></a></td></tr>
 			</table>
 

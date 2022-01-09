@@ -3,7 +3,7 @@ package event.literacycontest;
 import java.sql.Date;
 
 public class LiteraryContestVO {
-	private int liberKey;
+	private String liberKey;
 	private String liberTitle;
 	private String liberContents;
 	private String liberSort;
@@ -16,7 +16,7 @@ public class LiteraryContestVO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public LiteraryContestVO(int liberKey, String liberTitle, String liberContents, String liberSort,
+	public LiteraryContestVO(String liberKey, String liberTitle, String liberContents, String liberSort,
 			String liberCareer, int liberProductionDate, Date liberSubmissionDate, int mKey, int fileKey) {
 		super();
 		this.liberKey = liberKey;
@@ -29,35 +29,23 @@ public class LiteraryContestVO {
 		this.mKey = mKey;
 		this.fileKey = fileKey;
 	}
-	
-	public LiteraryContestVO(String liberTitle, String liberContents, String liberSort, String liberCareer,
-			int liberProductionDate, Date liberSubmissionDate) {
+	public LiteraryContestVO(String liberKey, String liberTitle, String liberContents, String liberSort,
+			String liberCareer) {
 		super();
+		this.liberKey = liberKey;
 		this.liberTitle = liberTitle;
 		this.liberContents = liberContents;
 		this.liberSort = liberSort;
 		this.liberCareer = liberCareer;
-		this.liberProductionDate = liberProductionDate;
-		this.liberSubmissionDate = liberSubmissionDate;
-	}
-	
-	
-	public LiteraryContestVO(String liberTitle, String liberContents, String liberSort, String liberCareer,
-			int liberProductionDate) {
-		super();
-		this.liberTitle = liberTitle;
-		this.liberContents = liberContents;
-		this.liberSort = liberSort;
-		this.liberCareer = liberCareer;
-		this.liberProductionDate = liberProductionDate;
 	}
 	
 	
 	
-	public int getLiberKey() {
+	
+	public String getLiberKey() {
 		return liberKey;
 	}
-	public void setLiberKey(int liberKey) {
+	public void setLiberKey(String liberKey) {
 		this.liberKey = liberKey;
 	}
 	public String getLiberTitle() {
