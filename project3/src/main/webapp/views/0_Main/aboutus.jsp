@@ -13,7 +13,7 @@ request.setCharacterEncoding("utf-8");
 	href="/project3/views/CSS/commoncss.css">
 <style>
 p{
-	color:black;
+	color:white;
 	font-size: 30px;
 }
 
