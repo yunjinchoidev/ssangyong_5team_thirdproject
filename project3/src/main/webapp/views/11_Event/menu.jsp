@@ -49,7 +49,7 @@ request.setCharacterEncoding("utf-8");
 	
 	<div id="eventmenu">
 		<ul>
-			<li><a href="/project3/views/11_Event/1_LiteracyContest/0_default.jsp">신춘문예</a></li>
+			<li><a href="/project3/views/11_Event/1_LiteraryContest/0_default.jsp">신춘문예</a></li>
 			<li><a href="/project3/views/11_Event/2_ThisMonthFantasy/0_default.jsp">이달의 판타지</a></li>
 		</ul>
 	</div>

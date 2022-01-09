@@ -1,4 +1,4 @@
-package event;
+package event.monthfantasy;
 
 public class MonthFantasy {
 	private int StmonthindiviKey;

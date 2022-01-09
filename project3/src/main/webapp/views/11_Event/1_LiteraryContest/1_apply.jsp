@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"  />  
 <%
 request.setCharacterEncoding("utf-8");
 %>
@@ -10,6 +13,18 @@ request.setCharacterEncoding("utf-8");
 <title>Insert title here</title>
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <style>
+.literapplytab{
+	width : 800px;
+	height : 600px;
+	border: 2px solid white;
+	font-size: 20px;
+	
+}
+
+.literapplytab td, tr{
+}
+
+
 </style>
 </head>
 <body>
@@ -29,47 +44,55 @@ request.setCharacterEncoding("utf-8");
 	<div class="contents">
 		<div class="cards">
 			<h1>제 1회 판타지 빌리지 신춘문예 신청서</h1>
-
-			<form>
-				<table width="300" border="0" align="center">
-					<tbody>
-						<tr>
-							<td align="center">
-								<h2>사이트 가입 신청서</h2>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+			<h2>신춘문예 작품 공모서</h2>
+			<form action="${contextPath}/LiteraryContest/addLiteraryContest.do">
 				<hr width="600" align="center">
-				<table width-"300"="" border="0" align="center">
+				<table border="1" align="center" class="literapplytab">
+					<colgroup>
+						<col width="30%">
+					</colgroup>
 					<tbody>
+					
 						<tr>
 							<td colspan="2" align="center" height="50">&lt;기본 입력 사항&gt;
 							</td>
 						</tr>
 						<tr>
-							<td width="100">아이디 :</td>
-							<td><input type="text" name="id" size="10" autofocus="">
+							<td width="100">작품 제목 :</td>
+							<td><input type="text" name="liberTitle" size="10" autofocus="">
 							</td>
 						</tr>
 						<tr>
-							<td width="100">비밀번호 :</td>
-							<td><input type="password" name="password" size="10">
+							<td width="100">작품 분류 :</td>
+							<td><input type="text" name="liberSort" size="10" autofocus="">
+							</td>
+						</tr>
+						
+						<tr>
+							<td width="100">작품 설명:</td>
+							<td>
+							<textarea cols="50" rows="20" name="liberContents"> </textarea>
 							</td>
 						</tr>
 						<tr>
-							<td width="100">e-mail :</td>
-							<td><input type="e-mail" name="mail" size="20"></td>
+							<td width="100">지원자의 경력 :</td>
+							<td><input type="text" name="liberCareer" size="20"></td>
 						</tr>
 						<tr>
-							<td width="100">성별 :</td>
-							<td><input type="radio" name="gender">남자 <input
-								type="radio" name="gender">여자</td>
+							<td width="100">제작기간 :</td>
+							<td><input type="text" name="liberProductionDate" size="20"></td>
+						</tr>
+						<tr>
+							<td width="100">제출일 :</td>
+							<td><input type="text" name="liberSubmissionDate" size="20"></td>
 						</tr>
 					</tbody>
 				</table>
 				<br>
-				<table width-"300"="" border="0" align="center">
+				<input type="submit" value="가입신청">
+				</form>
+				
+				<table border="1" align="center">
 					<tbody>
 						<tr>
 							<td colspan="2" align="center" height="50">&lt;추가 입력 사항&gt;
@@ -112,23 +135,13 @@ request.setCharacterEncoding("utf-8");
 				<table width-"300"="" border="0" align="center">
 					<tbody>
 						<tr>
-							<td align="center" colspan="2" width="400">자기 소개(간단히)</td>
-						</tr>
-						<tr>
-							<td><textarea name="memo" rows="15" cols="60"></textarea></td>
-						</tr>
-					</tbody>
-				</table>
-				<table width-"300"="" border="0" align="center">
-					<tbody>
-						<tr>
 							<td><input type="submit" value="가입신청"></td>
 							<td></td>
 							<td><input type="reset" value="다시쓰기"></td>
 						</tr>
 					</tbody>
 				</table>
-			</form>
+			
 
 		</div>
 	</div>

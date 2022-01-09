@@ -3,6 +3,9 @@
 <%
 request.setCharacterEncoding("utf-8");
 %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"  />  
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,6 +59,8 @@ request.setCharacterEncoding("utf-8");
 						<td><a href="2_lastwinner.jsp">지난 해 최우승작</a></td></tr>
 					<tr><td><a href="3_interview.jsp">우승자 인터뷰</a></td>
 						<td><a href="3_interview.jsp">문의하기</a></td></tr>
+					<tr><td><a href="4_listliteraryContest.jsp">지원현황</a></td>
+						<td></a></td></tr>
 			</table>
 
 
