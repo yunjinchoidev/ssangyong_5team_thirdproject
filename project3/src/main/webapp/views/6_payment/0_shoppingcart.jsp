@@ -49,13 +49,13 @@ p{
 					<col width="20%">
 				</colgroup>
 				<tr><td>체크유무</td><td>상품이미지</td><td>수량</td><td>가격</td></tr>
-				<tr><td><input type="checkbox"></td><td><img src="#"></td>
+				<tr><td><input type="checkbox"></td><td><img src="example.jpg"></td>
 				<td><select><option>1</option><option>2</option><option>3</option>
 				</select></td><td>####</td></tr>
-				<tr><td><input type="checkbox"></td><td><img src="#"></td>
+				<tr><td><input type="checkbox"></td><td><img src="example.jpg"></td>
 				<td><select><option>1</option><option>2</option><option>3</option>
 				</select></td><td>####</td></tr>
-				<tr><td><input type="checkbox"></td><td><img src="#"></td>
+				<tr><td><input type="checkbox"></td><td><img src="example.jpg"></td>
 				<td><select><option>1</option><option>2</option><option>3</option>
 				</select></td><td>####</td></tr>
 			</table>				

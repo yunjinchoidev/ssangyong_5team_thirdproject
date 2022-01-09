@@ -19,6 +19,7 @@ request.setCharacterEncoding("utf-8");
 .thismonth {
 	width: 200px;
 	flex: 1;
+	margin: 20px;
 }
 
 .thismonthchild {
