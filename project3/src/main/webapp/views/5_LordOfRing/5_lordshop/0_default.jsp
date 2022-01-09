@@ -14,12 +14,14 @@ request.setCharacterEncoding("utf-8");
 <style>
 #lordshopwrap01{
 	display: flex;
-	width: 70%;
-	height: 300px;
+	width: 90%;
+	height: 400px;
 	margin: 0 auto;
+	padding: 20px;
 }
 .indivi{
 	flex:1;
+	margin: 20px;
 }
 .indivi img{
 	width: 200px;

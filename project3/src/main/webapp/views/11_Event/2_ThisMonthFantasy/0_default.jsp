@@ -10,20 +10,23 @@ request.setCharacterEncoding("utf-8");
 <title>Insert title here</title>
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <style>
-
-.thecontest{
+.thecontest {
 	display: flex;
-	width : 1100px;
-}
-.thismonth{
-	width: 200px;
-	margin : 60px;
-	flex:1;
+	width: 1100px;
+	margin: 0 auto;
 }
 
-.thismonthchild{
+.thismonth {
+	width: 200px;
+	flex: 1;
+	margin: 20px;
 }
-#theimg{
+
+.thismonthchild {
+	
+}
+
+#theimg {
 	width: 150px;
 	height: 150px;
 }
@@ -35,181 +38,196 @@ request.setCharacterEncoding("utf-8");
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
-	
+
 	<!-- S헤더 삽입 -->
 	<jsp:include page="/views/11_Event/menu.jsp">
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
-	
+
 
 	<div class="contents">
 		<div class="cards">
 			<h1>이달의 판타지</h1>
-			<p> 이벤트 기간 ####.##.## ~ ####.##.##
-			<p> ################################################<br>
-			################################################<br>
-			################################################<br>
-			################################################<br></p>
-			
+			<p>이벤트 기간 ####.##.## ~ ####.##.##
+			<p>
+				##########################<br> ##########################<br>
+				##########################<br> ##########################<br>
+			</p>
+
 			<div class="thecontest">
-			<div class="thismonth">
-				<div><input type="radio"></div>
-				<div class="thismonthchild"><img src="example.jpg" id="theimg"></div>
-				<div class="thismonthchild"> 
-					##########################<br>
-					  ###########################<br>
-					  ###########################<br>
-					  ###########################<br>
+				<div class="thismonth">
+					<div>
+						<input type="radio">
+					</div>
+					<div class="thismonthchild">
+						<img src="example.jpg" id="theimg">
+					</div>
+					<div class="thismonthchild">
+						####<br> #####<br> #####<br> #####<br>
+					</div>
 				</div>
-			</div>
-			<div class="thismonth">
-				<div><input type="radio"></div>
-				<div class="thismonthchild"><img src="example.jpg" id="theimg"></div>
-				<div class="thismonthchild"> 
-					##########################<br>
-					  ###########################<br>
-					  ###########################<br>
-					  ###########################<br>
+				<div class="thismonth">
+					<div>
+						<input type="radio">
+					</div>
+					<div class="thismonthchild">
+						<img src="example.jpg" id="theimg">
+					</div>
+					<div class="thismonthchild">
+						####<br> #####<br> #####<br> #####<br>
+					</div>
 				</div>
-			</div>
-			<div class="thismonth">
-				<div><input type="radio"></div>
-				<div class="thismonthchild"><img src="example.jpg" id="theimg"></div>
-				<div class="thismonthchild"> 
-					##########################<br>
-					  ###########################<br>
-					  ###########################<br>
-					  ###########################<br>
+				<div class="thismonth">
+					<div>
+						<input type="radio">
+					</div>
+					<div class="thismonthchild">
+						<img src="example.jpg" id="theimg">
+					</div>
+					<div class="thismonthchild">
+						####<br> #####<br> #####<br> #####<br>
+					</div>
 				</div>
-			</div>
-			<div class="thismonth">
-				<div><input type="radio"></div>
-				<div class="thismonthchild"><img src="example.jpg" id="theimg"></div>
-				<div class="thismonthchild"> 
-					##########################<br>
-					  ###########################<br>
-					  ###########################<br>
-					  ###########################<br>
+				<div class="thismonth">
+					<div>
+						<input type="radio">
+					</div>
+					<div class="thismonthchild">
+						<img src="example.jpg" id="theimg">
+					</div>
+					<div class="thismonthchild">
+						####<br> #####<br> #####<br> #####<br>
+					</div>
 				</div>
-			</div>
-			<div class="thismonth">
-				<div><input type="radio"></div>
-				<div class="thismonthchild"><img src="example.jpg" id="theimg"></div>
-				<div class="thismonthchild"> 
-					##########################<br>
-					  ###########################<br>
-					  ###########################<br>
-					  ###########################<br>
+				<div class="thismonth">
+					<div>
+						<input type="radio">
+					</div>
+					<div class="thismonthchild">
+						<img src="example.jpg" id="theimg">
+					</div>
+					<div class="thismonthchild">
+						####<br> #####<br> #####<br> #####<br>
+					</div>
 				</div>
-			</div>
-			</div>
-			<div class="thecontest">
-			<div class="thismonth">
-				<div><input type="radio"></div>
-				<div class="thismonthchild"><img src="example.jpg" id="theimg"></div>
-				<div class="thismonthchild"> 
-					##########################<br>
-					  ###########################<br>
-					  ###########################<br>
-					  ###########################<br>
-				</div>
-			</div>
-			<div class="thismonth">
-				<div><input type="radio"></div>
-				<div class="thismonthchild"><img src="example.jpg" id="theimg"></div>
-				<div class="thismonthchild"> 
-					##########################<br>
-					  ###########################<br>
-					  ###########################<br>
-					  ###########################<br>
-				</div>
-			</div>
-			<div class="thismonth">
-				<div><input type="radio"></div>
-				<div class="thismonthchild"><img src="example.jpg" id="theimg"></div>
-				<div class="thismonthchild"> 
-					##########################<br>
-					  ###########################<br>
-					  ###########################<br>
-					  ###########################<br>
-				</div>
-			</div>
-			<div class="thismonth">
-				<div><input type="radio"></div>
-				<div class="thismonthchild"><img src="example.jpg" id="theimg"></div>
-				<div class="thismonthchild"> 
-					##########################<br>
-					  ###########################<br>
-					  ###########################<br>
-					  ###########################<br>
-				</div>
-			</div>
-			<div class="thismonth">
-				<div><input type="radio"></div>
-				<div class="thismonthchild"><img src="example.jpg" id="theimg"></div>
-				<div class="thismonthchild"> 
-					##########################<br>
-					  ###########################<br>
-					  ###########################<br>
-					  ###########################<br>
-				</div>
-			</div>
 			</div>
 			<div class="thecontest">
-			<div class="thismonth">
-				<div><input type="radio"></div>
-				<div class="thismonthchild"><img src="example.jpg" id="theimg"></div>
-				<div class="thismonthchild"> 
-					##########################<br>
-					  ###########################<br>
-					  ###########################<br>
-					  ###########################<br>
+				<div class="thismonth">
+					<div>
+						<input type="radio">
+					</div>
+					<div class="thismonthchild">
+						<img src="example.jpg" id="theimg">
+					</div>
+					<div class="thismonthchild">
+						####<br> #####<br> #####<br> #####<br>
+					</div>
+				</div>
+				<div class="thismonth">
+					<div>
+						<input type="radio">
+					</div>
+					<div class="thismonthchild">
+						<img src="example.jpg" id="theimg">
+					</div>
+					<div class="thismonthchild">
+						####<br> #####<br> #####<br> #####<br>
+					</div>
+				</div>
+				<div class="thismonth">
+					<div>
+						<input type="radio">
+					</div>
+					<div class="thismonthchild">
+						<img src="example.jpg" id="theimg">
+					</div>
+					<div class="thismonthchild">
+						####<br> #####<br> #####<br> #####<br>
+					</div>
+				</div>
+				<div class="thismonth">
+					<div>
+						<input type="radio">
+					</div>
+					<div class="thismonthchild">
+						<img src="example.jpg" id="theimg">
+					</div>
+					<div class="thismonthchild">
+						####<br> #####<br> #####<br> #####<br>
+					</div>
+				</div>
+				<div class="thismonth">
+					<div>
+						<input type="radio">
+					</div>
+					<div class="thismonthchild">
+						<img src="example.jpg" id="theimg">
+					</div>
+					<div class="thismonthchild">
+						####<br> #####<br> #####<br> #####<br>
+					</div>
 				</div>
 			</div>
-			<div class="thismonth">
-				<div><input type="radio"></div>
-				<div class="thismonthchild"><img src="example.jpg" id="theimg"></div>
-				<div class="thismonthchild"> 
-					##########################<br>
-					  ###########################<br>
-					  ###########################<br>
-					  ###########################<br>
+			<div class="thecontest">
+				<div class="thismonth">
+					<div>
+						<input type="radio">
+					</div>
+					<div class="thismonthchild">
+						<img src="example.jpg" id="theimg">
+					</div>
+					<div class="thismonthchild">
+						####<br> #####<br> #####<br> #####<br>
+					</div>
+				</div>
+				<div class="thismonth">
+					<div>
+						<input type="radio">
+					</div>
+					<div class="thismonthchild">
+						<img src="example.jpg" id="theimg">
+					</div>
+					<div class="thismonthchild">
+						####<br> #####<br> #####<br> #####<br>
+					</div>
+				</div>
+				<div class="thismonth">
+					<div>
+						<input type="radio">
+					</div>
+					<div class="thismonthchild">
+						<img src="example.jpg" id="theimg">
+					</div>
+					<div class="thismonthchild">
+						####<br> #####<br> #####<br> #####<br>
+					</div>
+				</div>
+				<div class="thismonth">
+					<div>
+						<input type="radio">
+					</div>
+					<div class="thismonthchild">
+						<img src="example.jpg" id="theimg">
+					</div>
+					<div class="thismonthchild">
+						####<br> #####<br> #####<br> #####<br>
+					</div>
+				</div>
+				<div class="thismonth">
+					<div>
+						<input type="radio">
+					</div>
+					<div class="thismonthchild">
+						<img src="example.jpg" id="theimg">
+					</div>
+					<div class="thismonthchild">
+						####<br> #####<br> #####<br> #####<br>
+					</div>
 				</div>
 			</div>
-			<div class="thismonth">
-				<div><input type="radio"></div>
-				<div class="thismonthchild"><img src="example.jpg" id="theimg"></div>
-				<div class="thismonthchild"> 
-					##########################<br>
-					  ###########################<br>
-					  ###########################<br>
-					  ###########################<br>
-				</div>
-			</div>
-			<div class="thismonth">
-				<div><input type="radio"></div>
-				<div class="thismonthchild"><img src="example.jpg" id="theimg"></div>
-				<div class="thismonthchild"> 
-					##########################<br>
-					  ###########################<br>
-					  ###########################<br>
-					  ###########################<br>
-				</div>
-			</div>
-			<div class="thismonth">
-				<div><input type="radio"></div>
-				<div class="thismonthchild"><img src="example.jpg" id="theimg"></div>
-				<div class="thismonthchild"> 
-					##########################<br>
-					  ###########################<br>
-					  ###########################<br>
-					  ###########################<br>
-				</div>
-			</div>
-			</div>
-			
-			
+
+
 		</div>
 	</div>
 
