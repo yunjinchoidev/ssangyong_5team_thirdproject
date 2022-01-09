@@ -17,6 +17,7 @@ request.setCharacterEncoding("utf-8");
 	background-color: #2c3e50;
 	width: 100%;
 	height: 300px;
+	margin-left: -10px;
 }
 
 .footerlogo {

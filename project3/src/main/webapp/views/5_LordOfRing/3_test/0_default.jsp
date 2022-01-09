@@ -11,8 +11,13 @@ request.setCharacterEncoding("utf-8");
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
+
 <style>
-해리포터
+.testtab{
+	width:60%;
+	height: 1000px;
+	margin: 0 auto;
+}
 </style>
 </head>
 <body>
@@ -31,27 +36,28 @@ request.setCharacterEncoding("utf-8");
 
 	<div class="contents">
 		<div class="cards">
-			<div class="indivi">
 				<h2>당신은.. 반지의 주인이 될 자격이 있습니까?</h2>
 				<h2>약 10분에 걸쳐 당신의 성향을 검사하겠습니다.</h2>
 				<h2>당신의 솔직한 답변을 기대합니다.</h2>
 
 				<form>
-					이름 : <input type="text"><br> 1. 당신은 누구와 함께 걷고 있습니까?<br>
-					<textarea cols="100" rows="7"></textarea>
-					<br> 2. 그 사람과 함께 숲속을 계속 걸어가다 보면 한 동물을 만나게 됩니다.<br> 그 동물은
-					무엇인가요?<br>
-					<textarea cols="100" rows="7"></textarea>
-					<br>
-					<textarea cols="100" rows="7"></textarea>
-					<br>
-					<textarea cols="100" rows="7"></textarea>
-					<br>
-					<textarea cols="100" rows="7"></textarea>
-					<br> <input type="submit" value="제출하기">
-				</form>
+				<table border="1" class="testtab">
+					<colgroup>
+					 <col width="10%">
+					 <col width="70%">
+					</colgroup>
+					<tr><td>이름 : </td><td><input type="text"></td></tr>				
+					<tr><td>1. 당신은 누구와 함께 걷고 있습니까?</td><td><textarea cols="100" rows="7"></textarea></td></tr>				
+					<tr><td>1. 당신은 누구와 함께 걷고 있습니까?</td><td><textarea cols="100" rows="7"></textarea></td></tr>				
+					<tr><td>1. 당신은 누구와 함께 걷고 있습니까?</td><td><textarea cols="100" rows="7"></textarea></td></tr>				
+					<tr><td>1. 당신은 누구와 함께 걷고 있습니까?</td><td><textarea cols="100" rows="7"></textarea></td></tr>				
+					<tr><td>1. 당신은 누구와 함께 걷고 있습니까?</td><td><textarea cols="100" rows="7"></textarea></td></tr>				
+					<tr><td>1. 당신은 누구와 함께 걷고 있습니까?</td><td><textarea cols="100" rows="7"></textarea></td></tr>				
+					<tr><td>1. 당신은 누구와 함께 걷고 있습니까?</td><td><textarea cols="100" rows="7"></textarea></td></tr>				
+				</table>
+					<input type="submit" value="제출하기">
+					</form>				
 
-			</div>
 		</div>
 	</div>
 

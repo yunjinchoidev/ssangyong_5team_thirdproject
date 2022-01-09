@@ -39,19 +39,6 @@
 	
 		<div class="contents">
 		<div class="cards">
-				<a href="1_articleForm.jsp">나의 공상 기록하기</a>
-			<p>공상 하다</p>
-			<div class="myfancywrap">
-				<img src="example.jpg" style="width: 300px; height: 300px">
-				<img src="example.jpg" style="width: 300px; height: 300px">
-				<img src="example.jpg" style="width: 300px; height: 300px">
-			</div>
-			<div class="myfancywrap">
-				<img src="example.jpg" style="width: 900px; height: 300px">
-			</div>
-			
-			
-		
 <table align="center" border="1"  width="80%"  >
   <tr height="10" align="center"  bgcolor="lightgreen">
      <td >글번호</td>

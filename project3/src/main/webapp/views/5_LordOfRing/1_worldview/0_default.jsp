@@ -31,7 +31,10 @@ request.setCharacterEncoding("utf-8");
 
 	<div class="contents">
 		<div class="cards">
-			<
+		<p>
+			#1
+		</p>
+		
 		</div>
 	</div>
 

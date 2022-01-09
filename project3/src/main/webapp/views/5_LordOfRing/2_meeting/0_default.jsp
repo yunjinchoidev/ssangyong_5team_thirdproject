@@ -12,7 +12,28 @@ request.setCharacterEncoding("utf-8");
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 <style>
-해리포터
+#meetinglistwrap{
+	width: 1000px;
+	height: 200px;
+	margin-left : 100px;
+	border : 3px solid white;
+	display: flex;
+	padding: 20px;
+}
+.meetinglistchild{
+	margin : 0 auto;
+	font-size: 30px;
+	width: 300px;
+	height: 200px;
+	display: inline-block;
+	flex : 1;
+	
+}
+#meetingdetailimg{
+	width: 100%;
+	height: 100%;
+}
+
 </style>
 </head>
 <body>
@@ -31,7 +52,80 @@ request.setCharacterEncoding("utf-8");
 
 	<div class="contents">
 		<div class="cards">
-			<
+			<h1>정기 모임</h1>
+			<h2>정기 모임 일정</h2>
+			<p> 당신이 참여하길 기다리는 모임들이 있습니다</p>
+		
+				
+			<div id="meetinglistwrap">
+				<div class="meetinglistchild"><a href="1_detail.jsp"><img src="example.jpg" id="meetingdetailimg"></a></div>
+				<div class="meetinglistchild">
+					<ul>
+						<li>날짜 : #####</li>
+						<li>TITLE : ####</li>
+						<li>인원 : ####</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="meetinglistwrap">
+				<div class="meetinglistchild"><img src="example.jpg" id="meetingdetailimg"></div>
+				<div class="meetinglistchild">
+					<ul>
+						<li>날짜 : #####</li>
+						<li>TITLE : ####</li>
+						<li>인원 : ####</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="meetinglistwrap">
+				<div class="meetinglistchild"><img src="example.jpg" id="meetingdetailimg"></div>
+				<div class="meetinglistchild">
+					<ul>
+						<li>날짜 : #####</li>
+						<li>TITLE : ####</li>
+						<li>인원 : ####</li>
+					</ul>
+				</div>
+			</div>
+			<div id="meetinglistwrap">
+				<div class="meetinglistchild"><img src="example.jpg" id="meetingdetailimg"></div>
+				<div class="meetinglistchild">
+					<ul>
+						<li>날짜 : #####</li>
+						<li>TITLE : ####</li>
+						<li>인원 : ####</li>
+					</ul>
+				</div>
+			</div>
+			<div id="meetinglistwrap">
+				<div class="meetinglistchild"><img src="example.jpg" id="meetingdetailimg"></div>
+				<div class="meetinglistchild">
+					<ul>
+						<li>날짜 : #####</li>
+						<li>TITLE : ####</li>
+						<li>인원 : ####</li>
+					</ul>
+				</div>
+			</div>
+			<div id="meetinglistwrap">
+				<div class="meetinglistchild"><img src="example.jpg" id="meetingdetailimg"></div>
+				<div class="meetinglistchild">
+					<ul>
+						<li>날짜 : #####</li>
+						<li>TITLE : ####</li>
+						<li>인원 : ####</li>
+					</ul>
+				</div>
+			</div>
+		
+		
+		
+		
+		
+		
+		
 		</div>
 	</div>
 

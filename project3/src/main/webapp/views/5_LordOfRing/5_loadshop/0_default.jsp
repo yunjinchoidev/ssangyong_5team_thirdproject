@@ -12,7 +12,19 @@ request.setCharacterEncoding("utf-8");
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 <style>
-해리포터
+#lordshopwrap01{
+	display: flex;
+	width: 70%;
+	height: 300px;
+	margin: 0 auto;
+}
+.indivi{
+	flex:1;
+}
+.indivi img{
+	width: 200px;
+	height: 200px;
+}
 </style>
 </head>
 <body>
@@ -31,25 +43,68 @@ request.setCharacterEncoding("utf-8");
 
 	<div class="contents">
 		<div class="cards">
-			<div class="indivi">
-				<h2>당신은.. 반지의 주인이 될 자격이 있습니까?</h2>
-				<h2>약 10분에 걸쳐 당신의 성향을 검사하겠습니다.</h2>
-				<h2>당신의 솔직한 답변을 기대합니다.</h2>
-
-				<form>
-					이름 : <input type="text"><br> 1. 당신은 누구와 함께 걷고 있습니까?<br>
-					<textarea cols="100" rows="7"></textarea>
-					<br> 2. 그 사람과 함께 숲속을 계속 걸어가다 보면 한 동물을 만나게 됩니다.<br> 그 동물은
-					무엇인가요?<br>
-					<textarea cols="100" rows="7"></textarea>
-					<br>
-					<textarea cols="100" rows="7"></textarea>
-					<br>
-					<textarea cols="100" rows="7"></textarea>
-					<br>
-					<textarea cols="100" rows="7"></textarea>
-					<br> <input type="submit" value="제출하기">
-				</form>
+				<h1> Absolute Ring ship</h1>
+				<p> 엄선된 물건들이 있습니다. 마음껏 둘러보십시오</p>
+				<div id=lordshopwrap01>
+					<div class="indivi">
+						<a href="1_detail.jsp"><img src="example.jpg"></a>
+						<p>#########<br>
+							#########<br>
+						#########<br></p>
+					</div>
+					<div class="indivi">
+						<a href="#"><img src="example.jpg"></a>
+						<p>#########<br>
+							#########<br>
+						#########<br></p>
+					</div>
+					<div class="indivi">
+						<a href="#"><img src="example.jpg"></a>
+						<p>#########<br>
+							#########<br>
+						#########<br></p>
+					</div>
+				</div>
+				<div id=lordshopwrap01>
+					<div class="indivi">
+						<a href="#"><img src="example.jpg"></a>
+						<p>#########<br>
+							#########<br>
+						#########<br></p>
+					</div>
+					<div class="indivi">
+						<a href="#"><img src="example.jpg"></a>
+						<p>#########<br>
+							#########<br>
+						#########<br></p>
+					</div>
+					<div class="indivi">
+						<a href="#"><img src="example.jpg"></a>
+						<p>#########<br>
+							#########<br>
+						#########<br></p>
+					</div>
+				</div>
+				<div id=lordshopwrap01>
+					<div class="indivi">
+						<a href="#"><img src="example.jpg"></a>
+						<p>#########<br>
+							#########<br>
+						#########<br></p>
+					</div>
+					<div class="indivi">
+						<a href="#"><img src="example.jpg"></a>
+						<p>#########<br>
+							#########<br>
+						#########<br></p>
+					</div>
+					<div class="indivi">
+						<a href="#"><img src="example.jpg"></a>
+						<p>#########<br>
+							#########<br>
+						#########<br></p>
+					</div>
+				</div>
 
 			</div>
 		</div>
