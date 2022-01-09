@@ -12,8 +12,69 @@ request.setCharacterEncoding("utf-8");
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 <style>
+h1{
+text-align:center;
+color:white;
+}
 
+button{
+width:150px;
+height:50px;
+background-color:rgba(0,0,0,0);
+color : skyblue;
+border: 1px solid skyblue;
+font-weight:bold;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
+
+button:hover{
+width:150px;
+height:50px;
+background-color:#3F3F3F;
+color : white;
+border:none;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
+
+/* 좌측 메뉴바 영역 */
+#menubar{
+position: fixed;
+top:350px;
+left:150px;
+width:200px;
+height:400px;
+border: solid grey;
+}
+
+/* 지팡이 메뉴 버튼 */
+#menustaff{
+position:absolute;
+left:20px;
+}
+
+/* 빗자루 메뉴 버튼 */
+#menustick{
+position: absolute;
+left:20px;
+top: 200px;
+}
+
+/* 유니폼 메뉴 버튼 */
+#menuuniform{
+position: absolute;
+left:20px;
+top: 320px;
+}
 </style>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 	<!-- S헤더 삽입 -->
@@ -27,6 +88,13 @@ request.setCharacterEncoding("utf-8");
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 
+<div id="menubar">
+<h1>메뉴</h1>
+<button type="button" id="menustaff">마블 스토어</button>
+<button type="button" id="menustick">해리포터 스토어</button>
+<button type="button" id="menuuniform" onclick="location.href='/project3/views/5_LordOfRing/5_lordshop/0_default.jsp'">절대 스토어</button>
+</div>
+
 
 	<div class="contents">
 		<div class="cards">
@@ -34,15 +102,10 @@ request.setCharacterEncoding("utf-8");
 					<h2>공식 스토어</h2>
 					<p>이 곳에서 판매하는 제품들은 엄격한 공정을 거쳐 엄선된 것들입니다.</p>
 				</div>
-				<ul>
-					<li><a href="#">마블 공식 스토어 바로가기</a></li>
-					<li><a href="#">해리포터 공식 스토어 바로가기</a></li>
-					<li><a href="#">반지의제왕 공식 스토어 바로가기</a></li>
-				</ul>
+			
 
 		</div>
 	</div>
-
 
 
 
