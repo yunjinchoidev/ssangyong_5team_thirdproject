@@ -46,7 +46,7 @@ request.setCharacterEncoding("utf-8");
 			<h1>제 1회 판타지 빌리지 신춘문예 신청서</h1>
 			<h2>신춘문예 작품 공모서</h2>
 			<h2>${contextPath }</h2>
-			<form action="${contextPath}/LiteraryContest/addLiteraryContest.do">
+			<form action="${contextPath}/literaryContest/addLiteraryContest.do">
 				<hr width="600" align="center">
 				<table border="1" align="center" class="literapplytab">
 					<colgroup>
@@ -58,12 +58,12 @@ request.setCharacterEncoding("utf-8");
 						</tr>
 						<tr>
 							<td width="100">신청번호:</td>
-							<td><input type="text" name="liberKey" size="10" autofocus="">
+							<td><input type="text" name="literKey" size="10" autofocus="">
 							</td>
 						</tr>
 						<tr>
 							<td width="100">작품 제목 :</td>
-							<td><input type="text" name="liberTitle" size="10" autofocus="">
+							<td><input type="text" name="literTitle" size="10" autofocus="">
 							</td>
 						</tr>
 						
@@ -71,17 +71,21 @@ request.setCharacterEncoding("utf-8");
 						<tr>
 							<td width="100">작품 설명:</td>
 							<td>
-							<input type="text" name="liberContents" size="10" autofocus="">
+							<input type="text" name="literContents" size="10" autofocus="">
 							</td>
 						</tr>
 						<tr>
 							<td width="100">작품 분류 :</td>
-							<td><input type="text" name="liberSort" size="10" autofocus="">
+							<td><input type="text" name="literSort" size="10" autofocus="">
 							</td>
 						</tr>
 						<tr>
 							<td width="100">지원자의 경력 :</td>
-							<td><input type="text" name="liberCareer" size="20"></td>
+							<td><input type="text" name="literCareer" size="20"></td>
+						</tr>
+						<tr>
+							<td width="100">제작기간 :</td>
+							<td><input type="text" name="literProductionDate" size="20"></td>
 						</tr>
 				</table>
 				<br>
