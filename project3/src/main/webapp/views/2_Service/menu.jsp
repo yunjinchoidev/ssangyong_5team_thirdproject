@@ -61,8 +61,7 @@ request.setCharacterEncoding("utf-8");
 			<li><a href="/project3/views/2_Service/2_myfancy/0_default.jsp">공상하다</a></li>
 			<li><a href="/project3/views/2_Service/3_myfantastic/0_default.jsp">나의 판타스틱</a></li>
 			<li><a href="/project3/views/2_Service/4_readingclub/0_default.jsp">독서 클럽</a></li>
-			<li><a href="/project3/views/2_Service/5_storytrade/0_default.jsp">스토리매매</a></li>
-			<li><a href="/project3/views/2_Service/6_totalboard/listArticles.jsp">전체 게시판</a></li>
+			<li><a href="/project3/views/2_Service/5_totalboard/listArticles.jsp">전체 게시판</a></li>
 		</ul>
 	</div>
 

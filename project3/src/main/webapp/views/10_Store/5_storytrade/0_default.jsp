@@ -39,11 +39,11 @@
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 
-	<!-- S서비스메뉴 삽입 -->
-	<jsp:include page="/views/2_Service/menu.jsp">
+	<!-- S헤더 삽입 -->
+	<jsp:include page="/views/10_Store/menu.jsp">
 		<jsp:param name="name" value="go" />
 	</jsp:include>
-	<!-- E서비스 메뉴삽입 -->
+	<!-- E헤더 삽입 -->
 	
 		<div class="contents">
 		<div class="cards">

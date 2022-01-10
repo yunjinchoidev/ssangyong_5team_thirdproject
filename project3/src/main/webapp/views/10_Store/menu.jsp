@@ -25,8 +25,8 @@ request.setCharacterEncoding("utf-8");
 	margin: 0;
 	padding: 0;
 	text-align : center;
-	width:500px;
-	padding-left: 700px;
+	width:600px;
+	padding-left: 650px;
 	
 }
 #Storemenu ul li{
@@ -54,6 +54,7 @@ request.setCharacterEncoding("utf-8");
 			<li><a href="/project3/views/10_Store/2_lental/0_default.jsp">렌탈</a></li>
 			<li><a href="/project3/views/10_Store/3_personal/0_default.jsp">1:1 매매</a></li>
 			<li><a href="/project3/views/10_Store/4_lecture/0_default.jsp">강의</a></li>
+			<li><a href="/project3/views/10_Store/5_storytrade/0_default.jsp">스토리매매</a></li>
 		</ul>
 	</div>
 </body>

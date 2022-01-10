@@ -55,9 +55,9 @@ h1{
 	<div class="contents">
 		<div class="cards">
 			<h1> 신청서 작성</h1>
-			<form>
+			<form action="6_listapply.jsp">
 			<table id="talentapplytab" border>
-				<tr><td>신청자</td><td><input type="text"></td></tr> 
+				<tr><td>신청자</td><td><input type="text" name></td></tr> 
 				<tr><td>재능</td><td><input type="text"></td></tr> 
 				<tr><td>신청일</td><td><input type="text"></td></tr> 
 				<tr><td>참여 가능한 시간대</td><td><input type="text"></td></tr> 
