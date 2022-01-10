@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>스토어-지팡이</title>
+<title>스토어-유니폼</title>
 
 <style>
 body{
@@ -81,8 +81,8 @@ width:1200px;
 height:1200px;
 }
 
-/* 딱총나무 지팡이 */
-#staff1{
+/* 그리핀도르 스카프 */
+#uniform1{
 position: absolute;
 top:100px;
 left:100px;
@@ -95,14 +95,14 @@ left:130px;
 color:white;
 }
 
-/* 호랑가시 나무 지팡이 */
+/* 그리핀도르 교복 */
 #prod2{
 position:absolute;
 top:0px;
 left:400px;
 }
 
-#staff2{
+#uniform2{
 position: absolute;
 top:100px;
 left:100px;
@@ -121,7 +121,8 @@ top:0px;
 left:800px;
 }
 
-#staff3{
+/* 슬리데린 목도리 */
+#uniform3{
 position: absolute;
 top:100px;
 left:100px;
@@ -140,7 +141,8 @@ top:550px;
 left:0px;
 }
 
-#staff4{
+/* 슬리데린 교복 */
+#uniform4{
 position: absolute;
 top:100px;
 left:100px;
@@ -159,7 +161,8 @@ top:550px;
 left:400px;
 }
 
-#staff5{
+/* 래번클로 교복 */
+#uniform5{
 position: absolute;
 top:100px;
 left:100px;
@@ -178,7 +181,8 @@ top:550px;
 left:800px;
 }
 
-#staff6{
+/* 후플푸프 교복 */
+#uniform6{
 position: absolute;
 top:100px;
 left:100px;
@@ -230,67 +234,67 @@ AOS.init();
 
 <div id="prod1" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
-<a href="1_staffDetail/staff1_Detail.jsp">
-<img id="staff1" src="../media/딱총1.png" width="200px" height="200px">
+<a href="3_uniformDetail/uniform1_Detail.jsp">
+<img id="uniform1" src="../media/그리핀스카프.png" width="200px" height="200px">
 </a>
 <div id="prod1Info">
-<h3>딱총나무 지팡이</h3>
-<h3 style="position:absolute;left:30px; ">23000원</h3>
+<h3>그리핀도르 스카프</h3>
+<h3 style="position:absolute;left:30px; ">21000원</h3>
 </div>
 </div>
 
 <div id="prod2" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
-<a href="1_staffDetail/staff2_Detail.jsp">
-<img id="staff2" src="../media/호랑가시.png" width="200px" height="200px">
+<a href="3_uniformDetail/uniform2_Detail.jsp">
+<img id="uniform2" src="../media/그리핀교복.png" width="200px" height="200px">
 </a>
 <div id="prod2Info">
-<h3>호랑가시나무 지팡이</h3>
-<h3 style="position:absolute;left:30px; ">26000원</h3>
+<h3>그리핀도르 교복</h3>
+<h3 style="position:absolute;left:30px; ">43000원</h3>
 </div>
 </div>
 
 <div id="prod3" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
-<a href="1_staffDetail/staff3_Detail.jsp">
-<img id="staff3" src="../media/포도나무.png" width="200px" height="200px">
+<a href="3_uniformDetail/uniform3_Detail.jsp">
+<img id="uniform3" src="../media/슬리데린목도리.png" width="200px" height="200px">
 </a>
 <div id="prod3Info">
-<h3>포도나무 지팡이</h3>
-<h3 style="position:absolute;left:30px; ">22000원</h3>
+<h3>슬리데린 목도리</h3>
+<h3 style="position:absolute;left:30px; ">21000원</h3>
 </div>
 </div>
 
 <div id="prod4" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
-<a href="1_staffDetail/staff4_Detail.jsp">
-<img id="staff2" src="../media/호두나무.png" width="200px" height="200px">
+<a href="3_uniformDetail/uniform4_Detail.jsp">
+<img id="uniform4" src="../media/슬리데린교복.png" width="200px" height="200px">
 </a>
 <div id="prod2Info">
-<h3>호두나무 지팡이</h3>
-<h3 style="position:absolute;left:30px; ">23000원</h3>
+<h3>슬리데린교복</h3>
+<h3 style="position:absolute;left:30px; ">43000원</h3>
 </div>
 </div>
 
 <div id="prod5" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
-<a href="1_staffDetail/staff5_Detail.jsp">
-<img id="staff5" src="../media/느릅나무.png" width="200px" height="200px">
+<a href="3_uniformDetail/uniform5_Detail.jsp">
+<img id="uniform5" src="../media/래번클로교복.png" width="200px" height="200px">
 </a>
 <div id="prod5Info">
-<h3>느릅나무 지팡이</h3>
-<h3 style="position:absolute;left:30px; ">29000원</h3>
+<h3>래번클로 교복</h3>
+<h3 style="position:absolute;left:30px; ">39000원</h3>
 </div>
 </div>
 
 <div id="prod6" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
-<a href="1_staffDetail/staff6_Detail.jsp">
-<img id="staff6" src="../media/주목나무.png" width="200px" height="200px">
+<a href="3_uniformDetail/uniform6_Detail.jsp">
+<img id="uniform6" src="../media/후플푸프로브.png" width="200px" height="200px">
 </a>
 <div id="prod6Info">
-<h3>주목나무 지팡이</h3>
-<h3 style="position:absolute;left:30px; ">26000원</h3>
+<h3>후플푸프로브</h3>
+<h3 style="position:absolute;left:30px; ">25000원</h3>
 </div>
 </div>
 

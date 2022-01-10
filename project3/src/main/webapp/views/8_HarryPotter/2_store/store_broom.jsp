@@ -78,11 +78,11 @@ position: absolute;
 top: 300px;
 left: 500px;
 width:1200px;
-height:1200px;
+height:800px;
 }
 
-/* 딱총나무 지팡이 */
-#staff1{
+/* 님부스2000 */
+#broom1{
 position: absolute;
 top:100px;
 left:100px;
@@ -90,19 +90,20 @@ left:100px;
 
 #prod1Info{
 position: absolute;
+width:200px;
 top:350px;
-left:130px;
+left:150px;
 color:white;
 }
 
-/* 호랑가시 나무 지팡이 */
+/* 님부스2001 */
 #prod2{
 position:absolute;
 top:0px;
 left:400px;
 }
 
-#staff2{
+#broom2{
 position: absolute;
 top:100px;
 left:100px;
@@ -110,18 +111,20 @@ left:100px;
 
 #prod2Info{
 position: absolute;
+width:200px;
 top:350px;
-left:120px;
+left:150px;
 color:white;
 }
 
+/* 파이어볼트 */
 #prod3{
 position:absolute;
 top:0px;
 left:800px;
 }
 
-#staff3{
+#broom3{
 position: absolute;
 top:100px;
 left:100px;
@@ -129,72 +132,17 @@ left:100px;
 
 #prod3Info{
 position: absolute;
+width:200px;
 top:350px;
-left:130px;
+left:150px;
 color:white;
 }
 
-#prod4{
-position:absolute;
-top:550px;
-left:0px;
-}
-
-#staff4{
-position: absolute;
-top:100px;
-left:100px;
-}
-
-#prod4Info{
-position: absolute;
-top:350px;
-left:130px;
-color:white;
-}
-
-#prod5{
-position:absolute;
-top:550px;
-left:400px;
-}
-
-#staff5{
-position: absolute;
-top:100px;
-left:100px;
-}
-
-#prod5Info{
-position: absolute;
-top:350px;
-left:130px;
-color:white;
-}
-
-#prod6{
-position:absolute;
-top:550px;
-left:800px;
-}
-
-#staff6{
-position: absolute;
-top:100px;
-left:100px;
-}
-
-#prod6Info{
-position: absolute;
-top:350px;
-left:120px;
-color:white;
-}
 
 #footer{
 position:absolute;
 width:100%;
-top:1500px;
+top:1000px;
 }
 </style>
 
@@ -230,67 +178,34 @@ AOS.init();
 
 <div id="prod1" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
-<a href="1_staffDetail/staff1_Detail.jsp">
-<img id="staff1" src="../media/딱총1.png" width="200px" height="200px">
+<a href="2_broomDetail/broom1_Detail.jsp">
+<img id="broom1" src="../media/님부스2000.png" width="200px" height="200px">
 </a>
 <div id="prod1Info">
-<h3>딱총나무 지팡이</h3>
-<h3 style="position:absolute;left:30px; ">23000원</h3>
+<h3>님부스2000</h3>
+<h3 style="position:absolute;left:20px; ">57000원</h3>
 </div>
 </div>
 
 <div id="prod2" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
-<a href="1_staffDetail/staff2_Detail.jsp">
-<img id="staff2" src="../media/호랑가시.png" width="200px" height="200px">
+<a href="2_broomDetail/broom2_Detail.jsp">
+<img id="broom2" src="../media/님부스2001.png" width="200px" height="200px">
 </a>
 <div id="prod2Info">
-<h3>호랑가시나무 지팡이</h3>
-<h3 style="position:absolute;left:30px; ">26000원</h3>
+<h3>님부스2001</h3>
+<h3 style="position:absolute;left:20px; ">59000원</h3>
 </div>
 </div>
 
 <div id="prod3" data-aos="fade">
 <img src="../media/productFrame.png" width=400px; height=400px;>
-<a href="1_staffDetail/staff3_Detail.jsp">
-<img id="staff3" src="../media/포도나무.png" width="200px" height="200px">
+<a href="2_broomDetail/broom3_Detail.jsp">
+<img id="broom3" src="../media/파이어볼트.png" width="200px" height="200px">
 </a>
 <div id="prod3Info">
-<h3>포도나무 지팡이</h3>
-<h3 style="position:absolute;left:30px; ">22000원</h3>
-</div>
-</div>
-
-<div id="prod4" data-aos="fade">
-<img src="../media/productFrame.png" width=400px; height=400px;>
-<a href="1_staffDetail/staff4_Detail.jsp">
-<img id="staff2" src="../media/호두나무.png" width="200px" height="200px">
-</a>
-<div id="prod2Info">
-<h3>호두나무 지팡이</h3>
-<h3 style="position:absolute;left:30px; ">23000원</h3>
-</div>
-</div>
-
-<div id="prod5" data-aos="fade">
-<img src="../media/productFrame.png" width=400px; height=400px;>
-<a href="1_staffDetail/staff5_Detail.jsp">
-<img id="staff5" src="../media/느릅나무.png" width="200px" height="200px">
-</a>
-<div id="prod5Info">
-<h3>느릅나무 지팡이</h3>
-<h3 style="position:absolute;left:30px; ">29000원</h3>
-</div>
-</div>
-
-<div id="prod6" data-aos="fade">
-<img src="../media/productFrame.png" width=400px; height=400px;>
-<a href="1_staffDetail/staff6_Detail.jsp">
-<img id="staff6" src="../media/주목나무.png" width="200px" height="200px">
-</a>
-<div id="prod6Info">
-<h3>주목나무 지팡이</h3>
-<h3 style="position:absolute;left:30px; ">26000원</h3>
+<h3>파이어볼트</h3>
+<h3 style="position:absolute;left:10px; ">63000원</h3>
 </div>
 </div>
 
