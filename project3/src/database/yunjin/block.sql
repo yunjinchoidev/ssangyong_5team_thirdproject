@@ -1,0 +1,11 @@
+CREATE TABLE Block(
+	bKey	NUMBER PRIMARY KEY,
+	mKey NUMBER CONSTRAINT Block_mKey_fk REFERENCES member (mKey),
+	bUser	VARCHAR2(100),
+	bReason	VARCHAR2(200),
+	bTerm	NUMBER,
+	bDate	DATE
+);
+
+SELECT * 
+FROM Block;

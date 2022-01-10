@@ -3,10 +3,15 @@ CREATE TABLE cart(
 	cartDate	DATE,
 	cartCnt	NUMBER,
 	cartPrice	number, 
-	mKey(FK)	NUMBER,
-	cusKey(FK)	NUMBER,
-	rentalKey(FK)	NUMBER,
-	offictialKey(FK)	NUMBER
-	lecKey(FK)	NUMBER
-	rcKey(FK)	NUMBER
-)
+	mKey NUMBER CONSTRAINTS cart_mKey_fk REFERENCES member(mKey),
+	officialKey NUMBER CONSTRAINTS cart_officialKey_fk REFERENCES officialStore(officialKey),
+	rentalKey NUMBER CONSTRAINTS cart_rentalKey_fk REFERENCES rentalstore(rentalKey),
+	cusKey	NUMBER CONSTRAINTS cart_cusKey_fk REFERENCES customstore(cusKey),
+	lecKey	NUMBER CONSTRAINTS cart_lecKey_fk REFERENCES lecture(lecKey),
+	requKey	NUMBER CONSTRAINTS cart_requKey_fk REFERENCES storyrequest(requKey)
+);
+
+
+DROP TABLE cart;
+
+	

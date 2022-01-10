@@ -1,6 +1,3 @@
-
-
-
 create table Member (
 	mKey NUMBER PRIMARY key,
 	mId VARCHAR2(50),
