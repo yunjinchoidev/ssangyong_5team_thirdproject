@@ -1,0 +1,18 @@
+CREATE TABLE order(
+	orderKey(PK)	NUMBER,
+	sellerId	VARCHAR2(100),
+	orderDate	DATE,
+	installmentType	VARCHAR2(100),
+	orderPrice	NUMBER,
+	payType	VARCHAR2(100),
+	orderingPsnEmail	VARCHAR2(100),
+	cardType	VARCHAR2(100),
+	mKey(FK)	NUMBER CONSTRAINTS order_mKey_fk REFERENCES XXXX(mKey),
+	cusKey(FK)	NUMBER CONSTRAINTS order_cusKey_fk REFERENCES XXXX(cusKey),
+	orderstatus(FK)	VARCHAR2(100) CONSTRAINTS order_orderstatus_fk REFERENCES XXXX(orderstatus),
+	cartKey(FK)	NUMBER CONSTRAINTS order_cartKey_fk REFERENCES XXXX(cartKey),
+	lecKey(FK)	NUMBER CONSTRAINTS order_lecKey_fk REFERENCES lecture(lecKey),
+	offictialKey(FK)	NUMBER CONSTRAINTS order_offictialKey_fk REFERENCES officialStore(offictialKey),
+	rentalKey(FK)	NUMBER CONSTRAINTS order_rentalKey_fk REFERENCES XXXX(rentalKey),
+	rcKey(FK)	NUMBER CONSTRAINTS order_rcKey_fk REFERENCES XXXX(rcKey),
+)

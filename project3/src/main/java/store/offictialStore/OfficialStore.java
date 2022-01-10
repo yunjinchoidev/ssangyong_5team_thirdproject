@@ -1,6 +1,6 @@
-package store;
+package store.offictialStore;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class OfficialStore {
 	private int offictialKey;
@@ -11,7 +11,6 @@ public class OfficialStore {
 	private int offictialDiscount;
 	private String cateKey;
 	private int fileKey;
-
 	public OfficialStore() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -93,5 +92,4 @@ public class OfficialStore {
 	public void setFileKey(int fileKey) {
 		this.fileKey = fileKey;
 	}
-
 }

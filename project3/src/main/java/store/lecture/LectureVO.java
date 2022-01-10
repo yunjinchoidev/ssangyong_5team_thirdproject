@@ -1,6 +1,6 @@
-package store;
+package store.lecture;
 
-public class Lecture {
+public class LectureVO {
 	private int lecKey;
 	private String lecName;
 	private String lecTeacher;
@@ -8,14 +8,13 @@ public class Lecture {
 	private int leconlineavail;
 	private String lecdifficulty;
 	private String leccontents;
-	private String lecreview;
 	private int lecscore;
-	public Lecture() {
+	public LectureVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Lecture(int lecKey, String lecName, String lecTeacher, int leclimitcnt, int leconlineavail,
-			String lecdifficulty, String leccontents, String lecreview, int lecscore) {
+	public LectureVO(int lecKey, String lecName, String lecTeacher, int leclimitcnt, int leconlineavail,
+			String lecdifficulty, String leccontents, int lecscore) {
 		super();
 		this.lecKey = lecKey;
 		this.lecName = lecName;
@@ -24,7 +23,6 @@ public class Lecture {
 		this.leconlineavail = leconlineavail;
 		this.lecdifficulty = lecdifficulty;
 		this.leccontents = leccontents;
-		this.lecreview = lecreview;
 		this.lecscore = lecscore;
 	}
 	public int getLecKey() {
@@ -69,18 +67,12 @@ public class Lecture {
 	public void setLeccontents(String leccontents) {
 		this.leccontents = leccontents;
 	}
-
-	public String getLecreview() {
-		return lecreview;
-	}
-	public void setLecreview(String lecreview) {
-		this.lecreview = lecreview;
-	}
 	public int getLecscore() {
 		return lecscore;
 	}
 	public void setLecscore(int lecscore) {
 		this.lecscore = lecscore;
 	}
+	
 	
 }

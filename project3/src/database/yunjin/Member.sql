@@ -1,5 +1,8 @@
+
+
+
 create table Member (
-	mKey number,
+	mKey NUMBER PRIMARY key,
 	mId VARCHAR2(50),
 	mPass VARCHAR2(50),
 	mName VARCHAR2(50),
@@ -24,6 +27,10 @@ create table Member (
 	mMyGift VARCHAR2(50),
 	mIp VARCHAR2(20)
 );
+
+SELECT * FROM MEMBER;
+
+DROP TABLE MEMBER;
 
 INSERT all
 into Member (mKey, mId, mPass, mName, mEmail, mreg, mGender, mManiaQuot, mJoinDate, mAuthNum, mCash, mPoint, mLevel, mEmailWhether, mAddress, mState, mBlocKList, mSellerRate, mGiftLevel, mUnderFifteen, mGiftDoneExist, mGiftDoneCnt, mMyGift, mIp) values (201, 'kcumberland0', 'QInp8BV03xz', 'Dougie', 'kduckwith0@netvibes.com', 19960101, 'M', 80, '2021/12/29', 1, 5993, 3242, 92, 1, '52 Arrowood Park', 1, 'Karissa', 10, 11, 0, 0, 11, 'act', '194.158.14.165')
