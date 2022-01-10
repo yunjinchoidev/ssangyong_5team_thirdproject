@@ -36,13 +36,6 @@ border-top-right-radius: 5px;
 border-bottom-right-radius: 5px;
 }
 
-hr{
-height:5px;
-width:300px;
-background-color: #5D4283;
-border-color: #5D4283;
-}
-
 /* 상품 사진 */
 #prodpic{
 position: absolute;
@@ -50,7 +43,6 @@ top: 350px;
 left:200px;
 width:600px;
 height:600px;
-border:solid red;
 }
 
 #prodInfo{
@@ -59,11 +51,9 @@ top:350px;
 left:1000px;
 width:500px;
 height:600px;
-border: solid red;
 color:white;
 text-align: center;
 }
-
 
 #footer{
 position:absolute;
@@ -111,16 +101,20 @@ $(document).ready(function() {
 	
 <!-- 상품 사진 -->
 <div id=prodpic>
+<img src="../../media/prodDetailFrame.png" width="100%" height="100%">
 <img src="../../media/주목나무.png" width="500px" height="500px"
-style="position: absolute; top:50px;left:80px">
+style="position: absolute; top:50px;left:50px">
 </div>
+
+
 
 <div id=prodInfo>
 <h1>주목나무 지팡이</h1>
-<hr>
-<h1>23000원</h1>
-<hr>
+<img src="../../media/storeline.png" width="400px" height="80px">
+<h1>29000원</h1>
+<img src="../../media/storeline.png" width="400px" height="80px">
 <h1>사용자: 볼드모트</h1>
+<img src="../../media/storeline.png" width="400px" height="80px">
 <form>
 <input type="text" name="cnt" placeholder="수량을 입력해주세요"
 style="width:150px;height:30px">
