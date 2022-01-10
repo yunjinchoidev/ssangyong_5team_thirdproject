@@ -28,13 +28,4 @@ INSERT INTO LiteraryContest(literkey,literTitle,literContents, literSort, literC
 	VALUES(5, '판타지5', '판타지5내용', '미스터리', '5년', 30, '2021/3/4');
 INSERT INTO LiteraryContest(literkey,literTitle,literContents, literSort, literCareer,literProductionDate)
 	VALUES(6, '판타지6', '판타지6내용', '미스터리', '6년', 30);
-	
-update LiteraryContest 
-set 
-literTitle ='go',
-literContents='go',
-literSort='go',
-literCareer='go', 
-literProductionDate=1
-where literKey=1;
 

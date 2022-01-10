@@ -14,7 +14,6 @@ request.setCharacterEncoding("utf-8");
 <style>
 
 body{
-	border : 3px solid;
 }
 p{
 	font-size: 20px;
@@ -22,7 +21,6 @@ p{
 
 #shoppingcarttab{
 	margin : 0 auto;
-	border : 3px solid;
 	width : 70%;
 	
 }

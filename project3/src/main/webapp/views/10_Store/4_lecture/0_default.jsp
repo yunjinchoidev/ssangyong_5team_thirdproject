@@ -12,7 +12,17 @@ request.setCharacterEncoding("utf-8");
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 <style>
-
+.lecturebox{
+	display: flex;
+	width : 1000px;
+	height: 400px;
+	margin: 0 auto;
+	padding: 20px;
+}
+.lectureboxchild{
+	padding: 20px;
+	flex : 1;
+}
 </style>
 </head>
 <body>
@@ -30,46 +40,49 @@ request.setCharacterEncoding("utf-8");
 
 	<div class="contents">
 		<div class="cards">
-			<div class="wrap">
-				<div class="offex">
-					<h2>공식 스토어</h2>
-					<p>이 곳에서 판매하는 제품들은 엄격한 공정을 거쳐 엄선된 것들입니다.</p>
-				</div>
+			<h2>강의</h2>
+			<p>이 곳에서 원하는 강의를 수강신청 하십시오.</p>
 
-				<div class="offup">
-					<div class="offup01">
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/h01.jpg"></a>
-						</div>
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/h02.jpg"></a>
-						</div>
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/h03.jpg"></a>
-						</div>
-					</div>
-					<div class="offup01">
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/m01.jpg"></a>
-						</div>
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/m02.jpg"></a>
-						</div>
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/m03.jpg"></a>
-						</div>
-					</div>
-					<div class="offup01">
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/l01.jpg"></a>
-						</div>
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/l02.jpg"></a>
-						</div>
-						<div class="offchild">
-							<a href="#"><img src="/project3/views/2_upmenubar/Media/l03.jpg"></a>
-						</div>
-					</div>
+			<div class="lecturebox">
+				<div class="lectureboxchild">
+					<a href="1_detail.jsp"><img
+						src="/project3/views/10_Store/4_lecture/Media/lecture01.png"></a>
+				</div>
+				<div class="lectureboxchild">
+					<a href="1_detail.jsp"><img
+						src="/project3/views/10_Store/4_lecture/Media/lecture02.png"></a>
+				</div>
+				<div class="lectureboxchild">
+					<a href="1_detail"><img
+						src="/project3/views/10_Store/4_lecture/Media/lecture03.png"></a>
+				</div>
+			</div>
+			<div class="lecturebox">
+				<div class="lectureboxchild">
+					<a href="1_detail.jsp"><img
+						src="/project3/views/10_Store/4_lecture/Media/lecture01.png"></a>
+				</div>
+				<div class="lectureboxchild">
+					<a href="1_detail.jsp"><img
+						src="/project3/views/10_Store/4_lecture/Media/lecture02.png"></a>
+				</div>
+				<div class="lectureboxchild">
+					<a href="1_detail.jsp"><img
+						src="/project3/views/10_Store/4_lecture/Media/lecture03.png"></a>
+				</div>
+			</div>
+			<div class="lecturebox">
+				<div class="lectureboxchild">
+					<a href="1_detail.jsp"><img
+						src="/project3/views/10_Store/4_lecture/Media/lecture01.png"></a>
+				</div>
+				<div class="lectureboxchild">
+					<a href="1_detail.jsp"><img
+						src="/project3/views/10_Store/4_lecture/Media/lecture02.png"></a>
+				</div>
+				<div class="lectureboxchild">
+					<a href="1_detail.jsp"><img
+						src="/project3/views/10_Store/4_lecture/Media/lecture03.png"></a>
 				</div>
 			</div>
 		</div>

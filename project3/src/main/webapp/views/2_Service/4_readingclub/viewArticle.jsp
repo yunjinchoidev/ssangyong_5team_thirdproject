@@ -169,8 +169,17 @@
   </tr>
  </table>
  </form>
+ 
+	<table>
+  	<tr><td><a href="#">신청하기</a></td></tr>
+  </table>
   </div>
   </div>
+  
+  
+  
+  
+  
 	<!-- S푸터 삽입 -->
 	<jsp:include page="/views/common/commonfooter.jsp">
 		<jsp:param name="name" value="go" />

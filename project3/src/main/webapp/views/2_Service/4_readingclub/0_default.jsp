@@ -147,6 +147,10 @@
 <a  class="cls1"  href="${contextPath}/board/articleForm.do"><p class="cls2">글쓰기</p></a>
  </div>
   </div>
+  
+  
+  
+  
 	<!-- S푸터 삽입 -->
 	<jsp:include page="/views/common/commonfooter.jsp">
 		<jsp:param name="name" value="go" />
