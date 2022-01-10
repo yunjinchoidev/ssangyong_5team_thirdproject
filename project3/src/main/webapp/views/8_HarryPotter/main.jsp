@@ -144,7 +144,9 @@ top:3800px;
 </div>
 <div id="potterShopText" data-aos="fade-up">
 <h1>지팡이는 준비 하셨나요?</h1>
+<a href="2_store/store_Staff.jsp">
 <button type="button" style="position: absolute;">스토어 이동</button>
+</a>
 </div>
 
 <div id="potterBoard" data-aos="fade-up">
