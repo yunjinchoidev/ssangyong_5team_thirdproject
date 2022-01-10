@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>해리포터-기숙사선택</title>
 
-<link rel="stylesheet" href="css/hint.css">
+<link rel="stylesheet" href="../css/hint.css">
 
 <style>
 body{
