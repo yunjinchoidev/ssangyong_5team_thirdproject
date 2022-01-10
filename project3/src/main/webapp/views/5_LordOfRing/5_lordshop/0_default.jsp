@@ -49,39 +49,19 @@ request.setCharacterEncoding("utf-8");
 				<p> 엄선된 물건들이 있습니다. 마음껏 둘러보십시오</p>
 				<div id=lordshopwrap01>
 					<div class="indivi">
-						<a href="1_detail.jsp"><img src="example.jpg"></a>
+						<a href="/project3/views/5_LordOfRing/5_lordshop/1_detail.jsp?id=1"><img src="media/theonering.jpg"></a>
 						<p>#########<br>
 							#########<br>
 						#########<br></p>
 					</div>
 					<div class="indivi">
-						<a href="#"><img src="example.jpg"></a>
+						<a href="#"><img src="media/theonering.jpg"></a>
 						<p>#########<br>
 							#########<br>
 						#########<br></p>
 					</div>
 					<div class="indivi">
-						<a href="#"><img src="example.jpg"></a>
-						<p>#########<br>
-							#########<br>
-						#########<br></p>
-					</div>
-				</div>
-				<div id=lordshopwrap01>
-					<div class="indivi">
-						<a href="#"><img src="example.jpg"></a>
-						<p>#########<br>
-							#########<br>
-						#########<br></p>
-					</div>
-					<div class="indivi">
-						<a href="#"><img src="example.jpg"></a>
-						<p>#########<br>
-							#########<br>
-						#########<br></p>
-					</div>
-					<div class="indivi">
-						<a href="#"><img src="example.jpg"></a>
+						<a href="#"><img src="media/theonering.jpg"></a>
 						<p>#########<br>
 							#########<br>
 						#########<br></p>
@@ -89,19 +69,39 @@ request.setCharacterEncoding("utf-8");
 				</div>
 				<div id=lordshopwrap01>
 					<div class="indivi">
-						<a href="#"><img src="example.jpg"></a>
+						<a href="#"><img src="media/theonering.jpg"></a>
 						<p>#########<br>
 							#########<br>
 						#########<br></p>
 					</div>
 					<div class="indivi">
-						<a href="#"><img src="example.jpg"></a>
+						<a href="#"><img src="media/theonering.jpg"></a>
 						<p>#########<br>
 							#########<br>
 						#########<br></p>
 					</div>
 					<div class="indivi">
-						<a href="#"><img src="example.jpg"></a>
+						<a href="/project3/views/5_LordOfRing/5_lordshop/1_detail.jsp?id=1"><img src="media/theonering.jpg"></a>
+						<p>#########<br>
+							#########<br>
+						#########<br></p>
+					</div>
+				</div>
+				<div id=lordshopwrap01>
+					<div class="indivi">
+						<a href="#"><img src="media/theonering.jpg"></a>
+						<p>#########<br>
+							#########<br>
+						#########<br></p>
+					</div>
+					<div class="indivi">
+						<a href="#"><img src="media/theonering.jpg"></a>
+						<p>#########<br>
+							#########<br>
+						#########<br></p>
+					</div>
+					<div class="indivi">
+						<a href="#"><img src="media/theonering.jpg"></a>
 						<p>#########<br>
 							#########<br>
 						#########<br></p>

@@ -11,3 +11,6 @@ CREATE TABLE officialStore(
 );
 
 DROP TABLE officialstore;
+
+SELECT * 
+FROM officialStore;

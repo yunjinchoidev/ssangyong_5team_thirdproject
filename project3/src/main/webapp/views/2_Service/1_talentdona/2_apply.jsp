@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%
-request.setCharacterEncoding("utf-8");
-%>
+    pageEncoding="UTF-8"
+    import="java.util.*"
+    import="service.talent.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
+<c:set var="path" value="${pageContext.request.contextPath}"/> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,6 +41,7 @@ h1{
 </style>
 </head>
 <body>
+
 	<!-- S헤더 삽입 -->
 	<jsp:include page="/views/common/commonheader.jsp">
 		<jsp:param name="name" value="go" />
@@ -57,13 +60,15 @@ h1{
 			<h1> 신청서 작성</h1>
 			<form action="6_listapply.jsp">
 			<table id="talentapplytab" border>
-				<tr><td>신청자</td><td><input type="text" name></td></tr> 
-				<tr><td>재능</td><td><input type="text"></td></tr> 
-				<tr><td>신청일</td><td><input type="text"></td></tr> 
-				<tr><td>참여 가능한 시간대</td><td><input type="text"></td></tr> 
-				<tr><td>이메일 수신 여부</td><td><input type="text"></td></tr> 
+				<tr><td>신청번호</td><td><input type="text" name="taKey"></td></tr> 
+				<tr><td>신청자</td><td><input type="text" name="taname"></td></tr> 
+				<tr><td>재능</td><td><input type="text" name="tamytalent"></td></tr> 
+				<tr><td>신청일</td><td><input type="text" name="taapplydate"></td></tr> 
+				<tr><td>참여 가능한 시간대</td><td><input type="text" name="tatime"></td></tr> 
+				<tr><td>참여 가능 장소</td><td><input type="text" name="taloc"></td></tr> 
+				<tr><td>회원 번호</td><td><input type="text" name="mKey" ></td></tr> 
 			</table>
-			<input type="submit" value="제출하기" onclick="location.href='1_list.jsp'">
+			<input type="submit" value="제출하기" onclick="location.href='6_listapply.jsp'">
 			<input type="button" value="돌아가기" onclick="location.href='0_default.jsp'">
 			</form>
 		</div>

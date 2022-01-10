@@ -58,11 +58,12 @@ request.setCharacterEncoding("utf-8");
 						<div class="lordmalldetailchild"><img src="example.jpg" id="detailimg"></div>
 						<div class="lordmalldetailchild">
 							<ul>
-								<li>상품모델 : #####</li>
-								<li>원산지 : ####</li>
-								<li>상품 번호 : ####</li>
-								<li>구매 수량 : <select><option>1</option></select></li>
-								<li>판매 가격 : #####</li>
+								<li>상품번호 : #####</li>
+								<li>상품 명: ####</li>
+								<li>상품 설명 : ####</li>
+								<li>등록일 : <select><option>1</option></select></li>
+								<li>재고 : #####</li>
+								<li> : #####</li>
 								<li><button>장바구니</button><button>구매하기</button></li>
 							</ul>
 						</div>

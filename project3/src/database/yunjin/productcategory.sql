@@ -7,3 +7,5 @@ CREATE TABLE productCategory(
 );
 
 SELECT * FROM productCategory;
+
+INSERT INTO productCategory VALUES (201, '반지', '반지의제왕', '악세사리', '공용');
