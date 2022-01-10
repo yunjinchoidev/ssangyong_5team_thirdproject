@@ -17,6 +17,7 @@ request.setCharacterEncoding("utf-8");
 	height: 800px;
 	border : 2px solid black;
 	margin: 0 auto;
+	font-size: 30px;
 }
 </style>
 </head>

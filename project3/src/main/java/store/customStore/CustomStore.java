@@ -1,4 +1,4 @@
-package store;
+package store.customStore;
 
 import java.sql.Date;
 
