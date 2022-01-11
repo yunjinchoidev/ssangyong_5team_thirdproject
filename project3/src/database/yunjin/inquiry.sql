@@ -10,3 +10,5 @@ CREATE TABLE inquiry(
 	inquiryAnswerContents	VARCHAR2(100),
 	mKey NUMBER CONSTRAINT inquiry_mKey_fk REFERENCES member (mKey)
 );
+
+DROP TABLE inquiry;

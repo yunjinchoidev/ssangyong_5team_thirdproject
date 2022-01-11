@@ -10,4 +10,6 @@ CREATE TABLE attachedfile(
 SELECT *
 FROM ATTACHEDFILE;
 
+DROP TABLE attachedfile;
+
 INSERT INTO attachedfile VALUES (201, '그림1', 'project3', 'jpg', '24mb', sysdate);

@@ -7,3 +7,5 @@ CREATE TABLE marvel(
 	MarvelWeight	NUMBER,
 	mKey NUMBER CONSTRAINT marvel_mKey_fk REFERENCES member (mKey)
 );
+
+DROP TABLE marvel;
