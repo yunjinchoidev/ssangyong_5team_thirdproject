@@ -118,6 +118,7 @@ top:3800px;
    <script>
    AOS.init();
    </script>
+   <div id="logodiv">
    <div id="potterLogo" 
      data-aos="fade-zoom-in" 
      data-aos-easing="ease-in-back"
@@ -125,7 +126,7 @@ top:3800px;
      data-aos-offset="0">
    <img src="media/potterLogo.png">
    </div>
-
+   </div>
 
 <!-- 해리포터 기숙사 -->
 <div id="potterBanner" data-aos="fade-up">

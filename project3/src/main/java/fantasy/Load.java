@@ -1,6 +1,6 @@
-package lord;
+package fantasy;
 
-public class lordVO {
+public class Load {
 	private int loadKey;
 	private String loadCharacter;
 	private String loadTribe;
@@ -10,12 +10,12 @@ public class lordVO {
 	private int loadWeight;
 	private int mKey;
 
-	public lordVO() {
+	public Load() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public lordVO(int loadKey, String loadCharacter, String loadTribe, String loadPaciBattle, String loadloc,
+	public Load(int loadKey, String loadCharacter, String loadTribe, String loadPaciBattle, String loadloc,
 			int loadHeight, int loadWeight, int mKey) {
 		super();
 		this.loadKey = loadKey;

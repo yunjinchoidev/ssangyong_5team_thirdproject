@@ -1,4 +1,4 @@
-package harrypotter;
+package fantasy;
 
 public class harrypotter {
 	int harryKey;

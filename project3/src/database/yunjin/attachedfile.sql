@@ -11,7 +11,3 @@ SELECT *
 FROM ATTACHEDFILE;
 
 INSERT INTO attachedfile VALUES (201, '그림1', 'project3', 'jpg', '24mb', sysdate);
-INSERT INTO attachedfile VALUES (202, '그림1', 'project3', 'jpg', '24mb', sysdate);
-INSERT INTO attachedfile VALUES (203, '그림1', 'project3', 'jpg', '24mb', sysdate);
-INSERT INTO attachedfile VALUES (204, '그림1', 'project3', 'jpg', '24mb', sysdate);
-INSERT INTO attachedfile VALUES (205, '그림1', 'project3', 'jpg', '24mb', sysdate);
