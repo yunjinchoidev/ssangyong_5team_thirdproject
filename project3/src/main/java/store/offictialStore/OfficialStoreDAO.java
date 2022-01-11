@@ -244,6 +244,10 @@ public class OfficialStoreDAO {
 		// TODO Auto-generated method stub
 		OfficialStoreDAO DAO = new OfficialStoreDAO();
 		DAO.insertOfficialStoreVOPre(new OfficialStoreVO(201, "절대반지201", "절대반지201입니다.", "2022-01-10", 201, 201, 201,201));
+		DAO.insertOfficialStoreVOPre(new OfficialStoreVO(202, "절대반지202", "절대반지202입니다.", "2022-01-10", 202, 202, 202,202));
+		DAO.insertOfficialStoreVOPre(new OfficialStoreVO(203, "절대반지203", "절대반지203입니다.", "2022-01-10", 203, 203, 203,203));
+		DAO.insertOfficialStoreVOPre(new OfficialStoreVO(204, "절대반지204", "절대반지204입니다.", "2022-01-10", 204, 204, 204,204));
+		DAO.insertOfficialStoreVOPre(new OfficialStoreVO(205, "절대반지205", "절대반지205입니다.", "2022-01-10", 205, 205, 205,205));
 		
 		
 		
