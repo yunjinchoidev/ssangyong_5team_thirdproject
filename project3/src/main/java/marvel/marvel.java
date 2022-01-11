@@ -1,4 +1,4 @@
-package fantasy;
+package marvel;
 
 public class marvel {
 	private int marvelKey;
