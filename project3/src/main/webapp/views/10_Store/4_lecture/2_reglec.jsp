@@ -1,8 +1,8 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"
-	import="store.lecture.LectureDao"
-	import="store.lecture.LectureVO"
+	import="lecture.LectureDao"
+	import="lecture.LectureVO"
 	%>
 <%
 request.setCharacterEncoding("utf-8");

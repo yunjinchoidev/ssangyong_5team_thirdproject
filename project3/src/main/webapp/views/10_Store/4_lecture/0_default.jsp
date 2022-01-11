@@ -64,7 +64,7 @@ request.setCharacterEncoding("utf-8");
 
 
 			</p>
-
+			
 			<div class="lecturebox">
 				<div class="lectureboxchild">
 					<a href="1_detail.jsp?id=1"><img

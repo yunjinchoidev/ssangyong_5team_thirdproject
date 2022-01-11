@@ -31,7 +31,7 @@ public class TalentApplyDAO {
 	
 	
 	// 전체 명단
-	public ArrayList<TalentApplyVO> Alllist() {
+	public ArrayList<TalentApplyVO> TalentApplyist() {
 		ArrayList<TalentApplyVO> talist = new ArrayList<TalentApplyVO>();
 		String sql = "SELECT *\r\n"
 				+ "FROM TalentApply\r\n";
@@ -47,6 +47,7 @@ public class TalentApplyDAO {
 				ta.setTamytalent(rs.getString("tamytalent"));
 				ta.setTaapplydate(rs.getString("taapplydate"));
 				ta.setTatime(rs.getString("taTime"));
+				ta.setTaloc(rs.getString("taloc"));
 				ta.setmKey(rs.getInt("mKey"));
 				talist.add(ta);
 			}
@@ -63,7 +64,7 @@ public class TalentApplyDAO {
 	}
 	
 	// 지원자 이름으로 검색
-	public ArrayList<TalentApplyVO> Search01(String taname) {
+	public ArrayList<TalentApplyVO> SearchTalentApply(String taname) {
 		ArrayList<TalentApplyVO> talist = new ArrayList<TalentApplyVO>();
 		String sql = "SELECT *\r\n"
 				+ "FROM TalentApply\r\n"
@@ -73,7 +74,6 @@ public class TalentApplyDAO {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, taname);
 			rs = pstmt.executeQuery();
-			int rowNum =1;
 			System.out.println("사원명 검색");
 			while( rs.next() ) {
 				TalentApplyVO ta = new TalentApplyVO();
@@ -101,8 +101,8 @@ public class TalentApplyDAO {
 	
 	
 	/*4 [1단계:확인] 4. A06_DatabaseDao pstmt로 사원정보를 등록하는 기는 메서드를 만드세요.*/
-	public void insertTalentApplyVOPre(TalentApplyVO ins) {
-		String sql = "INSERT INTO TalentApply VALUES (?,?,?,?,?,?,?)";
+	public void insertTalentApplyVO(TalentApplyVO ins) {
+		String sql = "INSERT INTO talentapply VALUES (?,?,?,?,?,?,?)";
 		try {
 			setConn();
 			// 자동커밋 방지
@@ -133,7 +133,7 @@ public class TalentApplyDAO {
 	
 	
 	/*5[1단계:확인] 5. A06_DatabaseDao pstmt로 사원정보를 수정/삭제하는 기는 메서드를 만드세요.*/
-	public void updateTalentApplyVOPre(TalentApplyVO upt) {
+	public void updateTalentApplyVO(TalentApplyVO upt) {
 		try {
 			setConn();
 			// 자동커밋 방지
@@ -175,7 +175,7 @@ public class TalentApplyDAO {
 	
 	
 	/*5[1단계:확인] 5. A06_DatabaseDao pstmt로 사원정보를 수정/삭제하는 기는 메서드를 만드세요.*/
-	public void deleteTalentApplyVOPre(int taKey) {
+	public void deleteTalentApplyVO(int taKey) {
 		String sql = "delete \r\n"
 				+ "from TalentApply \r\n"
 				+ "where taKey=?\r\n";
@@ -242,8 +242,10 @@ public class TalentApplyDAO {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		TalentApplyDAO DAO = new TalentApplyDAO();
-		DAO.insertTalentApplyVOPre(new TalentApplyVO(1, "최윤진", "축구", "2022-01-10", "3시간", "성남", 201));
-		DAO.insertTalentApplyVOPre(new TalentApplyVO(202, "최윤진202", "축구202", "2022-01-12", "202시간", "성남202", 202));
+		DAO.deleteTalentApplyVO(1);
+		DAO.insertTalentApplyVO(new TalentApplyVO(304, "최윤진", "축구", "2022-01-10", "3시간", "성남", 201));
+		DAO.insertTalentApplyVO(new TalentApplyVO(305, "최윤진202", "축구202", "2022-01-12", "202시간", "성남202", 202));
+		DAO.insertTalentApplyVO(new TalentApplyVO(306, "최윤진203", "축구203", "2022-01-12", "203시간", "성남203", 203));
 		
 		
 		
