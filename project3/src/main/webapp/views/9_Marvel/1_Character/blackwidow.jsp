@@ -7,7 +7,7 @@ request.setCharacterEncoding("utf-8");
 <html>
 <head>
 <meta charset="UTF-8">
-<title>아이언맨 캐릭터 소개</title>
+<title>블랙위도우 캐릭터 소개</title>
 <style>
 * {
 	padding: 0;
@@ -118,32 +118,30 @@ a {
 
 	<div class="wrap">
 		<div class="contents">
-		    <img src="../marvelmedia/ironman_image.png" style="margin-top:280px; width: 400px; height: 500px;">
-			<h2 class="en" style="color: white; font-size: 45px;">IRON MAN</h2>
-			<p style="color: white; font-size: 25px;">Anthony Edward Stark</p>
+		    <img src="../marvelmedia/blackwidow_image.png" style="margin-top:280px; width: 450px; height: 400px;">
+			<h2 class="en" style="color: white; font-size: 45px;">BLACK WIDOW</h2>
+			<p style="color: white; font-size: 25px;">Natalia Alianovna Romanoff</p>
 			<ul class="inner">
 				<li><a href="#" >
 					<h3>01</h3>
 					<div class="txtBox">
 						<p class="tit" style="color: white; font-size: 35px;">Information</p>
-						<p class="txt" style="color: white">아이언맨의 정보를 확인해보세요!</p>
+						<p class="txt" style="color: white">블랙위도우에 대한 정보를 확인해보세요!</p>
 					</div></a></li>
 
 				<li><a href="#" >
 					<h3>02</h3>
 					<div class="txtBox">
 						<p class="tit" style="color: white; font-size: 35px;">Power</p>
-						<p class="txt" style="color: white">아이언맨의 능력을 확인해보세요!</p>
+						<p class="txt" style="color: white">블랙위도우의 능력을 확인해보세요!</p>
 					</div></a></li>
-					
 				<li><a href="#">
 					<h3>03</h3>
 					<div class="txtBox">
 						<p class="tit" style="color: white; font-size: 35px;">Connections</p>
-						<p class="txt" style="color: white">아이언맨과 연관된 캐릭터를 확인해보세요!</p>
+						<p class="txt" style="color: white">블랙위도우와 연관된 캐릭터를 확인해보세요!</p>
 					</div></a></li>
 			</ul>
-		</div>
 		</div>
 		<div id="footer">
 			<!-- S푸터 삽입 -->
@@ -151,6 +149,7 @@ a {
 				<jsp:param name="name" value="go" />
 			</jsp:include>
 			<!-- E푸터 삽입 -->
+		</div>
 		</div>
 </body>
 </html>
