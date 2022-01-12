@@ -84,8 +84,8 @@ top: 215px;
    color: white;
    font-size: 20pt;
    position: absolute;
-   top: 2700px;
-   left: 850px;
+   top: 2500px;
+   left: 650px;
 }
 
 #bottom {
