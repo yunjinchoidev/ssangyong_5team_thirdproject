@@ -56,7 +56,7 @@ top: 215px;
    color: white;
    font-size: 20pt;
    position: absolute;
-   top: 850px;
+   top: 950px;
    left: 600px;
 }
 
@@ -74,25 +74,21 @@ top: 215px;
    left: 650px;
 }
 
-#mavelBoard {
+#marvelBoard {
    position: absolute;
-   top: 1700px;
-   left: 750px;
+   top: 2300px;
+   left: 300px;
 }
 
-#mavelBoardText {
+#marvelBoardText {
    color: white;
    font-size: 20pt;
    position: absolute;
-   top: 2500px;
+   top: 2750px;
    left: 650px;
 }
 
-#bottom {
-   position: absolute;
-   top: 3300px;
-   left: 20px;
-}
+
 
 #footer {
    position: absolute;
@@ -128,11 +124,11 @@ top: 215px;
 
    <!-- 마블캐릭터 -->
    <div id="marvelBanner" data-aos="fade-up">
-      <img src="marvelmedia/marvelbanner.png" width="600px" height="350px">
+      <img src="marvelmedia/marvelbanner.png" width="600px" height="450px">
    </div>
    <div id="marvelBannerText" data-aos="fade-up">
       <h1>좋아하는 캐릭터를 선택해주세요!</h1>
-      <a href="spiderman.jsp">
+      <a href="1_Character/spiderman.jsp">
       <button type="button" style="position: absolute;">캐릭터 선택</button>
    </div>
 
@@ -142,19 +138,19 @@ top: 215px;
    </div>
    <div id="marvelShopText" data-aos="fade-up">
       <h1>쇼핑할 준비는 되셨나요?</h1>
+      <a href="2_Marvelshop/toy.jsp">
       <button type="button" style="position: absolute;">스토어 이동</button>
    </div>
 
    <div id="marvelBoard" data-aos="fade-up">
-      <img src="" width="600px" height="400px">
+      <img src="marvelmedia/marvelboard.png" width="600px" height="400px">
    </div>
-   <div id="mavelBoardText" data-aos="fade-up">
+   <div id="marvelBoardText" data-aos="fade-up">
       <h1>마블에 관련된 이야기를 나누어볼까요?</h1>
+      <a href="#">
       <button type="button" style="position: absolute;">게시판 이동</button>
    </div>
-   <div id="bottom" data-aos="fade-up">
-      <img src="marvelmedia/marvelboard.png" width="650px" height="350px">
-   </div>
+ 
    <div id="footer">
       <!-- S푸터 삽입 -->
       <jsp:include page="/views/common/commonfooter.jsp">
