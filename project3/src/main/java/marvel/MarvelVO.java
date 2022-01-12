@@ -1,6 +1,6 @@
-package fantasy;
+package marvel;
 
-public class marvel {
+public class MarvelVO {
 	private int marvelKey;
 	private String marvelCharacter;
 	private String MarvelAbility;
@@ -9,12 +9,12 @@ public class marvel {
 	private int MarvelWeight;
 	private int mKey;
 
-	public marvel() {
+	public MarvelVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public marvel(int marvelKey, String marvelCharacter, String marvelAbility, String marvelHobby, int marvelHeight,
+	public MarvelVO(int marvelKey, String marvelCharacter, String marvelAbility, String marvelHobby, int marvelHeight,
 			int marvelWeight, int mKey) {
 		super();
 		this.marvelKey = marvelKey;

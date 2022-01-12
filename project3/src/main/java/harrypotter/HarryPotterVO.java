@@ -1,6 +1,6 @@
-package fantasy;
+package harrypotter;
 
-public class harrypotter {
+public class HarryPotterVO {
 	int harryKey;
 	String harryCharacter;
 	String harryDomioty;
@@ -11,12 +11,12 @@ public class harrypotter {
 	int harryWeight;
 	int mKey;
 
-	public harrypotter() {
+	public HarryPotterVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public harrypotter(int harryKey, String harryCharacter, String harryDomioty, String harryMagicLevel, int harryBirth,
+	public HarryPotterVO(int harryKey, String harryCharacter, String harryDomioty, String harryMagicLevel, int harryBirth,
 			String harryMagic, int harryHeight, int harryWeight, int mKey) {
 		super();
 		this.harryKey = harryKey;

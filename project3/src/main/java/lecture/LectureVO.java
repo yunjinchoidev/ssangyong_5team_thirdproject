@@ -1,4 +1,4 @@
-package store.lecture;
+package lecture;
 
 public class LectureVO {
 	private int lecKey;

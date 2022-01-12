@@ -1,4 +1,4 @@
-package store.offictialStore;
+package talentApply;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,8 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+public class TalentApplyDAO {
 
-public class OfficialStoreDAO {
 	private Connection con;
 	private Statement stmt;
 	private PreparedStatement pstmt;
@@ -31,21 +31,25 @@ public class OfficialStoreDAO {
 	
 	
 	// 전체 명단
-	public ArrayList<OfficialStoreVO> Alllist() {
-		ArrayList<OfficialStoreVO> officiallist = new ArrayList<OfficialStoreVO>();
+	public ArrayList<TalentApplyVO> TalentApplyist() {
+		ArrayList<TalentApplyVO> talist = new ArrayList<TalentApplyVO>();
 		String sql = "SELECT *\r\n"
-				+ "FROM OfficialStore\r\n";
+				+ "FROM TalentApply\r\n";
 		try {
 			setConn();
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			System.out.println("사원명 검색");
 			while( rs.next() ) {
-				OfficialStoreVO off = new OfficialStoreVO(
-						rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),
-						rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8));
-				
-				officiallist.add(off);
+				TalentApplyVO ta = new TalentApplyVO();
+				ta.setTaKey(rs.getInt("taKey"));
+				ta.setTaname(rs.getString("taname"));
+				ta.setTamytalent(rs.getString("tamytalent"));
+				ta.setTaapplydate(rs.getString("taapplydate"));
+				ta.setTatime(rs.getString("taTime"));
+				ta.setTaloc(rs.getString("taloc"));
+				ta.setmKey(rs.getInt("mKey"));
+				talist.add(ta);
 			}
 			rs.close();
 			pstmt.close();
@@ -56,30 +60,30 @@ public class OfficialStoreDAO {
 			if(pstmt!=null) pstmt = null;
 			if(con!=null) con = null;
 		}
-		return officiallist;
+		return talist;
 	}
 	
-	
-	
 	// 지원자 이름으로 검색
-	public ArrayList<OfficialStoreVO> Search01(String taname) {
-		ArrayList<OfficialStoreVO> officiallist = new ArrayList<OfficialStoreVO>();
+	public ArrayList<TalentApplyVO> SearchTalentApply(String taname) {
+		ArrayList<TalentApplyVO> talist = new ArrayList<TalentApplyVO>();
 		String sql = "SELECT *\r\n"
-				+ "FROM OfficialStore\r\n"
+				+ "FROM TalentApply\r\n"
 				+ "WHERE taname LIKE '%'||?||'%'";
 		try {
 			setConn();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, taname);
 			rs = pstmt.executeQuery();
-			int rowNum =1;
 			System.out.println("사원명 검색");
 			while( rs.next() ) {
-				OfficialStoreVO off = new OfficialStoreVO(
-						rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),
-						rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8));
-				
-				officiallist.add(off);
+				TalentApplyVO ta = new TalentApplyVO();
+				ta.setTaKey(rs.getInt("taKey"));
+				ta.setTaname(rs.getString("taname"));
+				ta.setTamytalent(rs.getString("tamytalent"));
+				ta.setTaapplydate(rs.getString("taapplydate"));
+				ta.setTatime(rs.getString("taTime"));
+				ta.setmKey(rs.getInt("mKey"));
+				talist.add(ta);
 			}
 			rs.close();
 			pstmt.close();
@@ -90,29 +94,28 @@ public class OfficialStoreDAO {
 			if(pstmt!=null) pstmt = null;
 			if(con!=null) con = null;
 		}
-		return officiallist;
+		return talist;
 	}
 	
 
 	
 	
-	/*insert*/
-	public void insertOfficialStoreVOPre(OfficialStoreVO ins) {
-		String sql = "INSERT INTO OfficialStore VALUES (?,?,?,?,?,?,?,?)";
+	/*4 [1단계:확인] 4. A06_DatabaseDao pstmt로 사원정보를 등록하는 기는 메서드를 만드세요.*/
+	public void insertTalentApplyVO(TalentApplyVO ins) {
+		String sql = "INSERT INTO talentapply VALUES (?,?,?,?,?,?,?)";
 		try {
 			setConn();
 			// 자동커밋 방지
 			con.setAutoCommit(false);
 			pstmt = con.prepareStatement(sql);
 			
-			pstmt.setInt(1, ins.getOfficialKey());
-			pstmt.setString(2, ins.getOfficialPname());
-			pstmt.setString(3, ins.getOfficialExplain());
-			pstmt.setString(4, ins.getOfficialRegDateS());
-			pstmt.setInt(5, ins.getOfficialnventory());
-			pstmt.setInt(6, ins.getOfficialDiscount());
-			pstmt.setInt(7, ins.getProcateKey());
-			pstmt.setInt(8, ins.getFileKey());
+			pstmt.setInt(1, ins.getTaKey());
+			pstmt.setString(2, ins.getTaname());
+			pstmt.setString(3, ins.getTamytalent());
+			pstmt.setString(4, ins.getTaapplydate());
+			pstmt.setString(5, ins.getTatime());
+			pstmt.setString(6, ins.getTaloc());
+			pstmt.setInt(7, ins.getmKey());
 			pstmt.executeUpdate();
 			con.commit();
 			pstmt.close(); 
@@ -130,31 +133,27 @@ public class OfficialStoreDAO {
 	
 	
 	/*5[1단계:확인] 5. A06_DatabaseDao pstmt로 사원정보를 수정/삭제하는 기는 메서드를 만드세요.*/
-	public void updateOfficialStoreVOPre(OfficialStoreVO upt) {
+	public void updateTalentApplyVO(TalentApplyVO upt) {
 		try {
 			setConn();
 			// 자동커밋 방지
 			con.setAutoCommit(false);
 			
-			String sql = "update OfficialStore\r\n"
-					+ "			SET offictialPname=?,\r\n"
-					+ "				OfficialExplain = ?,\r\n"
-					+ "				OfficialRegDate = to_date(sysdate,'YYYY/MM/DD'),\r\n"
-					+ "				Officialnventory = ?,\r\n"
-					+ "				OfficialDiscount = ?,\r\n"
-					+ "				proCateKey = ?,\r\n"
-					+ "				fileKey = ?,\r\n"
-					+ "		   where OfficialKey = ?";
+			String sql = "update TalentApply\r\n"
+					+ "			SET taname=?,\r\n"
+					+ "				tamytalent = ?,\r\n"
+					+ "				taapplydate = ?,\r\n"
+					+ "				tatime = ?,\r\n"
+					+ "				taloc = ?\r\n"
+					+ "		   where taKey = ?";
 			pstmt  = con.prepareStatement(sql);
 			
-			pstmt.setString(1, upt.getOfficialPname());
-			pstmt.setString(2, upt.getOfficialExplain());
-			//pstmt.setDate(3, 2021/1/21);
-			pstmt.setInt(3, upt.getOfficialnventory());
-			pstmt.setInt(4, upt.getOfficialDiscount());
-			pstmt.setInt(5, upt.getProcateKey());
-			pstmt.setInt(6, upt.getFileKey());
-			pstmt.setInt(7, upt.getOfficialKey());
+			pstmt.setString(1, upt.getTaname());
+			pstmt.setString(2, upt.getTamytalent());
+			pstmt.setString(3, upt.getTaapplydate());
+			pstmt.setString(4, upt.getTatime());
+			pstmt.setString(5, upt.getTaloc());
+			pstmt.setInt(6, upt.getTaKey());
 			
 			pstmt.executeUpdate(); 
 			con.commit();
@@ -175,17 +174,17 @@ public class OfficialStoreDAO {
 
 	
 	
-	/*삭제 기능 메서드*/
-	public void deleteOfficialStoreVOPre(int officialKey) {
+	/*5[1단계:확인] 5. A06_DatabaseDao pstmt로 사원정보를 수정/삭제하는 기는 메서드를 만드세요.*/
+	public void deleteTalentApplyVO(int taKey) {
 		String sql = "delete \r\n"
-				+ "from OfficialStore \r\n"
-				+ "where officialKey=?\r\n";
+				+ "from TalentApply \r\n"
+				+ "where taKey=?\r\n";
 		try {
 			setConn();
 			// 자동커밋 방지
 			con.setAutoCommit(false);
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, officialKey);
+			pstmt.setInt(1, taKey);
 			pstmt.executeUpdate();
 			con.commit();
 			pstmt.close(); 
@@ -242,13 +241,11 @@ public class OfficialStoreDAO {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		OfficialStoreDAO DAO = new OfficialStoreDAO();
-		DAO.insertOfficialStoreVOPre(new OfficialStoreVO(201, "절대반지201", "절대반지201입니다.", "2022-01-10", 201, 201, 201,201));
-		DAO.insertOfficialStoreVOPre(new OfficialStoreVO(202, "절대반지202", "절대반지202입니다.", "2022-01-10", 202, 202, 202,202));
-		DAO.insertOfficialStoreVOPre(new OfficialStoreVO(203, "절대반지203", "절대반지203입니다.", "2022-01-10", 203, 203, 203,203));
-		DAO.insertOfficialStoreVOPre(new OfficialStoreVO(204, "절대반지204", "절대반지204입니다.", "2022-01-10", 204, 204, 204,204));
-		DAO.insertOfficialStoreVOPre(new OfficialStoreVO(205, "절대반지205", "절대반지205입니다.", "2022-01-10", 205, 205, 205,205));
-		
+		TalentApplyDAO DAO = new TalentApplyDAO();
+		DAO.deleteTalentApplyVO(1);
+		DAO.insertTalentApplyVO(new TalentApplyVO(304, "최윤진", "축구", "2022-01-10", "3시간", "성남", 201));
+		DAO.insertTalentApplyVO(new TalentApplyVO(305, "최윤진202", "축구202", "2022-01-12", "202시간", "성남202", 202));
+		DAO.insertTalentApplyVO(new TalentApplyVO(306, "최윤진203", "축구203", "2022-01-12", "203시간", "성남203", 203));
 		
 		
 		
