@@ -14,5 +14,3 @@ CREATE TABLE Board(
 	boParWritNum	NUMBER,
 	boContent	VARCHAR2(4000)
 );
-
-SELECT * FROM Board;

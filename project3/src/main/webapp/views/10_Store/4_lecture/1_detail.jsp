@@ -1,14 +1,8 @@
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"
-	import="lecture.*"
-	%>
+	pageEncoding="UTF-8"%>
 <%
 request.setCharacterEncoding("utf-8");
 %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
-<c:set var="path" value="${pageContext.request.contextPath}"/> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,14 +41,6 @@ p, td{
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
-<%
-
-	LectureDao dao = new LectureDao();
-	ArrayList<LectureVO> l01 = dao.lecSearch(1);
-	LectureVO thelec = l01.get(0);
-	
-%>
-
 
 
 	<div class="contents">
@@ -64,13 +50,14 @@ p, td{
 			<colgroup>
 				<col width="30%">
 			</colgroup>
-				<tr><td>강의 고유 번호</td><td><%=thelec.getLecKey() %></td></tr>
-				<tr><td>강의 명</td><td><%=thelec.getLecName() %></td></tr>
-				<tr><td>강사</td><td><%=thelec.getLecTeacher() %></td></tr>
-				<tr><td>수강제한인원</td><td><%=thelec.getLeclimitcnt() %></td></tr>
-				<tr><td>온라인 여부</td><td><%=thelec.getLeconlineavail() %></td></tr>
-				<tr><td>난이도</td><td><%=thelec.getLecdifficulty() %></td></tr>
-				<tr><td>강의 내용</td><td><%=thelec.getLeccontents() %></td></tr>
+				<tr><td>강의 명</td><td>####</td></tr>
+				<tr><td>강의 일정</td><td>####</td></tr>
+				<tr><td>첫 모임일</td><td>####</td></tr>
+				<tr><td>강사</td><td>#####</td></tr>
+				<tr><td>수강제한인원</td><td>####</td></tr>
+				<tr><td>난이도</td><td>####</td></tr>
+				<tr><td>강의 내용</td><td>####</td></tr>
+				<tr><td>별점</td><td>####</td></tr>
 			</table>
 			
 			<form>

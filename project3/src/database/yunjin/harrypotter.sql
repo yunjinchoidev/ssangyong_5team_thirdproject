@@ -9,5 +9,3 @@ CREATE TABLE harrypotter(
 	harryWeight	NUMBER,
 	mKey NUMBER CONSTRAINT harrypotter_mKey_fk REFERENCES member (mKey)
 );
-
-DROP TABLE harrypotter;

@@ -6,5 +6,3 @@ CREATE TABLE talentDonation(
 	talenLoc	VARCHAR2(100),
 	mKey NUMBER CONSTRAINT talentDonation_mKey_fk REFERENCES MEMBER(mKey)
 );
-
-SELECT * FROM talentDonation;

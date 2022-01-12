@@ -5,7 +5,7 @@ CREATE TABLE readingclub(
 	rcDate	DATE,
 	rcDues	NUMBER,
 	rsContents	VARCHAR2(4000),
-	mKey NUMBER CONSTRAINT readingclub_mKey_fk REFERENCES member(mKey),
+	proCateKey NUMBER CONSTRAINT readingclub_proCateKey_fk REFERENCES productcategory(proCateKey),
 	fileKey	NUMBER CONSTRAINT readingclub_fileKey_fk REFERENCES attachedfile(fileKey)
 );
 

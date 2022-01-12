@@ -10,6 +10,3 @@ CREATE TABLE storyrequest(
 	fileKey	NUMBER CONSTRAINT stotyrequest_fileKey_fk REFERENCES attachedfile(fileKey)
 );
 
-DROP TABLE storyrequest;
-
-SELECT * FROM STORYREQUEST;

@@ -7,6 +7,4 @@ CREATE TABLE lord(
 	lordHeight	NUMBER,
 	lordWeight	NUMBER,
 	mKey NUMBER CONSTRAINT lord_mKey_fk REFERENCES member (mKey)
-);
-
-DROP TABLE lord;
+)
