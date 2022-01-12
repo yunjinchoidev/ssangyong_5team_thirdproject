@@ -9,6 +9,92 @@ request.setCharacterEncoding("utf-8");
 <meta charset="UTF-8">
 <title>아이언맨 캐릭터 소개</title>
 <style>
+* {
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+/* layout */
+.wrap {
+	width: 100%;
+	overflow: hidden;
+	border: 1px solid white;
+}
+
+.contents {
+	width: 1000px;
+	height: 500px;
+	margin: 80px auto;
+	text-align: center;
+	padding: 50px 50px box-sizing: border-box;
+	border: 3px solid white;
+	position: relative;
+}
+
+}
+.contents h2 {
+	font-size: 200px;
+	font-weight: normal;
+	margin-bottom: 30px;
+}
+
+.contents p {
+	font-size: 14px;
+	font-color: white;
+}
+
+.contents ul.inner {
+	overflow: hidden;
+	width: 68%;
+	text-align: center;
+	position: absolute;
+	right: 5%;
+	top: 45%;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+.contents ul.inner li {
+	float: left;
+	width: 32.32%;
+	margin-right: 1.5%;
+	padding: 10px 20px 0;
+	box-sizing: border-box;
+	height: 250px;
+	box-shadow: 5px 5px 10px
+}
+
+.contents ul.inner li:nth-child(3) {
+	margin-right: 0;
+}
+
+.contents ul.inner h3 {
+	font-size: 55px;
+	color: white;
+}
+
+.contents ul.inner .txtBox {
+	margin-top: 20px;
+}
+
+.contents ul.inner .txtBox .tit {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.contents ul.inner .txtBox .tit {
+	font-size: 15px;
+	margin-bottom: 20px;
+}
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -20,29 +106,31 @@ request.setCharacterEncoding("utf-8");
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
+
 	<div class="wrap">
 		<div class="contents">
-			<h2 class="en">IRON MAN</h2>
-			<p>Anthony Edward Stark</p>
+		    <img src="../marvelmedia/ironman_image.png" style="margin-top:280px; width: 400px; height: 500px;">
+			<h2 class="en" style="color: white; font-size: 45px;">IRON MAN</h2>
+			<p style="color: white; font-size: 25px;">Anthony Edward Stark</p>
 			<ul class="inner">
-				<li><a href="#"></a>
+				<li><a href="#" ></a>
 					<h3>01</h3>
 					<div class="txtBox">
-						<p class="tit">Information</p>
-						<p class="txt">아이언맨의 정보를 확인해보세요!</p>
+						<p class="tit" style="color: white; font-size: 35px;">Information</p>
+						<p class="txt" style="color: white">아이언맨의 정보를 확인해보세요!</p>
 					</div> </a></li>
 
-				<li><a href="#"></a>
+				<li><a href="#" ></a>
 					<h3>02</h3>
 					<div class="txtBox">
-						<p class="tit">Power</p>
-						<p class="txt">아이언맨의 능력을 확인해보세요!</p>
+						<p class="tit" style="color: white; font-size: 35px;">Power</p>
+						<p class="txt" style="color: white">아이언맨의 능력을 확인해보세요!</p>
 					</div> </a></li>
 				<li><a href="#"></a>
 					<h3>03</h3>
 					<div class="txtBox">
-						<p class="tit">Connections</p>
-						<p class="txt">아이언맨과 연관된 캐릭터를 확인해보세요!</p>
+						<p class="tit" style="color: white; font-size: 35px;">Connections</p>
+						<p class="txt" style="color: white">아이언맨과 연관된 캐릭터를 확인해보세요!</p>
 					</div> </a></li>
 			</ul>
 		</div>
