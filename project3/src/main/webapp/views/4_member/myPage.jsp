@@ -343,7 +343,9 @@ top:3000px;
 <div id="memberInfoBox">
 	<div id="memberInfo">
 		<h1 id="nameArea">???님</h1><h4 id="idArea">ID입니다</h4><h4 id="nickArea">닉네임</h4>
+		<a href="memberInfoUpdate.jsp">
 		<button>회원정보수정</button>
+		</a>
 		<hr id="memberHr1">
 		<h1 id="memberLvArea">회원레벨:LV?</h1>
 		<h1 id="fanPower">덕력지수<br>&nbsp ??점</h1>
