@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마블스토어-장난감</title>
+<title>마블스토어-의류</title>
 
 <style>
 body{
@@ -180,33 +180,33 @@ AOS.init();
 <div id="prod1" data-aos="fade">
 <img src="../marvelmedia/marvelframe.png" width=400px; height=400px;>
 <a href="2_broomDetail/broom1_Detail.jsp">
-<img id="broom1" src="../marvelmedia/spiderman_toy.png" width="200px" height="200px">
+<img id="broom1" src="../marvelmedia/spiderman_clo.png" width="200px" height="200px">
 </a>
 <div id="prod1Info">
-<h3>스파이더맨 장난감</h3>
-<h3 style="position:absolute;left:20px; ">62000원</h3>
+<h3>스파이더맨 수트</h3>
+<h3 style="position:absolute;left:20px; ">72000원</h3>
 </div>
 </div>
 
 <div id="prod2" data-aos="fade">
 <img src="../marvelmedia/marvelframe.png" width=400px; height=400px;>
 <a href="2_broomDetail/broom2_Detail.jsp">
-<img id="broom2" src="../marvelmedia/blackwidow_toy.png" width="200px" height="200px">
+<img id="broom2" src="../marvelmedia/ironman_clo.png" width="200px" height="200px">
 </a>
 <div id="prod2Info">
-<h3>블랙위도우 레고</h3>
-<h3 style="position:absolute;left:20px; ">50000원</h3>
+<h3>아이언맨 수트</h3>
+<h3 style="position:absolute;left:20px; ">75000원</h3>
 </div>
 </div>
 
 <div id="prod3" data-aos="fade">
 <img src="../marvelmedia/marvelframe.png" width=400px; height=400px;>
 <a href="2_broomDetail/broom3_Detail.jsp">
-<img id="broom3" src="../marvelmedia/thor_toy.png" width="200px" height="200px">
+<img id="broom3" src="../marvelmedia/thor_clo.png" width="200px" height="200px">
 </a>
 <div id="prod3Info">
-<h3>토르 해머</h3>
-<h3 style="position:absolute;left:10px; ">45000원</h3>
+<h3>토르 반팔 상의</h3>
+<h3 style="position:absolute;left:10px; ">35000원</h3>
 </div>
 </div>
 
