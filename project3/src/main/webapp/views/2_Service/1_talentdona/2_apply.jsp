@@ -1,7 +1,9 @@
+<%@page import="talentApply.TalentApplyVO"%>
+<%@page import="talentApply.TalentApplyDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     import="java.util.*"
-    import="service.talent.*" %>
+    import="talent.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 <c:set var="path" value="${pageContext.request.contextPath}"/> 
@@ -18,27 +20,36 @@
 body{
 	border : 3px solid;
 }
-.donabox01{
-	display: flex;
-}
-
-.donabox01 img{
-	width: 100px;
-	height: 100px;
-	border: 3px solid;
-	flex : 1;
-}
 
 #talentapplytab{
-	width:70%;
-	height: 400px;
+	width:800px;
+	height: 500px;
+	border : 3px solid yellow;
 	margin : 0 auto;
+	font-size: 30px;
 }
+
+#talentapplytab table, #talentapplytab td, #talentapplytab tr{
+	border : 3px solid yellow;
+}
+
+input[type=text], #selctime, input[type=date]{
+	width: 400px;
+	height: 40px;
+	text-align: center;
+	font-size: 30px;
+}
+
 
 h1{
 	padding-top: 40px;
 }
 </style>
+<script>
+function check(){
+	alert("제출이 완료되었습니다.");
+}
+</script>
 </head>
 <body>
 
@@ -54,27 +65,57 @@ h1{
 	</jsp:include>
 	<!-- E서비스 메뉴삽입 -->
 
-
+			<%
+				int taKey=0;
+				String taKeyS = request.getParameter("taKey");
+				if(taKeyS!=null) {taKey=Integer.parseInt(taKeyS);}; 
+				String taloc = request.getParameter("taloc"); if(taloc==null) {taloc="";};
+				String taname = request.getParameter("taname"); if(taname==null) {taname="";};
+				String tamytalent = request.getParameter("tamytalent"); if(tamytalent==null) {tamytalent="";};
+				String taapplydate = request.getParameter("taapplydate"); if(taapplydate==null) {taapplydate="";};
+				String tatime = request.getParameter("tatime"); if(tatime==null) {tatime="";};
+			
+				
+				int mKey=0;
+				String mKeyS = request.getParameter("mKey");
+				if(mKeyS!=null) {mKey=Integer.parseInt(mKeyS);}; 
+				
+				TalentApplyDAO dao = new TalentApplyDAO();
+				dao.insertTalentApplyVO(new TalentApplyVO(taKey, taname, tamytalent, taapplydate, tatime, taloc, mKey));
+			
+			%>
 	<div class="contents">
 		<div class="cards">
 			<h1> 신청서 작성</h1>
-			<form action="6_listapply.jsp">
+			<form>
 			<table id="talentapplytab" border>
-				<tr><td>신청번호</td><td><input type="text" name="taKey"></td></tr> 
+				<colgroup>
+					<col width="30%">
+				</colgroup>
+				<tr><td>재능기부신청번호</td><td><input type="text" name="taKey"></td></tr> 
 				<tr><td>신청자</td><td><input type="text" name="taname"></td></tr> 
 				<tr><td>재능</td><td><input type="text" name="tamytalent"></td></tr> 
-				<tr><td>신청일</td><td><input type="text" name="taapplydate"></td></tr> 
-				<tr><td>참여 가능한 시간대</td><td><input type="text" name="tatime"></td></tr> 
+				<tr><td>신청일</td><td><input type="date" name="taapplydate">
+				
+				
+				</td></tr> 
 				<tr><td>참여 가능 장소</td><td><input type="text" name="taloc"></td></tr> 
+				<tr><td>참여 가능한 시간대</td>
+					<td><select name="tatime" id="selctime">
+						<option value="9~12">9~12</option>
+						<option value="12~15">12~15</option>
+						<option value="15~18">15~18</option></select>
+						</td>
+				</tr> 
+				
 				<tr><td>회원 번호</td><td><input type="text" name="mKey" ></td></tr> 
+					
 			</table>
-			<input type="submit" value="제출하기" onclick="location.href='6_listapply.jsp'">
+			<input type="submit" value="제출하기" onclick="check()">
 			<input type="button" value="돌아가기" onclick="location.href='0_default.jsp'">
 			</form>
 		</div>
 	</div>
-
-
 
 
 

@@ -80,7 +80,6 @@ function check(){
 				if(mKeyS!=null) {mKey=Integer.parseInt(mKeyS);}; 
 				
 				TalentApplyDAO dao = new TalentApplyDAO();
-				dao.insertTalentApplyVO(new TalentApplyVO(talenKey, talentYouWant, tamyChildPer, talenDate, taleLoc, mKey));
 			
 			%>
 	<div class="contents">
