@@ -112,6 +112,10 @@ a {
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 
+   	<!-- S반지제왕 메뉴 삽입 -->
+	<jsp:include page="/views/9_Marvel/menu.jsp">
+		<jsp:param name="name" value="go" />
+	</jsp:include>
 	<div class="wrap">
 		<div class="contents">
 		    <img src="../marvelmedia/thor_image.png" style="margin-top:280px; width: 400px; height: 500px;">
