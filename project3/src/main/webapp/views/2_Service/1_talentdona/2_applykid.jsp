@@ -66,22 +66,21 @@ function check(){
 	<!-- E서비스 메뉴삽입 -->
 
 			<%
-				int taKey=0;
-				String taKeyS = request.getParameter("taKey");
-				if(taKeyS!=null) {taKey=Integer.parseInt(taKeyS);}; 
-				String taloc = request.getParameter("taloc"); if(taloc==null) {taloc="";};
-				String taname = request.getParameter("taname"); if(taname==null) {taname="";};
-				String tamytalent = request.getParameter("tamytalent"); if(tamytalent==null) {tamytalent="";};
-				String taapplydate = request.getParameter("taapplydate"); if(taapplydate==null) {taapplydate="";};
-				String tatime = request.getParameter("tatime"); if(tatime==null) {tatime="";};
-			
+				int talenKey=0;
+				String talenKeyS = request.getParameter("talenKey");
+				if(talenKeyS!=null) {talenKey=Integer.parseInt(talenKeyS);}; 
+		
+				String talentYouWant = request.getParameter("talentYouWant"); if(talentYouWant==null) {talentYouWant="";};
+				String tamyChildPer = request.getParameter("tamyChildPer"); if(tamyChildPer==null) {tamyChildPer="";};
+				String talenDate = request.getParameter("talenDate"); if(talenDate==null) {talenDate="";};
+				String taleLoc = request.getParameter("taleLoc"); if(taleLoc==null) {taleLoc="";};
 				
 				int mKey=0;
 				String mKeyS = request.getParameter("mKey");
 				if(mKeyS!=null) {mKey=Integer.parseInt(mKeyS);}; 
 				
 				TalentApplyDAO dao = new TalentApplyDAO();
-				dao.insertTalentApplyVO(new TalentApplyVO(taKey, taname, tamytalent, taapplydate, tatime, taloc, mKey));
+				dao.insertTalentApplyVO(new TalentApplyVO(talenKey, talentYouWant, tamyChildPer, talenDate, taleLoc, mKey));
 			
 			%>
 	<div class="contents">
@@ -92,22 +91,12 @@ function check(){
 				<colgroup>
 					<col width="30%">
 				</colgroup>
-				<tr><td>재능기부참여신청번호</td><td><input type="text" name="taKey"></td></tr> 
-				<tr><td>신청자</td><td><input type="text" name="taname"></td></tr> 
-				<tr><td>재능</td><td><input type="text" name="tamytalent"></td></tr> 
-				<tr><td>신청일</td><td><input type="date" name="taapplydate">
-				
-				
+				<tr><td>재능기부참여신청번호</td><td><input type="text" name="talenKey"></td></tr> 
+				<tr><td>원하는 재능</td><td><input type="text" name="talentYouWant"></td></tr> 
+				<tr><td>아이의 성격</td><td><input type="text" name="tamyChildPer"></td></tr> 
+				<tr><td>신청 날짜</td><td><input type="date" name="talenDate">
+				<tr><td>신청 장소</td><td><input type="date" name="taleLoc">
 				</td></tr> 
-				<tr><td>참여 가능 장소</td><td><input type="text" name="taloc"></td></tr> 
-				<tr><td>참여 가능한 시간대</td>
-					<td><select name="tatime" id="selctime">
-						<option value="9~12">9~12</option>
-						<option value="12~15">12~15</option>
-						<option value="15~18">15~18</option></select>
-						</td>
-				</tr> 
-				
 				<tr><td>회원 번호</td><td><input type="text" name="mKey" ></td></tr> 
 					
 			</table>
