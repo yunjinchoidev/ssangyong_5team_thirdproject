@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     import="java.util.*"
-    import="talent.*" %>
+    import="talentApply.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 <c:set var="path" value="${pageContext.request.contextPath}"/> 
@@ -47,14 +47,14 @@
 		if(taloc==null) taloc="";
 		if(mKey==null) mKey="";
 		
-		dao.insertTalentApplyVOPre(new TalentApplyVO(_taKey, taname, tamytalent,
-				taapplydate, tatime, taloc, _mKey));
+		dao.insertTalentApplyVO((new TalentApplyVO(_taKey, taname, tamytalent,
+				taapplydate, tatime, taloc, _mKey)));
 		
 		
 		
 		
-		ArrayList<TalentApplyVO> taalllist = dao.Alllist();
-		ArrayList<TalentApplyVO> talist = dao.Search01(taname);
+		ArrayList<TalentApplyVO> taalllist = dao.TalentApplyist();
+		ArrayList<TalentApplyVO> talist = dao.SearchTalentApply(taname);
 		
 		
 		
