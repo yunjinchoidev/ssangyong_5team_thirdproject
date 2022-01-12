@@ -23,6 +23,24 @@ request.setCharacterEncoding("utf-8");
 	padding: 20px;
 	flex : 1;
 }
+
+.lectureboxchild img{
+	border : 10px solid yellow;
+}
+
+.lectureboxchild a{
+	color : white;
+	font-size: 30px;
+	text-decoration: none;
+}
+
+.lecbtn{
+	width:300px;
+	height: 150px;
+	margin: 30px;
+	font-size: 40px;
+	font-weight: bolder;
+}
 </style>
 </head>
 <body>
@@ -41,15 +59,21 @@ request.setCharacterEncoding("utf-8");
 	<div class="contents">
 		<div class="cards">
 			<h2>강의</h2>
-			<p>이 곳에서 원하는 강의를 수강신청 하십시오.</p>
+			<p>이 곳에서 원하는 강의를 수강신청 하십시오.
+	
 
+
+			</p>
+			
 			<div class="lecturebox">
 				<div class="lectureboxchild">
-					<a href="1_detail.jsp"><img
-						src="/project3/views/10_Store/4_lecture/Media/lecture01.png"></a>
+					<a href="1_detail.jsp?id=1"><img
+						src="/project3/views/10_Store/4_lecture/Media/lecture01.png">
+						입문자를 위한<br> 톨킨 따라잡기
+						</a>
 				</div>
 				<div class="lectureboxchild">
-					<a href="1_detail.jsp"><img
+					<a href="1_detail.jsp?id=2"><img
 						src="/project3/views/10_Store/4_lecture/Media/lecture02.png"></a>
 				</div>
 				<div class="lectureboxchild">
@@ -85,9 +109,12 @@ request.setCharacterEncoding("utf-8");
 						src="/project3/views/10_Store/4_lecture/Media/lecture03.png"></a>
 				</div>
 			</div>
+	
+			<button class="lecbtn" onclick="location.href='2_reglec.jsp'">등록하기</button>
+			<button class="lecbtn">수정하기</button>
 		</div>
 	</div>
-
+	
 
 
 

@@ -39,16 +39,14 @@ public class TalentDonationDAO {
 			setConn();
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			System.out.println("사원명 검색");
 			while( rs.next() ) {
 				TalentDonationVO ta = new TalentDonationVO();
-				ta.setTalenKey(rs.getInt("taKey"));
-				ta.settalenYouWant(rs.getString("talenYouWant"));
-				ta.setTamytalent(rs.getString("tamytalent"));
-				ta.setTaapplydate(rs.getString("taapplydate"));
-				ta.setTatime(rs.getString("taTime"));
-				ta.setTaloc(rs.getString("taloc"));
-				ta.setmKey(rs.getInt("mKey"));
+				ta.setTalenKey(rs.getInt(1));
+				ta.setTalentYouWant(rs.getString(2));
+				ta.setTalenChildPer(rs.getString(3));
+				ta.setTalenDate(rs.getString(4));
+				ta.setTalenLoc(rs.getString(5));
+				ta.setmKey(rs.getInt(6));
 				talist.add(ta);
 			}
 			rs.close();
@@ -63,7 +61,7 @@ public class TalentDonationDAO {
 		return talist;
 	}
 	
-	// 지원자 이름으로 검색
+	// 원하는 재능 이름으로 검색
 	public ArrayList<TalentDonationVO> SearchTalentDonation(String talenYouWant) {
 		ArrayList<TalentDonationVO> talist = new ArrayList<TalentDonationVO>();
 		String sql = "SELECT *\r\n"
@@ -77,12 +75,12 @@ public class TalentDonationDAO {
 			System.out.println("사원명 검색");
 			while( rs.next() ) {
 				TalentDonationVO ta = new TalentDonationVO();
-				ta.setTaKey(rs.getInt("taKey"));
-				ta.settalenYouWant(rs.getString("talenYouWant"));
-				ta.setTamytalent(rs.getString("tamytalent"));
-				ta.setTaapplydate(rs.getString("taapplydate"));
-				ta.setTatime(rs.getString("taTime"));
-				ta.setmKey(rs.getInt("mKey"));
+				ta.setTalenKey(rs.getInt(1));
+				ta.setTalentYouWant(rs.getString(2));
+				ta.setTalenChildPer(rs.getString(3));
+				ta.setTalenDate(rs.getString(4));
+				ta.setTalenLoc(rs.getString(5));
+				ta.setmKey(rs.getInt(6));
 				talist.add(ta);
 			}
 			rs.close();
@@ -100,22 +98,21 @@ public class TalentDonationDAO {
 
 	
 	
-	/*4 [1단계:확인] 4. A06_DatabaseDao pstmt로 사원정보를 등록하는 기는 메서드를 만드세요.*/
+	/*삽입*/
 	public void insertTalentDonationVO(TalentDonationVO ins) {
-		String sql = "INSERT INTO TalentDonation VALUES (?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO TalentDonation VALUES (?,?,?,?,?,?)";
 		try {
 			setConn();
 			// 자동커밋 방지
 			con.setAutoCommit(false);
 			pstmt = con.prepareStatement(sql);
 			
-			pstmt.setInt(1, ins.getTaKey());
-			pstmt.setString(2, ins.gettalenYouWant());
-			pstmt.setString(3, ins.getTamytalent());
-			pstmt.setString(4, ins.getTaapplydate());
-			pstmt.setString(5, ins.getTatime());
-			pstmt.setString(6, ins.getTaloc());
-			pstmt.setInt(7, ins.getmKey());
+			pstmt.setInt(1, ins.getTalenKey());
+			pstmt.setString(2, ins.getTalentYouWant());
+			pstmt.setString(3, ins.getTalenChildPer());
+			pstmt.setString(4, ins.getTalenDate());
+			pstmt.setString(5, ins.getTalenLoc());
+			pstmt.setInt(6, ins.getmKey());
 			pstmt.executeUpdate();
 			con.commit();
 			pstmt.close(); 
@@ -141,19 +138,19 @@ public class TalentDonationDAO {
 			
 			String sql = "update TalentDonation\r\n"
 					+ "			SET talenYouWant=?,\r\n"
-					+ "				tamytalent = ?,\r\n"
-					+ "				taapplydate = ?,\r\n"
-					+ "				tatime = ?,\r\n"
-					+ "				taloc = ?\r\n"
-					+ "		   where taKey = ?";
+					+ "				talentChildPer = ?,\r\n"
+					+ "				talenDate = ?,\r\n"
+					+ "				talenLoc = ?,\r\n"
+					+ "				mKey = ?,\r\n"
+					+ "		   where talenKey = ?";
 			pstmt  = con.prepareStatement(sql);
 			
-			pstmt.setString(1, upt.gettalenYouWant());
-			pstmt.setString(2, upt.getTamytalent());
-			pstmt.setString(3, upt.getTaapplydate());
-			pstmt.setString(4, upt.getTatime());
-			pstmt.setString(5, upt.getTaloc());
-			pstmt.setInt(6, upt.getTaKey());
+			pstmt.setString(1, upt.getTalentYouWant());
+			pstmt.setString(2, upt.getTalenChildPer());
+			pstmt.setString(3, upt.getTalenDate());
+			pstmt.setString(4, upt.getTalenLoc());
+			pstmt.setInt(5, upt.getmKey());
+			pstmt.setInt(6, upt.getTalenKey());
 			
 			pstmt.executeUpdate(); 
 			con.commit();
@@ -175,16 +172,16 @@ public class TalentDonationDAO {
 	
 	
 	/*5[1단계:확인] 5. A06_DatabaseDao pstmt로 사원정보를 수정/삭제하는 기는 메서드를 만드세요.*/
-	public void deleteTalentDonationVO(int taKey) {
+	public void deleteTalentDonationVO(int talenKey) {
 		String sql = "delete \r\n"
 				+ "from TalentDonation \r\n"
-				+ "where taKey=?\r\n";
+				+ "where talenKey=?\r\n";
 		try {
 			setConn();
 			// 자동커밋 방지
 			con.setAutoCommit(false);
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, taKey);
+			pstmt.setInt(1, talenKey);
 			pstmt.executeUpdate();
 			con.commit();
 			pstmt.close(); 
@@ -242,10 +239,7 @@ public class TalentDonationDAO {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		TalentDonationDAO DAO = new TalentDonationDAO();
-		DAO.deleteTalentDonationVO(1);
-		DAO.insertTalentDonationVO(new TalentDonationVO(304, "최윤진", "축구", "2022-01-10", "3시간", "성남", 201));
-		DAO.insertTalentDonationVO(new TalentDonationVO(305, "최윤진202", "축구202", "2022-01-12", "202시간", "성남202", 202));
-		DAO.insertTalentDonationVO(new TalentDonationVO(306, "최윤진203", "축구203", "2022-01-12", "203시간", "성남203", 203));
+		DAO.insertTalentDonationVO(new TalentDonationVO(201, "요리", "수줍음", "2021/01/12", "제주",201));
 		
 		
 		
