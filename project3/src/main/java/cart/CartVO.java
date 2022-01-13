@@ -5,10 +5,11 @@ import java.sql.Date;
 public class CartVO {
 	private int cartKey;
 	private Date cartDate;
+	private String cartDateS;
 	private int cartCnt;
 	private int cartPrice;
 	private int mKey;
-	private int offictialKey;
+	private int officialKey;
 	private int rentalKey;
 	private int cusKey;
 	private int lecKey;
@@ -19,7 +20,38 @@ public class CartVO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public CartVO(int cartKey, Date cartDate, int cartCnt, int cartPrice, int mKey, int offictialKey, int rentalKey,
+	public CartVO(int cartKey, Date cartDate, String cartDateS, int cartCnt, int cartPrice, int mKey, int officialKey,
+			int rentalKey, int cusKey, int lecKey, int requKey) {
+		super();
+		this.cartKey = cartKey;
+		this.cartDate = cartDate;
+		this.cartDateS = cartDateS;
+		this.cartCnt = cartCnt;
+		this.cartPrice = cartPrice;
+		this.mKey = mKey;
+		this.officialKey = officialKey;
+		this.rentalKey = rentalKey;
+		this.cusKey = cusKey;
+		this.lecKey = lecKey;
+		this.requKey = requKey;
+	}
+
+	public CartVO(int cartKey, String cartDateS, int cartCnt, int cartPrice, int mKey, int officialKey, int rentalKey,
+			int cusKey, int lecKey, int requKey) {
+		super();
+		this.cartKey = cartKey;
+		this.cartDateS = cartDateS;
+		this.cartCnt = cartCnt;
+		this.cartPrice = cartPrice;
+		this.mKey = mKey;
+		this.officialKey = officialKey;
+		this.rentalKey = rentalKey;
+		this.cusKey = cusKey;
+		this.lecKey = lecKey;
+		this.requKey = requKey;
+	}
+
+	public CartVO(int cartKey, Date cartDate, int cartCnt, int cartPrice, int mKey, int officialKey, int rentalKey,
 			int cusKey, int lecKey, int requKey) {
 		super();
 		this.cartKey = cartKey;
@@ -27,7 +59,7 @@ public class CartVO {
 		this.cartCnt = cartCnt;
 		this.cartPrice = cartPrice;
 		this.mKey = mKey;
-		this.offictialKey = offictialKey;
+		this.officialKey = officialKey;
 		this.rentalKey = rentalKey;
 		this.cusKey = cusKey;
 		this.lecKey = lecKey;
@@ -48,6 +80,14 @@ public class CartVO {
 
 	public void setCartDate(Date cartDate) {
 		this.cartDate = cartDate;
+	}
+
+	public String getCartDateS() {
+		return cartDateS;
+	}
+
+	public void setCartDateS(String cartDateS) {
+		this.cartDateS = cartDateS;
 	}
 
 	public int getCartCnt() {
@@ -74,12 +114,12 @@ public class CartVO {
 		this.mKey = mKey;
 	}
 
-	public int getOffictialKey() {
-		return offictialKey;
+	public int getOfficialKey() {
+		return officialKey;
 	}
 
-	public void setOffictialKey(int offictialKey) {
-		this.offictialKey = offictialKey;
+	public void setOfficialKey(int officialKey) {
+		this.officialKey = officialKey;
 	}
 
 	public int getRentalKey() {

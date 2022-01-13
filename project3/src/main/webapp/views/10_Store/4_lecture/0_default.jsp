@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="lecture.*" import="attachedFile.*"%>
 <%
 request.setCharacterEncoding("utf-8");
 %>
@@ -12,35 +12,43 @@ request.setCharacterEncoding("utf-8");
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 <style>
-.lecturebox{
-	display: flex;
-	width : 1000px;
-	height: 400px;
-	margin: 0 auto;
+
+.lectureboxchild {
 	padding: 20px;
-}
-.lectureboxchild{
-	padding: 20px;
-	flex : 1;
+	width: 300px;
+	height: 200px;
+	display: inline-block;
+	margin-top: 60px;
+	margin: 20px;
 }
 
-.lectureboxchild img{
-	border : 10px solid yellow;
+.lectureboxchild img {
+	border: 10px solid yellow;
+	width: 200px;
+	height: 1300px;
+	display: inline-block;
 }
 
-.lectureboxchild a{
-	color : white;
+.lectureboxchild a {
+	color: white;
 	font-size: 30px;
 	text-decoration: none;
 }
 
-.lecbtn{
-	width:300px;
+.lecbtn {
+	width: 300px;
 	height: 150px;
 	margin: 30px;
 	font-size: 40px;
 	font-weight: bolder;
 }
+
+input[type=submit]{
+	width : 200px;
+	height: 60px;
+	font-size: 30px;
+}
+
 </style>
 </head>
 <body>
@@ -54,67 +62,36 @@ request.setCharacterEncoding("utf-8");
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
-
-
+	<%
+	LectureDAO dao = new LectureDAO();
+	AttachedFileDAO dao01 = new AttachedFileDAO();
+	%>
 	<div class="contents">
 		<div class="cards">
 			<h2>강의</h2>
-			<p>이 곳에서 원하는 강의를 수강신청 하십시오.
-	
-
-
-			</p>
-			
-			<div class="lecturebox">
-				<div class="lectureboxchild">
-					<a href="1_detail.jsp?id=1"><img
-						src="/project3/views/10_Store/4_lecture/Media/lecture01.png">
-						입문자를 위한<br> 톨킨 따라잡기
-						</a>
-				</div>
-				<div class="lectureboxchild">
-					<a href="1_detail.jsp?id=2"><img
-						src="/project3/views/10_Store/4_lecture/Media/lecture02.png"></a>
-				</div>
-				<div class="lectureboxchild">
-					<a href="1_detail"><img
-						src="/project3/views/10_Store/4_lecture/Media/lecture03.png"></a>
-				</div>
-			</div>
-			<div class="lecturebox">
-				<div class="lectureboxchild">
-					<a href="1_detail.jsp"><img
-						src="/project3/views/10_Store/4_lecture/Media/lecture01.png"></a>
-				</div>
-				<div class="lectureboxchild">
-					<a href="1_detail.jsp"><img
-						src="/project3/views/10_Store/4_lecture/Media/lecture02.png"></a>
-				</div>
-				<div class="lectureboxchild">
-					<a href="1_detail.jsp"><img
-						src="/project3/views/10_Store/4_lecture/Media/lecture03.png"></a>
-				</div>
-			</div>
-			<div class="lecturebox">
-				<div class="lectureboxchild">
-					<a href="1_detail.jsp"><img
-						src="/project3/views/10_Store/4_lecture/Media/lecture01.png"></a>
-				</div>
-				<div class="lectureboxchild">
-					<a href="1_detail.jsp"><img
-						src="/project3/views/10_Store/4_lecture/Media/lecture02.png"></a>
-				</div>
-				<div class="lectureboxchild">
-					<a href="1_detail.jsp"><img
-						src="/project3/views/10_Store/4_lecture/Media/lecture03.png"></a>
-				</div>
-			</div>
-	
+			<p>이 곳에서 원하는 강의를 수강신청 하십시오.</p>
 			<button class="lecbtn" onclick="location.href='2_reglec.jsp'">등록하기</button>
-			<button class="lecbtn">수정하기</button>
+			<button class="lecbtn">수정하기</button><br>
+			
+			<%
+			for (LectureVO d : dao.lecList()) {
+			%>
+			<div class="lectureboxchild">
+			<form action="1_detail.jsp">
+				<a href="1_detail.jsp"><img src="/project3/views/10_Store/4_lecture/Media/<%=dao01.SearchfilePath(d.getFileKey())%>"> <br><%=d.getLecName() %>
+			
+						<input type="hidden" name="lecKeyS" value="<%=d.getLecKey()%>"><br>
+						<input type="submit" value="수강신청하기"></a>
+			</form>
+			
+			</div>
+			<%
+			}
+			%>
+			
 		</div>
 	</div>
-	
+
 
 
 

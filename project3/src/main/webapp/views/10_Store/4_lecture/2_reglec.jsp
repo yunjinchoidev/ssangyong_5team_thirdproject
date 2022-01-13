@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"
-	import="lecture.LectureDao"
+	import="lecture.LectureDAO"
 	import="lecture.LectureVO"
 	%>
 <%
@@ -30,6 +30,7 @@ input[type=text]{
 	width:500px;
 	height: 50px;
 	font-size: 40px;
+	text-align: center;
 }
 
 p, td{
@@ -59,7 +60,7 @@ p, td{
 	<!-- E헤더 삽입 -->
 
 <%
-	int lecKey=0; 
+int lecKey=0; 
 	int leclimitcnt=0; 
 	int leconlineavail=0;
 	int lecscore=0; 
@@ -92,13 +93,12 @@ p, td{
 
 	
 	
-	LectureDao dao = new LectureDao();
+	LectureDAO dao = new LectureDAO();
 	dao.insertLec(new LectureVO(
-			lecKey, lecName, lecTeacher,
-			leclimitcnt,leconlineavail, lecdifficulty, 
-			leccontents, lecscore, proCateKey, 
-			fileKey));
-	
+	lecKey, lecName, lecTeacher,
+	leclimitcnt,leconlineavail, lecdifficulty, 
+	leccontents, lecscore, proCateKey, 
+	fileKey));
 %>
 
 

@@ -10,7 +10,20 @@ CREATE TABLE literarycontest (
 	fileKey	NUMBER CONSTRAINT literarycontest_fileKey_fk REFERENCES attachedfile(fileKey)
 );
 
+SELECT *
+FROM LITERARYCONTEST;
+
+update LiteraryContest
+	SET literTitle=222222222,
+	literContents = 1,
+	literSort= 1,
+	literCareer= 1,
+	literProductionDate= 1,
+	literSubmissionDate= to_date('2021/1/11','YYYY/MM/DD'),
+	mKey=201,
+	fileKey= 201
+where literKey=1;
+
 
 
 DROP TABLE literarycontest; 
-

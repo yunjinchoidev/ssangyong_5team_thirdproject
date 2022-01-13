@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class LectureDao {
+public class LectureDAO {
 
 		private Connection con;
 		private Statement stmt;
@@ -66,7 +66,8 @@ public class LectureDao {
 		public ArrayList<LectureVO> lecList() {
 			ArrayList<LectureVO> leclist = new ArrayList<LectureVO>();
 			String sql = "SELECT *\r\n"
-					+ "FROM Lecture\r\n";
+					+ "FROM Lecture\r\n"
+					+ "order by lecKey";
 			
 			try {
 				setConn();
@@ -91,12 +92,12 @@ public class LectureDao {
 
 		
 		
-		//강의명으로조회//
+		//강의번호로으로조회//
 		public ArrayList<LectureVO> lecSearch(int lecKey) {
 			ArrayList<LectureVO> searchlist = new ArrayList<LectureVO>();
-			String sql = "SELECT *\r\n"
-					+ "FROM Lecture\r\n"
-					+ "WHERE lecKey = ?";	
+			String sql = "SELECT * \r\n"
+					+ "FROM Lecture \r\n"
+					+ "WHERE lecKey = ? ";	
 			System.out.println("# pstmt 실행 #");
 			try {
 				setConn();
@@ -104,14 +105,17 @@ public class LectureDao {
 				pstmt.setInt(1, lecKey);
 				
 				rs = pstmt.executeQuery();
+				
 				while( rs.next() ) {
 					searchlist.add(new LectureVO(rs.getInt(1), rs.getString(2), rs.getString(3),
 							rs.getInt(4), rs.getInt(5), rs.getString(6),
 							rs.getString(7), rs.getInt(8), rs.getInt(9),rs.getInt(10)));
 				}
+				
 				rs.close();
 				pstmt.close();
 				con.close();
+				
 			} catch (SQLException e) {
 				System.out.println(e.getMessage());
 				closeRsc();
@@ -229,12 +233,10 @@ public class LectureDao {
 		}
 
 		public static void main(String[] args) {
-			LectureDao dao = new LectureDao();
-			for(LectureVO l01 : dao.lecList()) {
-				System.out.println(l01.getLeccontents());
-			};
+			LectureDAO dao = new LectureDAO();
+			for(LectureVO a : dao.lecSearch(1)) {
+				System.out.println(a.getLecName());
+			}
 			
-			dao.insertLec(new LectureVO(300, "A", "AA", 299, 299, "A", "AA", 201, 201, 201));
 		}
-
 }
