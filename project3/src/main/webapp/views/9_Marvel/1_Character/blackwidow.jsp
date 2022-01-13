@@ -118,7 +118,7 @@ a {
 
 	<div class="wrap">
 		<div class="contents">
-		    <img src="../marvelmedia/blackwidow_image.png" style="margin-top:280px; width: 450px; height: 400px;">
+		    <img src="../marvelmedia/Blackwidow_image.png"  style="margin-top:300px; width: 450px; height: 450px;">
 			<h2 class="en" style="color: white; font-size: 45px;">BLACK WIDOW</h2>
 			<p style="color: white; font-size: 25px;">Natalia Alianovna Romanoff</p>
 			<ul class="inner">

@@ -183,7 +183,7 @@ AOS.init();
 <img id="broom1" src="../marvelmedia/spiderman_toy.png" width="200px" height="200px">
 </a>
 <div id="prod1Info">
-<h3>스파이더맨 장난감</h3>
+<h3>스파이더맨 레고</h3>
 <h3 style="position:absolute;left:20px; ">62000원</h3>
 </div>
 </div>
