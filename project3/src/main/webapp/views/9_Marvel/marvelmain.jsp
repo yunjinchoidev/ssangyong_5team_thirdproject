@@ -10,7 +10,7 @@ request.setCharacterEncoding("utf-8");
 <title>마블인트로페이지</title>
 <style>
 body {
-   background-color: #202020;
+   background-color: black;
 }
 
 button {
@@ -34,72 +34,68 @@ button:hover {
    height: 40px;
    font-weight: bold;
    background-color: #DB0000;
-   background-color: rgba(0, 0, 0, 0);
    border-top-left-radius: 5px;
    border-bottom-left-radius: 5px;
    border-top-right-radius: 5px;
    border-bottom-right-radius: 5px;
 }
-
-#marvelLogo {
-   position: absolute;
-   left: 300px;
-   top: 300px;
+#marvellogo{
+position:absolute;
+left:780px;
+top: 215px;
 }
+
 
 #marvelBanner {
    position: absolute;
-   top: 500px;
+   top: 600px;
    left: 300px;
 }
 
 #marvelBannerText {
    color: white;
-   font-size: 15px;
+   font-size: 20pt;
    position: absolute;
-   top: 1350px;
-   left: 850px;
+   top: 950px;
+   left: 600px;
 }
 
 #marvelShop {
    position: absolute;
-   top: 1700px;
-   left: 800px;
+   top: 1200px;
+   left: 900px;
 }
 
-#mavelShopText {
+#marvelShopText {
    color: white;
    font-size: 20pt;
    position: absolute;
-   top: 1900px;
-   left: 450px;
+   top: 1550px;
+   left: 650px;
 }
 
-#mavelBoard {
+#marvelBoard {
    position: absolute;
-   top: 2400px;
+   top: 2300px;
    left: 300px;
 }
 
-#mavelBoardText {
+#marvelBoardText {
    color: white;
    font-size: 20pt;
    position: absolute;
-   top: 2700px;
-   left: 850px;
+   top: 2750px;
+   left: 650px;
 }
 
-#bottom {
-   position: absolute;
-   top: 3300px;
-   left: 20px;
-}
+
 
 #footer {
    position: absolute;
    width: 100%;
    height: 200px;
    top: 3800px;
+
 }
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -113,43 +109,49 @@ button:hover {
    </jsp:include>
    <!-- E헤더 삽입 -->
 
+
    <script>
       AOS.init();
    </script>
-   <div id="marvelLogo" data-aos="fade-zoom-in"
-      data-aos-easing="ease-in-back" data-aos-delay="10" data-aos-offset="0">
-      <img src="marvelmedia\marvellogo.png">
+   
+   <div id="marvellogo" 
+     data-aos="fade-zoom-in" 
+     data-aos-easing="ease-in-back"
+     data-aos-delay="10"
+     data-aos-offset="0">
+   <img src="marvelmedia/marvellogo.png" width="350px" height="100px">
    </div>
-
+   
 
    <!-- 마블캐릭터 -->
    <div id="marvelBanner" data-aos="fade-up">
-      <img src="marvelmedia/marvelbanner.png" width="500px" height="300px">
+      <img src="marvelmedia/marvelbanner.png" width="600px" height="450px">
    </div>
    <div id="marvelBannerText" data-aos="fade-up">
-      <h1>좋아하는 캐릭터를 선택해주세요!</h1>
+      <h1 style="color:white">좋아하는 캐릭터를 선택해주세요!</h1>
+      <a href="1_Character/spiderman.jsp" style="text-decoration:none">
       <button type="button" style="position: absolute;">캐릭터 선택</button>
    </div>
 
    <!-- 스토어 이동 -->
    <div id="marvelShop" data-aos="fade-up">
-      <img src="marvelmedia\marvelshop.png" width="500px" height="300px">
+      <img src="marvelmedia/marvelshop.png" width="600px" height="400px">
    </div>
    <div id="marvelShopText" data-aos="fade-up">
-      <h1>쇼핑할 준비는 되셨나요?</h1>
+      <h1 style="color:white"}>쇼핑할 준비는 되셨나요?</h1>
+      <a href="2_Marvelshop/toy.jsp" style="text-decoration:none">
       <button type="button" style="position: absolute;">스토어 이동</button>
    </div>
 
    <div id="marvelBoard" data-aos="fade-up">
-      <img src="marvelmedia\marvelboard.png" width="500px" height="300px">
+      <img src="marvelmedia/marvelboard.png" width="600px" height="400px">
    </div>
-   <div id="mavelBoardText" data-aos="fade-up">
-      <h1>마블에 관련된 이야기를 나누어볼까요?</h1>
+   <div id="marvelBoardText" data-aos="fade-up">
+      <h1 style="color:white">마블에 관련된 이야기를 나누어볼까요?</h1>
+      <a href="#">
       <button type="button" style="position: absolute;">게시판 이동</button>
    </div>
-   <div id="bottom" data-aos="fade-up">
-      <img src="media/hogwarts.png" width="1850px" height="600px">
-   </div>
+ 
    <div id="footer">
       <!-- S푸터 삽입 -->
       <jsp:include page="/views/common/commonfooter.jsp">

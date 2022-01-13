@@ -115,6 +115,24 @@ $(document).ready(function() {
 			  }
 			})
 	});
+	
+	$("#cancelBtn").click(function () {
+        Swal.fire({
+            icon: 'confirm',
+            title: '회원가입 취소',
+            text: '취소하시겠습니까?',
+            showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: '확인',
+			  cancelButtonText: '취소'
+        }).then((result) => {
+			  if (result.value) {
+				  location.replace('../3_login/Login.jsp');
+			  }
+			  
+			})
+    });
 
 });
 
@@ -142,7 +160,7 @@ $(document).ready(function() {
 		</table>
 		<br>
 		<div id="btnDiv">
-		<a href="../3_login/Login.jsp"><button id="cancelBtn" type= "button" style="position:absolute;left:80px;">취소</button>	</a>
+		<button id="cancelBtn" type= "button" style="position:absolute;left:80px;">취소</button>
 		<button type="button" id="confirmBtn">확인</button>
 		</div>
 	</form>
