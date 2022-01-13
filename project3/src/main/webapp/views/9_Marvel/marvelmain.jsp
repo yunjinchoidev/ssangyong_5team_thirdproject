@@ -95,6 +95,7 @@ top: 215px;
    width: 100%;
    height: 200px;
    top: 3800px;
+
 }
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -127,8 +128,8 @@ top: 215px;
       <img src="marvelmedia/marvelbanner.png" width="600px" height="450px">
    </div>
    <div id="marvelBannerText" data-aos="fade-up">
-      <h1>좋아하는 캐릭터를 선택해주세요!</h1>
-      <a href="1_Character/spiderman.jsp">
+      <h1 style="color:white">좋아하는 캐릭터를 선택해주세요!</h1>
+      <a href="1_Character/spiderman.jsp" style="text-decoration:none">
       <button type="button" style="position: absolute;">캐릭터 선택</button>
    </div>
 
@@ -137,8 +138,8 @@ top: 215px;
       <img src="marvelmedia/marvelshop.png" width="600px" height="400px">
    </div>
    <div id="marvelShopText" data-aos="fade-up">
-      <h1>쇼핑할 준비는 되셨나요?</h1>
-      <a href="2_Marvelshop/toy.jsp">
+      <h1 style="color:white"}>쇼핑할 준비는 되셨나요?</h1>
+      <a href="2_Marvelshop/toy.jsp" style="text-decoration:none">
       <button type="button" style="position: absolute;">스토어 이동</button>
    </div>
 
@@ -146,7 +147,7 @@ top: 215px;
       <img src="marvelmedia/marvelboard.png" width="600px" height="400px">
    </div>
    <div id="marvelBoardText" data-aos="fade-up">
-      <h1>마블에 관련된 이야기를 나누어볼까요?</h1>
+      <h1 style="color:white">마블에 관련된 이야기를 나누어볼까요?</h1>
       <a href="#">
       <button type="button" style="position: absolute;">게시판 이동</button>
    </div>
