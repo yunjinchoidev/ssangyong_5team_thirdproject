@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%request.setCharacterEncoding("utf-8"); %>
@@ -147,6 +148,7 @@ $(document).ready(function() {
 			}).then((result) => {
 			  if (result.value) {
 	              $('form').submit();
+	          
 			  }
 			})
 	});
@@ -154,7 +156,34 @@ $(document).ready(function() {
 });
 
 </script>
-		
+
+<%
+// 컨트롤러에서 받아온 DB의 id, pass
+
+String id = (String) request.getAttribute("id");
+String pass = (String) request.getAttribute("pass");
+
+// jsp에서 받아온 id, pass
+String id2 = request.getParameter("id");
+String pass2 = request.getParameter("pass");
+
+try{
+	if(id2!=null && pass2!=null){
+		if(id.equals(id2) && pass.equals(pass2)){
+			session.setAttribute("ID", id2);
+			session.setAttribute("PASSWORD", pass2);
+	
+			response.sendRedirect("views/0_Main/aboutus.jsp");
+	
+		}
+	}
+}catch(Exception e){
+	out.println(e.getMessage());
+	out.println("<script>alert('로그인 정보를 확인해주세요')</script>");
+}
+
+%>
+	
 <body>
 <jsp:include page="/views/common/commonheader.jsp">
 		<jsp:param name="name" value="go" />

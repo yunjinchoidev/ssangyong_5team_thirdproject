@@ -80,6 +80,19 @@ public class MemberVO {
 		this.mAddress = mAddress;
 	}
 	
+	public MemberVO(int mkey, String mId, String mPass, String mName, String mEmail, String phonenum, String mReg,
+			String nickname, String mGender,String mAddress) {
+		this.mId = mId;
+		this.mPass = mPass;
+		this.mName = mName;
+		this.mEmail = mEmail;
+		this.phonenum = phonenum;
+		this.mReg = mReg;
+		this.nickname = nickname;
+		this.mGender = mGender;
+		this.mAddress = mAddress;
+	}
+	
 	public int getmKey() {
 		return mKey;
 	}
