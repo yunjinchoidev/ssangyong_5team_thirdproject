@@ -7,15 +7,15 @@ request.setCharacterEncoding("utf-8");
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>반지의제왕</title>
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 
 <style>
 .testtab {
-	width: 1300px;
-	height: 1000px;
+	width: 1400px;
+	height: 1300px;
 	margin: 0 auto;
 	font-size: 20px;
 }
@@ -28,6 +28,19 @@ request.setCharacterEncoding("utf-8");
 p {
 	color: white;
 	font-size: 40px;
+}
+
+input[type=submit]{
+	width: 500px;
+	height: 100px;
+	font-size: 60px;
+	margin: 30px;
+}
+input[type=text]{
+	width: 300px;
+	height: 50px;
+	font-size: 50px;
+	text-align: center;
 }
 </style>
 </head>

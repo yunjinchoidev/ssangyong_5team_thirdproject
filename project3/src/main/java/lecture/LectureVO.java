@@ -11,12 +11,13 @@ public class LectureVO {
 	private int lecscore;
 	private int proCateKey;
 	private int fileKey;
+	private int lecPrice;
 	public LectureVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public LectureVO(int lecKey, String lecName, String lecTeacher, int leclimitcnt, int leconlineavail,
-			String lecdifficulty, String leccontents, int lecscore, int proCateKey, int fileKey) {
+			String lecdifficulty, String leccontents, int lecscore, int proCateKey, int fileKey, int lecPrice) {
 		super();
 		this.lecKey = lecKey;
 		this.lecName = lecName;
@@ -28,6 +29,7 @@ public class LectureVO {
 		this.lecscore = lecscore;
 		this.proCateKey = proCateKey;
 		this.fileKey = fileKey;
+		this.lecPrice = lecPrice;
 	}
 	public int getLecKey() {
 		return lecKey;
@@ -89,6 +91,13 @@ public class LectureVO {
 	public void setFileKey(int fileKey) {
 		this.fileKey = fileKey;
 	}
-
+	public int getLecPrice() {
+		return lecPrice;
+	}
+	public void setLecPrice(int lecPrice) {
+		this.lecPrice = lecPrice;
+	}
+	
+	
 
 }

@@ -8,3 +8,15 @@ CREATE TABLE lord(
 	lordWeight	NUMBER,
 	mKey NUMBER CONSTRAINT lord_mKey_fk REFERENCES member (mKey)
 )
+
+SELECT *
+FROM lordTest;
+
+
+DELETE lordTest;
+
+CREATE TABLE lordtest(
+	lordtestkey NUMBER PRIMARY key,
+	mKey NUMBER CONSTRAINT lord_mKey_fk REFERENCES member (mKey),
+	sumoftest number
+)

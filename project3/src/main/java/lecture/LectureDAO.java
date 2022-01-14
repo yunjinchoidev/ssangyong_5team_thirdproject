@@ -76,7 +76,7 @@ public class LectureDAO {
 				while( rs.next() ) {
 					leclist.add(new LectureVO(rs.getInt(1), rs.getString(2), rs.getString(3),
 							rs.getInt(4), rs.getInt(5), rs.getString(6),
-							rs.getString(7), rs.getInt(8), rs.getInt(9),rs.getInt(10)));
+							rs.getString(7), rs.getInt(8), rs.getInt(9),rs.getInt(10), rs.getInt(11)));
 				}
 				rs.close();
 				pstmt.close();
@@ -109,7 +109,7 @@ public class LectureDAO {
 				while( rs.next() ) {
 					searchlist.add(new LectureVO(rs.getInt(1), rs.getString(2), rs.getString(3),
 							rs.getInt(4), rs.getInt(5), rs.getString(6),
-							rs.getString(7), rs.getInt(8), rs.getInt(9),rs.getInt(10)));
+							rs.getString(7), rs.getInt(8), rs.getInt(9),rs.getInt(10),rs.getInt(11)));
 				}
 				
 				rs.close();
@@ -127,7 +127,7 @@ public class LectureDAO {
 		
 		//삽입//
 		public void insertLec(LectureVO ins) {
-			String sql = "INSERT INTO Lecture VALUES (?,?,?,?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO Lecture VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 			try {
 				setConn();
 				con.setAutoCommit(false);
@@ -142,6 +142,7 @@ public class LectureDAO {
 				pstmt.setInt(8,ins.getLecscore());
 				pstmt.setInt(9,ins.getProCateKey());
 				pstmt.setInt(10,ins.getFileKey());
+				pstmt.setInt(11,ins.getLecPrice());
 				
 				pstmt.executeUpdate();
 				con.commit();
@@ -177,6 +178,7 @@ public class LectureDAO {
 								"Lecscore = ?,\r\n"+
 								"ProCateKey = ?,\r\n"+
 								"FileKey = ?,\r\n"+
+								"lecPrice = ?\r\n"+
 								"where LecKey = ?";
 				pstmt = con.prepareStatement(sql);
 			
@@ -189,7 +191,8 @@ public class LectureDAO {
 				pstmt.setInt(7,upt.getLecscore());
 				pstmt.setInt(8,upt.getProCateKey());
 				pstmt.setInt(9,upt.getFileKey());
-				pstmt.setInt(10, upt.getLecKey());
+				pstmt.setInt(10,upt.getLecPrice());
+				pstmt.setInt(11, upt.getLecKey());
 				pstmt.executeUpdate();
 				con.commit();
 				pstmt.close();

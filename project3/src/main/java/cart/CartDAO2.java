@@ -1,6 +1,5 @@
 package cart;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -91,7 +90,7 @@ public class CartDAO2 {
 		
 		
 		//강의번호로으로조회//
-		public ArrayList<CartVO2> lecSearch(int mKey) {
+		public ArrayList<CartVO2> cartSearch(int mKey) {
 			ArrayList<CartVO2> searchlist = new ArrayList<CartVO2>();
 			String sql = "	 select cartKey, cartPrice, mKey, lecKey \r\n"
 					+ "	from cart \r\n"+
@@ -121,8 +120,8 @@ public class CartDAO2 {
 		
 		
 		//삽입//
-		public void insertLec(CartVO2 ins) {
-			String sql = "INSERT INTO cart VALUES (?,to_date(?,'YYYY/MM/DD'),?,?,null,null,null,null,?,null)";
+		public void insertcart(CartVO2 ins) {
+			String sql = "INSERT INTO cart VALUES (?,to_date(sysdate,'YYYY/MM/DD'),null,?,?,null,null,null,?,null)";
 			try {
 				setConn();
 				con.setAutoCommit(false);
@@ -130,12 +129,12 @@ public class CartDAO2 {
 				pstmt.setInt(1, ins.getCartKey());
 				//pstmt.setString(2,ins.getCartDateS());
 				//pstmt.setInt(3,ins.getCartCnt());
-				pstmt.setInt(4,ins.getCartPrice());
-				pstmt.setInt(5,ins.getmKey());
+				pstmt.setInt(2,ins.getCartPrice());
+				pstmt.setInt(3,ins.getmKey());
 				//pstmt.setInt(6,ins.getOfficialKey());
 				//pstmt.setInt(7,ins.getRentalKey());
 				//pstmt.setInt(8,ins.getCusKey());
-				pstmt.setInt(9,ins.getLecKey());
+				pstmt.setInt(4,ins.getLecKey());
 				//pstmt.setInt(10,ins.getRequKey());
 				
 				pstmt.executeUpdate();
@@ -157,7 +156,7 @@ public class CartDAO2 {
 		
 		
 		/* 수정 */
-		public void updateLec(CartVO2 upt) {
+		public void updatecart(CartVO2 upt) {
 			try {
 				setConn();
 				con.setAutoCommit(false);
@@ -215,7 +214,10 @@ public class CartDAO2 {
 			CartDAO2 dao = new CartDAO2();
 			for(CartVO2 a : dao.cartList()) {
 				System.out.println(a.getCartKey());
-			}
+			};
+			
+			dao.insertcart(new CartVO2(3, 20, 3, 201));
+			
 			
 		}
 }

@@ -13,6 +13,8 @@ CREATE TABLE literarycontest (
 SELECT *
 FROM LITERARYCONTEST;
 
+DELETE LITERARYCONTEST;
+
 update LiteraryContest
 	SET literTitle=222222222,
 	literContents = 1,

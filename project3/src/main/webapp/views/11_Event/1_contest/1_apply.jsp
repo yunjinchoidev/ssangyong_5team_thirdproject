@@ -12,14 +12,14 @@ request.setCharacterEncoding("utf-8");
 <head>
 <link rel="stylesheet" type="text/css" href="/project3/views/CSS/commoncss.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>신춘문예</title>
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <style>
 .literapplytab{
 	width : 1000px;
-	height : 800px;
-	border: 3px solid white;
-	font-size: 30px;
+	height : 600px;
+	border: 3px solid yellow;
+	font-size: 20px;
 }
 
 
@@ -34,6 +34,13 @@ input[type=text], input[type=date], select{
 		font-size: 30px;
 }
 
+
+input[type=submit]{
+	width: 500px;
+	height: 100px;
+	font-size: 60px;
+	margin: 30px;
+}
 </style>
 <script>
 function check() {
@@ -78,7 +85,6 @@ if(literProductionDateS!=null) {literProductionDate=Integer.parseInt(literProduc
 
 String literSubmissionDateS = request.getParameter("literSubmissionDateS"); if(literSubmissionDateS==null) {literSubmissionDateS="";};
 
-
 int mKey=0;
 String mKeyS = request.getParameter("mKey");
 if(mKeyS!=null) {mKey=Integer.parseInt(mKeyS);}; 
@@ -95,12 +101,13 @@ dao.insertlt(new LiteraryContestVO(
 		literProductionDate,literSubmissionDateS,
 		mKey, fileKey));
 
+System.out.println(literSubmissionDateS);
 %>
 
 	<div class="contents">
 		<div class="cards">
-			<h1>제 1회 판타지 빌리지 신춘문예 신청서</h1>
-			<h2>신춘문예 작품 공모서</h2>
+			<h1>제 1회 판타지 빌리지 신춘문예 공모서</h1>
+			<hr style="border:3px solid yellow; margin:30px;">
 			<form>
 				<table border="1" align="center" class="literapplytab">
 					<colgroup>
@@ -135,7 +142,16 @@ dao.insertlt(new LiteraryContestVO(
 						</tr>
 						<tr>
 							<td width="100">지원자의 경력 :</td>
-							<td><input type="text" name="literCareer" size="20"></td>
+							<td>
+								<select  name="literCareer">
+								<option value="1년">1년</option>
+								<option value="2년">2년</option>
+								<option value="3년">3년</option>
+								<option value="4년">4년</option>
+								<option value="5년">5년</option>
+							</select>
+							
+							</td>
 						</tr>
 						<tr>
 							<td width="100">제작기간 :</td>
@@ -152,7 +168,9 @@ dao.insertlt(new LiteraryContestVO(
 						</tr>
 						<tr>
 							<td width="100">제출일 :</td>
-							<td><input type="date" name="literProductionDateS" size="20"></td>
+							<td>
+								<input type="text" name="literSubmissionDateS" size="10" autofocus="" placeholder="YYYY/MM/DD">
+							</td>
 						</tr>
 						<tr>
 							<td width="100">회원번호:</td>
@@ -164,7 +182,7 @@ dao.insertlt(new LiteraryContestVO(
 						</tr>
 				</table>
 				<br>
-				<input type="submit" value="가입신청" onclick="check()">
+				<input type="submit" value="공모하기" onclick="check()">
 				</form>
 				
 		</div>

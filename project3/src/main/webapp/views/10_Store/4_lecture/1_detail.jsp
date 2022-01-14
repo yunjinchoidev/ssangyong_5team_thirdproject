@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>강의</title>
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 <style>
@@ -99,15 +99,19 @@ p {
 				<tr><td>난이도</td><td><%=l01.getLecdifficulty()%></td></tr>
 				<tr><td>난이도</td><td><%=l01.getLecdifficulty()%></td></tr>
 				<tr><td>평점</td><td><%=l01.getLecscore()%></td></tr>
-				<%} %>
+				<tr><td>가격</td><td><%=l01.getLecPrice()%></td></tr>
+				
+				<form action="4_cart.jsp"> 
+				<tr><td colspan="2">
+				<input
+					type="submit" value="장바구니담기" class="leclin">
+					<input type="hidden" name="lecKey" value="<%=l01.getLecKey()%>"></td>
+				<%} %>		
+				</form></tr>
 			</table>
-			<form action="4_cart.jsp">
 				<input type="button" value="메인으로이동"
 					onclick="location.href='0_default.jsp'" class="leclin"> 
-					<input
-					type="submit" value="수강신청하기" class="leclin">
-					<input type="hidden" name="lecKey" value=lecKeyA>
-			</form>
+	
 
 		</div>
 	</div>

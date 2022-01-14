@@ -14,7 +14,7 @@ request.setCharacterEncoding("utf-8");
 <head>
 <link rel="stylesheet" type="text/css" href="/project3/views/CSS/commoncss.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>신춘문예</title>
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <style>
 .literapplytab{
@@ -149,7 +149,14 @@ dao.insertlt(new LiteraryContestVO(
 						</tr>
 						<tr>
 							<td width="100">지원자의 경력 :</td>
-							<td><input type="text" name="literCareer" value="<%=theone.getLiterCareer() %>" size="20"></td>
+							<td>
+								<select  name="literCareer">
+								<option value="1년">1년</option>
+								<option value="2년">2년</option>
+								<option value="3년">3년</option>
+								<option value="4년">4년</option>
+								<option value="5년">5년</option>
+							</select>
 						</tr>
 						<tr>
 							<td width="100">제작기간 :</td>
@@ -166,16 +173,12 @@ dao.insertlt(new LiteraryContestVO(
 							일</td>
 						</tr>
 						<tr>
-							<td width="100">제출일 :</td>
-							<td><input type="date" name="literProductionDateS" size="20" value="<%=theone.getLiterCareer() %>"></td>
-						</tr>
-						<tr>
 							<td width="100">회원번호:</td>
 							<td><input type="text" name="mKey" size="20" value="<%=theone.getmKey() %>" ></td>
 						</tr>
 						<tr>
 							<td width="100">파일:</td>
-							<td><input type="text" name="fileKey" size="20" value="<%=theone.getFileKey()%>"></td>
+							<td><input type="text" name="fileKey" size="20" value="<%=theone.getFileKey()%>" ></td>
 						</tr>
 				</table>
 				<br>

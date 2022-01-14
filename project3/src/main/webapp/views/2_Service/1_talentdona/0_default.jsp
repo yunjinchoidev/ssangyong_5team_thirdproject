@@ -114,11 +114,8 @@ p {
 			<button onclick="location.href='1_apply.jsp'" class="talbtn">재능을 나누고 싶어요<br>(기부자 등록)</button>
 			<button onclick="location.href='2_applykid.jsp'" class="talbtn">재능기부를 받고 싶어요<br>(참여자 등록)</button>
 
-			<div class="donabox01">
-				<img src="dona01.jpg"> <img src="dona02.jpg"> <img
-					src="dona03.jpg">
-			</div>
-
+			<hr style="border : 5px solid yellow; margin: 40px; ">
+			
 
 			<h2>재능을 나누겠다고 한 사람들</h2>
 			<%

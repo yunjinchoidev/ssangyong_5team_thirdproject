@@ -25,6 +25,15 @@ p{
 	font-size: 100px;
 	font-weight: bolder;
 }
+
+#go {
+	width: 100%;
+	height: 100px;
+	background-color: #051f30;
+	margin: 0;
+	padding: 0;
+}
+
 </style>
 </head>
 <body>
@@ -33,7 +42,6 @@ p{
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
-
 
 	<div class="contents">
 		<div class="cards">

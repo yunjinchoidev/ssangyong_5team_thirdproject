@@ -1,4 +1,4 @@
-ACREATE TABLE cart(
+CREATE TABLE cart(
 	cartKey	NUMBER PRIMARY KEY,
 	cartDate	DATE,
 	cartCnt	NUMBER,
@@ -15,9 +15,12 @@ SELECT * FROM cart;
 
 DROP TABLE cart;
 
-
  select cartKey, mname, lecname
 from member m, lecture l, cart c
   where m.mKey=c.mKey and c.lecKey=l.lecKey;
+ 
+ 
+ 
+ 
 
 	

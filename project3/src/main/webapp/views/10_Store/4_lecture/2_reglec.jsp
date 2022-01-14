@@ -14,7 +14,7 @@ request.setCharacterEncoding("utf-8");
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>강의</title>
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
@@ -66,6 +66,7 @@ int lecKey=0;
 	int lecscore=0; 
 	int proCateKey=0;
 	int fileKey=0;
+	int lecPrice=0;
 	
 	String lecKeyS = request.getParameter("lecKey");
 	if(lecKeyS!=null) {lecKey=Integer.parseInt(lecKeyS);}; 
@@ -91,14 +92,16 @@ int lecKey=0;
 	String fileKeyS =request.getParameter("fileKey");
 	if(fileKeyS!=null) {fileKey=Integer.parseInt(fileKeyS);}; 
 
-	
+	String lecPriceS =request.getParameter("lecPrice");
+	if(lecPriceS!=null) {lecPrice=Integer.parseInt(lecPriceS);}; 
+
 	
 	LectureDAO dao = new LectureDAO();
 	dao.insertLec(new LectureVO(
 	lecKey, lecName, lecTeacher,
 	leclimitcnt,leconlineavail, lecdifficulty, 
 	leccontents, lecscore, proCateKey, 
-	fileKey));
+	fileKey, lecPrice));
 %>
 
 

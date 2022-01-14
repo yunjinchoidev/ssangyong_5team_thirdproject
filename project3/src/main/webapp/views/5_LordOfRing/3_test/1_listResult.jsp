@@ -12,16 +12,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>반지의제왕</title>
 <link rel="stylesheet" 
 	href="${path}/a00_com/a00_com.css">
 <style>
 
 .lordtesttab{
-	width:600px;
-	height: 600px;
+	width:1000px;
+	height: 500px;
 	margin: 0 auto;
-	font-size: 20px;
+	font-size: 40px;
 }
 .lordtesttab table, .lordtesttab td, .lordtesttab th{
 	border : 3px solid yellow;
@@ -29,9 +29,9 @@
 }
 
 
-p{
+#pp01{
 	color : white;
-	font-size: 40px;
+	font-size: 100px;
 }
 </style>
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
@@ -127,13 +127,13 @@ p{
 <div class="contents">
 	<div class="cards">
 	
-		<h1>당신의 테스트 결과</h1>
+		<p id="pp01">당신의 테스트 결과</p>
 		<table class="lordtesttab">
 			<colgroup>
 				<col width="50%">
 			</colgroup>
+				<tr><th>당신의 검사번호</th><td><%=lordTestKey %></tr>
 				<tr><th>당신의 회원번호</th><td><%=mKey%></tr>
-				<tr><th>당신의 회원번호</th><td><%=lordTestKey %></tr>
 				<tr><td>당신의 점수</td><td><%=sumofvalue %></td></tr>
 				<tr><td colspan="2">당신은 절대 반지의 자격이......<%=ans %></td></tr>
 		</table>

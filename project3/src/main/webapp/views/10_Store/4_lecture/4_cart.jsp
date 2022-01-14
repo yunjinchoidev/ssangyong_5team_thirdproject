@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="lecture.*" import="attachedFile.*"%>
+	pageEncoding="UTF-8" import="lecture.*" import="attachedFile.*"
+	import="cart.*"%>
 <%
 request.setCharacterEncoding("utf-8");
 %>
@@ -13,40 +14,14 @@ request.setCharacterEncoding("utf-8");
 	href="/project3/views/CSS/commoncss.css">
 <style>
 
-.lectureboxchild {
-	padding: 20px;
-	width: 300px;
-	height: 200px;
-	display: inline-block;
-	margin-top: 60px;
-	margin: 20px;
-}
 
-.lectureboxchild img {
-	border: 10px solid yellow;
-	width: 200px;
-	height: 1300px;
-	display: inline-block;
-}
-
-.lectureboxchild a {
+#gogo{
+	width:800px;
+	height: 300px;
+	font-size: 30px;
 	color: white;
-	font-size: 30px;
-	text-decoration: none;
-}
-
-.lecbtn {
-	width: 300px;
-	height: 150px;
-	margin: 30px;
-	font-size: 40px;
-	font-weight: bolder;
-}
-
-input[type=submit]{
-	width : 200px;
-	height: 60px;
-	font-size: 30px;
+	border : 3px solid yellow;
+	margin : 0 auto;
 }
 
 </style>
@@ -65,16 +40,38 @@ input[type=submit]{
 	<%
 	LectureDAO dao = new LectureDAO();
 	AttachedFileDAO dao01 = new AttachedFileDAO();
+	CartDAO2 dao02 = new CartDAO2();
+	
+	
+	
+	String lecKeyS = request.getParameter("lecKey");
+	int lecKey =0;
+	if(lecKeyS!=null){lecKey=Integer.parseInt(lecKeyS);};
+	
+	int lecPrice = dao.lecSearch(lecKey).get(0).getLecPrice();
+	int mKey = 201;
+	
+	
+	
+	int A = (int)(Math.random()*1000);
+	dao02.insertcart((new CartVO2(A, lecPrice, lecKey, 201)));
+	CartVO2 c = dao02.cartSearch(mKey).get(0);
+	
+
+	
+	
 	%>
 	<div class="contents">
 		<div class="cards">
-			<h2>강의</h2>
 			<p>나의 장바구니</p>
-			
-			
-			
-			<button class="lecbtn" onclick="location.href='2_reglec.jsp'">등록하기</button>
-			<button class="lecbtn">수정하기</button><br>
+			<table id="gogo">
+					<tr><td>장바구니번호</td><td><%=A %></td></tr>
+					<tr><td>가격</td><td><%=c.getCartPrice()%></td></tr>
+					<tr><td>강의명</td><td><%=dao.lecSearch(lecKey).get(0).getLecName()%></td></tr>
+			</table>		
+			<br>
+			<button class="lecbtn" onclick="location.href='2_reglec.jsp'">결제하러가기</button>
+			<button class="lecbtn">삭제하기</button><br>
 			
 			
 			

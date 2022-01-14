@@ -1,5 +1,6 @@
 package cart;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -61,22 +62,19 @@ public class CartDAO {
 		}
 
 		
-		
 		// 전체 조회
-		public ArrayList<LectureVO> lecList() {
-			ArrayList<LectureVO> leclist = new ArrayList<LectureVO>();
-			String sql = "	 select * \r\n"
-					+ "	from member m, lecture l, cart c\r\n"
-					+ "	where m.mKey=c.mKey and c.lecKey=l.lecKey";
+		public ArrayList<CartVO2> cartList() {
+			ArrayList<CartVO2> leclist = new ArrayList<CartVO2>();
+			String sql = "	 select cartKey, cartPrice, mKey, lecKey \r\n"
+					+ "	from cart \r\n";
 		
 			try {
 				setConn();
 				pstmt = con.prepareStatement(sql);
 				rs = pstmt.executeQuery();
 				while( rs.next() ) {
-					leclist.add(new LectureVO(rs.getInt(1), rs.getString(2), rs.getString(3),
-							rs.getInt(4), rs.getInt(5), rs.getString(6),
-							rs.getString(7), rs.getInt(8), rs.getInt(9),rs.getInt(10)));
+					leclist.add(new CartVO2(rs.getInt(1), rs.getInt(2), rs.getInt(3),
+							rs.getInt(4)));
 				}
 				rs.close();
 				pstmt.close();
@@ -93,25 +91,22 @@ public class CartDAO {
 		
 		
 		//강의번호로으로조회//
-		public ArrayList<LectureVO> lecSearch(int lecKey) {
-			ArrayList<LectureVO> searchlist = new ArrayList<LectureVO>();
-			String sql = "SELECT * \r\n"
-					+ "FROM Lecture \r\n"
-					+ "WHERE lecKey = ? ";	
+		public ArrayList<CartVO2> lecSearch(int mKey) {
+			ArrayList<CartVO2> searchlist = new ArrayList<CartVO2>();
+			String sql = "	 select cartKey, cartPrice, mKey, lecKey \r\n"
+					+ "	from cart \r\n"+
+					"where mKey=?";
 			System.out.println("# pstmt 실행 #");
 			try {
 				setConn();
 				pstmt = con.prepareStatement(sql);
-				pstmt.setInt(1, lecKey);
+				pstmt.setInt(1, mKey);
 				
 				rs = pstmt.executeQuery();
-				
 				while( rs.next() ) {
-					searchlist.add(new LectureVO(rs.getInt(1), rs.getString(2), rs.getString(3),
-							rs.getInt(4), rs.getInt(5), rs.getString(6),
-							rs.getString(7), rs.getInt(8), rs.getInt(9),rs.getInt(10)));
+					searchlist.add(new CartVO2(rs.getInt(1), rs.getInt(2), rs.getInt(3),
+							rs.getInt(4)));
 				}
-				
 				rs.close();
 				pstmt.close();
 				con.close();
@@ -126,22 +121,22 @@ public class CartDAO {
 		
 		
 		//삽입//
-		public void insertLec(LectureVO ins) {
-			String sql = "INSERT INTO Lecture VALUES (?,?,?,?,?,?,?,?,?,?)";
+		public void insertLec(CartVO2 ins) {
+			String sql = "INSERT INTO cart VALUES (?,to_date(?,'YYYY/MM/DD'),?,?,null,null,null,null,?,null)";
 			try {
 				setConn();
 				con.setAutoCommit(false);
 				pstmt = con.prepareStatement(sql);
-				pstmt.setInt(1, ins.getLecKey());
-				pstmt.setString(2,ins.getLecName());
-				pstmt.setString(3,ins.getLecTeacher());
-				pstmt.setInt(4,ins.getLeclimitcnt());
-				pstmt.setInt(5,ins.getLeconlineavail());
-				pstmt.setString(6,ins.getLecdifficulty());
-				pstmt.setString(7,ins.getLeccontents());
-				pstmt.setInt(8,ins.getLecscore());
-				pstmt.setInt(9,ins.getProCateKey());
-				pstmt.setInt(10,ins.getFileKey());
+				pstmt.setInt(1, ins.getCartKey());
+				//pstmt.setString(2,ins.getCartDateS());
+				//pstmt.setInt(3,ins.getCartCnt());
+				pstmt.setInt(4,ins.getCartPrice());
+				pstmt.setInt(5,ins.getmKey());
+				//pstmt.setInt(6,ins.getOfficialKey());
+				//pstmt.setInt(7,ins.getRentalKey());
+				//pstmt.setInt(8,ins.getCusKey());
+				pstmt.setInt(9,ins.getLecKey());
+				//pstmt.setInt(10,ins.getRequKey());
 				
 				pstmt.executeUpdate();
 				con.commit();
@@ -162,34 +157,18 @@ public class CartDAO {
 		
 		
 		/* 수정 */
-		public void updateLec(LectureVO upt) {
+		public void updateLec(CartVO2 upt) {
 			try {
 				setConn();
 				con.setAutoCommit(false);
 
-				String sql = "update Lecture\r\n" + 
-								"SET lecname=?,\r\n" + 
-								"lecteacher = ?,\r\n"+
-								"Leclimitcnt = ?,\r\n"+
-								"Leconlineavail = ?,\r\n"+
-								"Lecdifficulty = ?,\r\n"+
-								"Leccontents = ?,\r\n"+
-								"Lecscore = ?,\r\n"+
-								"ProCateKey = ?,\r\n"+
-								"FileKey = ?,\r\n"+
-								"where LecKey = ?";
+				String sql = "update Cart\r\n" + 
+								"SET cartprice=?,\r\n" + 
+								"where cartKey = ?";
 				pstmt = con.prepareStatement(sql);
 			
-				pstmt.setString(1,upt.getLecName());
-				pstmt.setString(2,upt.getLecTeacher());
-				pstmt.setInt(3,upt.getLeclimitcnt());
-				pstmt.setInt(4,upt.getLeconlineavail());
-				pstmt.setString(5,upt.getLecdifficulty());
-				pstmt.setString(6,upt.getLeccontents());
-				pstmt.setInt(7,upt.getLecscore());
-				pstmt.setInt(8,upt.getProCateKey());
-				pstmt.setInt(9,upt.getFileKey());
-				pstmt.setInt(10, upt.getLecKey());
+				pstmt.setInt(1,upt.getCartPrice());
+				pstmt.setInt(2,upt.getCartKey());
 				pstmt.executeUpdate();
 				con.commit();
 				pstmt.close();
@@ -208,15 +187,15 @@ public class CartDAO {
 		}
 
 		/* 삭제 */
-		public void deleteLec(int LecKey) {
+		public void deletecart(int cartKey) {
 			String sql = "delete \r\n" + 
-						"from Lecture \r\n" + 
-					"where LecKey=?\r\n";
+						"from cart \r\n" + 
+					"where cartKey=?\r\n";
 			try {
 				setConn();
 				con.setAutoCommit(false);
 				pstmt = con.prepareStatement(sql);
-				pstmt.setInt(1, LecKey);
+				pstmt.setInt(1, cartKey);
 				pstmt.executeUpdate();
 				con.commit();
 				pstmt.close();
@@ -234,8 +213,8 @@ public class CartDAO {
 
 		public static void main(String[] args) {
 			CartDAO dao = new CartDAO();
-			for(LectureVO a : dao.lecSearch(1)) {
-				System.out.println(a.getLecName());
+			for(CartVO2 a : dao.cartList()) {
+				System.out.println(a.getCartKey());
 			}
 			
 		}

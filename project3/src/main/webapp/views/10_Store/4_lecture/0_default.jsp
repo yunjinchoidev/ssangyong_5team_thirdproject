@@ -7,7 +7,7 @@ request.setCharacterEncoding("utf-8");
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>강의</title>
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
@@ -15,8 +15,8 @@ request.setCharacterEncoding("utf-8");
 
 .lectureboxchild {
 	padding: 20px;
-	width: 300px;
-	height: 200px;
+	width: 400px;
+	height: 300px;
 	display: inline-block;
 	margin-top: 60px;
 	margin: 20px;
@@ -25,7 +25,6 @@ request.setCharacterEncoding("utf-8");
 .lectureboxchild img {
 	border: 10px solid yellow;
 	width: 200px;
-	height: 1300px;
 	display: inline-block;
 }
 
@@ -71,19 +70,19 @@ input[type=submit]{
 			<h2>강의</h2>
 			<p>이 곳에서 원하는 강의를 수강신청 하십시오.</p>
 			<button class="lecbtn" onclick="location.href='2_reglec.jsp'">등록하기</button>
-			<button class="lecbtn">수정하기</button><br>
-			
+			<br>
 			<%
 			for (LectureVO d : dao.lecList()) {
 			%>
 			<div class="lectureboxchild">
 			<form action="1_detail.jsp">
-				<a href="1_detail.jsp"><img src="/project3/views/10_Store/4_lecture/Media/<%=dao01.SearchfilePath(d.getFileKey())%>"> <br><%=d.getLecName() %>
+				<a href="1_detail.jsp">
+				<img src="/project3/views/10_Store/4_lecture/Media/<%=dao01.SearchfilePath(d.getFileKey())%>"> 
+				<br><%=d.getLecName() %><br><%=d.getLecPrice() %>
 			
 						<input type="hidden" name="lecKeyS" value="<%=d.getLecKey()%>"><br>
 						<input type="submit" value="수강신청하기"></a>
 			</form>
-			
 			</div>
 			<%
 			}

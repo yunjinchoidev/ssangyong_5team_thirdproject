@@ -14,7 +14,7 @@ request.setCharacterEncoding("utf-8");
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>신춘문예</title>
 <script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript">
 function check() {
     if (!confirm("확인(예) 또는 취소(아니오)를 선택해주세요.")) {
@@ -65,7 +65,7 @@ function check() {
 
 #seachcon{
 	width: 1000px;
-	height: 70px;
+	height: 100px;
 	font-size: 60px;
 	font-weight: bolder;
 	text-align: center;
@@ -91,7 +91,6 @@ function check() {
 
 	<div class="contents">
 		<div class="cards">
-		
 			<h1>새로운 세계를 공모하십시오.</h1>
 			<p> 제 1회 판타지 빌리지 신춘문예</p>
 			<p> 톨킨같은 유명한 판타지 작가가 되고 싶습니까? <br>
@@ -101,14 +100,8 @@ function check() {
 				기다리겠습니다.
 				<br><br></p>
 			<button onclick="location.href='1_apply.jsp'" id="contebtn">공모하기(apply)</button>
-			
-			<div>
-				<img src="example.jpg" style="width:300px; height:300px">
-				<img src="example.jpg" style="width:300px; height:300px">
-				<img src="example.jpg" style="width:300px; height:300px">
-			</div>
 		
-			
+			<hr style="border : 5px solid yellow; margin: 40px; ">
 
 <%
 	LiteraryContestDAO dao = new LiteraryContestDAO();
@@ -124,9 +117,9 @@ function check() {
 	if (literKeyS!=null) {literKey=Integer.parseInt(literKeyS);};
 	
 	dao.deletelt(literKey);
-	
 %>
-	<h2>제출리스트</h2>
+
+
 	<form>
 	<input type="text" id="seachcon" name="fansort" placeholder="작품 분류로 검색하세요">
 	<input type="submit">
@@ -139,7 +132,6 @@ function check() {
          <td width="7%" ><b>작품분류</b></td>
          <td width="7%"><b>경력</b></td>
          <td width="7%" ><b>제작기간</b></td>
-         <td width="7%" ><b>제출일</b></td>
          <td width="7%" ><b>회원번호</b></td>
          <td width="7%" ><b>파일번호</b></td>
          <td width="7%" colspan="2"><b>비고</b></td>
@@ -152,7 +144,6 @@ function check() {
 			<td><%=a.getLiterSort() %></td>
 			<td><%=a.getLiterCareer() %></td>
 			<td><%=a.getLiterProductionDate() %></td>
-			<td><%=a.getLiterSubmissionDateS() %></td>
 			<td><%=a.getmKey() %></td>
 			<td><%=a.getFileKey() %></td>
 			<td>
@@ -160,14 +151,17 @@ function check() {
 				<input type="submit" onclick="return check()" value="삭제">
 				<input type="hidden" name="literKey" value="<%=a.getLiterKey() %>">
 				</form></td>
-		
 			<td>
+			
 			<form action="2_modapply.jsp">
 				<input type="submit" onclick="return check()" value="수정">
 				<input type="hidden" name="literKey" value="<%=a.getLiterKey() %>">
 				</form></td></tr>
 			<%} %>
    </table>  
+
+
+
 
 		</div>
 	</div>
