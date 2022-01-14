@@ -159,6 +159,7 @@ $(document).ready(function() {
 
 <%
 // 컨트롤러에서 받아온 DB의 id, pass
+String path = request.getContextPath();
 
 String id = (String) request.getAttribute("id");
 String pass = (String) request.getAttribute("pass");
@@ -193,11 +194,12 @@ try{
 <div id="title">
 <h1>FantasyVillage 로그인</h1>
 <div id="titleh3">
-<h3>계정이 없으신가요? <a href="../4_member/join_Membership.jsp">회원가입</a></h3>
+<!-- ../4_member/join_Membership.jsp -->
+<h3>계정이 없으신가요? <a href="<%=path%>/member.do">회원가입</a></h3>
 </div>
 </div>
 <div id = "loginForm">
-	<form>
+	<form method="post">
 		<img src="./img/user.png" id="userImg" width="55px" height="54px" style="background-color:lightgray;
 		position:relative; top:22px; left:5px;">
 		<input type=text name = id placeholder="아이디를 입력해주세요" style="width:250px;height:49px;">

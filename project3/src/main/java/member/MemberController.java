@@ -1,6 +1,7 @@
 package member;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -28,8 +29,12 @@ public class MemberController extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8"); // post
+		response.setContentType("text/html; charset=UTF-8");
 		
-		request.setCharacterEncoding("utf-8"); // post
+		PrintWriter out = response.getWriter();
+		String path = request.getContextPath();
+		
 		String id=request.getParameter("id");
 		String pass=request.getParameter("pass");
 		String name=request.getParameter("name");
@@ -47,10 +52,17 @@ public class MemberController extends HttpServlet {
 		
 		MemberDAO dao = new MemberDAO();
 		
-		if(id != null && pass!=null) {
-		dao.insertMember(new MemberVO(id,pass,name,email,
-				phonenum,reg,nickname,gender,address));
+		if(id!=null) {
+			if(!id.equals("") && !pass.equals("") && !name.equals("") && !numfirst.equals("") && !numsecond.equals("") 
+					&& !phonenum.equals("") && !nickname.equals("") && !addfirst.equals("") && !addsecond.equals("")
+					&&!email.equals("")) {
+				dao.insertMember(new MemberVO(id,pass,name,email,
+									phonenum,reg,nickname,gender,address));
+			
+			}	
 		}
+			
+	
 		
 		// 3. view단 호출
 		String page="views\\4_member\\join_Membership.jsp";

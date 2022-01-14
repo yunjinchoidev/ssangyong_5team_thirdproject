@@ -1,3 +1,5 @@
+<%@page import="member.MemberVO"%>
+<%@page import="member.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     import="java.util.*" %>
@@ -333,6 +335,14 @@ top:3000px;
 	});
 </script>
 </head>
+<%
+String id= (String) session.getAttribute("ID");
+String pass = (String) session.getAttribute("PASSWORD");
+
+MemberDAO dao = new MemberDAO();
+
+%>
+
 <body>
 
 <jsp:include page="/views/common/commonheader.jsp">
@@ -340,9 +350,10 @@ top:3000px;
 	</jsp:include>
 
 <!-- 멤버 박스 -->
+<%for(MemberVO mem:dao.memberlist(id, pass)){ %>
 <div id="memberInfoBox">
 	<div id="memberInfo">
-		<h1 id="nameArea">???님</h1><h4 id="idArea">ID입니다</h4><h4 id="nickArea">닉네임</h4>
+		<h1 id="nameArea"><%= mem.getmName()%>님</h1><h4 id="idArea">ID입니다</h4><h4 id="nickArea">닉네임</h4>
 		<a href="memberInfoUpdate.jsp">
 		<button>회원정보수정</button>
 		</a>
@@ -363,7 +374,7 @@ top:3000px;
 		<h1 id="talentDonaCnt">재능기부 참여 횟수<br>&nbsp&nbsp&nbsp&nbsp&nbsp 20회</h1>
 	</div>
 </div>
-
+<%} %>
 <!-- 해리포터 박스 -->
 <div id="potterBox">
 	<div id="potterInfo">

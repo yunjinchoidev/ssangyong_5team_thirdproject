@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%request.setCharacterEncoding("utf-8"); %>
@@ -102,29 +103,48 @@ $().ready(function(){
 			})
 	});
 	
-	$("#canclebtn").click(function () {
-        Swal.fire({
-            icon: 'confirm',
-            title: '회원가입 취소',
-            text: '취소하시겠습니까?',
-            showCancelButton: true,
-			  confirmButtonColor: '#3085d6',
-			  cancelButtonColor: '#d33',
-			  confirmButtonText: '확인',
-			  cancelButtonText: '취소'
-        }).then((result) => {
-			  if (result.value) {
-				  location.replace('../3_login/Login.jsp');
-			  }
-			  
-			})
-    });
 	
 	
 });
 
 </script>
 </head>
+<%
+String path = request.getContextPath();
+
+String id=request.getParameter("id");
+String pass=request.getParameter("pass");
+String name=request.getParameter("name");
+String numfirst = request.getParameter("numfirst");
+String numsecond = request.getParameter("numsecond");
+String reg = numfirst+numsecond;
+String phonenum=request.getParameter("phonenum");
+String nickname=request.getParameter("nickname");
+String addfirst=request.getParameter("addfirst");
+String addsecond=request.getParameter("addsecond");
+String address=request.getParameter("address");
+String email=addfirst+"@"+addsecond;
+String gender=request.getParameter("gender");
+
+
+
+
+try {
+if(id!=null){
+if(!id.equals("") && !pass.equals("") && !name.equals("") && !numfirst.equals("") && !numsecond.equals("") 
+		&& !phonenum.equals("") && !nickname.equals("") && !addfirst.equals("") && !addsecond.equals("")
+		&&!email.equals("")) {
+	
+	out.println("<script>alert('계정이 등록 되었습니다')</script>");
+		
+}else {
+	out.println("<script>alert('회원가입 실패 !입력된 정보를 확인해주세요');</script>");
+}
+}
+}catch(Exception e){
+	out.println("<script>alert('회원가입 실패 !입력된 정보를 확인해주세요');</script>");
+}
+%>
 <body>
 	<jsp:include page="/views/common/commonheader.jsp">
 		<jsp:param name="name" value="go" />
@@ -136,7 +156,7 @@ $().ready(function(){
 	<hr>
 	</div>
 	<div id="inputMember">
-		<form>
+		<form method="post">
 			<table>
 				<!-- ID 입력 -->
 				<tr><th>ID</th><td><input type="text" name="id" size="26" placeholder="아이디를 입력해주세요"></td>
@@ -177,7 +197,9 @@ $().ready(function(){
 				</tr>
 			</table>
 			<br>
+			<a href="<%=path%>/login.do">
 			<button id="canclebtn" type= "button" style="position:absolute;left:80px;">취소</button>
+			</a>
 			<button type="button" id="joinBtn" style="position:absolute;left:220px;">회원가입</button>	
 		</form>
 		
