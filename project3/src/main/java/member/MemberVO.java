@@ -2,6 +2,8 @@ package member;
 
 import java.util.Date;
 
+import org.w3c.dom.html.HTMLElement;
+
 public class MemberVO {
 	private int mKey;
 	private String mId;
@@ -25,7 +27,7 @@ public class MemberVO {
 	private double mSellerRate;
 	private int mGiftLevel;
 	private char mUnderFifteen;
-	private char mGiftDoneExist;
+	private String mGiftDoneExist;
 	private int mGiftDoneCnt;
 	private String mMyGift;
 	private String mIp;
@@ -36,7 +38,7 @@ public class MemberVO {
 	public MemberVO(int mKey, String mId, String mPass, String mName, String mEmail, String phonenum, String mReg,
 			String nickname, String mGender, int mManiaQuot, Date mJoinDate, int mAuthNum, int mCash, int mPoint,
 			int mLevel, char mEmailWhether, String mAddress, char mState, String mBlockList, double mSellerRate,
-			int mGiftLevel, char mUnderFifteen, char mGiftDoneExist, int mGiftDoneCnt, String mMyGift, String mIp) {
+			int mGiftLevel, char mUnderFifteen, String mGiftDoneExist, int mGiftDoneCnt, String mMyGift, String mIp) {
 		super();
 		this.mKey = mKey;
 		this.mId = mId;
@@ -81,7 +83,7 @@ public class MemberVO {
 	}
 	
 	public MemberVO(int mkey, String mId, String mPass, String mName, String mEmail, String phonenum, String mReg,
-			String nickname, String mGender,String mAddress) {
+			String nickname, String mGender,String mAddress, String mMyGift, String mGiftDoneExist) {
 		this.mId = mId;
 		this.mPass = mPass;
 		this.mName = mName;
@@ -91,6 +93,36 @@ public class MemberVO {
 		this.nickname = nickname;
 		this.mGender = mGender;
 		this.mAddress = mAddress;
+		this.mMyGift = mMyGift;
+		this.mGiftDoneExist = mGiftDoneExist;
+	}
+	
+	public MemberVO(String nickname, String mEmail, String phonenum, String mAddress
+			,String mGiftDoneExist, String mMyGift) {
+		this.nickname = nickname;
+		this.mEmail = mEmail;
+		this.phonenum = phonenum;
+		this.mAddress = mAddress;
+		this.mGiftDoneExist = mGiftDoneExist;
+		this.mMyGift = mMyGift;
+	}
+	
+	// mymemberlist
+	public MemberVO(String mName, String mId, String nickname,int mLevel, int mManiaQuot
+			,int mCash, int mPoint, int mGiftLevel,String mMyGift ,String mGiftDoneExist
+			,int mGiftDoneCnt) {
+		this.mName = mName;
+		this.mId = mId;
+		this.nickname = nickname;
+		this.mLevel = mLevel;
+		this.mManiaQuot = mManiaQuot;
+		this.mCash = mCash;
+		this.mPoint = mPoint;
+		this.mGiftLevel = mGiftLevel;
+		this.mGiftDoneExist = mGiftDoneExist;
+		this.mMyGift = mMyGift;
+		this.mGiftDoneCnt = mGiftDoneCnt;
+		
 	}
 	
 	public int getmKey() {
@@ -225,10 +257,10 @@ public class MemberVO {
 	public void setmUnderFifteen(char mUnderFifteen) {
 		this.mUnderFifteen = mUnderFifteen;
 	}
-	public char getmGiftDoneExist() {
+	public String getmGiftDoneExist() {
 		return mGiftDoneExist;
 	}
-	public void setmGiftDoneExist(char mGiftDoneExist) {
+	public void setmGiftDoneExist(String mGiftDoneExist) {
 		this.mGiftDoneExist = mGiftDoneExist;
 	}
 	public int getmGiftDoneCnt() {

@@ -53,12 +53,21 @@ public class MemberController extends HttpServlet {
 		MemberDAO dao = new MemberDAO();
 		
 		if(id!=null) {
+			// 회원가입 정보 입력
 			if(!id.equals("") && !pass.equals("") && !name.equals("") && !numfirst.equals("") && !numsecond.equals("") 
 					&& !phonenum.equals("") && !nickname.equals("") && !addfirst.equals("") && !addsecond.equals("")
 					&&!email.equals("")) {
 				dao.insertMember(new MemberVO(id,pass,name,email,
 									phonenum,reg,nickname,gender,address));
-			
+				
+				// 가입 시 해리포터 정보 초기화
+				dao.insertPotter(null);
+				
+				// 가입 시 마블 정보 초기화
+				dao.insertMarvel(null);
+				
+				// 가입 시 반지의제왕 정보 초기화
+				dao.insertLord(null);
 			}	
 		}
 			

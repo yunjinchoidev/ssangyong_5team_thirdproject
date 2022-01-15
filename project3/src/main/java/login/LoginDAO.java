@@ -52,7 +52,8 @@ public ArrayList<MemberVO> memberlist(String id, String pass) {
 			int row=1;
 			while(rs.next()) {
 				memberlist.add(new MemberVO(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getString(4)
-						,rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10)));
+						,rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),
+						rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12)));
 				System.out.println(row+++"행");
 				System.out.print(rs.getInt(1)+"\t");// select를 통해서 데이터 순서로 1부터
 				System.out.print(rs.getString(2)+"\t"); 
@@ -64,6 +65,8 @@ public ArrayList<MemberVO> memberlist(String id, String pass) {
 				System.out.print(rs.getString(8)+"\n");
 				System.out.print(rs.getString(9)+"\n");
 				System.out.print(rs.getString(10)+"\n");
+				System.out.print(rs.getString(11)+"\n");
+				System.out.print(rs.getString(12)+"\n");
 							
 			}
 			rs.close();
