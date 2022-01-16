@@ -10,13 +10,13 @@ CREATE TABLE lord(
 )
 
 SELECT *
-FROM lordTest;
+FROM lord;
 
+INSERT INTO lord(lordKey, lordCharacter, lordTribe, lordPaciBattle,
+lordloc,lordHeight,lordWeight,mKey) 
+VALUES ((SELECT NVL(MAX(lordKey)+1,1) FROM lord),'미지정','미지정'
+,'미지정','미지정',0,0,(SELECT NVL(MAX(mkey)+1,1)FROM lord));
 
-DELETE lordTest;
+DELETE FROM lord
+WHERE mkey=2;
 
-CREATE TABLE lordtest(
-	lordtestkey NUMBER PRIMARY key,
-	mKey NUMBER CONSTRAINT lord_mKey_fk REFERENCES member (mKey),
-	sumoftest number
-)

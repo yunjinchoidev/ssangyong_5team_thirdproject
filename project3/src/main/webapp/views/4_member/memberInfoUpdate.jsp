@@ -50,12 +50,6 @@ top:600px;
 left:790px;
 }
 
-#mychar{
-position: absolute;
-top:750px;
-left:710px;
-}
-
 #canclebtn{
 position: absolute;
 top:1000px;
@@ -170,6 +164,11 @@ $().ready(function(){
 });
 </script>
 </head>
+<%
+String id = (String) session.getAttribute("ID");
+String pass = (String) session.getAttribute("PASSWORD");
+%>
+
 <body>
 	
 	<jsp:include page="/views/common/commonheader.jsp">
@@ -185,9 +184,6 @@ $().ready(function(){
 		<table>
 			<tr><th>닉네임</th>
 			<td><input type="text" name="nickname" /></td>
-			</tr>
-			<tr><th>주소</th>
-			<td><input type="text" name="address" /></td>
 			</tr>
 			<tr><th>이메일</th>
 				<td><input type="text" name="addfirst" size="8"> @
@@ -205,7 +201,7 @@ $().ready(function(){
 			<tr><th>주소</th>
 			<td><input type="text" name="address" /></td>
 			<tr>
-			<th>성별</th>
+			<th>재능기부참여</th>
 			<td><input type="radio" name="giftdona" value="Y" checked="checked">참여 
 			<input type="radio" name="giftdona" value="N">미참여</td>
 			</tr>
@@ -220,27 +216,11 @@ $().ready(function(){
 			</table>
 		</div>
 		
-		<div id="mychar">
-			<h2 style="position: relative;left:130px;">나의 캐릭터</h2>
-				<table>
-					<tr>
-						<th>해리포터</th>
-						<td><input type="text" name="char1"></td>					
-					</tr>
-					<tr>
-						<th>마블</th>
-						<td><input type="text" name="char2"></td>					
-					</tr>
-					<tr>
-						<th>반지의제왕</th>
-						<td><input type="text" name="char3"></td>					
-					</tr>
-				</table>
-		</div>
-		
 		<div id="btn">
 			<button type="button" id="canclebtn">취소</button>
 			<button type="button" id="completebtn">완료</button>
+			<input type="hidden" name=sessionid value=<%=id %>>
+			<input type="hidden" name=sessionpass value=<%=pass %>>
 		</div>
 	</form>
 	

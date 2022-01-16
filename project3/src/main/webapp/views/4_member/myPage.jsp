@@ -336,6 +336,8 @@ top:3000px;
 </script>
 </head>
 <%
+String path = request.getContextPath();
+
 String id= (String) session.getAttribute("ID");
 String pass = (String) session.getAttribute("PASSWORD");
 
@@ -350,28 +352,29 @@ MemberDAO dao = new MemberDAO();
 	</jsp:include>
 
 <!-- 멤버 박스 -->
-<%for(MemberVO mem:dao.memberlist(id, pass)){ %>
+<%for(MemberVO mem:dao.mymemberlist(id, pass)){ %>
 <div id="memberInfoBox">
 	<div id="memberInfo">
-		<h1 id="nameArea"><%= mem.getmName()%>님</h1><h4 id="idArea">ID입니다</h4><h4 id="nickArea">닉네임</h4>
-		<a href="memberInfoUpdate.jsp">
+		<h1 id="nameArea"><%= mem.getmName()%>님</h1><h4 id="idArea"><%=mem.getmId()%></h4>
+		<h4 id="nickArea"><%=mem.getNickname()%></h4>
+		<a href="<%=path%>/memupdate.do">
 		<button>회원정보수정</button>
 		</a>
 		<hr id="memberHr1">
-		<h1 id="memberLvArea">회원레벨:LV?</h1>
-		<h1 id="fanPower">덕력지수<br>&nbsp ??점</h1>
+		<h1 id="memberLvArea">회원레벨:LV<%=mem.getmLevel()%></h1>
+		<h1 id="fanPower">덕력지수<br>&nbsp <%=mem.getmManiaQuot()%>점</h1>
 		<div class="updown1"></div>
-		<h1 id="cash">&nbsp캐쉬<br>20000</h1>
+		<h1 id="cash">&nbsp캐쉬<br>&nbsp &nbsp<%=mem.getmCash()%></h1>
 		<div class="updown2"></div>
-		<h1 id="point">포인트<br>&nbsp120</h1>
+		<h1 id="point">포인트<br>&nbsp<%=mem.getmPoint()%>점</h1>
 		<hr id="memberHr2">
-		<h1 id="giftLvArea">재능레벨:LV?</h1>
-		<h2 id="whoGift">닉네임의 재능</h2>
-		<h3 id="gift1">-재능 예시1</h3>
+		<h1 id="giftLvArea">재능레벨:LV<%=mem.getmGiftLevel()%></h1>
+		<h2 id="whoGift">회원님의 재능</h2>
+		<h3 id="gift1">-<%=mem.getmMyGift()%></h3>
 		<h3 id="gift2">-재능 예시2</h3>
-		<h1 id="talentDona">재능기부 참여<br>&nbsp&nbsp&nbsp&nbsp&nbsp Y</h1>
+		<h1 id="talentDona">재능기부 참여<br>&nbsp&nbsp&nbsp&nbsp&nbsp <%=mem.getmGiftDoneExist()%></h1>
 		<div class="updown3"></div>
-		<h1 id="talentDonaCnt">재능기부 참여 횟수<br>&nbsp&nbsp&nbsp&nbsp&nbsp 20회</h1>
+		<h1 id="talentDonaCnt">재능기부 참여 횟수<br>&nbsp&nbsp&nbsp&nbsp&nbsp <%=mem.getmGiftDoneCnt() %>회</h1>
 	</div>
 </div>
 <%} %>

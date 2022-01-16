@@ -135,7 +135,7 @@ if(!id.equals("") && !pass.equals("") && !name.equals("") && !numfirst.equals(""
 		&& !phonenum.equals("") && !nickname.equals("") && !addfirst.equals("") && !addsecond.equals("")
 		&&!email.equals("")) {
 	
-	out.println("<script>alert('계정이 등록 되었습니다')</script>");
+	out.println("<script>alert('계정이 등록 되었습니다');history.back();</script>");
 		
 }else {
 	out.println("<script>alert('회원가입 실패 !입력된 정보를 확인해주세요');</script>");
