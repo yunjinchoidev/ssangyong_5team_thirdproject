@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import harrypotter.HarryPotterVO;
+import lord.LordVO;
+import marvel.MarvelVO;
+
 /**
  * Servlet implementation class MemupdateController
  */
@@ -39,13 +43,23 @@ public class MemupdateController extends HttpServlet {
 		String gifttext1 = request.getParameter("gifttext1");
 		String sessionid = request.getParameter("sessionid");
 		String sessionpass = request.getParameter("sessionpass");
+		String potterchar = request.getParameter("potterchar");
+		String marvelchar = request.getParameter("marvelchar");
+		String lordchar = request.getParameter("lordchar");
 		
 		
 		MemberDAO dao = new MemberDAO();
 		MemberVO upt = new MemberVO(nickname, email, phone, address, giftdona, gifttext1);
+		HarryPotterVO potterupt = new HarryPotterVO(potterchar);
+		LordVO lordupt = new LordVO(lordchar);
+		MarvelVO marvelupt = new MarvelVO(marvelchar);
+		
 		
 		if(nickname!=null && email!=null && phone!=null && address!=null) {
 			dao.updateMember(upt, sessionid, sessionpass);
+			dao.updatePotter(potterupt, sessionid, sessionpass);
+			dao.updateMarvel(marvelupt, sessionid, sessionpass);
+			dao.updateLord(lordupt, sessionid, sessionpass);
 		}
 		
 		String page="views\\4_member\\memberInfoUpdate.jsp";

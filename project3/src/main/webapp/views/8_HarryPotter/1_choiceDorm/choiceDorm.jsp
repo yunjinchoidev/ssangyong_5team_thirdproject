@@ -125,7 +125,16 @@ top:2500px;
 <script>
 
 $(document).ready(function() {
+	/*
+	$('#btngry').on("click", function(){
+		 location.href= 'choiceDormGry.do';  
+	});
 	
+
+$('#btnSly').on("click", function(){
+	 	location.href= 'choiceDormSly.do';	  
+	});
+	*/
 
 });
 
@@ -137,6 +146,12 @@ $(document).ready(function() {
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
+
+<%
+String path = request.getContextPath();
+String id = (String) session.getAttribute("ID");
+String pass = (String) session.getAttribute("PASSWORD");
+%>
 
 <body>
 
@@ -151,19 +166,19 @@ $(document).ready(function() {
 <h1 id="tex1">기숙사를 선택해주세요</h1>  
 <!-- 모자 영역 -->
 <div id="hat" data-aos="zoom-in">
-<span class="hint--right" aria-label="너는 어느 기숙사가 좋을까..."><img src="../media/magic_hat.png" width="350px" height="300px"></span>
+<span class="hint--right" aria-label="너는 어느 기숙사가 좋을까..."><img src="views\8_HarryPotter\media\magic_hat.png" width="350px" height="300px"></span>
 </div>
 
 <!-- 그리핀도르 -->
-<form action="choiceGryffindor.jsp">
 <div id="gryffindor" data-aos="fade-right">
 <div id="gryffindorLogo">
-<a href="choiceGryffindor.jsp">
-<button id="btngry" name="dorm" value="gryffindor">
-<img src="../media/gryffindor.png" width="300px" height="300px">
+<form action = "<%=path%>/choiceDormGry.do" method="post">
+<button id="btngry" name="dorm">
+<img src="views\8_HarryPotter\media\gryffindor.png" width="300px" height="300px">
 </button>
-</a>
+</form>
 </div>
+
 <div id="gryh41">
 <h1 style="color:red;">GRYFFINDOR</h1>
 <h4 >창립자:고드릭 그리핀도르</h4>
@@ -171,17 +186,20 @@ $(document).ready(function() {
 <h4>대표색:붉은색,금색</h4>
 <h4>덕목:용기,기사도정신</h4>
 <h4 style="font-style: italic;">"그 이름에 걸맞는 용기를 가진 아이들은, 누구나 가르치도록 하세"</h4>
+
 </div>
 </div>
-</form>
+
 
 <!-- 슬리데린 -->
-<form action="choiceSlytherin.jsp">
 <div id="slytherin" data-aos="fade-left">
-<a href="choiceSlytherin.jsp">
+
+<form action = "<%=path%>/choiceDormSly.do" method="post">
 <button id="btnSly" name="dorm" value="slytherin">
-<img src="../media/slytherin.png" width="300px" height="300px"></button>
-</a>
+<img src="views\8_HarryPotter\media\slytherin.png" width="300px" height="300px">
+</button>
+</form>
+
 <div id="slyh41">
 <h1 style="color:green;">SLYTHERIN</h1>
 <h4 >창립자:살라자르 슬리데린</h4>
@@ -191,17 +209,18 @@ $(document).ready(function() {
 <h4 style="font-style: italic;">"가장 순수한 혈통을 지닌 이들만 가르치도록하세"</h4>
 </div>
 </div>
-</form>
+
 
 <!-- 래번클로 -->
-<form action="choiceRavenclaw.jsp">
 <div id="ravenclaw" data-aos="fade-right">
 <div id="ravenclawLogo">
-<a href="choiceRavenclaw.jsp">
+
+<form action = "<%=path%>/choiceDormRaven.do" method="post">
 <button id="btnRaven" name="dorm" value="ravenclaw">
-<img src="../media/ravenclaw.png" width="300px" height="300px">
+<img src="views\8_HarryPotter\media\ravenclaw.png" width="300px" height="300px">
 </button>
-</a>
+</form>
+
 </div>
 <div id="gryh41">
 <h1 style="color:SkyBlue;">RAVENCLAW</h1>
@@ -212,15 +231,16 @@ $(document).ready(function() {
 <h4 style="font-style: italic;">"가장 똑똑한 아이들만 가르치도록 하세"</h4>
 </div>
 </div>
-</form>
 
 <!-- 후플푸프 -->
-<form action="choiceHufflepuff.jsp">
 <div id="hufflepuff" data-aos="fade-left">
-<a href="choiceHufflepuff.jsp">
+
+<form action = "<%=path%>/choiceDormHuffle.do" method="post">
 <button id="btnHuf" name="dorm" value="hufflepuff">
-<img src="../media/hufflepuff.png" width="300px" height="300px"></button>
-</a>
+<img src="views\8_HarryPotter\media\hufflepuff.png" width="300px" height="300px">
+</button>
+</form>
+
 <div id="slyh41">
 <h1 style="color:yellow;">HUFFLEPUFF</h1>
 <h4 >창립자:헬가 후플푸프</h4>
@@ -230,7 +250,6 @@ $(document).ready(function() {
 <h4 style="font-style: italic;">"난 그 아이들을 똑같이 가르칠 걸세"</h4>
 </div>
 </div>
-</form>
 
 
 <div id="footer">

@@ -50,6 +50,12 @@ top:600px;
 left:790px;
 }
 
+#mychar{
+position: absolute;
+top:750px;
+left:710px;
+}
+
 #canclebtn{
 position: absolute;
 top:1000px;
@@ -214,6 +220,24 @@ String pass = (String) session.getAttribute("PASSWORD");
 				<tr><td><input type="text" name="gifttext1"></td></tr>
 				<tr><td><input type="text" name="gifttext2"></td></tr>
 			</table>
+		</div>
+		
+		<div id="mychar">
+			<h2 style="position: relative;left:130px;">나의 캐릭터</h2>
+				<table>
+					<tr>
+						<th>해리포터</th>
+						<td><input type="text" name="potterchar"></td>					
+					</tr>
+					<tr>
+						<th>마블</th>
+						<td><input type="text" name="marvelchar"></td>					
+					</tr>
+					<tr>
+						<th>반지의제왕</th>
+						<td><input type="text" name="lordchar"></td>					
+					</tr>
+				</table>
 		</div>
 		
 		<div id="btn">

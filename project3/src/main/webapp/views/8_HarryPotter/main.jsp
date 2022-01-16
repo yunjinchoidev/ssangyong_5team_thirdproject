@@ -108,6 +108,9 @@ top:3800px;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
+<%
+String path = request.getContextPath();
+%>
 <body>
 
 <jsp:include page="/views/common/commonheader.jsp">
@@ -134,7 +137,7 @@ top:3800px;
 </div>
 <div id="potterBannerText" data-aos="fade-up">
 <h1>기숙사는 선택 하셨나요?</h1>
-<a href="1_choiceDorm/choiceDorm.jsp">
+<a href="<%=path%>/choiceDorm.do">
 <button type="button" style="position: absolute;">기숙사 선택</button>
 </a>
 </div>

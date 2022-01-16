@@ -23,3 +23,24 @@ INSERT INTO potter(HARRYKEY, harrycharacter, harrydomioty
 			
 DELETE FROM potter
 WHERE mkey=1;
+
+UPDATE potter
+SET harrycharacter='해리포터'
+WHERE mkey = (SELECT mkey
+FROM MEMBER
+WHERE mid = 'himan'
+AND mpass='7777');
+
+UPDATE POTTER 
+SET HARRYDOMIOTY =?
+WHERE mkey = (SELECT mkey
+FROM MEMBER
+WHERE mid = 'himan'
+AND mpass='7777');
+
+SELECT HARRYMAGICLEVEL , HARRYCHARACTER , HARRYDOMIOTY 
+FROM POTTER
+WHERE MKEY = (SELECT mkey
+FROM MEMBER
+WHERE mid='himan'
+AND mpass = '7777');
