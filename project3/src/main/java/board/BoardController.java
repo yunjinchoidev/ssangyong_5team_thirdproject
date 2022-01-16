@@ -75,7 +75,8 @@ public class BoardController extends HttpServlet {
 			int mKey=0; if(mKeyS!=null) {mKey=Integer.parseInt(mKeyS);};
 			
 			String fileKeyS = request.getParameter("fileKey"); 
-			int fileKey=0; if(fileKeyS!=null) {fileKey=Integer.parseInt(fileKeyS);};
+			int fileKey=0; if(fileKeyS!=null) 
+			{fileKey=Integer.parseInt(fileKeyS);};
 			
 			String boCateKeyS = request.getParameter("boCateKey"); 
 			int boCateKey=0; if(boCateKeyS!=null) {boCateKey=Integer.parseInt(boCateKeyS);};
