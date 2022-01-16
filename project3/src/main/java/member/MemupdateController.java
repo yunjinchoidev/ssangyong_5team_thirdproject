@@ -1,6 +1,7 @@
 package member;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,6 +33,8 @@ public class MemupdateController extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8"); // post
+		response.setContentType("text/html; charset=UTF-8");
 		
 		String nickname = request.getParameter("nickname");
 		String addfirst = request.getParameter("addfirst");
@@ -54,12 +57,14 @@ public class MemupdateController extends HttpServlet {
 		LordVO lordupt = new LordVO(lordchar);
 		MarvelVO marvelupt = new MarvelVO(marvelchar);
 		
+		PrintWriter out = response.getWriter();
 		
 		if(nickname!=null && email!=null && phone!=null && address!=null) {
 			dao.updateMember(upt, sessionid, sessionpass);
 			dao.updatePotter(potterupt, sessionid, sessionpass);
 			dao.updateMarvel(marvelupt, sessionid, sessionpass);
 			dao.updateLord(lordupt, sessionid, sessionpass);
+			
 		}
 		
 		String page="views\\4_member\\memberInfoUpdate.jsp";

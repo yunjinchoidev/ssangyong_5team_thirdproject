@@ -161,7 +161,7 @@ $().ready(function(){
 			  cancelButtonText: '취소'
          }).then((result) => {
 			  if (result.value) {
-				  location.replace('myPage.jsp');
+				  location.replace("mypage.do");
 			  }
 			  
 			})

@@ -210,7 +210,7 @@ public class MemberDAO {
 			pstmt.close();
 			con.close();
 		} catch (SQLException e) {
-			System.out.println("에러:"+e.getMessage());
+			System.out.println("회원정보리스트:"+e.getMessage());
 			
 			if(rs!=null) {
 				try {
@@ -267,20 +267,20 @@ public class MemberDAO {
 				System.out.print(rs.getString(2)+"\t"); 
 				System.out.print(rs.getString(3)+"\n");
 				System.out.print(rs.getString(4)+"\n");
-				System.out.print(rs.getString(5)+"\n");
-				System.out.print(rs.getString(6)+"\n");
-				System.out.print(rs.getString(7)+"\n");
-				System.out.print(rs.getString(8)+"\n");
+				System.out.print(rs.getInt(5)+"\n");
+				System.out.print(rs.getInt(6)+"\n");
+				System.out.print(rs.getInt(7)+"\n");
+				System.out.print(rs.getInt(8)+"\n");
 				System.out.print(rs.getString(9)+"\n");
 				System.out.print(rs.getString(10)+"\n");
-				System.out.print(rs.getString(11)+"\n");
+				System.out.print(rs.getInt(11)+"\n");
 							
 			}
 			rs.close();
 			pstmt.close();
 			con.close();
 		} catch (SQLException e) {
-			System.out.println("에러:"+e.getMessage());
+			System.out.println("마이페이지 회원정보 리스트 에러:"+e.getMessage());
 			
 			if(rs!=null) {
 				try {
@@ -333,14 +333,14 @@ public class MemberDAO {
 				while(rs.next()) {
 					mymarvellist.add(new MarvelVO(rs.getString(1)));
 					System.out.println(row+++"행");
-					System.out.print(rs.getInt(1)+"\t");
+					System.out.print(rs.getString(1)+"\t");
 								
 				}
 				rs.close();
 				pstmt.close();
 				con.close();
 			} catch (SQLException e) {
-				System.out.println("에러:"+e.getMessage());
+				System.out.println("마블 정보 리스트 에러:"+e.getMessage());
 				
 				if(rs!=null) {
 					try {
@@ -392,14 +392,14 @@ public class MemberDAO {
 						while(rs.next()) {
 							mylordllist.add(new LordVO(rs.getString(1)));
 							System.out.println(row+++"행");
-							System.out.print(rs.getInt(1)+"\t");
+							System.out.print(rs.getString(1)+"\t");
 										
 						}
 						rs.close();
 						pstmt.close();
 						con.close();
 					} catch (SQLException e) {
-						System.out.println("에러:"+e.getMessage());
+						System.out.println("반지의 제왕 정보 리스트 에러:"+e.getMessage());
 						
 						if(rs!=null) {
 							try {
@@ -451,7 +451,7 @@ public class MemberDAO {
 						while(rs.next()) {
 							mypotterlist.add(new HarryPotterVO(rs.getString(1), rs.getString(2), rs.getString(3)));
 							System.out.println(row+++"행");
-							System.out.print(rs.getInt(1)+"\t");// select를 통해서 데이터 순서로 1부터
+							System.out.print(rs.getString(1)+"\t");// select를 통해서 데이터 순서로 1부터
 							System.out.print(rs.getString(2)+"\t"); 
 							System.out.print(rs.getString(3)+"\n");
 										
@@ -460,7 +460,7 @@ public class MemberDAO {
 						pstmt.close();
 						con.close();
 					} catch (SQLException e) {
-						System.out.println("에러:"+e.getMessage());
+						System.out.println("해리포터 정보 리스트 에러:"+e.getMessage());
 						
 						if(rs!=null) {
 							try {
