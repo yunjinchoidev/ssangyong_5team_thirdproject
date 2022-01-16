@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"
     import="java.util.*"
     import="project3.lord.*"
-    import="lord.*"
+    import="lordTest.*"
      %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    

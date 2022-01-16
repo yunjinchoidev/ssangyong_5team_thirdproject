@@ -60,9 +60,9 @@ request.setCharacterEncoding("utf-8");
 <body>
 	<div id="Servicemenu">
 		<ul>
-			<li><a href="/project3/views/2_Service/1_talentdona/0_default.jsp">재능기부</a></li>
-			<li><a href="/project3/views/2_Service/2_myfancy/0_default.jsp">공상하다</a></li>
-			<li><a href="/project3/views/2_Service/3_myfantastic/0_default.jsp">나의 판타스틱</a></li>
+			<li><a href="${contextPath }/talent/list.do">재능기부</a></li>
+			<li><a href="${contextPath }/fantasize/list.do">공상하다</a></li>
+			<li><a href="${contextPath }/myfantastic/list.do">나의 판타스틱</a></li>
 			<li><a href="${contextPath }/rc/list.do">독서 클럽</a></li>
 			<li><a href="${contextPath }/board/list.do">전체 게시판</a></li>
 		</ul>

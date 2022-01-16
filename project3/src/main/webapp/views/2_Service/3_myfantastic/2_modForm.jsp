@@ -91,7 +91,7 @@ input{
 	<div class="contents">
 		<div class="cards">
 			<p>글 수정하기</p>
-			<form action="${contextPath }/board/mod.do" enctype="multipart/form-data"> 
+			<form action="${contextPath }/myfantastic/mod.do" enctype="multipart/form-data"> 
 			<table align="center" class="tbdaddtab">
 			<colgroup>
 				<col width="30%">

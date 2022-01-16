@@ -84,11 +84,8 @@ input {
 
 	<div class="contents">
 		<div class="cards">
-			<p>
-				자유게시판>
-
-				<a href="${contextPath}/board/addForm.do">글쓰기</a>
-				<a href="${contextPath}/board/addForm2.do">글쓰기</a>
+			<p>나의 판타스틱</p>
+				<a href="${contextPath}/myfantastic/addForm.do">글쓰기</a>
 
 
 

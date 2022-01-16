@@ -11,7 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import harrypotter.HarryPotterVO;
-import lord.LordVO;
+import lordTest.LordVO;
 import marvel.MarvelVO;
 
 

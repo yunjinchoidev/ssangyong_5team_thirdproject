@@ -48,6 +48,15 @@ INSERT INTO board values (9, 201, 201, 201, '홍길동9',
 INSERT INTO board values (10, 201, 201, 201, '홍길동10',
 			'abcd', 'a@naver.com', sysdate, '제목10', sysdate, '123.123.123', 
 			500, 0, '콘텐츠10');
+INSERT INTO board values (33, 201, 202, 201, '홍길동10',
+			'abcd', 'a@naver.com', sysdate, '제목10', sysdate, '123.123.123', 
+			500, 0, '콘텐츠10');
+INSERT INTO board values (35, 201, 202, 202, '홍길동10',
+			'abcd', 'a@naver.com', sysdate, '제목10', sysdate, '123.123.123', 
+			500, 0, '콘텐츠10');
+INSERT INTO board values (36, 201, 202, 202, '홍길동10',
+			'abcd', 'a@naver.com', sysdate, '제목10', sysdate, '123.123.123', 
+			500, 0, '콘텐츠10');
 
 COMMIT;
 
@@ -78,9 +87,12 @@ SELECT
 	boContent,
 	LEVEL
 FROM board
+WHERE BOCateKey=202
 START WITH PARENTNO=0
 CONNECT BY PRIOR bopostkey=PARENTNO
 ORDER BY bopostkey;
+
+
 
 
 

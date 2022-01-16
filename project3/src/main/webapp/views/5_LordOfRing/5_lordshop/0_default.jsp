@@ -46,7 +46,9 @@ request.setCharacterEncoding("utf-8");
 	<div class="contents">
 		<div class="cards">
 				<h1> Absolute Ring ship</h1>
-				<p> 엄선된 물건들이 있습니다. 마음껏 둘러보십시오</p>
+				<p> 엄선된 물건들이 있습니다.<br>
+				 마음껏 둘러보십시오</p>
+				 <hr style="border:3px solid yellow;">
 				<div id=lordshopwrap01>
 					<div class="indivi">
 						<a href="/project3/views/5_LordOfRing/5_lordshop/1_detail.jsp?id=1"><img src="media/theonering.jpg"></a>

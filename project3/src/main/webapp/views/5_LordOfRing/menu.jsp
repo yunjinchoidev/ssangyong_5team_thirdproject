@@ -3,6 +3,10 @@
 <%
 request.setCharacterEncoding("utf-8");
 %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,9 +56,9 @@ request.setCharacterEncoding("utf-8");
 	<div id="loadmenu">
 		<ul>
 			<li><a href="/project3/views/5_LordOfRing/1_worldview/0_default.jsp">세계관</a></li>
-			<li><a href="/project3/views/5_LordOfRing/2_meeting/0_default.jsp">정기모임</a></li>
+			<li><a href="${contextPath }/lordMeeting/list.do">정기모임</a></li>
 			<li><a href="/project3/views/5_LordOfRing/3_test/0_default.jsp">반지 자격 테스트</a></li>
-			<li><a href="/project3/views/5_LordOfRing/4_lordboard/listArticles.jsp">반지의 제왕 게시판</a></li>
+			<li><a href="${contextPath }/lordBoard/list.do">반지의 제왕 게시판</a></li>
 			<li><a href="/project3/views/5_LordOfRing/5_lordshop/0_default.jsp">The One Ring shop</a></li>
 		</ul>
 	</div>

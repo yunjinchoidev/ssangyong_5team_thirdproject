@@ -92,7 +92,7 @@ input{
 	<div class="contents">
 		<div class="cards">
 			<p>글쓰기</p>
-			<form action="${contextPath }/board/add.do" enctype="multipart/form-data"> 
+			<form action="${contextPath }/myfantastic/add.do" enctype="multipart/form-data"> 
 			<table align="center" class="tbdaddtab">
 			<colgroup>
 				<col width="30%">
