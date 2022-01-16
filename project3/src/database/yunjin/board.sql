@@ -7,10 +7,83 @@ CREATE TABLE Board(
 	boWriterPass	VARCHAR2(100),
 	boWriterEmail	VARCHAR2(200),
 	boPostDate	DATE,
-	boTtitle	VARCHAR2(200),
+	boTitle	VARCHAR2(200),
 	boModifyDate	DATE,
-	boWriteIp	VARCHAR2(100),
+	boWriterIp	VARCHAR2(100),
 	boViews	NUMBER,
-	boParWritNum	NUMBER,
+	parentNO	NUMBER,
 	boContent	VARCHAR2(4000)
 );
+
+SELECT max(boPostKey)
+FROM Board;
+
+INSERT INTO board values (1, 201, 201, 201, '홍길동',
+			'abcd', 'a@naver.com', sysdate, '제목1', sysdate, '123.123.123', 
+			500, 0, '콘텐츠1');
+INSERT INTO board values (2, 201, 201, 201, '홍길동',
+			'abcd', 'a@naver.com', sysdate, '제목1', sysdate, '123.123.123', 
+			500, 1, '콘텐츠1');
+INSERT INTO board values (3, 201, 201, 201, '홍길동',
+			'abcd', 'a@naver.com', sysdate, '제목1', sysdate, '123.123.123', 
+			500, 1, '콘텐츠1');
+INSERT INTO board values (4, 201, 201, 201, '홍길동',
+			'abcd', 'a@naver.com', sysdate, '제목1', sysdate, '123.123.123', 
+			500, 0, '콘텐츠1');
+INSERT INTO board values (5, 201, 201, 201, '홍길동',
+			'abcd', 'a@naver.com', sysdate, '제목1', sysdate, '123.123.123', 
+			500, 2, '콘텐츠1');
+INSERT INTO board values (6, 201, 201, 201, '홍길동6',
+			'abcd', 'a@naver.com', sysdate, '제목6', sysdate, '123.123.123', 
+			500, 0, '콘텐츠6');
+INSERT INTO board values (7, 201, 201, 201, '홍길동',
+			'abcd', 'a@naver.com', sysdate, '제목7', sysdate, '123.123.123', 
+			500, 6, '콘텐츠7');
+INSERT INTO board values (8, 201, 201, 201, '홍길동',
+			'abcd', 'a@naver.com', sysdate, '제목8', sysdate, '123.123.123', 
+			500, 6, '콘텐츠8');
+INSERT INTO board values (9, 201, 201, 201, '홍길동9',
+			'abcd', 'a@naver.com', sysdate, '제목9', sysdate, '123.123.123', 
+			500, 0, '콘텐츠9');
+INSERT INTO board values (10, 201, 201, 201, '홍길동10',
+			'abcd', 'a@naver.com', sysdate, '제목10', sysdate, '123.123.123', 
+			500, 0, '콘텐츠10');
+
+COMMIT;
+
+ALTER TABLE board RENAME COLUMN bottitle TO boTitle;
+ALTER TABLE board RENAME COLUMN bowriteip TO bowriterip;
+
+SELECT * FROM board;
+
+DROP TABLE board;
+
+DELETE FROM board;
+
+
+SELECT
+	boPostKey,
+	mKey,
+	fileKey,
+	boCateKey,
+	boWriter,
+	boWriterPass,
+	boWriterEmail,
+	boPostDate,
+	LPAD(' ',4*(LEVEL-1))||BOTITLE "bottile", 
+	boModifyDate,
+	boWriterIp,
+	boViews,
+	PARENTNO ,
+	boContent,
+	LEVEL
+FROM board
+START WITH PARENTNO=0
+CONNECT BY PRIOR bopostkey=PARENTNO
+ORDER BY bopostkey;
+
+
+
+ SELECT *
+	FROM Board
+	WHERE boPostKey=1;	

@@ -61,13 +61,20 @@ public class LiteraryContestDAO {
 		}
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
 	// 전체 조회
 	public ArrayList<LiteraryContestVO> contestList() {
 		ArrayList<LiteraryContestVO> conlist = new ArrayList<LiteraryContestVO>();
 		String sql = "SELECT *\r\n" + 
 					"FROM LiteraryContest\r\n";
 					
-
 		try {
 			setConn();
 			pstmt = con.prepareStatement(sql);

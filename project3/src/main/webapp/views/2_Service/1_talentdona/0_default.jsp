@@ -113,6 +113,7 @@ p {
 
 			<button onclick="location.href='1_apply.jsp'" class="talbtn">재능을 나누고 싶어요<br>(기부자 등록)</button>
 			<button onclick="location.href='2_applykid.jsp'" class="talbtn">재능기부를 받고 싶어요<br>(참여자 등록)</button>
+			<button onclick="location.href='3_telenboard.jsp'" class="talbtn">게시판(기부자&참여하기)</button>
 
 			<hr style="border : 5px solid yellow; margin: 40px; ">
 			
@@ -149,9 +150,6 @@ p {
 			</table>
 
 		</div>
-	</div>
-	<div class="contents">
-		<div class="cards"></div>
 	</div>
 
 

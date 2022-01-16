@@ -3,6 +3,9 @@
 <%
 request.setCharacterEncoding("utf-8");
 %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,8 +63,8 @@ request.setCharacterEncoding("utf-8");
 			<li><a href="/project3/views/2_Service/1_talentdona/0_default.jsp">재능기부</a></li>
 			<li><a href="/project3/views/2_Service/2_myfancy/0_default.jsp">공상하다</a></li>
 			<li><a href="/project3/views/2_Service/3_myfantastic/0_default.jsp">나의 판타스틱</a></li>
-			<li><a href="/project3/views/2_Service/4_readingclub/0_default.jsp">독서 클럽</a></li>
-			<li><a href="/project3/views/2_Service/5_totalboard/listArticles.jsp">전체 게시판</a></li>
+			<li><a href="${contextPath }/rc/list.do">독서 클럽</a></li>
+			<li><a href="${contextPath }/board/list.do">전체 게시판</a></li>
 		</ul>
 	</div>
 

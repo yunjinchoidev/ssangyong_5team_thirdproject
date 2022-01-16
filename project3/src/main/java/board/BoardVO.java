@@ -6,29 +6,74 @@ public class BoardVO {
 
 	private int boPostKey;
 	private int mKey;
-	private int boFileNum;
+	private int fileKey;
 	private int boCateKey;
 	private String boWriter;
 	private String boWriterPass;
 	private String boWriterEmail;
 	private Date boPostDate;
+	private String boPostDateS;
 	private String boTitle;
 	private Date boModifyDate;
+	private String boModifyDateS;
 	private String boWriterIp;
 	private int boViews;
-	private int boParWritNum;
+	private int boParentNO;
 	private String boContent;
+	private int level;
 	public BoardVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public BoardVO(int boPostKey, int mKey, int boFileNum, int boCateKey, String boWriter, String boWriterPass,
-			String boWriterEmail, Date boPostDate, String boTitle, Date boModifyDate, String boWriterIp, int boViews,
-			int boParWritNum, String boContent) {
+	public BoardVO(int boPostKey, int mKey, int fileKey, int boCateKey, String boWriter, String boWriterPass,
+			String boWriterEmail, Date boPostDate, String boPostDateS, String boTitle, Date boModifyDate,
+			String boModifyDateS, String boWriterIp, int boViews, int boParentNO, String boContent, int level) {
 		super();
 		this.boPostKey = boPostKey;
 		this.mKey = mKey;
-		this.boFileNum = boFileNum;
+		this.fileKey = fileKey;
+		this.boCateKey = boCateKey;
+		this.boWriter = boWriter;
+		this.boWriterPass = boWriterPass;
+		this.boWriterEmail = boWriterEmail;
+		this.boPostDate = boPostDate;
+		this.boPostDateS = boPostDateS;
+		this.boTitle = boTitle;
+		this.boModifyDate = boModifyDate;
+		this.boModifyDateS = boModifyDateS;
+		this.boWriterIp = boWriterIp;
+		this.boViews = boViews;
+		this.boParentNO = boParentNO;
+		this.boContent = boContent;
+		this.level = level;
+	}
+	public BoardVO(int boPostKey, int mKey, int fileKey, int boCateKey, String boWriter, String boWriterPass,
+			String boWriterEmail, String boPostDateS, String boTitle, String boModifyDateS, String boWriterIp,
+			int boViews, int boParentNO, String boContent, int level) {
+		super();
+		this.boPostKey = boPostKey;
+		this.mKey = mKey;
+		this.fileKey = fileKey;
+		this.boCateKey = boCateKey;
+		this.boWriter = boWriter;
+		this.boWriterPass = boWriterPass;
+		this.boWriterEmail = boWriterEmail;
+		this.boPostDateS = boPostDateS;
+		this.boTitle = boTitle;
+		this.boModifyDateS = boModifyDateS;
+		this.boWriterIp = boWriterIp;
+		this.boViews = boViews;
+		this.boParentNO = boParentNO;
+		this.boContent = boContent;
+		this.level = level;
+	}
+	public BoardVO(int boPostKey, int mKey, int fileKey, int boCateKey, String boWriter, String boWriterPass,
+			String boWriterEmail, Date boPostDate, String boTitle, Date boModifyDate, String boWriterIp, int boViews,
+			int boParentNO, String boContent, int level) {
+		super();
+		this.boPostKey = boPostKey;
+		this.mKey = mKey;
+		this.fileKey = fileKey;
 		this.boCateKey = boCateKey;
 		this.boWriter = boWriter;
 		this.boWriterPass = boWriterPass;
@@ -38,8 +83,9 @@ public class BoardVO {
 		this.boModifyDate = boModifyDate;
 		this.boWriterIp = boWriterIp;
 		this.boViews = boViews;
-		this.boParWritNum = boParWritNum;
+		this.boParentNO = boParentNO;
 		this.boContent = boContent;
+		this.level = level;
 	}
 	public int getBoPostKey() {
 		return boPostKey;
@@ -53,11 +99,11 @@ public class BoardVO {
 	public void setmKey(int mKey) {
 		this.mKey = mKey;
 	}
-	public int getBoFileNum() {
-		return boFileNum;
+	public int getFileKey() {
+		return fileKey;
 	}
-	public void setBoFileNum(int boFileNum) {
-		this.boFileNum = boFileNum;
+	public void setFileKey(int fileKey) {
+		this.fileKey = fileKey;
 	}
 	public int getBoCateKey() {
 		return boCateKey;
@@ -89,6 +135,12 @@ public class BoardVO {
 	public void setBoPostDate(Date boPostDate) {
 		this.boPostDate = boPostDate;
 	}
+	public String getBoPostDateS() {
+		return boPostDateS;
+	}
+	public void setBoPostDateS(String boPostDateS) {
+		this.boPostDateS = boPostDateS;
+	}
 	public String getBoTitle() {
 		return boTitle;
 	}
@@ -100,6 +152,12 @@ public class BoardVO {
 	}
 	public void setBoModifyDate(Date boModifyDate) {
 		this.boModifyDate = boModifyDate;
+	}
+	public String getBoModifyDateS() {
+		return boModifyDateS;
+	}
+	public void setBoModifyDateS(String boModifyDateS) {
+		this.boModifyDateS = boModifyDateS;
 	}
 	public String getBoWriterIp() {
 		return boWriterIp;
@@ -113,17 +171,23 @@ public class BoardVO {
 	public void setBoViews(int boViews) {
 		this.boViews = boViews;
 	}
-	public int getBoParWritNum() {
-		return boParWritNum;
+	public int getBoParentNO() {
+		return boParentNO;
 	}
-	public void setBoParWritNum(int boParWritNum) {
-		this.boParWritNum = boParWritNum;
+	public void setBoParentNO(int boParentNO) {
+		this.boParentNO = boParentNO;
 	}
 	public String getBoContent() {
 		return boContent;
 	}
 	public void setBoContent(String boContent) {
 		this.boContent = boContent;
+	}
+	public int getLevel() {
+		return level;
+	}
+	public void setLevel(int level) {
+		this.level = level;
 	}
 	
 }
