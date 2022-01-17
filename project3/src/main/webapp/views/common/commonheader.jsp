@@ -3,6 +3,9 @@
 <%
 request.setCharacterEncoding("utf-8");
 %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -156,8 +159,8 @@ body {
                <div class="headermenuwrap">
                   <div class="headermenu01">
                      <ul>
-                        <li><a href="/project3/views/2_Service/1_talentdona/0_default.jsp">서비스</a></li>
-                        <li><a href="/project3/views/10_Store/1_official/0_default.jsp">스토어</a></li>
+                        <li><a href="${contextPath }/talent/list.do">서비스</a></li>
+                        <li><a href="${contextPath}/oft/list.do">스토어</a></li>
                         <li><a href="/project3/views/11_Event/1_contest/0_default.jsp">이벤트</a></li>
                      </ul>
                   </div>
@@ -165,7 +168,7 @@ body {
                   <div class="headermenu02">
                      <a href="/project3/views/3_login/Login.jsp"><img
                         src="/project3/views/Media/account3.png" id="account"></a> 
-                        <a href="/project3/views/6_payment/0_shoppingcart.jsp"><img
+                        <a href="${contextPath }/cart/list.do"><img
                         src="/project3/views/Media/shopping-cart2.png" id="shoppingcart"></a>
                   </div>
                </div>
