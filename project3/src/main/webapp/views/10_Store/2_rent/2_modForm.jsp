@@ -96,26 +96,14 @@ input{
 			<colgroup>
 				<col width="30%">
 			</colgroup>
-			<tr><th>제품이름</th><td><input type="text" name="rentalPname" ></td></tr>
-					<tr><th>렌탈기간</th><td><input type="text" name="rentalterm"></td></tr>
-					<tr><th>제품설명</th><td><input type="text" name="rentalExplain"></td></tr>
-					<tr><th>렌탈시작</th><td><input type="text" name="rentalStartDayS" placeholder="YYYY/MM/DD"></td></tr>
-					<tr><th>렌탈시작</th><td><input type="text" name="rentalEndDayS" placeholder="YYYY/MM/DD"></td></tr>
-					<tr><th>상품분류번호</th><td><input type="text" name="proCateKey"></td></tr>
-					<tr><th>파일번호</th><td><input type="file" name="fileKey"></td></tr>
-					<tr><th>가격</th><td><input type="text" name="rentPrice" placeholder="가격을 입력하세요"></td></tr>
-					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
-			
-					<tr><th>상품 공식 번호</th><td><input type="text" name="officialKey" value="${rentVO.officialKey}"></td></tr>
-					
-					
-					<tr><th>상품 설명</th><td><input type="text" name="officialExplain" value="${rentVO.officialExplain}"></td></tr>
-							<tr><th>상품명</th><td><input type="text" name="officialPname" value="${rentVO.officialPname}"></td></tr>
-		
-					<tr><th>재고</th><td><input type="text" name="officialInventory" value="${rentVO.officialInventory}"></td></tr>
-					<tr><th>할인률</th><td><input type="text" name="officialDiscount" value="${rentVO.officialDiscount}"></td></tr>
-					<tr><th>상품분류코드</th><td><input type="text" name="proCateKey" value="${rentVO.proCateKey}"> </td></tr>
-					<tr><th>파일</th><td><input type="file" name="fileKey" value="${rentVO.fileKey}"></td></tr>
+			<tr><th>제품이름</th><td><input type="text" name="rentalPname" value="${rentalVO.rentalPname}"></td></tr>
+					<tr><th>렌탈기간</th><td><input type="text" name="rentalterm" value="${rentalVO.rentalterm}"></td></tr>
+					<tr><th>제품설명</th><td><input type="text" name="rentalExplain" value="${rentalVO.rentalExplain}"></td></tr>
+					<tr><th>렌탈시작</th><td><input type="text" name="rentalStartDayS" placeholder="YYYY/MM/DD" value="${rentalVO.rentalStartDayS}"></td></tr>
+					<tr><th>렌탈시작</th><td><input type="text" name="rentalEndDayS" placeholder="YYYY/MM/DD" value="${rentalVO.rentalEndDayS}"></td></tr>
+					<tr><th>상품분류번호</th><td><input type="text" name="proCateKey" value="${rentalVO.proCateKey}"></td></tr>
+					<tr><th>파일번호</th><td><input type="file" name="fileKey" value="${rentalVO.fileKey}"></td></tr>
+					<tr><th>가격</th><td><input type="text" name="rentPrice" placeholder="가격을 입력하세요" value="${rentalVO.rentPrice}"></td></tr>
 					<tr><td colspan="2"><input type="submit" value="제출하기" ></td></tr>
 			</table>
 			</form>

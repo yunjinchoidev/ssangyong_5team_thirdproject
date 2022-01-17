@@ -58,6 +58,10 @@ public class RentalStoreTController extends HttpServlet {
 			request.setAttribute("rentalList", rentalList);
 			nextPage = "/views/10_Store/2_rent/0_list.jsp";
 
+			
+			
+			
+			
 		} else if (action.equals("/list.do")) {
 			rentalList = RentalStoreTService.list();
 			request.setAttribute("rentalList", rentalList);
@@ -117,13 +121,13 @@ public class RentalStoreTController extends HttpServlet {
 			}
 			;
 			
-			RentalStoreTVO off = new RentalStoreTVO(
+			RentalStoreTVO reatalVO = new RentalStoreTVO(
 					rentalKey, rentalPname, rentalterm,
 					rentalExplain, rentalStartDayS, rentalEndDayS,
 					proCateKey, fileKey, rentPrice);
 
 
-			RentalStoreTService.add(off);
+			RentalStoreTService.add(rentalVO);
 			
 			nextPage="/rent/list.do";
 
@@ -221,7 +225,7 @@ public class RentalStoreTController extends HttpServlet {
 			request.setAttribute("rent", rent);
 			
 			
-			nextPage="/rental/list.do";
+			nextPage="/rent/list.do";
 
 			
 		} else if (action.equals("/del.do")) {

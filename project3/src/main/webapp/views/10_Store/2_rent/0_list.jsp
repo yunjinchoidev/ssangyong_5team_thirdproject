@@ -78,10 +78,10 @@ color: white;
 					<c:when test="${!empty rentalList}">
 						<c:forEach var="rentalList" items="${rentalList}" varStatus="rentNum">
 							<div class="lordshopchild"> 
-								재고 : ${rentalList.rentalPname }<br>
-								기간 : ${rentalList.rentalterm }<br>
-								시작 : ${rentalList.rentalStartDayS }<br>
-								마감 : ${rentalList.rentalEndDayS }<br>
+								상품명 : ${rentalList.rentalPname }<br>
+								기간 : ${rentalList.rentalterm }일<br>
+								시작일 : ${rentalList.rentalStartDayS }<br>
+								마감일 : ${rentalList.rentalEndDayS }<br>
 								분류 : ${rentalList.proCateKey }<br>
 								파일 : ${rentalList.fileKey }<br>
 								가격 : ${rentalList.rentPrice }<br>

@@ -380,13 +380,15 @@ public class BoardDAO {
 					"비밀번호1", "a@A", "2021/1/14", "제목", "2021/12/01",
 					"192.312.31", 1, 0, "콘텐츠1",0));
 			*/
-			System.out.println(dao.searchBdKey(10).getBoPostKey());
-			System.out.println(dao.searchBdTitle("8").getBoPostKey());
+			//System.out.println(dao.searchBdKey(10).getBoPostKey());
+			//System.out.println(dao.searchBdTitle("8").getBoPostKey());
 			
 			for(BoardVO b : dao.listBd()) {
 				System.out.println("게시글 번호" + b.getBoPostKey()+"입력일 : "+b.getBoTitle());
 			}
 			
+			dao.searchBdTitle("최윤진");
+		
 			
 			
 			

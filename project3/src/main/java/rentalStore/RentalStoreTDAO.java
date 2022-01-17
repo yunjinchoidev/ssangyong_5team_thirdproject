@@ -224,8 +224,8 @@ public class RentalStoreTDAO {
 					+ "			SET RentalPname=?,\r\n"
 					+ "				rentalterm = ?,\r\n"
 					+ "				rentalExplain = ?,\r\n"
-					+ "				rentalStartDay=to_date(sysdate,'YYYY/MM/DD'),\r\n"
-					+ "				rentalEndDay=to_date(sysdate,'YYYY/MM/DD'),\r\n"
+					+ "				rentalStartDay=to_date(?,'YYYY/MM/DD'),\r\n"
+					+ "				rentalEndDay=to_date(?,'YYYY/MM/DD'),\r\n"
 					+ "				proCateKey = ?,\r\n"
 					+ "				fileKey = ?,\r\n"
 					+ "				rentalPrice = ?\r\n"
@@ -331,7 +331,7 @@ public class RentalStoreTDAO {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		RentalStoreTDAO DAO = new RentalStoreTDAO();
-		//DAO.insert(new RentalStoreTVO(2, "a", 1, "A", "2021/11/11", "2021/11/12", 501, "401", 2000));
+		DAO.insert(new RentalStoreTVO(2, "a", 1, "A", "2021/11/11", "2021/11/12",501, "401", 2000));
 		
 		for(RentalStoreTVO of : DAO.list()) {
 			System.out.println(of.getRentalKey());
