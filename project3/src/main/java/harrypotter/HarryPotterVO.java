@@ -1,9 +1,12 @@
 package harrypotter;
 
+import java.util.Date;
+
 public class HarryPotterVO {
 	int harryKey;
 	String harryCharacter;
 	String harryDomioty;
+	Date DormJoinDate;
 	String harryMagicLevel;
 	int harryBirth;
 	String harryMagic;
@@ -28,6 +31,28 @@ public class HarryPotterVO {
 		this.harryHeight = harryHeight;
 		this.harryWeight = harryWeight;
 		this.mKey = mKey;
+	}
+	
+	// 캐릭터 업데이트
+	public HarryPotterVO(String harryCharacter) {
+		super();
+		this.harryCharacter = harryCharacter;
+	}
+	
+	// 기숙사 업데이트
+	public HarryPotterVO(String harryDomioty, Date DormJoinDate) {
+		super();
+		this.harryDomioty = harryDomioty;
+		this.DormJoinDate = DormJoinDate;
+	}
+	
+	// 마이페이지 출력
+	public HarryPotterVO(String harryMagicLevel,String harryCharacter,
+			String harryDomioty) {
+		super();
+		this.harryMagicLevel = harryMagicLevel;
+		this.harryCharacter = harryCharacter;
+		this.harryDomioty = harryDomioty;
 	}
 
 	public int getHarryKey() {

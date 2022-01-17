@@ -19,13 +19,19 @@ public class MarvelVO {
 		super();
 		this.marvelKey = marvelKey;
 		this.marvelCharacter = marvelCharacter;
-		MarvelAbility = marvelAbility;
-		MarvelHobby = marvelHobby;
-		MarvelHeight = marvelHeight;
-		MarvelWeight = marvelWeight;
+		this.MarvelAbility = marvelAbility;
+		this.MarvelHobby = marvelHobby;
+		this.MarvelHeight = marvelHeight;
+		this.MarvelWeight = marvelWeight;
 		this.mKey = mKey;
 	}
-
+	
+	public MarvelVO(String marvelCharacter) {
+		super();
+		this.marvelCharacter = marvelCharacter;
+		
+	}
+	
 	public int getMarvelKey() {
 		return marvelKey;
 	}

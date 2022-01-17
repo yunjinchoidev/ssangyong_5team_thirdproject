@@ -17,3 +17,17 @@ VALUES ((SELECT NVL(MAX(MARVELKEY)+1,1) FROM MARVEL),'미지정','미지정','�
 
 DELETE FROM marvel
 WHERE mkey=2;
+
+UPDATE marvel
+SET MARVELCHARACTER='아이언맨'
+WHERE mkey = (SELECT mkey
+FROM MEMBER
+WHERE mid = 'himan'
+AND mpass='7777');
+
+SELECT  marvelCharacter
+FROM marvel
+WHERE MKEY = (SELECT mkey
+FROM MEMBER
+WHERE mid='himan'
+AND mpass = '7777');

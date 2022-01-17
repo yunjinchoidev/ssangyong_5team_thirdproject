@@ -45,6 +45,11 @@ position: absolute;
 top:200px;
 }
 
+#confirmBtn{
+position: absolute;
+top:300px;
+left:150px;
+}
 
 </style>
 
@@ -52,7 +57,7 @@ top:200px;
 </head>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="js/confetti_v2.js"></script>
+<script src="views\8_HarryPotter\js\confetti_v2.js"></script>
 
 <script>
 
@@ -70,6 +75,14 @@ $(document).ready(function(){
 	});
 
 </script>
+
+<%
+String path = request.getContextPath();
+
+String id= (String)session.getAttribute("ID");
+String pass= (String)session.getAttribute("PASSWORD");
+
+%>
 
 <body style="background-color: black;">
 
@@ -92,7 +105,7 @@ $(document).ready(function(){
 <canvas id="canvas"></canvas>
 
 <!-- 후플푸프 배경 이미지 -->
-<img src="../media/huffleBack.jpg" width="100%" height="100%">
+<img src="views\8_HarryPotter\media\huffleBack.jpg" width="100%" height="100%">
 
 <div id="tex">
 <h2 style="position:absolute;top:20px;left:130px;font-size:30px">
@@ -105,6 +118,13 @@ HUFFLEPUFF
 <h2 style="position:absolute;top:200px;left:150px;font-size:30px">
 사용자닉네임
 </h2>
+<form>
+<button id="confirmBtn">확정하기</button>
+
+<input type="hidden" name="dorm" value="후플푸프">
+<input type="hidden" name="id" value="<%=id %>">
+<input type="hidden" name="pass" value="<%=pass %>">
+</form>
 </div>
 
 <div id="btnDiv">

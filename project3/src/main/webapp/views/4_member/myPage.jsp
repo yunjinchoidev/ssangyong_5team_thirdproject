@@ -1,3 +1,6 @@
+<%@page import="lord.LordVO"%>
+<%@page import="marvel.MarvelVO"%>
+<%@page import="harrypotter.HarryPotterVO"%>
 <%@page import="member.MemberVO"%>
 <%@page import="member.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -378,40 +381,46 @@ MemberDAO dao = new MemberDAO();
 	</div>
 </div>
 <%} %>
+
+<%for(HarryPotterVO potter:dao.mypotterlist(id, pass)){ %>
 <!-- 해리포터 박스 -->
 <div id="potterBox">
 	<div id="potterInfo">
 		<h1 id="potterTitle">해리포터</h1>
 		<hr id="potterHr">
-		<h1 id="potterLvArea">레벨:LV?</h1>
-		<h1 id="potterMyChar">나의 캐릭터:???</h1>
-		<h1 id="potterDorm">소속 기숙사:???</h1>
+		<h1 id="potterLvArea">레벨:LV<%=potter.getHarryMagicLevel()%></h1>
+		<h1 id="potterMyChar">나의 캐릭터:<%=potter.getHarryCharacter() %></h1>
+		<h1 id="potterDorm">소속 기숙사:<%=potter.getHarryDomioty() %></h1>
 	</div>
 
 </div>
+<%} %>
 
+<%for(MarvelVO marvel:dao.mymarvellist(id, pass)){ %>
 <!-- 마블 박스 -->
 <div id="marvelBox">
 	<div id="marvelInfo">
 		<h1 id="marvelTitle">마블</h1>
 		<hr id="marvelHr">
 		<h1 id="marvelLvArea">레벨:LV?</h1>
-		<h1 id="marvelMyChar">나의 캐릭터:???</h1>
+		<h1 id="marvelMyChar">나의 캐릭터:<%=marvel.getMarvelCharacter()%></h1>
 	</div>
 
 </div>
+<%} %>
 
+<%for(LordVO lord:dao.mylordllist(id, pass)){ %>
 <!-- 반지의제왕 박스 -->
 <div id="ringBox">
 	<div id="ringInfo">
 		<h1 id="ringTitle">반지의제왕</h1>
 		<hr id="ringHr">
 		<h1 id="ringLvArea">레벨:LV?</h1>
-		<h1 id="ringMyChar">나의 캐릭터:???</h1>
+		<h1 id="ringMyChar">나의 캐릭터:<%=lord.getLoadCharacter()%></h1>
 	</div>
 
 </div>
-
+<%} %>
 
 	
 <div id="footer">
