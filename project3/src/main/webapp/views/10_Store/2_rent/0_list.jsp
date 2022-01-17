@@ -31,6 +31,16 @@ request.setCharacterEncoding("utf-8");
 	border: 3px solid yellow;
 	display: inline-block;
 	margin: 20px;
+	
+}
+
+.lordshopchild a{
+text-decoration: none;
+color: white;
+}
+.lordshopchild a:hover{
+	color : red;
+	background-color: green;
 }
 
 
@@ -59,22 +69,25 @@ request.setCharacterEncoding("utf-8");
 				 <hr style="border:3px solid yellow;">
 					<div class="lordshopwrap">
 				<c:choose>
-					<c:when test="${empty rentList}">
+					<c:when test="${empty rentalList}">
 						<div>
 							<td colspan="16">등록된 글이 없습니다.</td>
 						</div>
 					</c:when>
 					
-					<c:when test="${!empty rentList}">
-						<c:forEach var="rentList" items="${rentList}" varStatus="rentNum">
+					<c:when test="${!empty rentalList}">
+						<c:forEach var="rentalList" items="${rentalList}" varStatus="rentNum">
 							<div class="lordshopchild"> 
-								재고 : ${rentList.officialInventory }<br>
-								물건명 : ${rentList.officialPname }<br>
-								할인률 : ${rentList.officialDiscount }<br>
-								할인률 : ${rentList.proCateKey }<br>
-								<a href="${contextPath }/rent/view.do?officialKey=${rentList.officialKey}">상품 자세히 보기</a>
-								<a href="${contextPath }/rent/del.do?officialKey=${rentList.officialKey}">상품 삭제</a>
-								<a href="${contextPath }/rent/modForm.do?officialKey=${rentList.officialKey}">상품 수정</a>
+								재고 : ${rentalList.rentalPname }<br>
+								기간 : ${rentalList.rentalterm }<br>
+								시작 : ${rentalList.rentalStartDayS }<br>
+								마감 : ${rentalList.rentalEndDayS }<br>
+								분류 : ${rentalList.proCateKey }<br>
+								파일 : ${rentalList.fileKey }<br>
+								가격 : ${rentalList.rentPrice }<br>
+								<a href="${contextPath }/rent/view.do?rentalKey=${rentalList.rentalKey}">상품 자세히 보기</a>
+								<a href="${contextPath }/rent/del.do?rentalKey=${rentalList.rentalKey}">상품 삭제</a>
+								<a href="${contextPath }/rent/modForm.do?rentalKey=${rentalList.rentalKey}">상품 수정</a>
 							</div>
 						</c:forEach>
 					</c:when>

@@ -36,7 +36,8 @@ public class RentalStoreTDAO {
 	public ArrayList<RentalStoreTVO> list() {
 		ArrayList<RentalStoreTVO> rentallist = new ArrayList<RentalStoreTVO>();
 		String sql = "SELECT *\r\n"
-				+ "FROM rentalStoreT\r\n";
+				+ "FROM rentalStoreT\r\n"
+				+ " order by rentalKey";
 		try {
 			setConn();
 			pstmt = con.prepareStatement(sql);
@@ -196,6 +197,7 @@ public class RentalStoreTDAO {
 			pstmt.setString(8, ins.getFileKey());
 			pstmt.setInt(9, ins.getRentPrice());
 			pstmt.executeUpdate();
+			System.out.println(num+"번 인서트 완료");
 			con.commit();
 			pstmt.close(); 
 			con.close();
@@ -329,7 +331,7 @@ public class RentalStoreTDAO {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		RentalStoreTDAO DAO = new RentalStoreTDAO();
-		DAO.insert(new RentalStoreTVO(1, "a", 1, "A", "2021/11/11", "2021/11/12", 501, "401", 2000));
+		//DAO.insert(new RentalStoreTVO(2, "a", 1, "A", "2021/11/11", "2021/11/12", 501, "401", 2000));
 		
 		for(RentalStoreTVO of : DAO.list()) {
 			System.out.println(of.getRentalKey());

@@ -26,10 +26,10 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 /**
  * Servlet implementation class BoardController
  */
-@WebServlet(name = "oftLord", urlPatterns = { "/oftLord/*" })
+@WebServlet(name = "rent", urlPatterns = { "/rent/*" })
 public class RentalStoreTController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static String BOARD_IMAGE_REPO = "C:\\oft\\oft_image";
+	private static String BOARD_IMAGE_REPO = "C:\\rent\\rent_image";
 	RentalStoreTService RentalStoreTService = new RentalStoreTService();
 	RentalStoreTDAO rentalStoreTDAO = new RentalStoreTDAO();
 	RentalStoreTVO rentalStoreTVO = new RentalStoreTVO();
@@ -56,170 +56,192 @@ public class RentalStoreTController extends HttpServlet {
 		if (action == null || action.equals("/list.do")) {
 			rentalList = RentalStoreTService.list();
 			request.setAttribute("rentalList", rentalList);
+			nextPage = "/views/10_Store/2_rent/0_list.jsp";
 
-			nextPage = "/views/5_LordOfRing/5_lordshop/0_list.jsp";
-
-			
-			
 		} else if (action.equals("/list.do")) {
 			rentalList = RentalStoreTService.list();
 			request.setAttribute("rentalList", rentalList);
-
-			nextPage = "/views/5_LordOfRing/5_lordshop/0_list.jsp";
+			nextPage = "/views/10_Store/2_rent/0_list.jsp";
 
 		} else if (action.equals("/addForm.do")) {
-			nextPage = "/views/5_LordOfRing/5_lordshop/1_addForm.jsp";
+			nextPage = "/views/10_Store/2_rent/1_addForm.jsp";
 			
 		} else if (action.equals("/add.do")) {
-			String officialKeyS = request.getParameter("officialKey");
-			int officialKey = 0;
-			if (officialKeyS != null) {
-				officialKey = Integer.parseInt(officialKeyS);
+			String rentalKeyS = request.getParameter("rentalKey");
+			int  rentalKey= 0;
+			if (rentalKeyS != null) {
+				rentalKey= Integer.parseInt(rentalKeyS);
 			}
 			;
 
-			String officialPname = request.getParameter("officialPname");
-			if (officialPname == null)
-				officialPname = "";
-			
-			String officialExplain = request.getParameter("officialExplain");
-			if (officialExplain == null)
-				officialExplain = "";
-			
-			
-			
-			
-			String officialInventoryS = request.getParameter("officialInventory");
-			int officialInventory = 0;
-			if (officialInventoryS != null) {
-				officialInventory = Integer.parseInt(officialInventoryS);
-			}
-			;
-			String officialDiscountS = request.getParameter("officialDiscount");
-			int officialDiscount = 0;
-			if (officialDiscountS != null) {
-				officialDiscount = Integer.parseInt(officialDiscountS);
-			}
-			;
-			String ProCateKeyS = request.getParameter("proCateKey");
-			int ProCateKey = 0;
-			if (ProCateKeyS != null) {
-				ProCateKey = Integer.parseInt(ProCateKeyS);
-			}
-			;
+			String  rentalPname= request.getParameter("rentalPname");
+			if (rentalPname == null)
+				rentalPname = "";
 
-			String fileKey = request.getParameter("fileKey");
-			if (fileKey == null)
-				fileKey = "";
-
+			
+			String rentaltermS = request.getParameter("rentalterm");
+			int  rentalterm= 0;
+			if (rentaltermS != null) {
+				rentalterm= Integer.parseInt(rentaltermS);
+			}
+			;
+			
+			String rentalExplain = request.getParameter("rentalExplain");
+			if ( rentalExplain== null)
+				rentalExplain = "rentalExplain";
+			
+			String rentalStartDayS = request.getParameter("rentalStartDayS");
+			if (rentalStartDayS == null)
+				rentalStartDayS = "rentalStartDayS";
+			
+			String rentalEndDayS = request.getParameter("rentalEndDayS");
+			if (rentalEndDayS == null)
+				rentalEndDayS = "rentalEndDayS";
+			
+			String proCateKeyS = request.getParameter("proCateKey");
+			int  proCateKey= 0;
+			if (proCateKeyS != null) {
+				proCateKey= Integer.parseInt(proCateKeyS);
+			}
+			;
+			
+			
+			String fileKey= request.getParameter("fileKey");
+			if ( fileKey== null)
+				fileKey = "fileKey";
+			
+			String rentPriceS = request.getParameter("rentPrice");
+			int  rentPrice= 0;
+			if (rentPriceS != null) {
+				rentPrice = Integer.parseInt(rentPriceS);
+			}
+			;
+			
 			RentalStoreTVO off = new RentalStoreTVO(
-					officialKey, officialPname, officialExplain, 
-					"", officialInventory, officialDiscount,
-					ProCateKey, fileKey);
+					rentalKey, rentalPname, rentalterm,
+					rentalExplain, rentalStartDayS, rentalEndDayS,
+					proCateKey, fileKey, rentPrice);
 
 
 			RentalStoreTService.add(off);
 			
-			nextPage="/oftLord/list.do";
+			nextPage="/rent/list.do";
 
+			
+			
+			
+			
 		} else if (action.equals("/view.do")) {
-			String officialKeyS = request.getParameter("officialKey");
-			int officialKey = 0;
-			if (officialKeyS != null) {
-				officialKey = Integer.parseInt(officialKeyS);
+			String rentalKeyS = request.getParameter("rentalKey");
+			int rentalKey = 0;
+			if (rentalKeyS != null) {
+				rentalKey = Integer.parseInt(rentalKeyS);
 			}
 			;
-			
-			rentalVO = RentalStoreTService.view(officialKey);
-			request.setAttribute("renctalVO", rentalVO);
-			nextPage = "/views/5_LordOfRing/5_lordshop/3_detail.jsp";
+			rentalVO = RentalStoreTService.view(rentalKey);
+			request.setAttribute("rentalVO", rentalVO);
+			nextPage = "/views/10_Store/2_rent/3_detail.jsp";
 
+			
+			
+			
 		} else if (action.equals("/modForm.do")) {
-			String officialKeyS = request.getParameter("officialKey");
-			int officialKey = 0;
-			if (officialKeyS != null) {
-				officialKey = Integer.parseInt(officialKeyS);
+			String rentalKeyS = request.getParameter("rentalKey");
+			int rentalKey = 0;
+			if (rentalKeyS != null) {
+				rentalKey = Integer.parseInt(rentalKeyS);
 			}
 			;
 			
-			oftVO = RentalStoreTService.view(officialKey);
-			request.setAttribute("oftVO", oftVO);
-			nextPage = "/views/5_LordOfRing/5_lordshop/2_modForm.jsp";
+			rentalVO = RentalStoreTService.view(rentalKey);
+			request.setAttribute("rentalVO", rentalVO);
+			nextPage = "/views/10_Store/2_rent/2_modForm.jsp";
 			
 
 		} else if (action.equals("/mod.do")) {
 
-			String officialKeyS = request.getParameter("officialKey");
-			int officialKey = 0;
-			if (officialKeyS != null) {
-				officialKey = Integer.parseInt(officialKeyS);
+			String rentalKeyS = request.getParameter("rentalKey");
+			int  rentalKey= 0;
+			if (rentalKeyS != null) {
+				rentalKey= Integer.parseInt(rentalKeyS);
 			}
 			;
 
-			String officialPname = request.getParameter("officialPname");
-			if (officialPname == null)
-				officialPname = "";
+			String  rentalPname= request.getParameter("rentalPname");
+			if (rentalPname == null)
+				rentalPname = "";
+
 			
-			String officialExplain = request.getParameter("officialExplain");
-			if (officialExplain == null)
-				officialExplain = "";
-			
-			
-			
-			
-			String officialInventoryS = request.getParameter("officialInventory");
-			int officialInventory = 0;
-			if (officialInventoryS != null) {
-				officialInventory = Integer.parseInt(officialInventoryS);
+			String rentaltermS = request.getParameter("rentalterm");
+			int  rentalterm= 0;
+			if (rentaltermS != null) {
+				rentalterm= Integer.parseInt(rentaltermS);
 			}
 			;
-			String officialDiscountS = request.getParameter("officialDiscount");
-			int officialDiscount = 0;
-			if (officialDiscountS != null) {
-				officialDiscount = Integer.parseInt(officialDiscountS);
+			
+			String rentalExplain = request.getParameter("rentalExplain");
+			if ( rentalExplain== null)
+				rentalExplain = "rentalExplain";
+			
+			String rentalStartDayS = request.getParameter("rentalStartDayS");
+			if (rentalStartDayS == null)
+				rentalStartDayS = "rentalStartDayS";
+			
+			String rentalEndDayS = request.getParameter("rentalEndDayS");
+			if (rentalEndDayS == null)
+				rentalEndDayS = "rentalEndDayS";
+			
+			String proCateKeyS = request.getParameter("proCateKey");
+			int  proCateKey= 0;
+			if (proCateKeyS != null) {
+				proCateKey= Integer.parseInt(proCateKeyS);
 			}
 			;
-			String ProCateKeyS = request.getParameter("proCateKey");
-			int ProCateKey = 0;
-			if (ProCateKeyS != null) {
-				ProCateKey = Integer.parseInt(ProCateKeyS);
+			
+			
+			String fileKey= request.getParameter("fileKey");
+			if ( fileKey== null)
+				fileKey = "fileKey";
+			
+			String rentPriceS = request.getParameter("rentPrice");
+			int  rentPrice= 0;
+			if (rentPriceS != null) {
+				rentPrice = Integer.parseInt(rentPriceS);
 			}
 			;
-
-			String fileKey = request.getParameter("fileKey");
-			if (fileKey == null)
-				fileKey = "";
-
-			RentalStoreTVO oft = new RentalStoreTVO(
-					officialKey, officialPname, officialExplain, 
-					"", officialInventory, officialDiscount,
-					ProCateKey, fileKey);
+			
+			RentalStoreTVO rent = new RentalStoreTVO(
+					rentalKey, rentalPname, rentalterm,
+					rentalExplain, rentalStartDayS, rentalEndDayS,
+					proCateKey, fileKey, rentPrice);
 
 			
 
-			RentalStoreTService.mod(oft);
-			request.setAttribute("oft", oft);
+			RentalStoreTService.mod(rent);
+			request.setAttribute("rent", rent);
 			
 			
-			nextPage="/oftLord/list.do";
+			nextPage="/rental/list.do";
 
 			
 		} else if (action.equals("/del.do")) {
-			String officialKeyS = request.getParameter("officialKey");
-			int officialKey = 0;
-			if (officialKeyS != null) {
-				officialKey = Integer.parseInt(officialKeyS);
+			String rentalKeyS = request.getParameter("rentalKey");
+			int rentalKey = 0;
+			if (rentalKeyS != null) {
+				rentalKey = Integer.parseInt(rentalKeyS);
 			}
 			;
+			
 
-			RentalStoreTService.del(officialKey);
-			nextPage = "/oftLord/list.do";
+			RentalStoreTService.del(rentalKey);
+			nextPage = "/rent/list.do";
 
 		} else {
-			oftList = RentalStoreTService.list();
-			request.setAttribute("oftList", oftList);
+			rentalList = RentalStoreTService.list();
+			request.setAttribute("rentalList", rentalList);
 
-			nextPage = "/views/5_LordOfRing/5_lordshop/0_list.jsp";		
+			nextPage = "/views/10_Store/2_rent/0_list.jsp";
+
 			}
 		
 		RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);

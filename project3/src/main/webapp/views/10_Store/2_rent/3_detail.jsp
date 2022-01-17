@@ -95,13 +95,16 @@ input {
 						<td width="30%">
 						<td width="70%">
 					</colgroup>
-					<tr><th>공식스토어 고유번호</th><td>${rentVO.officialKey}</td></tr>
-					<tr><th>제품 이름</th><td>${rentVO.officialPname}</td></tr>
-					<tr><th>설명</th><td>${rentVO.officialExplain}</td></tr>
-					<tr><th>재고</th><td>${rentVO.officialInventory}</td></tr>
-					<tr><th>할인률</th><td>${rentVO.officialDiscount}</td></tr>
-					<tr><th>상품분류번호</th><td>${rentVO.proCateKey}</td></tr>
-					<tr><th>파일번호</th><td>${rentVO.fileKey}</td></tr>
+					
+					<tr><th>공식스토어 고유번호</th><td>${rentalVO.rentalKey}</td></tr>
+					<tr><th>제품 이름</th><td>${rentalVO.rentalPname}</td></tr>
+					<tr><th>기간</th><td>${rentalVO.rentalterm}</td></tr>
+					<tr><th>설명</th><td>${rentalVO.rentalExplain}</td></tr>
+					<tr><th>시작</th><td>${rentalVO.rentalStartDayS }</td></tr>
+					<tr><th>마감</th><td>${rentalVO.rentalEndDayS }</td></tr>
+					<tr><th>상품분류번호</th><td>${rentalVO.proCateKey }</td></tr>
+					<tr><th>파일번호</th><td>${rentalVO.fileKey}</td></tr>
+					<tr><th>파일번호</th><td>${rentalVO.rentPrice}</td></tr>
 					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
 					<button onclick="location.href='${contextPath}'">장바구니 담기</button>
 					<button>주문하기</button>
