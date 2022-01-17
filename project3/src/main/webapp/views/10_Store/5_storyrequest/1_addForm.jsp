@@ -81,6 +81,7 @@ input{
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
+
 	<!-- S헤더 삽입 -->
 	<jsp:include page="/views/10_Store/menu.jsp">
 		<jsp:param name="name" value="go" />
@@ -90,23 +91,19 @@ input{
 
 	<div class="contents">
 		<div class="cards">
-			<p>강의 등록 수정하기</p>
-			<form action="${contextPath }/oft/mod.do" enctype="multipart/form-data"> 
+			<p>글쓰기</p>
+			<form action="${contextPath }/oft/add.do" enctype="multipart/form-data"> 
 			<table align="center" class="tbdaddtab">
 			<colgroup>
 				<col width="30%">
 			</colgroup>
-				<tr><th>강의 이름</th><td><input type="text" name="lecName" value="${oftVO.lecName}" ></td></tr>     
-					<tr><th>강사</th><td><input type="text" name="lecTeacher" value="${oftVO.lecTeacher}"></td></tr>         					
-					<tr><th>제한인원</th><td><input type="text" name="leclimitcnt"  value="${oftVO.leclimitcnt}"></td></tr>    				
-					<tr><th>온라인여부</th><td><input type="text" name="leconlineavail"value="${oftVO.leconlineavail}" ></td></tr>				
-					<tr><th>난이도</th><td><input type="text" name="lecdifficulty" value="${oftVO.lecdifficulty}" ></td></tr>    					
-					<tr><th>내용</th><td><input type="text" name="leccontents"  value="${oftVO.leccontents}"></td></tr>        					
-					<tr><th>평점</th><td><input type="text" name="lecscore" value="${oftVO.lecscore}"></td></tr>           					
-					<tr><th>분류</th><td><input type="text" name="proCateKey" value="${oftVO.proCateKey}"></td></tr>         				
-					<tr><th>파일</th><td><input type="text" name="fileKey" value="${oftVO.fileKey}" ></td></tr>            					
-					<tr><th>가격</th><td><input type="text" name="lecPrice" value="${oftVO.lecPrice}" ></td></tr>           					
-					<tr><td colspan="2"><input type="submit" value="제출하기" value=""></td></tr>          				
+					<tr><th>제품 이름</th><td><input type="text" name="officialPname" ></td></tr>
+					<tr><th>설명</th><td><input type="text" name="officialExplain"></td></tr>
+					<tr><th>재고</th><td><input type="text" name="officialInventory"></td></tr>
+					<tr><th>할인률</th><td><input type="text" name="officialDiscount"></td></tr>
+					<tr><th>상품분류번호</th><td><input type="text" name="proCateKey"></td></tr>
+					<tr><th>파일번호</th><td><input type="file" name="fileKey"></td></tr>
+					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
 			</table>
 			</form>
 

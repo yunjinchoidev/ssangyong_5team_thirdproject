@@ -95,13 +95,17 @@ input {
 						<td width="30%">
 						<td width="70%">
 					</colgroup>
-					<tr><th>공식스토어 고유번호</th><td>${oftVO.officialKey}</td></tr>
-					<tr><th>제품 이름</th><td>${oftVO.officialPname}</td></tr>
-					<tr><th>설명</th><td>${oftVO.officialExplain}</td></tr>
-					<tr><th>재고</th><td>${oftVO.officialInventory}</td></tr>
-					<tr><th>할인률</th><td>${oftVO.officialDiscount}</td></tr>
-					<tr><th>상품분류번호</th><td>${oftVO.proCateKey}</td></tr>
-					<tr><th>파일번호</th><td>${oftVO.fileKey}</td></tr>
+					<tr><th>강의명</th><td>${oftVO.lecKey}</td></tr>
+					<tr><th>강의 내용</th><td>${oftVO.lecName}</td></tr>
+					<tr><th>강사</th><td>${oftVO.lecTeacher}</td></tr>
+					<tr><th>제한인원</th><td>${oftVO.leclimitcnt}</td></tr>
+					<tr><th>온라인여부</th><td>${oftVO.leconlineavail}</td></tr>
+					<tr><th>난이도</th><td>${oftVO.lecdifficulty}</td></tr>
+					<tr><th>내용</th><td>${oftVO.leccontents}</td></tr>
+					<tr><th>평점</th><td>${oftVO.lecscore}</td></tr>
+					<tr><th>분류</th><td>${oftVO.proCateKey}</td></tr>
+					<tr><th>파일</th><td>${oftVO.fileKey}</td></tr>
+					<tr><th>가격</th><td>${oftVO.lecPrice}</td></tr>
 					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
 					<button onclick="location.href='${contextPath}'">장바구니 담기</button>
 					<button>주문하기</button>

@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import storyRequest.StoryRequestVO;
+
 
 public class StoryRequestDAO {
 
@@ -65,10 +67,10 @@ public class StoryRequestDAO {
 	
 	
 	// 전체 조회
-	public ArrayList<StoryRequestVO> rqList() {
+	public ArrayList<StoryRequestVO> list() {
 		ArrayList<StoryRequestVO> conlist = new ArrayList<StoryRequestVO>();
 		String sql = "SELECT *\r\n" + 
-					"FROM StoryRequest\r\n";
+					"FROM StoryRequestT\r\n";
 					
 		try {
 			setConn();
@@ -81,7 +83,7 @@ public class StoryRequestDAO {
 						rs.getString(3), rs.getInt(4),
 						rs.getInt(5), rs.getString(6),
 						rs.getInt(7), rs.getInt(8), 
-						rs.getInt(9)));
+						rs.getString(9)));
 			}
 			rs.close();
 			pstmt.close();
@@ -93,12 +95,152 @@ public class StoryRequestDAO {
 		return conlist;
 	}
 
+	// 지원자 이름으로 검색
+	public ArrayList<StoryRequestVO> Search01(String officialPname) {
+		ArrayList<StoryRequestVO> officiallist = new ArrayList<StoryRequestVO>();
+		String sql = "SELECT *\r\n"
+				+ "FROM StoryRequest\r\n"
+				+ "WHERE requTitle LIKE '%'||?||'%'";
+		try {
+			setConn();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, officialPname);
+			rs = pstmt.executeQuery();
+			int rowNum =1;
+			System.out.println("공식스토어 검색");
+			while (rs.next()) {
+				officiallist.add(new StoryRequestVO(
+						rs.getInt(1), rs.getString(2), 
+						rs.getString(3), rs.getInt(4),
+						rs.getInt(5), rs.getString(6),
+						rs.getInt(7), rs.getInt(8), 
+						rs.getString(9)));
+			}
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			if(rs!=null) rs = null; // 강제로 자원해제..
+			if(pstmt!=null) pstmt = null;
+			if(con!=null) con = null;
+		}
+		return officiallist;
+	}
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	//고유번호로 조회//
+	public StoryRequestVO searchKey(int officialKey) {
+		ArrayList<StoryRequestVO> searchlist = new ArrayList<StoryRequestVO>();
+		String sql = "SELECT *\r\n" + 
+					"FROM StoryRequestT\r\n" + 
+					"WHERE requKey=? ";
+		try {
+			setConn();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, officialKey);
+			
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				searchlist.add(new StoryRequestVO(
+						rs.getInt(1), rs.getString(2), 
+						rs.getString(3), rs.getInt(4),
+						rs.getInt(5), rs.getString(6),
+						rs.getInt(7), rs.getInt(8), 
+						rs.getString(9)));
+			}
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			if(rs!=null) rs = null; // 강제로 자원해제..
+			if(pstmt!=null) pstmt = null;
+			if(con!=null) con = null;
+		}
+		return searchlist.get(0);
+	}
+	
+
+	
+	/*맥스번호*/
+	private int maxBdKey() {
+		int there=0;
+		String sql = "SELECT max(requKey)\r\n" + 
+				"FROM StoryRequestT\r\n";
+		System.out.println("최고 번호 조회");
+		try {
+			setConn();
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				there = rs.getInt(1)+1;
+			}
+			System.out.println(there);
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			closeRsc();
+		}
+		return there;
+	}
+
+	
+	
+	
+	
+	//강의번호로으로조회//
+	public ArrayList<StoryRequestVO> lecSearch(int lecKey) {
+		ArrayList<StoryRequestVO> searchlist = new ArrayList<StoryRequestVO>();
+		String sql = "SELECT * \r\n"
+				+ "FROM StoryRequestT \r\n"
+				+ "WHERE lecKey = ? ";	
+		System.out.println("# pstmt 실행 #");
+		try {
+			setConn();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, lecKey);
+			
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				searchlist.add(new StoryRequestVO(
+						rs.getInt(1), rs.getString(2), 
+						rs.getString(3), rs.getInt(4),
+						rs.getInt(5), rs.getString(6),
+						rs.getInt(7), rs.getInt(8), 
+						rs.getString(9)));
+			}
+			
+			rs.close();
+			pstmt.close();
+			con.close();
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			closeRsc();
+		}
+		return searchlist;
+	}
+
 	
 	
 	//requKey로 조회//
-	public ArrayList<StoryRequestVO> SearchrqList(int requKey ) {
+	public ArrayList<StoryRequestVO> SearchList(int requKey ) {
 		ArrayList<StoryRequestVO> searchlist = new ArrayList<StoryRequestVO>();
-		String sql = "SELECT *\r\n" + "FROM StoryRequest\r\n" + "WHERE literSort=? ";
+		String sql = "SELECT *\r\n" + "FROM StoryRequestT\r\n" + "WHERE requKey=? ";
 		System.out.println("# pstmt 실행 #");
 		try {
 			setConn();
@@ -112,7 +254,7 @@ public class StoryRequestDAO {
 						rs.getString(3), rs.getInt(4),
 						rs.getInt(5), rs.getString(6),
 						rs.getInt(7), rs.getInt(8), 
-						rs.getInt(9)));
+						rs.getString(9)));
 			}
 			rs.close();
 			pstmt.close();
@@ -129,13 +271,14 @@ public class StoryRequestDAO {
 	
 	
 	// 삽입//
-	public void insertrq(StoryRequestVO ins) {
-		String sql = "INSERT INTO StoryRequest VALUES (?,?,?,?,?,?,?,?,?)";
+	public void insert(StoryRequestVO ins) {
+		int num = maxBdKey();
+		String sql = "INSERT INTO StoryRequestT VALUES (?,?,?,?,?,?,?,?,?)";
 		try {
 			setConn();
 			con.setAutoCommit(false);
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, ins.getRequKey());
+			pstmt.setInt(1, num);
 			pstmt.setString(2, ins.getRequTitle());
 			pstmt.setString(3, ins.getRequContents());
 			pstmt.setInt(4, ins.getRequPrice());
@@ -143,7 +286,7 @@ public class StoryRequestDAO {
 			pstmt.setString(6, ins.getRequSort());
 			pstmt.setInt(7, ins.getmKey());
 			pstmt.setInt(8, ins.getProCateKey());
-			pstmt.setInt(9, ins.getFileKey());
+			pstmt.setString(9, ins.getFileKey());
 			System.out.println("데이터 삽입에 성공하였습니다. requKey 값은 : "+ins.getRequKey());
 			pstmt.executeUpdate();
 			con.commit();
@@ -165,12 +308,12 @@ public class StoryRequestDAO {
 	
 	
 	/* 수정 */
-	public void updaterq(StoryRequestVO upt) {
+	public void update(StoryRequestVO upt) {
 		try {
 			setConn();
 			con.setAutoCommit(false);
 
-			String sql = "update StoryRequest \r\n" +
+			String sql = "update StoryRequestT \r\n" +
 					"SET requTitle =?,\r\n" + 
 					" requContents = ?,\r\n"+
 					" requPrice = ?,\r\n"+
@@ -189,7 +332,7 @@ public class StoryRequestDAO {
 			pstmt.setString(5, upt.getRequSort());
 			pstmt.setInt(6, upt.getmKey());
 			pstmt.setInt(7, upt.getProCateKey());
-			pstmt.setInt(8, upt.getFileKey());
+			pstmt.setString(8, upt.getFileKey());
 			pstmt.setInt(9, upt.getRequKey());
 			pstmt.executeUpdate();
 			System.out.println("수정 완료 되었습니다.");
@@ -210,7 +353,7 @@ public class StoryRequestDAO {
 	/* 삭제 */
 	public void deleterq(int requkey) {
 		String sql = "delete \r\n" + 
-					"from StoryRequest \r\n" + 
+					"from StoryRequestT \r\n" + 
 					"where requkey=?\r\n";
 		try {
 			setConn();
@@ -251,12 +394,12 @@ public class StoryRequestDAO {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		StoryRequestDAO dao = new StoryRequestDAO();
-		//dao.insertrq(new StoryRequestVO(1,"요청스토리1", "요청스토리1콘텐츠", 10000, 3, "자기소개서", 201, 201, 201));
-		for(StoryRequestVO rq : dao.rqList()) {
+		dao.insert(new StoryRequestVO(3,"요청스토리1", "요청스토리1콘텐츠", 10000, 3, "자기소개서", 201, 701, "701"));
+		for(StoryRequestVO rq : dao.list()) {
 			System.out.println(rq.getRequKey()+" , "+rq.getRequTitle());
 		}
-		dao.updaterq(new StoryRequestVO(1,"요청스토리1", "요청스토리1콘텐츠(수정)", 10000, 3, "자기소개서", 201, 201, 201));
-		
+		//dao.update(new StoryRequestVO(1,"요청스토리1(수정)", "요청스토리1콘텐츠(수정)", 10000, 3, "자기소개서", 201, 701, "701"));
+		//dao.deleterq(2);
 		
 	}
 

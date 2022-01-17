@@ -9,7 +9,7 @@ public class StoryRequestVO {
 	private String requSort;
 	private int mKey;
 	private int proCateKey;
-	private int fileKey;
+	private String fileKey;
 
 	public StoryRequestVO() {
 		super();
@@ -17,7 +17,7 @@ public class StoryRequestVO {
 	}
 
 	public StoryRequestVO(int requKey, String requTitle, String requContents, int requPrice, int requModicnt,
-			String requSort, int mKey, int proCateKey, int fileKey) {
+			String requSort, int mKey, int proCateKey, String fileKey) {
 		super();
 		this.requKey = requKey;
 		this.requTitle = requTitle;
@@ -94,11 +94,11 @@ public class StoryRequestVO {
 		this.proCateKey = proCateKey;
 	}
 
-	public int getFileKey() {
+	public String getFileKey() {
 		return fileKey;
 	}
 
-	public void setFileKey(int fileKey) {
+	public void setFileKey(String fileKey) {
 		this.fileKey = fileKey;
 	}
 

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="literacyContest.*"
-	import="java.util.ArrayList"%>
+	pageEncoding="UTF-8" isELIgnored="false"
+	import="java.util.ArrayList"
+	import="board.*"%>
 <%
 request.setCharacterEncoding("utf-8");
 %>
@@ -13,21 +14,10 @@ request.setCharacterEncoding("utf-8");
 <head>
 <meta charset="UTF-8">
 <title>신춘문예</title>
-</script>
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 <style>
-.tbdtab {
-	width: 600px;
-	height: 300px;
-	font-size: 40px;
-	text-decoration: none;
-	color: black;
-	margin: 0 auto;
-	padding: 20px;
-}
-
-#contebtn {
+#btn {
 	width: 400px;
 	height: 80px;
 	font-size: 40px;
@@ -36,32 +26,31 @@ request.setCharacterEncoding("utf-8");
 	margin-bottom: 30px;
 }
 
-.tbdaddtab {
-	width: 1400px;
+#newtab {
+	width: 1700px;
 	height: 600px;
 	border: 3px solid yellow;
 	margin: 0 auto;
 	font-size: 20px;
 	margin-top: 50px;
 	color: white;
-	text-align: center;
-}
-.tbdaddtab tr{
-	height: 60px;
-}
-.tbdaddtab table, .tbdaddtab td, .tbdaddtab tr, .tbdaddtab th {
-	border: 3px solid yellow;
+	text-align: left;
+
 }
 
-input{
-	width:500px;
+.tab table, .tab td, .tab tr, .tab th {
+	border: 3px solid yellow;
+	text-decoration: none;
+}
+
+
+
+
+input {
+	width: 500px;
 	height: 60px;
 	font-size: 30px;
 	text-align: center;
-}
-
-.conlisttab td {
-	height: 50px;
 }
 
 #seachcon {
@@ -73,6 +62,16 @@ input{
 	background-color: white;
 	border: 2px solid yellow;
 }
+
+.g{
+	text-decoration: none;
+	color: red;
+}
+
+.g:hover{
+	color:white;
+}
+
 </style>
 </head>
 <body>
@@ -81,35 +80,28 @@ input{
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
-
 	<!-- S헤더 삽입 -->
 	<jsp:include page="/views/10_Store/menu.jsp">
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 
-
 	<div class="contents">
 		<div class="cards">
-			<p>글쓰기</p>
-			<form action="${contextPath }/lecture/add.do" enctype="multipart/form-data"> 
-			<table align="center" class="tbdaddtab">
-			<colgroup>
-				<col width="30%">
-			</colgroup>
-					<tr><th>강의 이름</th><td><input type="text" name="lecName" ></td></tr>
-					<tr><th>강사</th><td><input type="text" name="lecTeacher" ></td></tr>
-					<tr><th>제한인원</th><td><input type="text" name="leclimitcnt" ></td></tr>
-					<tr><th>온라인여부</th><td><input type="text" name="leconlineavail" ></td></tr>
-					<tr><th>난이도</th><td><input type="text" name="lecdifficulty" ></td></tr>
-					<tr><th>내용</th><td><input type="text" name="leccontents" ></td></tr>
-					<tr><th>평점</th><td><input type="text" name="lecscore" ></td></tr>
-					<tr><th>분류</th><td><input type="text" name="proCateKey" ></td></tr>
-					<tr><th>파일</th><td><input type="text" name="fileKey" ></td></tr>
-					<tr><th>가격</th><td><input type="text" name="lecPrice" ></td></tr>
+			<p>상세 글 보기</p>
+
+				<table id="newtab" border="1">
+					<colgroup>
+						<td width="30%">
+						<td width="70%">
+					</colgroup>
+					<tr><th>공식스토어 고유번호</th><td>${oftVO.requKey}</td></tr>
+					<tr><th>제품 이름</th><td>${oftVO.requTitle}</td></tr>
+					<tr><th>상품분류번호</th><td>${oftVO.requContents}</td></tr>
 					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
+					<button onclick="location.href='${contextPath}'">장바구니 담기</button>
+					<button>주문하기</button>
 			</table>
-			</form>
 
 
 		</div>

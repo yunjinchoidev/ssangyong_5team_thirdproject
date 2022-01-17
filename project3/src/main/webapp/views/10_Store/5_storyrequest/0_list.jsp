@@ -52,11 +52,11 @@ request.setCharacterEncoding("utf-8");
 
 	<div class="contents">
 		<div class="cards">
-				<h1>강의</h1>
+				<h1> Absolute Ring ship</h1>
 				<p> 엄선된 물건들이 있습니다.<br>
 				 마음껏 둘러보십시오</p>
 				 
-				 <button onclick="location.href='${contextPath}/lecture/addForm.do'">물건 추가</button>
+				 <button onclick="location.href='${contextPath}/story/addForm.do'">물건 추가</button>
 				 
 				 <hr style="border:3px solid yellow;">
 					<div class="lordshopwrap">
@@ -70,17 +70,13 @@ request.setCharacterEncoding("utf-8");
 					<c:when test="${!empty oftList}">
 						<c:forEach var="oftList" items="${oftList}" varStatus="oftNum">
 							<div class="lordshopchild"> 
-								강의키 : ${oftList.lecKey }<br>
-								강의 내용 : ${oftList.lecName }<br>
-								강사 : ${oftList.lecTeacher }<br>
-								제한인원 : ${oftList.leclimitcnt }<br>
-								온라인여부 : ${oftList.leconlineavail }<br>
-								난이도 : ${oftList.lecdifficulty }<br>
-								내용 : ${oftList.leccontents }<br>
-								평점 : ${oftList.lecscore }<br>
-								<a href="${contextPath }/lecture/view.do?lecKey=${oftList.lecKey}">상품 자세히 보기</a>
-								<a href="${contextPath }/lecture/del.do?lecKey=${oftList.lecKey}">상품 삭제</a>
-								<a href="${contextPath }/lecture/modForm.do?lecKey=${oftList.lecKey}">상품 수정</a>
+								고유번호 : ${oftList.requKey}<br>
+								제목 : ${oftList.requTitle }<br>
+								내용 : ${oftList.requContents}<br>
+								가격 : ${oftList.requPrice}<br>
+								<a href="${contextPath }/story/view.do?requKey=${oftList.requKey}">상품 자세히 보기</a>
+								<a href="${contextPath }/story/del.do?requKey=${oftList.requKey}">상품 삭제</a>
+								<a href="${contextPath }/story/modForm.do?requKey=${oftList.requKey}">상품 수정</a>
 							</div>
 						</c:forEach>
 					</c:when>

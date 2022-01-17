@@ -12,5 +12,8 @@ INSERT INTO productCategory VALUES (201, '반지', '반지의제왕', '악세사
 INSERT INTO productCategory VALUES (401, '반지', '반지의제왕', '악세사리', '공용');
 INSERT INTO productCategory VALUES (501, '렌탈', '반지의제왕', '악세사리', '공용');
 INSERT INTO productCategory VALUES (601, '1:1 거래', '반지의제왕', '악세사리', '공용');
+INSERT INTO productCategory VALUES (701, '강의', '반지의제왕', '악세사리', '공용');
+INSERT INTO productCategory VALUES (801, '스토리매매', '반지의제왕', '악세사리', '공용');
+INSERT INTO productCategory VALUES (701, '강의', '반지의제왕', '악세사리', '공용');
 
 COMMIT;
