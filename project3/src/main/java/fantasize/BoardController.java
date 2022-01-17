@@ -63,9 +63,6 @@ public class BoardController extends HttpServlet {
 	
 		}else if(action.equals("/addForm.do")){
 			nextPage="/views/2_Service/2_fantasize/1_addForm.jsp";
-		}else if(action.equals("/addForm2.do")){
-			nextPage="/views/2_Service/2_fantasize/1_addForm.jsp";
-			
 			
 		}else if(action.equals("/add.do")){
 			String boPostKeyS = request.getParameter("boPostKey"); 

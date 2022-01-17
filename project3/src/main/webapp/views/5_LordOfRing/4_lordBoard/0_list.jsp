@@ -37,7 +37,7 @@ request.setCharacterEncoding("utf-8");
 	text-align: left;
 }
 
-.tab table, .tab td, .tab tr, .tab th {
+.newtab table, .newtab td, .newtab tr, .newtab th {
 	border: 3px solid yellow;
 }
 

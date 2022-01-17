@@ -3,6 +3,9 @@
 <%
 request.setCharacterEncoding("utf-8");
 %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,11 +53,11 @@ request.setCharacterEncoding("utf-8");
 	<!-- E헤더 삽입 -->
 	<div id="Storemenu">
 		<ul>
-			<li><a href="/project3/views/10_Store/1_official/0_default.jsp">공식스토어</a></li>
-			<li><a href="/project3/views/10_Store/2_lental/0_default.jsp">렌탈</a></li>
-			<li><a href="/project3/views/10_Store/3_personal/0_default.jsp">1:1 매매</a></li>
-			<li><a href="/project3/views/10_Store/4_lecture/0_default.jsp">강의</a></li>
-			<li><a href="/project3/views/10_Store/5_storytrade/0_default.jsp">스토리매매</a></li>
+			<li><a href="${contextPath}/oft/list.do">공식스토어</a></li>
+			<li><a href="${contextPath}/rent/list.do">렌탈</a></li>
+			<li><a href="${contextPath}/personal/list.do">1:1 매매</a></li>
+			<li><a href="${contextPath}/lecture/list.do">강의</a></li>
+			<li><a href="${contextPath}/story/list.do">스토리매매</a></li>
 		</ul>
 	</div>
 </body>

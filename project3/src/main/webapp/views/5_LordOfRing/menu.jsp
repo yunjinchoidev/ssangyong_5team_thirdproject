@@ -59,7 +59,7 @@ request.setCharacterEncoding("utf-8");
 			<li><a href="${contextPath }/lordMeeting/list.do">정기모임</a></li>
 			<li><a href="/project3/views/5_LordOfRing/3_test/0_default.jsp">반지 자격 테스트</a></li>
 			<li><a href="${contextPath }/lordBoard/list.do">반지의 제왕 게시판</a></li>
-			<li><a href="/project3/views/5_LordOfRing/5_lordshop/0_default.jsp">The One Ring shop</a></li>
+			<li><a href="${contextPath}/oftLord/list.do">The One Ring shop</a></li>
 		</ul>
 	</div>
 </body>

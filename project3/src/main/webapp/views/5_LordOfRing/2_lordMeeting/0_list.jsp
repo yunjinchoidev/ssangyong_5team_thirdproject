@@ -37,7 +37,7 @@ request.setCharacterEncoding("utf-8");
 	text-align: left;
 }
 
-.tab table, .tab td, .tab tr, .tab th {
+.newtab table, .newtab td, .newtab tr, .newtab th {
 	border: 3px solid yellow;
 }
 
@@ -87,7 +87,7 @@ input {
 			<p>반지의 제왕 정기 모임 게시판</p>
 				<a href="${contextPath}/lordMeeting/addForm.do">글쓰기</a>
 
-				<table id="newtab"border="1">
+				<table id="newtab" border="1">
 				<tr>
 					<th>번호</th>
 					<th>게시글 고유번호</th>
