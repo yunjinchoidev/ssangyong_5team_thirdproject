@@ -54,8 +54,8 @@ request.setCharacterEncoding("utf-8");
 	<div id="Storemenu">
 		<ul>
 			<li><a href="${contextPath}/oft/list.do">공식스토어</a></li>
-			<li><a href="${contextPath}/rent/list.do">렌탈</a></li>
-			<li><a href="${contextPath}/personal/list.do">1:1 매매</a></li>
+			<li><a href="${contextPath}/rental/list.do">렌탈</a></li>
+			<li><a href="${contextPath}/custom/list.do">1:1 매매</a></li>
 			<li><a href="${contextPath}/lecture/list.do">강의</a></li>
 			<li><a href="${contextPath}/story/list.do">스토리매매</a></li>
 		</ul>

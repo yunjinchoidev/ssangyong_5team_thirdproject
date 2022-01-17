@@ -31,16 +31,6 @@ request.setCharacterEncoding("utf-8");
 	border: 3px solid yellow;
 	display: inline-block;
 	margin: 20px;
-	
-}
-
-.lordshopchild a{
-text-decoration: none;
-color: white;
-}
-.lordshopchild a:hover{
-	color : red;
-	background-color: green;
 }
 
 
@@ -62,9 +52,11 @@ color: white;
 
 	<div class="contents">
 		<div class="cards">
-				<h1> 렌탈 상점</h1>
+				<h1> Absolute Ring ship</h1>
+				<p> 엄선된 물건들이 있습니다.<br>
+				 마음껏 둘러보십시오</p>
 				 
-				 <button onclick="location.href='${contextPath}/rental/addForm.do'">물건 추가</button>
+				 <button onclick="location.href='${contextPath}/oft/addForm.do'">물건 추가</button>
 				 
 				 <hr style="border:3px solid yellow;">
 					<div class="lordshopwrap">
@@ -76,18 +68,15 @@ color: white;
 					</c:when>
 					
 					<c:when test="${!empty oftList}">
-						<c:forEach var="oftList" items="${oftList}" varStatus="rentNum">
+						<c:forEach var="oftList" items="${oftList}" varStatus="oftNum">
 							<div class="lordshopchild"> 
-								상품명 : ${oftList.rentalPname }<br>
-								기간 : ${oftList.rentalterm }일<br>
-								시작일 : ${oftList.rentalStartDayS }<br>
-								마감일 : ${oftList.rentalEndDayS }<br>
-								분류 : ${oftList.proCateKey }<br>
-								파일 : ${oftList.fileKey }<br>
-								가격 : ${oftList.rentPrice }<br>
-								<a href="${contextPath }/rental/view.do?rentalKey=${oftList.rentalKey}">상품 자세히 보기</a>
-								<a href="${contextPath }/rental/del.do?rentalKey=${oftList.rentalKey}">상품 삭제</a>
-								<a href="${contextPath }/rental/modForm.do?rentalKey=${oftList.rentalKey}">상품 수정</a>
+								재고 : ${oftList.officialInventory }<br>
+								물건명 : ${oftList.officialPname }<br>
+								할인률 : ${oftList.officialDiscount }<br>
+								할인률 : ${oftList.proCateKey }<br>
+								<a href="${contextPath }/oft/view.do?officialKey=${oftList.officialKey}">상품 자세히 보기</a>
+								<a href="${contextPath }/oft/del.do?officialKey=${oftList.officialKey}">상품 삭제</a>
+								<a href="${contextPath }/oft/modForm.do?officialKey=${oftList.officialKey}">상품 수정</a>
 							</div>
 						</c:forEach>
 					</c:when>

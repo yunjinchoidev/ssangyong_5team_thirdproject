@@ -1,4 +1,4 @@
-package rentalStore;
+package officialStoreTestLord;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import fantasize.BoardVO;
 
 
-public class RentalStoreTDAO {
+public class OfficialStoreTestDAO {
 	private Connection con;
 	private Statement stmt;
 	private PreparedStatement pstmt;
@@ -33,23 +33,21 @@ public class RentalStoreTDAO {
 	
 	
 	// 전체 명단
-	public ArrayList<RentalStoreTVO> list() {
-		ArrayList<RentalStoreTVO> rentallist = new ArrayList<RentalStoreTVO>();
+	public ArrayList<OfficialStoreTestVO> Alllist() {
+		ArrayList<OfficialStoreTestVO> officiallist = new ArrayList<OfficialStoreTestVO>();
 		String sql = "SELECT *\r\n"
-				+ "FROM rentalStoreT\r\n"
-				+ " order by rentalKey";
+				+ "FROM OfficialStoreT\r\n";
 		try {
 			setConn();
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			System.out.println("전체 검색 완료");
+			System.out.println("사원명 검색");
 			while( rs.next() ) {
-				RentalStoreTVO off = new RentalStoreTVO(
-						rs.getInt(1), rs.getString(2), rs.getInt(3),
-						rs.getString(4), rs.getString(5),rs.getString(6),
-						rs.getInt(7),rs.getString(8), rs.getInt(9));
+				OfficialStoreTestVO off = new OfficialStoreTestVO(
+						rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),
+						rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getString(8));
 				
-				rentallist.add(off);
+				officiallist.add(off);
 			}
 			rs.close();
 			pstmt.close();
@@ -60,31 +58,30 @@ public class RentalStoreTDAO {
 			if(pstmt!=null) pstmt = null;
 			if(con!=null) con = null;
 		}
-		return rentallist;
+		return officiallist;
 	}
 	
 	
 	
 	// 지원자 이름으로 검색
-	public ArrayList<RentalStoreTVO> Search01(String rentalPname) {
-		ArrayList<RentalStoreTVO> rentallist = new ArrayList<RentalStoreTVO>();
+	public ArrayList<OfficialStoreTestVO> Search01(String officialPname) {
+		ArrayList<OfficialStoreTestVO> officiallist = new ArrayList<OfficialStoreTestVO>();
 		String sql = "SELECT *\r\n"
-				+ "FROM RentalStoreT\r\n"
-				+ "WHERE rentalPname LIKE '%'||?||'%'";
+				+ "FROM OfficialStoreT\r\n"
+				+ "WHERE officialPname LIKE '%'||?||'%'";
 		try {
 			setConn();
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, rentalPname);
+			pstmt.setString(1, officialPname);
 			rs = pstmt.executeQuery();
 			int rowNum =1;
 			System.out.println("공식스토어 검색");
 			while( rs.next() ) {
-				RentalStoreTVO off = new RentalStoreTVO(
-						rs.getInt(1), rs.getString(2), rs.getInt(3),
-						rs.getString(4), rs.getString(5),rs.getString(6),
-						rs.getInt(7),rs.getString(8), rs.getInt(9));
+				OfficialStoreTestVO off = new OfficialStoreTestVO(
+						rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),
+						rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getString(8));
 				
-				rentallist.add(off);
+				officiallist.add(off);
 			}
 			rs.close();
 			pstmt.close();
@@ -95,7 +92,7 @@ public class RentalStoreTDAO {
 			if(pstmt!=null) pstmt = null;
 			if(con!=null) con = null;
 		}
-		return rentallist;
+		return officiallist;
 	}
 	
 
@@ -109,25 +106,24 @@ public class RentalStoreTDAO {
 	
 	
 	//고유번호로 조회//
-	public RentalStoreTVO searchKey(int rentalKey) {
-		ArrayList<RentalStoreTVO> rentallist = new ArrayList<RentalStoreTVO>();
+	public OfficialStoreTestVO searchKey(int officialKey) {
+		ArrayList<OfficialStoreTestVO> searchlist = new ArrayList<OfficialStoreTestVO>();
 		String sql = "SELECT *\r\n" + 
-					"FROM RentalStoreT\r\n" + 
-					"WHERE rentalKey=? ";
+					"FROM officialStoreT\r\n" + 
+					"WHERE officialKey=? ";
 		try {
 			setConn();
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, rentalKey);
+			pstmt.setInt(1, officialKey);
 			
 			rs = pstmt.executeQuery();
 			while( rs.next() ) {
-				RentalStoreTVO off = new RentalStoreTVO(
-						rs.getInt(1), rs.getString(2), rs.getInt(3),
-						rs.getString(4), rs.getString(5),rs.getString(6),
-						rs.getInt(7),rs.getString(8), rs.getInt(9));
+				OfficialStoreTestVO off = new OfficialStoreTestVO(
+						rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),
+						rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getString(8));
 				
-				rentallist.add(off);
-			}
+				searchlist.add(off);
+			};
 			rs.close();
 			pstmt.close();
 			con.close();
@@ -137,7 +133,7 @@ public class RentalStoreTDAO {
 			if(pstmt!=null) pstmt = null;
 			if(con!=null) con = null;
 		}
-		return rentallist.get(0);
+		return searchlist.get(0);
 	}
 	
 
@@ -145,8 +141,8 @@ public class RentalStoreTDAO {
 	/*맥스번호*/
 	private int maxBdKey() {
 		int there=0;
-		String sql = "SELECT max(rentalKey)\r\n" + 
-				"FROM rentalStoreT\r\n";
+		String sql = "SELECT max(officialKey)\r\n" + 
+				"FROM officialStoreT\r\n";
 		System.out.println("최고 번호 조회");
 		try {
 			setConn();
@@ -177,10 +173,10 @@ public class RentalStoreTDAO {
 	
 	
 	/*insert*/
-	public void insert(RentalStoreTVO ins) {
+	public void insert(OfficialStoreTestVO ins) {
 		int num = maxBdKey();
 		
-		String sql = "INSERT INTO rentalStoreT VALUES (?,?,?,?,to_date(?,'YYYY/MM/DD'),to_date(?,'YYYY/MM/DD'),?,?,?)";
+		String sql = "INSERT INTO OfficialStoreT VALUES (?,?,?,to_date(sysdate,'YYYY/MM/DD'),?,?,?,?)";
 		try {
 			setConn();
 			// 자동커밋 방지
@@ -188,16 +184,13 @@ public class RentalStoreTDAO {
 			pstmt = con.prepareStatement(sql);
 			
 			pstmt.setInt(1, num);
-			pstmt.setString(2, ins.getRentalPname());
-			pstmt.setInt(3, ins.getRentalterm());
-			pstmt.setString(4, ins.getRentalExplain());
-			pstmt.setString(5, ins.getRentalStartDayS());
-			pstmt.setString(6, ins.getRentalEndDayS());
-			pstmt.setInt(7, ins.getProCateKey());
-			pstmt.setString(8, ins.getFileKey());
-			pstmt.setInt(9, ins.getRentPrice());
+			pstmt.setString(2, ins.getOfficialPname());
+			pstmt.setString(3, ins.getOfficialExplain());
+			pstmt.setInt(4, ins.getOfficialInventory());
+			pstmt.setInt(5, ins.getOfficialDiscount());
+			pstmt.setInt(6, ins.getProCateKey());
+			pstmt.setString(7, ins.getFileKey());
 			pstmt.executeUpdate();
-			System.out.println(num+"번 인서트 완료");
 			con.commit();
 			pstmt.close(); 
 			con.close();
@@ -213,40 +206,34 @@ public class RentalStoreTDAO {
 	}
 	
 	
-	/*수정*/
-	public void update(RentalStoreTVO upt) {
+	/*5[1단계:확인] 5. A06_DatabaseDao pstmt로 사원정보를 수정/삭제하는 기는 메서드를 만드세요.*/
+	public void update(OfficialStoreTestVO upt) {
 		try {
 			setConn();
 			// 자동커밋 방지
 			con.setAutoCommit(false);
 			
-			String sql = "update rentalStoreT\r\n"
-					+ "			SET RentalPname=?,\r\n"
-					+ "				rentalterm = ?,\r\n"
-					+ "				rentalExplain = ?,\r\n"
-					+ "				rentalStartDay=to_date(?,'YYYY/MM/DD'),\r\n"
-					+ "				rentalEndDay=to_date(?,'YYYY/MM/DD'),\r\n"
+			String sql = "update OfficialStoreT\r\n"
+					+ "			SET officialPname=?,\r\n"
+					+ "				OfficialExplain = ?,\r\n"
+					+ "				OfficialRegDate = to_date(sysdate,'YYYY/MM/DD'),\r\n"
+					+ "				OfficialInventory = ?,\r\n"
+					+ "				OfficialDiscount = ?,\r\n"
 					+ "				proCateKey = ?,\r\n"
-					+ "				fileKey = ?,\r\n"
-					+ "				rentalPrice = ?\r\n"
-					+ "		   where rentalKey = ?";
+					+ "				fileKey = ?\r\n"
+					+ "		   where OfficialKey = ?";
 			pstmt  = con.prepareStatement(sql);
-		
-			pstmt.setString(1, upt.getRentalPname());
-			pstmt.setInt(2, upt.getRentalterm());
-			pstmt.setString(3, upt.getRentalExplain());
-			pstmt.setString(4, upt.getRentalStartDayS());
-			pstmt.setString(5, upt.getRentalEndDayS());
-			pstmt.setInt(6, upt.getProCateKey());
-			pstmt.setString(7, upt.getFileKey());
-			pstmt.setInt(8, upt.getRentPrice());
-			pstmt.setInt(9, upt.getRentalKey());
 			
-			
+			pstmt.setString(1, upt.getOfficialPname());
+			pstmt.setString(2, upt.getOfficialExplain());
+			//pstmt.setDate(3, 2021/1/21);
+			pstmt.setInt(3, upt.getOfficialInventory());
+			pstmt.setInt(4, upt.getOfficialDiscount());
+			pstmt.setInt(5, upt.getProCateKey());
+			pstmt.setString(6, upt.getFileKey());
+			pstmt.setInt(7, upt.getOfficialKey());
 			
 			pstmt.executeUpdate(); 
-			
-			System.out.println(upt.rentalKey+": 수정 완료");
 			con.commit();
 			pstmt.close();
 			con.close();
@@ -266,16 +253,16 @@ public class RentalStoreTDAO {
 	
 	
 	/*삭제 기능 메서드*/
-	public void delete(int rentalKey) {
+	public void delete(int officialKey) {
 		String sql = "delete \r\n"
-				+ "from rentalStoreT \r\n"
-				+ "where rentalKey=?\r\n";
+				+ "from OfficialStoreT \r\n"
+				+ "where officialKey=?\r\n";
 		try {
 			setConn();
 			// 자동커밋 방지
 			con.setAutoCommit(false);
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, rentalKey);
+			pstmt.setInt(1, officialKey);
 			pstmt.executeUpdate();
 			con.commit();
 			pstmt.close(); 
@@ -332,12 +319,12 @@ public class RentalStoreTDAO {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		RentalStoreTDAO DAO = new RentalStoreTDAO();
-		//DAO.insert(new RentalStoreTVO(2, "a", 1, "A", "2021/11/11", "2021/11/12",501, "401", 2000));
-		DAO.update(new RentalStoreTVO(9, "a(수정)", 1, "A", "2021/11/11", "2021/11/12",501, "401", 2000));
+		OfficialStoreTestDAO DAO = new OfficialStoreTestDAO();
+		DAO.insert(new OfficialStoreTestVO(402, "절대반지201", "절대반지201입니다.", "", 201, 201, 401,"401"));
+		DAO.update(new OfficialStoreTestVO(402, "절대반지201(수정)", "절대반지201입니다.", "", 201, 201, 401,"401"));
 		
-		for(RentalStoreTVO of : DAO.list()) {
-			System.out.println(of.getRentalKey());
+		for(OfficialStoreTestVO of : DAO.Alllist()) {
+			System.out.println(of.getOfficialKey());
 		}
 		
 		

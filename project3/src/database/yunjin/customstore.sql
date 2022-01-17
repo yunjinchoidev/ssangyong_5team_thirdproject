@@ -13,3 +13,7 @@ CREATE TABLE customStore(
 
 SELECT *
 FROM customStore;
+
+DELETE customstore;
+
+DROP TABLE CUSTOMSTORE;

@@ -90,25 +90,24 @@ input{
 
 	<div class="contents">
 		<div class="cards">
-			<p>글 수정하기</p>
-			<form action="${contextPath }/rental/mod.do" enctype="multipart/form-data"> 
+			<p>1:1 매매 상품 수정하기</p>
+			<form action="${contextPath }/custom/mod.do" enctype="multipart/form-data"> 
 			<table align="center" class="tbdaddtab">
 			<colgroup>
 				<col width="30%">
 			</colgroup>
 			
-				<tr><th>제품 키</th><td><input type="text" name="rentalKey" value="${oftVO.rentalKey }"></td></tr>
-					<tr><th>렌탈 제품 이름</th><td><input type="text" name="rentalPname" value="${oftVO.rentalPname }" ></td></tr>
-					<tr><th>기간</th><td><input type="text" name="rentalterm" value="${oftVO.rentalterm }"></td></tr>
-					<tr><th>설명</th><td><input type="text" name="rentalExplain" value="${oftVO.rentalExplain}"> </td></tr>
-					<tr><th>시작</th><td><input type="text" name="rentalStartDayS" value="${oftVO.rentalStartDayS }"></td></tr>
-					<tr><th>끝</th><td><input type="text" name="rentalEndDayS" value="${oftVO.rentalEndDayS }"></td></tr>
-					<tr><th>제품 분류</th><td><input type="text" name="proCateKey" value="${oftVO.proCateKey }"></td></tr>
-					<tr><th>파일번호</th><td><input type="file" name="fileKey" value="${oftVO.fileKey }"></td></tr>
-					<tr><th>가격</th><td><input type="text" name="rentPrice" value="${oftVO.rentPrice }"></td></tr>
+				<tr><th>제품 키</th><td><input type="text"   value="${oftVO.cusKey }" disabled></td></tr>
+					<tr><th>제품 이름</th><td><input type="text" name="cusPname" value="${oftVO.cusPname }" ></td></tr>
+					<tr><th>설명</th><td><input type="text" name="cusExplain" value="${oftVO.cusExplain}"></td></tr>
+					<tr><th>재고</th><td><input type="text" name="cusStock" value="${oftVO.cusStock}"> </td></tr>
+					<tr><th>할인</th><td><input type="text" name="cusDiscount" value="${oftVO.cusDiscount }"></td></tr>
+					<tr><th>회원번호</th><td><input type="text" name="mKey" value="${oftVO.mKey }"></td></tr>
+					<tr><th>상품분류</th><td><input type="text" name="proCateKey" value="${oftVO.proCateKey }"></td></tr>
+					<tr><th>파일키</th><td><input type="file" name="fileKey" value="${oftVO.fileKey }"></td></tr>
 					<tr><td colspan="2"><input type="submit" value="제출하기" value=""></td></tr>
-			
 			</table>
+			<input type="hidden" name="cusKey"  value="${oftVO.cusKey }" >
 			</form>
 
 

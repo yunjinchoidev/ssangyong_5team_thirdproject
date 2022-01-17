@@ -94,13 +94,16 @@ input {
 						<td width="30%">
 						<td width="70%">
 					</colgroup>
-							<tr><th>상품명 :</th><td> ${oftVO.rentalPname }</td></tr>
-							<tr><th>	기간 : </th><td>${oftVO.rentalterm }일</td></tr>
-							<tr><th>	시작일 : </th><td>${oftVO.rentalStartDayS }</td></tr>
-							<tr><th>	마감일 : </th><td>${oftVO.rentalEndDayS }</td></tr>
-							<tr><th>	분류 : </th><td>${oftVO.proCateKey }</td></tr>
-							<tr><th>	파일 :</th><td> ${oftVO.fileKey }</td></tr>
-							<tr><th>	가격 : </th><td>${oftVO.rentPrice }</td></tr>
+							<tr><th>제품키 :</th><td> ${oftVO.cusKey }</td></tr>
+							<tr><th>	상품명 : </th><td>${oftVO.cusPname }일</td></tr>
+							<tr><th>	설명 : </th><td>${oftVO.cusExplain }</td></tr>
+							<tr><th>	등록일 : </th><td>${oftVO.cusRegDateS }</td></tr>
+							<tr><th>	수정일 : </th><td>${oftVO.cusModiDateS }</td></tr>
+							<tr><th>	재고 :</th><td> ${oftVO.cusStock }</td></tr>
+							<tr><th>	할인률 :</th><td> ${oftVO.cusDiscount }</td></tr>
+							<tr><th>	회원키 :</th><td> ${oftVO.mKey }</td></tr>
+							<tr><th>	상품분류 :</th><td> ${oftVO.proCateKey }</td></tr>
+							<tr><th>	파일키 :</th><td> ${oftVO.fileKey }</td></tr>
 					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
 					<button onclick="location.href='${contextPath}'">장바구니 담기</button>
 					<button>주문하기</button>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" isELIgnored="false"
-	import="board.*"%>
+	pageEncoding="UTF-8" import="literacyContest.*"
+	import="java.util.ArrayList"%>
 <%
 request.setCharacterEncoding("utf-8");
 %>
@@ -13,10 +13,21 @@ request.setCharacterEncoding("utf-8");
 <head>
 <meta charset="UTF-8">
 <title>신춘문예</title>
+</script>
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 <style>
-#btn {
+.tbdtab {
+	width: 600px;
+	height: 300px;
+	font-size: 40px;
+	text-decoration: none;
+	color: black;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+#contebtn {
 	width: 400px;
 	height: 80px;
 	font-size: 40px;
@@ -25,31 +36,32 @@ request.setCharacterEncoding("utf-8");
 	margin-bottom: 30px;
 }
 
-#newtab {
-	width: 1700px;
+.tbdaddtab {
+	width: 1400px;
 	height: 600px;
 	border: 3px solid yellow;
 	margin: 0 auto;
 	font-size: 20px;
 	margin-top: 50px;
 	color: white;
-	text-align: left;
-
+	text-align: center;
 }
-
-.tab table, .tab td, .tab tr, .tab th {
+.tbdaddtab tr{
+	height: 60px;
+}
+.tbdaddtab table, .tbdaddtab td, .tbdaddtab tr, .tbdaddtab th {
 	border: 3px solid yellow;
-	text-decoration: none;
 }
 
-
-
-
-input {
-	width: 500px;
+input{
+	width:500px;
 	height: 60px;
 	font-size: 30px;
 	text-align: center;
+}
+
+.conlisttab td {
+	height: 50px;
 }
 
 #seachcon {
@@ -61,16 +73,6 @@ input {
 	background-color: white;
 	border: 2px solid yellow;
 }
-
-.g{
-	text-decoration: none;
-	color: red;
-}
-
-.g:hover{
-	color:white;
-}
-
 </style>
 </head>
 <body>
@@ -79,32 +81,33 @@ input {
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
+
 	<!-- S헤더 삽입 -->
 	<jsp:include page="/views/10_Store/menu.jsp">
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 
+
 	<div class="contents">
 		<div class="cards">
-			<p>상세 글 보기</p>
-
-				<table id="newtab" border="1">
-					<colgroup>
-						<td width="30%">
-						<td width="70%">
-					</colgroup>
-							<tr><th>상품명 :</th><td> ${oftVO.rentalPname }</td></tr>
-							<tr><th>	기간 : </th><td>${oftVO.rentalterm }일</td></tr>
-							<tr><th>	시작일 : </th><td>${oftVO.rentalStartDayS }</td></tr>
-							<tr><th>	마감일 : </th><td>${oftVO.rentalEndDayS }</td></tr>
-							<tr><th>	분류 : </th><td>${oftVO.proCateKey }</td></tr>
-							<tr><th>	파일 :</th><td> ${oftVO.fileKey }</td></tr>
-							<tr><th>	가격 : </th><td>${oftVO.rentPrice }</td></tr>
+			<p>상품 매매 등록 폼</p>
+			<form action="${contextPath }/custom/add.do" enctype="multipart/form-data"> 
+			<table align="center" class="tbdaddtab">
+			<colgroup>
+				<col width="30%">
+			</colgroup>
+				
+					<tr><th>상품 명</th><td><input type="text" name="cusPname" ></td></tr>
+					<tr><th>설명</th><td><input type="text" name="cusExplain" ></td></tr>
+					<tr><th>재고</th><td><input type="text" name="cusStock"></td></tr>
+					<tr><th>할인률</th><td><input type="text" name="cusDiscount"></td></tr>
+					<tr><th>고객번호</th><td><input type="text" name="mKey"></td></tr>
+					<tr><th>제품 분류</th><td><input type="text" name="proCateKey"></td></tr>
+					<tr><th>파일번호</th><td><input type="file" name="fileKey"></td></tr>
 					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
-					<button onclick="location.href='${contextPath}'">장바구니 담기</button>
-					<button>주문하기</button>
 			</table>
+			</form>
 
 
 		</div>

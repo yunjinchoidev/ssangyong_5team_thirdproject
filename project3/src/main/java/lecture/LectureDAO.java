@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import customStore.CustomStoreVO;
+
 public class LectureDAO {
 
 		private Connection con;
@@ -76,7 +78,7 @@ public class LectureDAO {
 				while( rs.next() ) {
 					leclist.add(new LectureVO(rs.getInt(1), rs.getString(2), rs.getString(3),
 							rs.getInt(4), rs.getInt(5), rs.getString(6),
-							rs.getString(7), rs.getInt(8), rs.getInt(9),rs.getInt(10), rs.getInt(11)));
+							rs.getString(7), rs.getInt(8), rs.getInt(9), rs.getString(10), rs.getInt(11)));
 				}
 				rs.close();
 				pstmt.close();
@@ -91,12 +93,117 @@ public class LectureDAO {
 		}
 
 		
+		// 지원자 이름으로 검색
+		public ArrayList<CustomStoreVO> Search01(String officialPname) {
+			ArrayList<CustomStoreVO> officiallist = new ArrayList<CustomStoreVO>();
+			String sql = "SELECT *\r\n"
+					+ "FROM LectureT\r\n"
+					+ "WHERE lecName LIKE '%'||?||'%'";
+			try {
+				setConn();
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, officialPname);
+				rs = pstmt.executeQuery();
+				int rowNum =1;
+				System.out.println("공식스토어 검색");
+				while( rs.next() ) {
+					CustomStoreVO off = new CustomStoreVO(
+							rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),
+							rs.getString(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),
+							rs.getInt(9), rs.getString(10));
+					
+					officiallist.add(off);
+				}
+				rs.close();
+				pstmt.close();
+				con.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+				if(rs!=null) rs = null; // 강제로 자원해제..
+				if(pstmt!=null) pstmt = null;
+				if(con!=null) con = null;
+			}
+			return officiallist;
+		}
+		
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		//고유번호로 조회//
+		public CustomStoreVO searchKey(int officialKey) {
+			ArrayList<CustomStoreVO> searchlist = new ArrayList<CustomStoreVO>();
+			String sql = "SELECT *\r\n" + 
+						"FROM LectureT\r\n" + 
+						"WHERE lecKey=? ";
+			try {
+				setConn();
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1, officialKey);
+				
+				rs = pstmt.executeQuery();
+				while( rs.next() ) {
+					CustomStoreVO off = new CustomStoreVO(
+							rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),
+							rs.getString(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),
+							rs.getInt(9), rs.getString(10));
+					
+					searchlist.add(off);
+				};
+				rs.close();
+				pstmt.close();
+				con.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+				if(rs!=null) rs = null; // 강제로 자원해제..
+				if(pstmt!=null) pstmt = null;
+				if(con!=null) con = null;
+			}
+			return searchlist.get(0);
+		}
+		
+
+		
+		/*맥스번호*/
+		private int maxBdKey() {
+			int there=0;
+			String sql = "SELECT max(lecKey)\r\n" + 
+					"FROM CustomStoreT\r\n";
+			System.out.println("최고 번호 조회");
+			try {
+				setConn();
+				pstmt = con.prepareStatement(sql);
+				
+				rs = pstmt.executeQuery();
+				while (rs.next()) {
+					there = rs.getInt(1)+1;
+				}
+				System.out.println(there);
+				rs.close();
+				pstmt.close();
+				con.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+				closeRsc();
+			}
+			return there;
+		}
+
+		
+		
+		
 		
 		//강의번호로으로조회//
 		public ArrayList<LectureVO> lecSearch(int lecKey) {
 			ArrayList<LectureVO> searchlist = new ArrayList<LectureVO>();
 			String sql = "SELECT * \r\n"
-					+ "FROM Lecture \r\n"
+					+ "FROM LectureT \r\n"
 					+ "WHERE lecKey = ? ";	
 			System.out.println("# pstmt 실행 #");
 			try {
@@ -109,7 +216,7 @@ public class LectureDAO {
 				while( rs.next() ) {
 					searchlist.add(new LectureVO(rs.getInt(1), rs.getString(2), rs.getString(3),
 							rs.getInt(4), rs.getInt(5), rs.getString(6),
-							rs.getString(7), rs.getInt(8), rs.getInt(9),rs.getInt(10),rs.getInt(11)));
+							rs.getString(7), rs.getInt(8), rs.getInt(9),rs.getString(10),rs.getInt(11)));
 				}
 				
 				rs.close();
@@ -127,12 +234,13 @@ public class LectureDAO {
 		
 		//삽입//
 		public void insertLec(LectureVO ins) {
-			String sql = "INSERT INTO Lecture VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+			int num = maxBdKey();
+			String sql = "INSERT INTO LectureT VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 			try {
 				setConn();
 				con.setAutoCommit(false);
 				pstmt = con.prepareStatement(sql);
-				pstmt.setInt(1, ins.getLecKey());
+				pstmt.setInt(1, num);
 				pstmt.setString(2,ins.getLecName());
 				pstmt.setString(3,ins.getLecTeacher());
 				pstmt.setInt(4,ins.getLeclimitcnt());
@@ -141,7 +249,7 @@ public class LectureDAO {
 				pstmt.setString(7,ins.getLeccontents());
 				pstmt.setInt(8,ins.getLecscore());
 				pstmt.setInt(9,ins.getProCateKey());
-				pstmt.setInt(10,ins.getFileKey());
+				pstmt.setString(10,ins.getFileKey());
 				pstmt.setInt(11,ins.getLecPrice());
 				
 				pstmt.executeUpdate();
@@ -168,7 +276,7 @@ public class LectureDAO {
 				setConn();
 				con.setAutoCommit(false);
 
-				String sql = "update Lecture\r\n" + 
+				String sql = "update LectureT\r\n" + 
 								"SET lecname=?,\r\n" + 
 								"lecteacher = ?,\r\n"+
 								"Leclimitcnt = ?,\r\n"+
@@ -190,7 +298,7 @@ public class LectureDAO {
 				pstmt.setString(6,upt.getLeccontents());
 				pstmt.setInt(7,upt.getLecscore());
 				pstmt.setInt(8,upt.getProCateKey());
-				pstmt.setInt(9,upt.getFileKey());
+				pstmt.setString(9,upt.getFileKey());
 				pstmt.setInt(10,upt.getLecPrice());
 				pstmt.setInt(11, upt.getLecKey());
 				pstmt.executeUpdate();
@@ -213,7 +321,7 @@ public class LectureDAO {
 		/* 삭제 */
 		public void deleteLec(int LecKey) {
 			String sql = "delete \r\n" + 
-						"from Lecture \r\n" + 
+						"from LectureT \r\n" + 
 					"where LecKey=?\r\n";
 			try {
 				setConn();

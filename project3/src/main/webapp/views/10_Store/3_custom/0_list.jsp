@@ -64,7 +64,7 @@ color: white;
 		<div class="cards">
 				<h1> 렌탈 상점</h1>
 				 
-				 <button onclick="location.href='${contextPath}/rental/addForm.do'">물건 추가</button>
+				 <button onclick="location.href='${contextPath}/custom/addForm.do'">물건 추가</button>
 				 
 				 <hr style="border:3px solid yellow;">
 					<div class="lordshopwrap">
@@ -78,16 +78,19 @@ color: white;
 					<c:when test="${!empty oftList}">
 						<c:forEach var="oftList" items="${oftList}" varStatus="rentNum">
 							<div class="lordshopchild"> 
-								상품명 : ${oftList.rentalPname }<br>
-								기간 : ${oftList.rentalterm }일<br>
-								시작일 : ${oftList.rentalStartDayS }<br>
-								마감일 : ${oftList.rentalEndDayS }<br>
-								분류 : ${oftList.proCateKey }<br>
-								파일 : ${oftList.fileKey }<br>
-								가격 : ${oftList.rentPrice }<br>
-								<a href="${contextPath }/rental/view.do?rentalKey=${oftList.rentalKey}">상품 자세히 보기</a>
-								<a href="${contextPath }/rental/del.do?rentalKey=${oftList.rentalKey}">상품 삭제</a>
-								<a href="${contextPath }/rental/modForm.do?rentalKey=${oftList.rentalKey}">상품 수정</a>
+								고객번호 : ${oftList.cusKey }<br>
+								상품명 : ${oftList.cusPname }일<br>
+								설명 : ${oftList.cusExplain }<br>
+								등록일 : ${oftList.cusRegDateS }<br>
+								수정일 : ${oftList.cusModiDateS }<br>
+								재고 : ${oftList.cusStock }<br>
+								할인률 : ${oftList.cusDiscount }<br>
+								고객번호 : ${oftList.mKey }<br>
+								상품분류 : ${oftList.proCateKey }<br>
+								파일키 : ${oftList.fileKey }<br>
+								<a href="${contextPath }/custom/view.do?cusKey=${oftList.cusKey}">상품 자세히 보기</a>
+								<a href="${contextPath }/custom/del.do?cusKey=${oftList.cusKey}">상품 삭제</a>
+								<a href="${contextPath }/custom/modForm.do?cusKey=${oftList.cusKey}">상품 수정</a>
 							</div>
 						</c:forEach>
 					</c:when>

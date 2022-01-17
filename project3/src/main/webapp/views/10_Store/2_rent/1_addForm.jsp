@@ -91,20 +91,21 @@ input{
 
 	<div class="contents">
 		<div class="cards">
-			<p>렌탈 물품 등록</p>
-			<form action="${contextPath }/rent/add.do" enctype="multipart/form-data"> 
+			<p>글쓰기</p>
+			<form action="${contextPath }/rental/add.do" enctype="multipart/form-data"> 
 			<table align="center" class="tbdaddtab">
 			<colgroup>
 				<col width="30%">
 			</colgroup>
-					<tr><th>제품이름</th><td><input type="text" name="rentalPname" ></td></tr>
-					<tr><th>렌탈기간</th><td><input type="text" name="rentalterm"></td></tr>
-					<tr><th>제품설명</th><td><input type="text" name="rentalExplain"></td></tr>
-					<tr><th>렌탈시작</th><td><input type="text" name="rentalStartDayS" placeholder="YYYY/MM/DD"></td></tr>
-					<tr><th>렌탈시작</th><td><input type="text" name="rentalEndDayS" placeholder="YYYY/MM/DD"></td></tr>
-					<tr><th>상품분류번호</th><td><input type="text" name="proCateKey"></td></tr>
+				
+					<tr><th>제품 키</th><td><input type="text" name="rentalKey" ></td></tr>
+					<tr><th>렌탈 제품 이름</th><td><input type="text" name="rentalPname" ></td></tr>
+					<tr><th>기간</th><td><input type="text" name="rentalterm" ></td></tr>
+					<tr><th>설명</th><td><input type="text" name="rentalExplain"></td></tr>
+					<tr><th>시작</th><td><input type="text" name="rentalStartDayS"></td></tr>
+					<tr><th>끝</th><td><input type="text" name="rentalEndDayS"></td></tr>
+					<tr><th>제품 분류</th><td><input type="text" name="proCateKey"></td></tr>
 					<tr><th>파일번호</th><td><input type="file" name="fileKey"></td></tr>
-					<tr><th>가격</th><td><input type="text" name="rentPrice" placeholder="가격을 입력하세요"></td></tr>
 					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
 			</table>
 			</form>

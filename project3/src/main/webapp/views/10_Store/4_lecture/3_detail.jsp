@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"
+	import="java.util.ArrayList"
 	import="board.*"%>
 <%
 request.setCharacterEncoding("utf-8");
@@ -94,13 +95,13 @@ input {
 						<td width="30%">
 						<td width="70%">
 					</colgroup>
-							<tr><th>상품명 :</th><td> ${oftVO.rentalPname }</td></tr>
-							<tr><th>	기간 : </th><td>${oftVO.rentalterm }일</td></tr>
-							<tr><th>	시작일 : </th><td>${oftVO.rentalStartDayS }</td></tr>
-							<tr><th>	마감일 : </th><td>${oftVO.rentalEndDayS }</td></tr>
-							<tr><th>	분류 : </th><td>${oftVO.proCateKey }</td></tr>
-							<tr><th>	파일 :</th><td> ${oftVO.fileKey }</td></tr>
-							<tr><th>	가격 : </th><td>${oftVO.rentPrice }</td></tr>
+					<tr><th>공식스토어 고유번호</th><td>${oftVO.officialKey}</td></tr>
+					<tr><th>제품 이름</th><td>${oftVO.officialPname}</td></tr>
+					<tr><th>설명</th><td>${oftVO.officialExplain}</td></tr>
+					<tr><th>재고</th><td>${oftVO.officialInventory}</td></tr>
+					<tr><th>할인률</th><td>${oftVO.officialDiscount}</td></tr>
+					<tr><th>상품분류번호</th><td>${oftVO.proCateKey}</td></tr>
+					<tr><th>파일번호</th><td>${oftVO.fileKey}</td></tr>
 					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
 					<button onclick="location.href='${contextPath}'">장바구니 담기</button>
 					<button>주문하기</button>
