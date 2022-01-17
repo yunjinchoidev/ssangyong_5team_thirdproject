@@ -209,7 +209,7 @@ try{
 		<input type=text name = pass placeholder="비밀번호를 입력해주세요" style="width:250px;height:49px;">
 		<br><br>
 		<div id = "btn">
-		<a href="../7_find/IdFind.jsp"><button type="button" id="idbtn">아이디 찾기</button></a>
+		<a href="<%=path%>/findid.do"><button type="button" id="idbtn">아이디 찾기</button></a>
 		<button type="button" id="loginbtn">로그인</button>
 		<a href="../7_find/PassFind.jsp"><button type="button" id ="passbtn">비밀번호 찾기</button></a>>
 		</div>

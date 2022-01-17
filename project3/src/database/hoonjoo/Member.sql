@@ -74,5 +74,11 @@ INSERT INTO MEMBER (mkey, mid, mpass, mname, memail, phonenum,mreg, nickname,mge
 				(SELECT NVL(MAX(mkey)+1,1) FROM MEMBER),?,?,?
 				,?,?,?,?,
 				?, sysdate, 0,?,'없음', 0.0, 0, '192.100.0.0',0,0,0,0,'N');
+			
+
+SELECT mid
+FROM MEMBER
+WHERE MNAME ='홍길동'
+AND MREG ='1234561234567';
 
 

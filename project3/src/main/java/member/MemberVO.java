@@ -125,6 +125,11 @@ public class MemberVO {
 		
 	}
 	
+	// 아이디 찾기
+	public MemberVO(String mId) {
+		this.mId = mId;
+	}
+	
 	public int getmKey() {
 		return mKey;
 	}
