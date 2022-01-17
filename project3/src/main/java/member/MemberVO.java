@@ -130,6 +130,12 @@ public class MemberVO {
 		this.mId = mId;
 	}
 	
+	// 비밀번호 찾기
+		public MemberVO(String mId, String mPass) {
+			this.mId = mId;
+			this.mPass = mPass;
+		}
+	
 	public int getmKey() {
 		return mKey;
 	}

@@ -740,6 +740,65 @@ public class MemberDAO {
 			}
 			return findid;
 		}
+		
+		// 비밀번호 찾기
+				public ArrayList<MemberVO> findpass(String id, String name, String reg) {
+					
+					ArrayList<MemberVO> findpass = new ArrayList<MemberVO>();
+					
+					try {
+						setConn();
+						String sql = "SELECT mid,mpass\r\n"
+								+ "FROM MEMBER\r\n"
+								+ "WHERE mid = '"+id+"' \r\n"
+								+ "AND MNAME ='"+name+"'\r\n"
+								+ "AND MREG ='"+reg+"'";
+						pstmt = con.prepareStatement(sql);
+						rs = pstmt.executeQuery(sql);
+						
+						int row=1;
+						while(rs.next()) {
+							findpass.add(new MemberVO(rs.getString(1),rs.getString(2)));
+							System.out.println(row+++"행");
+							System.out.print(rs.getString(1)+"\t");// select를 통해서 데이터 순서로 1부터
+							System.out.print(rs.getString(2)+"\t");// select를 통해서 데이터 순서로 1부터
+										
+						}
+						rs.close();
+						pstmt.close();
+						con.close();
+					} catch (SQLException e) {
+						System.out.println("비밀번호찾기 select:"+e.getMessage());
+						
+						if(rs!=null) {
+							try {
+								rs.close();
+							} catch (SQLException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+						}
+						
+						if(pstmt!=null) {
+							try {
+								pstmt.close();
+							} catch (SQLException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+						}
+						
+						if(con!=null) {
+							try {
+								con.close();
+							} catch (SQLException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+						}
+					}
+					return findpass;
+				}
 	   
 	// 메인
 	public static void main(String[] args) {
