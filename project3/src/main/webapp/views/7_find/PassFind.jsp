@@ -135,6 +135,7 @@ $(document).ready(function() {
 String path = request.getContextPath();
 
 String rpass = (String) request.getAttribute("rpass");
+String rid = (String) request.getAttribute("rid");
 %>
 </head>
 <body>
@@ -172,7 +173,8 @@ String rpass = (String) request.getAttribute("rpass");
 </div>
 
 <%if(rpass!=null) {
-session.setAttribute("rpass", rpass);%>
+session.setAttribute("rpass", rpass);
+session.setAttribute("rid", rid);%>
 <%}%>
 
 <div id="passdiv">

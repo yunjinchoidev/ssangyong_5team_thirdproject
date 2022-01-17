@@ -1,6 +1,7 @@
 package login;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,14 +16,14 @@ import member.MemberVO;
 /**
  * Servlet implementation class FindIdController
  */
-@WebServlet(name = "findpass", urlPatterns = { "/findpass.do" })
-public class FindPassController extends HttpServlet {
+@WebServlet(name = "passupt", urlPatterns = { "/passupt.do" })
+public class UpdatePassController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FindPassController() {
+    public UpdatePassController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,28 +35,21 @@ public class FindPassController extends HttpServlet {
 		request.setCharacterEncoding("utf-8"); // post
 		response.setContentType("text/html; charset=UTF-8");
 		
-		String firstNum = request.getParameter("firstNum");
-		String numsecond = request.getParameter("numsecond");
-		String reg = firstNum + numsecond;
-		String name = request.getParameter("name");
-		String id = request.getParameter("id");
-		String rpass = "";
-		String rid = "";
+		String pass = request.getParameter("pass");
+		String passcheck = request.getParameter("passcheck");
+		String idsession = request.getParameter("idsession");
 		
 		MemberDAO dao = new MemberDAO();
-		if(name!=null && reg!=null && id!=null) {
-			
-			for(MemberVO member : dao.findpass(id, name, reg)) {
-				System.out.println("비밀번호 찾기 DB에서 받아온 아이디:"+member.getmId());
-				System.out.println("비밀번호 찾기 DB에서 받아온 비밀번호:"+member.getmPass());
-				
-				rid = member.getmId();
-				rpass = member.getmPass();
-				request.setAttribute("rid", rid);
-				request.setAttribute("rpass", rpass);			}
+		
+		Date date = new Date();
+		MemberVO member = new MemberVO(pass,date);
+		
+		if(pass!=null && passcheck!=null) {
+			dao.updatePass(member, idsession);
 		}
 		
-		String page="views\\7_find\\PassFind.jsp";
+		
+		String page="views\\7_find\\PassUpdate.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(page);
 		rd.forward(request, response);
 	}

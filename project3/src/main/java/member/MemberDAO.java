@@ -799,6 +799,39 @@ public class MemberDAO {
 					}
 					return findpass;
 				}
+				
+				// 비밀번호 변경
+				   public void updatePass(MemberVO member, String id) {
+				      try {
+				         setConn();
+				         con.setAutoCommit(false);
+				       
+				         String sql ="UPDATE member \r\n"
+				         		+ "SET mpass =? \r\n"
+				         		+ "WHERE mid = '"+id+"'";
+				               
+				               pstmt = con.prepareStatement(sql);
+				               pstmt.setString(1, member.getmPass());
+				               
+				               pstmt.executeUpdate();
+				               con.commit();
+				               pstmt.close();
+				               con.close();
+				               
+				      } catch (SQLException e) {
+				         // TODO Auto-generated catch block
+				         System.out.println("비밀번호 변경 수정 예외:"+e.getMessage());
+				         try {
+				            con.rollback();
+				         } catch (SQLException e1) {
+				            // TODO Auto-generated catch block
+				            e1.printStackTrace();
+				         }
+				         closeRsc();
+				      }catch(Exception e) {
+				         System.out.println("일반 예외"+e.getMessage());
+				      }
+				   }
 	   
 	// 메인
 	public static void main(String[] args) {
