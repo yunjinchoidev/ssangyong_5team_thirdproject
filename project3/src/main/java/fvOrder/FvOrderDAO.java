@@ -1,4 +1,4 @@
-package cart;
+package fvOrder;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import fantasize.BoardVO;
 
 
-public class CartDAO {
+public class FvOrderDAO {
 	private Connection con;
 	private Statement stmt;
 	private PreparedStatement pstmt;
@@ -33,20 +33,28 @@ public class CartDAO {
 	
 	
 	// 전체 명단
-	public ArrayList<CartVO> Alllist() {
-		ArrayList<CartVO> officiallist = new ArrayList<CartVO>();
+	public ArrayList<FvOrderVO> Alllist() {
+		ArrayList<FvOrderVO> officiallist = new ArrayList<FvOrderVO>();
 		String sql = "SELECT *\r\n"
-				+ "FROM CartT\r\n";
+				+ "FROM FvOrderTT\r\n";
 		try {
 			setConn();
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			System.out.println("사원명 검색");
 			while( rs.next() ) {
-				CartVO off = new CartVO(
-						rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getInt(4),
-						rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),
-						rs.getInt(9), rs.getInt(10));
+				FvOrderVO off = new FvOrderVO(
+						rs.getInt(1),
+						rs.getString(2),
+						rs.getString(3),
+						rs.getString(4),
+						rs.getInt(5),
+						rs.getString(6),
+						rs.getString(7),
+						rs.getString(8),
+						rs.getInt(9),
+						rs.getInt(10),
+						rs.getString(11));
 				
 				officiallist.add(off);
 			}
@@ -65,23 +73,30 @@ public class CartDAO {
 	
 	
 	// 지원자 이름으로 검색
-	public ArrayList<CartVO> Search01(String officialPname) {
-		ArrayList<CartVO> officiallist = new ArrayList<CartVO>();
+	public ArrayList<FvOrderVO> Search01(String officialPname) {
+		ArrayList<FvOrderVO> officiallist = new ArrayList<FvOrderVO>();
 		String sql = "SELECT *\r\n"
-				+ "FROM CartT\r\n"
-				+ "WHERE officialPname LIKE '%'||?||'%'";
+				+ "FROM FvOrderTT\r\n"
+				+ "WHERE orderstatus LIKE '%'||?||'%'";
 		try {
 			setConn();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, officialPname);
 			rs = pstmt.executeQuery();
-			int rowNum =1;
 			System.out.println("공식스토어 검색");
 			while( rs.next() ) {
-				CartVO off = new CartVO(
-						rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getInt(4),
-						rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),
-						rs.getInt(9), rs.getInt(10));
+				FvOrderVO off = new FvOrderVO(
+						rs.getInt(1),
+						rs.getString(2),
+						rs.getString(3),
+						rs.getString(4),
+						rs.getInt(5),
+						rs.getString(6),
+						rs.getString(7),
+						rs.getString(8),
+						rs.getInt(9),
+						rs.getInt(10),
+						rs.getString(11));
 				
 				officiallist.add(off);
 			}
@@ -108,11 +123,11 @@ public class CartDAO {
 	
 	
 	//고유번호로 조회//
-	public ArrayList<CartVO> searchKey(int officialKey) {
-		ArrayList<CartVO> searchlist = new ArrayList<CartVO>();
+	public FvOrderVO searchKey(int officialKey) {
+		ArrayList<FvOrderVO> searchlist = new ArrayList<FvOrderVO>();
 		String sql = "SELECT *\r\n" + 
-					"FROM CartT\r\n" + 
-					"WHERE officialKey=? ";
+					"FROM FvOrderTT\r\n" + 
+					"WHERE orderKey=? ";
 		try {
 			setConn();
 			pstmt = con.prepareStatement(sql);
@@ -120,44 +135,21 @@ public class CartDAO {
 			
 			rs = pstmt.executeQuery();
 			while( rs.next() ) {
-				CartVO off = new CartVO(
-						rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getInt(4),
-						rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),
-						rs.getInt(9), rs.getInt(10));
+				FvOrderVO off = new FvOrderVO(
+						rs.getInt(1),
+						rs.getString(2),
+						rs.getString(3),
+						rs.getString(4),
+						rs.getInt(5),
+						rs.getString(6),
+						rs.getString(7),
+						rs.getString(8),
+						rs.getInt(9),
+						rs.getInt(10),
+						rs.getString(11));
 				
 				searchlist.add(off);
-			}
-			rs.close();
-			pstmt.close();
-			con.close();
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-			if(rs!=null) rs = null; // 강제로 자원해제..
-			if(pstmt!=null) pstmt = null;
-			if(con!=null) con = null;
-		}
-		return searchlist;
-	}
-	
-	public CartVO searchKey02(int officialKey) {
-		ArrayList<CartVO> searchlist = new ArrayList<CartVO>();
-		String sql = "SELECT *\r\n" + 
-				"FROM CartT\r\n" + 
-				"WHERE officialKey=? ";
-		try {
-			setConn();
-			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, officialKey);
-			
-			rs = pstmt.executeQuery();
-			while( rs.next() ) {
-				CartVO off = new CartVO(
-						rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getInt(4),
-						rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),
-						rs.getInt(9), rs.getInt(10));
-				
-				searchlist.add(off);
-			}
+			};
 			rs.close();
 			pstmt.close();
 			con.close();
@@ -175,8 +167,8 @@ public class CartDAO {
 	/*맥스번호*/
 	private int maxBdKey() {
 		int there=0;
-		String sql = "SELECT max(cartKey)\r\n" + 
-				"FROM CartT\r\n";
+		String sql = "SELECT max(orderKey)\r\n" + 
+				"FROM FvOrderTT\r\n";
 		System.out.println("최고 번호 조회");
 		try {
 			setConn();
@@ -207,10 +199,10 @@ public class CartDAO {
 	
 	
 	/*insert*/
-	public void insert(CartVO ins) {
+	public void insert(FvOrderVO ins) {
 		int num = maxBdKey();
 		
-		String sql = "INSERT INTO CartT VALUES (?,to_date(sysdate,'YYYY/MM/DD'),?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO FvOrderTT VALUES (?,?,to_date(sysdate,'YYYY/MM/DD'),?,?,?,?,?,?,?,?)";
 		try {
 			setConn();
 			// 자동커밋 방지
@@ -218,14 +210,15 @@ public class CartDAO {
 			pstmt = con.prepareStatement(sql);
 			
 			pstmt.setInt(1, num);
-			pstmt.setInt(2, ins.getCartCnt());
-			pstmt.setInt(3, ins.getCartPrice());
-			pstmt.setInt(4, ins.getmKey());
-			pstmt.setInt(5, ins.getOfficialKey());
-			pstmt.setInt(6, ins.getRentalKey());
-			pstmt.setInt(7, ins.getCusKey());
-			pstmt.setInt(8, ins.getLecKey());
-			pstmt.setInt(9, ins.getRequKey());
+			pstmt.setString(2, ins.getSellerId());
+			pstmt.setString(3, ins.getInstallType());
+			pstmt.setInt(4, ins.getOrderPrice());
+			pstmt.setString(5, ins.getPayType());
+			pstmt.setString(6, ins.getOrderEmail());
+			pstmt.setString(7, ins.getCardType());
+			pstmt.setInt(8, ins.getCartKey());
+			pstmt.setInt(9, ins.getCartKey());
+			pstmt.setString(10, ins.getOrderstatus());
 			pstmt.executeUpdate();
 			con.commit();
 			pstmt.close(); 
@@ -243,39 +236,35 @@ public class CartDAO {
 	
 	
 	/*5[1단계:확인] 5. A06_DatabaseDao pstmt로 사원정보를 수정/삭제하는 기는 메서드를 만드세요.*/
-	public void update(CartVO upt) {
+	public void update(FvOrderVO upt) {
 		try {
 			setConn();
 			// 자동커밋 방지
 			con.setAutoCommit(false);
 			
-			String sql = "update CartT\r\n"
-					+ "			SET	cartCnt = ?,\r\n"
-					+ "				cartPrice = ?,\r\n"
-					+ "				mKey = ?,\r\n"
-					+ "				officialKey = ?,\r\n"
-					+ "				rentalKey = ?,\r\n"
-					+ "				cusKey = ?,\r\n"
-					+ "				lecKey = ?,\r\n"
-					+ "				requKey = ?\r\n"
-					+ "		   where cartKey = ?";
+			String sql = "update FvOrderTT\r\n"
+					+ "			SET sellerId=?,\r\n"
+					+ "				installType=?,\r\n"
+					+ "				orderPrice = ?,\r\n"
+					+ "				payType = ?,\r\n"
+					+ "				orderEmail = ?,\r\n"
+					+ "				cardType = ?,\r\n"
+					+ "				cartKey = ?,\r\n"
+					+ "				mKey = ?\r\n"
+					+ "		   where orderKey = ?";
 			pstmt  = con.prepareStatement(sql);
 			
-			
-			pstmt.setInt(1, upt.getCartCnt());
-			pstmt.setInt(2, upt.getCartPrice());
-			//pstmt.setDate(3, 2021/1/21);
-			pstmt.setInt(3, upt.getmKey());
-			pstmt.setInt(4, upt.getOfficialKey());
-			pstmt.setInt(5, upt.getRentalKey());
-			pstmt.setInt(6, upt.getCusKey());
-			pstmt.setInt(7, upt.getLecKey());
-			pstmt.setInt(8, upt.getRequKey());
-			pstmt.setInt(9, upt.getCartKey());
+			pstmt.setString(1, upt.getSellerId());
+			pstmt.setString(2, upt.getInstallType());
+			pstmt.setInt(3, upt.getOrderPrice());
+			pstmt.setString(4, upt.getPayType());
+			pstmt.setString(5, upt.getOrderEmail());
+			pstmt.setString(6, upt.getCardType());
+			pstmt.setInt(7, upt.getCartKey());
+			pstmt.setInt(8, upt.getmKey());
+			pstmt.setInt(9, upt.getOrderKey());
 			
 			pstmt.executeUpdate(); 
-			
-			System.out.println(upt.getCartKey()+": 수정완료");
 			con.commit();
 			pstmt.close();
 			con.close();
@@ -297,8 +286,8 @@ public class CartDAO {
 	/*삭제 기능 메서드*/
 	public void delete(int officialKey) {
 		String sql = "delete \r\n"
-				+ "from CartT \r\n"
-				+ "where cartKey=?\r\n";
+				+ "from FvOrderTT \r\n"
+				+ "where orderKey=?\r\n";
 		try {
 			setConn();
 			// 자동커밋 방지
@@ -361,12 +350,13 @@ public class CartDAO {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		CartDAO DAO = new CartDAO();
-		//DAO.insert(new CartVO(1, "", 1, 1000, 1,401,0,0,0,0));
-		//DAO.update(new CartVO(1, "", 1, 2000, 201,401,0,0,0,0));
+		FvOrderDAO DAO = new FvOrderDAO();
+		//DAO.insert(new FvOrderVO(1, "fv", "", "무료", 10000, "카드", "aaaa@naver.com", "신용카드", 1, 1, "배송중"));
+		//DAO.insert(new FvOrderVO(2, "fv", "", "무료", 20000, "현금", "cyj0000@naver.com", "현금", 1, 1, "배송완료"));
+		//DAO.update(new FvOrderVO(2, "fv", "", "무료", 20000, "현금", "cyj1234@naver.com", "현금", 1, 1, "배송완료"));
 		
-		for(CartVO of : DAO.Alllist()) {
-			System.out.println(of.getCartKey());
+		for(FvOrderVO of : DAO.Alllist()) {
+			System.out.println(of.getOrderEmail());
 		}
 		
 		

@@ -1,3 +1,6 @@
+DELETE TABLE 
+DROP TABLE fvComment;
+
 CREATE TABLE fvComment(
 	commKey	NUMBER PRIMARY KEY,
 	boPostKey NUMBER  CONSTRAINT fvComment_boPostKey_fk REFERENCES Board(boPostKey),

@@ -6,6 +6,7 @@ public class FvOrderVO {
 	int orderKey;
 	String sellerId;
 	Date orderDate;
+	String orderDateS;
 	String installType;
 	int orderPrice;
 	String payType;
@@ -13,11 +14,6 @@ public class FvOrderVO {
 	String cardType;
 	int cartKey;
 	int mKey;
-	int offictialKey;
-	int rentalKey;
-	int lecKey;
-	int cusKey;
-	int requKey;
 	String orderstatus;
 
 	public FvOrderVO() {
@@ -25,9 +21,26 @@ public class FvOrderVO {
 		// TODO Auto-generated constructor stub
 	}
 
+	public FvOrderVO(int orderKey, String sellerId, Date orderDate, String orderDateS, String installType,
+			int orderPrice, String payType, String orderEmail, String cardType, int cartKey, int mKey,
+			String orderstatus) {
+		super();
+		this.orderKey = orderKey;
+		this.sellerId = sellerId;
+		this.orderDate = orderDate;
+		this.orderDateS = orderDateS;
+		this.installType = installType;
+		this.orderPrice = orderPrice;
+		this.payType = payType;
+		this.orderEmail = orderEmail;
+		this.cardType = cardType;
+		this.cartKey = cartKey;
+		this.mKey = mKey;
+		this.orderstatus = orderstatus;
+	}
+
 	public FvOrderVO(int orderKey, String sellerId, Date orderDate, String installType, int orderPrice, String payType,
-			String orderEmail, String cardType, int cartKey, int mKey, int offictialKey, int rentalKey, int lecKey,
-			int cusKey, int requKey, String orderstatus) {
+			String orderEmail, String cardType, int cartKey, int mKey, String orderstatus) {
 		super();
 		this.orderKey = orderKey;
 		this.sellerId = sellerId;
@@ -39,11 +52,22 @@ public class FvOrderVO {
 		this.cardType = cardType;
 		this.cartKey = cartKey;
 		this.mKey = mKey;
-		this.offictialKey = offictialKey;
-		this.rentalKey = rentalKey;
-		this.lecKey = lecKey;
-		this.cusKey = cusKey;
-		this.requKey = requKey;
+		this.orderstatus = orderstatus;
+	}
+
+	public FvOrderVO(int orderKey, String sellerId, String orderDateS, String installType, int orderPrice,
+			String payType, String orderEmail, String cardType, int cartKey, int mKey, String orderstatus) {
+		super();
+		this.orderKey = orderKey;
+		this.sellerId = sellerId;
+		this.orderDateS = orderDateS;
+		this.installType = installType;
+		this.orderPrice = orderPrice;
+		this.payType = payType;
+		this.orderEmail = orderEmail;
+		this.cardType = cardType;
+		this.cartKey = cartKey;
+		this.mKey = mKey;
 		this.orderstatus = orderstatus;
 	}
 
@@ -69,6 +93,14 @@ public class FvOrderVO {
 
 	public void setOrderDate(Date orderDate) {
 		this.orderDate = orderDate;
+	}
+
+	public String getOrderDateS() {
+		return orderDateS;
+	}
+
+	public void setOrderDateS(String orderDateS) {
+		this.orderDateS = orderDateS;
 	}
 
 	public String getInstallType() {
@@ -125,46 +157,6 @@ public class FvOrderVO {
 
 	public void setmKey(int mKey) {
 		this.mKey = mKey;
-	}
-
-	public int getOffictialKey() {
-		return offictialKey;
-	}
-
-	public void setOffictialKey(int offictialKey) {
-		this.offictialKey = offictialKey;
-	}
-
-	public int getRentalKey() {
-		return rentalKey;
-	}
-
-	public void setRentalKey(int rentalKey) {
-		this.rentalKey = rentalKey;
-	}
-
-	public int getLecKey() {
-		return lecKey;
-	}
-
-	public void setLecKey(int lecKey) {
-		this.lecKey = lecKey;
-	}
-
-	public int getCusKey() {
-		return cusKey;
-	}
-
-	public void setCusKey(int cusKey) {
-		this.cusKey = cusKey;
-	}
-
-	public int getRequKey() {
-		return requKey;
-	}
-
-	public void setRequKey(int requKey) {
-		this.requKey = requKey;
 	}
 
 	public String getOrderstatus() {

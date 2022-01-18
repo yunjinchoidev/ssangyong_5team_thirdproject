@@ -1,3 +1,5 @@
+DROP TABLE attachedfile;
+
 CREATE TABLE attachedfile(
 	fileKey	NUMBER PRIMARY KEY,
 	fileName	VARCHAR2(100),

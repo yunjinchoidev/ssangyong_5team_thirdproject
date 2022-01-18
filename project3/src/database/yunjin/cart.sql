@@ -1,3 +1,5 @@
+DROP TABLE cart
+
 CREATE TABLE cart(
 	cartKey	NUMBER PRIMARY KEY,
 	cartDate	DATE,

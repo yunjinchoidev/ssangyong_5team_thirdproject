@@ -1,3 +1,6 @@
+DELETE FROM  literarycontest;
+DROP TABLE  literarycontest;
+
 CREATE TABLE literarycontest (
 	literKey number PRIMARY KEY,
 	literTitle	VARCHAR2(100) default 'A',

@@ -71,6 +71,8 @@ public class CartController extends HttpServlet {
 
 		} else if (action.equals("/addForm.do")) {
 			nextPage = "/views/6_cart/1_addForm.jsp";
+		} else if (action.equals("/addFormRent.do")) {
+			nextPage = "/views/6_cart/1_addFormRent.jsp";
 			
 			
 			

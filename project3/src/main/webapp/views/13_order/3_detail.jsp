@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"
-	import="board.*"
-	import="yunjinTest.*"%>
+	import="java.util.ArrayList"
+	import="board.*"%>
 <%
 request.setCharacterEncoding("utf-8");
 %>
@@ -86,42 +86,25 @@ input {
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 
-<%
-			String mid =(String) session.getAttribute("ID");
-			System.out.println(mid);
-			
-			MemberDAO dao = new MemberDAO();
-			int mKey = dao.searchId(mid);
-			
-			System.out.println("########################");
-			System.out.println(mKey);
-			
-		
-			
-		%>
-
-
 	<div class="contents">
 		<div class="cards">
 			<p>상세 글 보기</p>
-<button onclick="location.href='${contextPath}/cart/addFormRent.do?rentalKey=${oftVO.rentalKey}'">장바구니 담기</button>
-				<form action="${contextPath}/cart/addFormRent.do?rentalKey=${oftVO.rentalKey}">
-				<input type="hidden" name="rentalKey" value="${rentalKey}">
-				</form>
-					<button>주문하기</button>
+
 				<table id="newtab" border="1">
 					<colgroup>
 						<td width="30%">
 						<td width="70%">
 					</colgroup>
-							<tr><th>상품번호 :</th><td> ${oftVO.rentalKey}</td></tr>
-							<tr><th>상품명 :</th><td> ${oftVO.rentalPname }</td></tr>
-							<tr><th>기간 : </th><td>${oftVO.rentalterm }일</td></tr>
-							<tr><th>시작일 : </th><td>${oftVO.rentalStartDayS }</td></tr>
-							<tr><th>마감일 : </th><td>${oftVO.rentalEndDayS }</td></tr>
-							<tr><th>분류 : </th><td>${oftVO.proCateKey }</td></tr>
-							<tr><th>파일 :</th><td> ${oftVO.fileKey }</td></tr>
-							<tr><th>가격 : </th><td>${oftVO.rentPrice }</td></tr>
+					<tr><th>공식스토어 고유번호</th><td>${oftVO.officialKey}</td></tr>
+					<tr><th>제품 이름</th><td>${oftVO.officialPname}</td></tr>
+					<tr><th>설명</th><td>${oftVO.officialExplain}</td></tr>
+					<tr><th>재고</th><td>${oftVO.officialInventory}</td></tr>
+					<tr><th>할인률</th><td>${oftVO.officialDiscount}</td></tr>
+					<tr><th>상품분류번호</th><td>${oftVO.proCateKey}</td></tr>
+					<tr><th>파일번호</th><td>${oftVO.fileKey}</td></tr>
+					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
+					<button onclick="location.href='${contextPath}'">장바구니 담기</button>
+					<button>주문하기</button>
 			</table>
 
 

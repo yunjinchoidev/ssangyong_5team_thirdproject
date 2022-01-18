@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"
 	import="attachedFileTest.*"
 	import="officialStoreTest.*"
+	import="yunjinTest.*"
 	%>
 <%
 request.setCharacterEncoding("utf-8");
@@ -58,6 +59,23 @@ color: white;
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
+
+<%
+			String mid =(String) session.getAttribute("ID");
+			System.out.println(mid);
+			
+			MemberDAO dao = new MemberDAO();
+			int mKey = dao.searchId(mid);
+			
+			System.out.println("########################");
+			System.out.println(mKey);
+			
+		%>
+
+
+
+
+
 
 
 	<div class="contents">

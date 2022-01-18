@@ -1,3 +1,6 @@
+DELETE FROM FVORDER;
+DROP TABLE fvorder;
+
 CREATE TABLE fvorder(
 	orderKey NUMBER PRIMARY KEY,
 	sellerId VARCHAR2(100) DEFAULT 'fv',

@@ -1,3 +1,6 @@
+DELETE cutomStore;
+DROP TABLE customStroe;
+
 CREATE TABLE customStore(
 	cusKey	NUMBER PRIMARY KEY,
 	cusPname	VARCHAR2(100),

@@ -259,6 +259,8 @@ public class RentalStoreTController extends HttpServlet {
 			RentalStoreTService.del(rentalKey);
 			nextPage = "/rental/list.do";
 
+			
+			
 		} else {
 			oftList = RentalStoreTService.list();
 			request.setAttribute("oftList", oftList);

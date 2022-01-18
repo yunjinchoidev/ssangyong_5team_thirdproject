@@ -1,3 +1,6 @@
+DELETE FROM board;
+DROP TABLE board;
+
 CREATE TABLE Board(
 	boPostKey	NUMBER PRIMARY KEY,
 	mKey NUMBER CONSTRAINT Board_mKey_fk REFERENCES member (mKey),

@@ -1,3 +1,5 @@
+DROP TABLE block;
+
 CREATE TABLE Block(
 	bKey	NUMBER PRIMARY KEY,
 	mKey NUMBER CONSTRAINT Block_mKey_fk REFERENCES member (mKey),

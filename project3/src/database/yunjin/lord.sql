@@ -1,3 +1,6 @@
+DELETE FROM  lord;
+DROP TABLE  lord;
+
 CREATE TABLE lord(
 	lordKey	NUMBER PRIMARY KEY,
 	lordCharacter	VARCHAR2(100),

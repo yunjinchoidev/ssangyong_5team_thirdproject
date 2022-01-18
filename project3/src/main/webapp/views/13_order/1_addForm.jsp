@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" isELIgnored="false"
-	import="board.*"
-	import="yunjinTest.*"%>
+	pageEncoding="UTF-8" import="literacyContest.*"
+	import="java.util.ArrayList"
+	import="yunjinTest.*"
+	import="login.*"%>
 <%
 request.setCharacterEncoding("utf-8");
 %>
@@ -14,10 +15,21 @@ request.setCharacterEncoding("utf-8");
 <head>
 <meta charset="UTF-8">
 <title>신춘문예</title>
+</script>
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 <style>
-#btn {
+.tbdtab {
+	width: 600px;
+	height: 300px;
+	font-size: 40px;
+	text-decoration: none;
+	color: black;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+#contebtn {
 	width: 400px;
 	height: 80px;
 	font-size: 40px;
@@ -26,31 +38,32 @@ request.setCharacterEncoding("utf-8");
 	margin-bottom: 30px;
 }
 
-#newtab {
-	width: 1700px;
+.tbdaddtab {
+	width: 1400px;
 	height: 600px;
 	border: 3px solid yellow;
 	margin: 0 auto;
 	font-size: 20px;
 	margin-top: 50px;
 	color: white;
-	text-align: left;
-
+	text-align: center;
 }
-
-.tab table, .tab td, .tab tr, .tab th {
+.tbdaddtab tr{
+	height: 60px;
+}
+.tbdaddtab table, .tbdaddtab td, .tbdaddtab tr, .tbdaddtab th {
 	border: 3px solid yellow;
-	text-decoration: none;
 }
 
-
-
-
-input {
-	width: 500px;
+input{
+	width:500px;
 	height: 60px;
 	font-size: 30px;
 	text-align: center;
+}
+
+.conlisttab td {
+	height: 50px;
 }
 
 #seachcon {
@@ -62,16 +75,6 @@ input {
 	background-color: white;
 	border: 2px solid yellow;
 }
-
-.g{
-	text-decoration: none;
-	color: red;
-}
-
-.g:hover{
-	color:white;
-}
-
 </style>
 </head>
 <body>
@@ -80,6 +83,7 @@ input {
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
+
 	<!-- S헤더 삽입 -->
 	<jsp:include page="/views/10_Store/menu.jsp">
 		<jsp:param name="name" value="go" />
@@ -96,33 +100,33 @@ input {
 			System.out.println("########################");
 			System.out.println(mKey);
 			
-		
+			String cartKey = request.getParameter("cartKey");
+			String cartPrice = request.getParameter("cartPrice");
+			
 			
 		%>
-
-
 	<div class="contents">
 		<div class="cards">
-			<p>상세 글 보기</p>
-<button onclick="location.href='${contextPath}/cart/addFormRent.do?rentalKey=${oftVO.rentalKey}'">장바구니 담기</button>
-				<form action="${contextPath}/cart/addFormRent.do?rentalKey=${oftVO.rentalKey}">
-				<input type="hidden" name="rentalKey" value="${rentalKey}">
-				</form>
-					<button>주문하기</button>
-				<table id="newtab" border="1">
-					<colgroup>
-						<td width="30%">
-						<td width="70%">
-					</colgroup>
-							<tr><th>상품번호 :</th><td> ${oftVO.rentalKey}</td></tr>
-							<tr><th>상품명 :</th><td> ${oftVO.rentalPname }</td></tr>
-							<tr><th>기간 : </th><td>${oftVO.rentalterm }일</td></tr>
-							<tr><th>시작일 : </th><td>${oftVO.rentalStartDayS }</td></tr>
-							<tr><th>마감일 : </th><td>${oftVO.rentalEndDayS }</td></tr>
-							<tr><th>분류 : </th><td>${oftVO.proCateKey }</td></tr>
-							<tr><th>파일 :</th><td> ${oftVO.fileKey }</td></tr>
-							<tr><th>가격 : </th><td>${oftVO.rentPrice }</td></tr>
+			<p>글쓰기</p>
+			
+			<form action="${contextPath }/order/add.do" enctype="multipart/form-data"> 
+			
+			<table align="center" class="tbdaddtab">
+			<colgroup>
+				<col width="30%">
+			</colgroup>
+					<tr><th>판매자</th><td><input type="text" name="sellerId" value="판타지빌리지"></td></tr>
+					<tr><th>할부</th><td><input type="text" name="installType" value="0"></td></tr>
+					<tr><th>가격</th><td><input type="text" name="orderPrice" value="<%=cartPrice%>"></td></tr>
+					<tr><th>결제유형</th><td><input type="text" name="payType" value="일시불"></td></tr>
+					<tr><th>이메일주소</th><td><input type="text" name="orderEamil"></td></tr>
+					<tr><th>카드 유형</th><td><input type="text" name="cardType" value="신용카드"></td></tr>
+					<tr><th>장바구니 번호</th><td><input type="text" name="cartKey" value="<%=cartKey %>"></td></tr>
+					<tr><th>회원 키</th><td><input type="text" name="mKey" value="<%=mKey%>"></td></tr>
+					<tr><th>주문상태</th><td><input type="text" name="orderstatus"></td></tr>
+					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
 			</table>
+			</form>
 
 
 		</div>

@@ -1,3 +1,6 @@
+DELETE FROM lecture;
+DROP TABLE lecture;
+
 CREATE TABLE lecture(
 	lecKey	NUMBER PRIMARY KEY,
 	lecName	VARCHAR2(100),

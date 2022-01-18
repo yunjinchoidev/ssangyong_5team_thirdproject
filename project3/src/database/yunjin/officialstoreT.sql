@@ -1,3 +1,7 @@
+DELETE FROM officialStoreT;
+DROP TABLE officialStoreT;
+
+
 
 CREATE TABLE officialStoreT(
 	officialKey	NUMBER PRIMARY KEY,

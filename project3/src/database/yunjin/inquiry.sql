@@ -1,3 +1,6 @@
+DELETE FROM inquiry;
+DROP TABLE inquiry;
+
 CREATE TABLE inquiry(
 	inquiryKey	NUMBER PRIMARY key,
 	inquiryType	VARCHAR2(100),

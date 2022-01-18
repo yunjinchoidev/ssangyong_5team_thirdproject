@@ -1,3 +1,5 @@
+
+
 CREATE TABLE notice(
 	noticeKey	NUMBER PRIMARY KEY,
 	noticeTitle	VARCHAR2(100),

@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"
 	import="attachedFileTest.*"
 	import="officialStoreTest.*"
+	import="yunjinTest.*"
 	%>
 <%
 request.setCharacterEncoding("utf-8");
@@ -48,33 +49,43 @@ request.setCharacterEncoding("utf-8");
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
-
+<%
+			String mid =(String) session.getAttribute("ID");
+			System.out.println(mid);
+			
+			MemberDAO dao = new MemberDAO();
+			int mKey = dao.searchId(mid);
+			
+			System.out.println("########################");
+			System.out.println(mKey);
+			
+		
+			
+		%>
 
 	<div class="contents">
 		<div class="cards">
-				<h1> 장바구니</h1>
-				<p>이 곳은 당신의 물건을 담을 수 있는<br>
-				장바구니 입니다.</p>
+				<h1> 당신의 주문</h1>
 				 
-				 <button onclick="location.href='${contextPath}/cart/addForm.do'">물건 추가</button>
-				 
+				 <button onclick="location.href='${contextPath}/order/addForm.do'">주문서</button>
 				 <hr style="border:3px solid yellow;">
 					<div class="lordshopwrap">
 				<c:choose>
 					<c:when test="${empty oftList}">
 						<div>
-							<td colspan="16">등록된 글이 없습니다.</td>
+							주문이 없습니다.
 						</div>
 					</c:when>
 					
 					<c:when test="${!empty oftList}">
 						<c:forEach var="oftList" items="${oftList}" varStatus="oftNum">
 							<div class="lordshopchild"> 
-								재고 : ${oftList.cartKey }<br>
-								물건명 : ${oftList.cartCnt }<br>
-								<a href="${contextPath }/cart/del.do?cartKey=${oftList.cartKey}">상품 삭제</a>
-								<a href="${contextPath }/cart/modForm.do?cartKey=${oftList.cartKey}">상품 수정</a>
-								<a href="${contextPath }/order/addForm.do?cartKey=${oftList.cartKey}&cartPrice=${oftList.cartPrice}">결제하기</a>
+								주문 키 : ${oftList.orderKey }<br>
+								주문일 : ${oftList.orderDateS }<br>
+								가격 : ${oftList.orderPrice }<br>
+								아이디 : ${oftList.orderKey }<br>
+								<a href="${contextPath }/order/del.do?cartKey=${oftList.orderKey}">주문 삭제</a>
+								<a href="${contextPath }/order/modForm.do?cartKey=${oftList.orderKey}">주문 수정</a>
 							</div>
 						</c:forEach>
 					</c:when>

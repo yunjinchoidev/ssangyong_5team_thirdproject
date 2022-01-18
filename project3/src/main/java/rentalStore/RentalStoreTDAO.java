@@ -334,8 +334,8 @@ public class RentalStoreTDAO {
 		// TODO Auto-generated method stub
 		RentalStoreTDAO DAO = new RentalStoreTDAO();
 		//DAO.insert(new RentalStoreTVO(2, "a", 1, "A", "2021/11/11", "2021/11/12",501, "401", 2000));
-		DAO.update(new RentalStoreTVO(9, "a(수정)", 1, "A", "2021/11/11", "2021/11/12",501, "401", 2000));
-		
+		//DAO.update(new RentalStoreTVO(9, "a(수정)", 1, "A", "2021/11/11", "2021/11/12",501, "401", 2000));
+		DAO.delete(9);
 		for(RentalStoreTVO of : DAO.list()) {
 			System.out.println(of.getRentalKey());
 		}

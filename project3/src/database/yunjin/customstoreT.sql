@@ -1,3 +1,7 @@
+DELETE FROM customStoreT;
+
+DROP TABLE customStoreT;
+
 CREATE TABLE customStoreT(
 	cusKey	NUMBER PRIMARY KEY,
 	cusPname	VARCHAR2(100),
@@ -12,7 +16,7 @@ CREATE TABLE customStoreT(
 );
 
 SELECT *
-FROM customStore;
+FROM customStoreT;
 
 DELETE customstore;
 

@@ -1,3 +1,7 @@
+DELETE FROM faq;
+
+DROP TABLE faq;
+
 CREATE TABLE faq(
 	faqKey	NUMBER PRIMARY key,
 	faqTitle	VARCHAR(100),

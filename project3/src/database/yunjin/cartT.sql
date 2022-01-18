@@ -1,3 +1,5 @@
+DROP TABLE cartT;
+
 CREATE TABLE cartT(
 	cartKey	NUMBER PRIMARY KEY,
 	cartDate	DATE,

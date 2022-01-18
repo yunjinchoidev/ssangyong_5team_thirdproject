@@ -1,3 +1,6 @@
+DELETE FROM  monthfantasy;
+DROP TABLE  monthfantasy;
+
 CREATE TABLE monthfantasy(
 	monthindiviKey	NUMBER PRIMARY KEY,
 	monthindivicontents	VARCHAR2(4000),

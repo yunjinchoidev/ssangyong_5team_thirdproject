@@ -138,10 +138,12 @@ input {
 
 											</c:forEach>
 											<span style="font-size: 20px;">[답변]</span>
-<a href="${contextPath}/board/view.do?boPostKey=${bdList.boPostKey}" class="g">${bdList.boPostKey}</a>
+												<a href="${contextPath}/board/view.do?boPostKey=${bdList.boPostKey}" class="g">
+													${bdList.boPostKey}</a>
 										</c:when>
 										<c:otherwise>
-											<a href="${contextPath}/board/view.do?boPostKey=${bdList.boPostKey}" class="g">${bdList.boPostKey}</a>
+											<a href="${contextPath}/board/view.do?boPostKey=${bdList.boPostKey}" class="g">
+												${bdList.boPostKey}</a>
 										</c:otherwise>
 									</c:choose></td>
 								<td>${bdList.boModifyDateS }</td>

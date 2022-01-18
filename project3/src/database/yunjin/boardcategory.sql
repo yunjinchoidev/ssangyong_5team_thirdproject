@@ -1,3 +1,5 @@
+DROP TABLE boardcategory;
+
 CREATE TABLE BoardCategory(
 	boCateKey	NUMBER PRIMARY KEY,
 	boCateMain	VARCHAR2(50),

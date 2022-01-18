@@ -1,3 +1,5 @@
+DROP TABLE attachedfileTest;
+
 CREATE TABLE attachedfileTest(
 	fileKey	varchar2(100) PRIMARY KEY,
 	fileName	VARCHAR2(100),
@@ -31,7 +33,7 @@ INSERT INTO attachedfile VALUES (210, '강의', 'l10.jpg', 'jpg', '2mb', sysdate
 
 COMMIT;
 
-INSERT INTO Attachedfile VALUES (1,'1','1','1','1', to_date('1111/11/11','YYYY/MM/DD'));
+INSERT INTO AttachedfileTest VALUES (1,'1','1','1','1', to_date('1111/11/11','YYYY/MM/DD'));
 
 SELECT filepath
 FROM attachedfile
