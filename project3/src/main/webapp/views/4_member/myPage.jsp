@@ -20,7 +20,7 @@ color:white;
 background-color: #051f30;
 }
 
-button{
+#uptmembtn{
 width:100px;
 height:30px;
 background-color:rgba(0,0,0,0);
@@ -36,7 +36,31 @@ top:35px;
 left:650px;
 }
 
-button:hover{
+#uptmembtn:hover{
+width:100px;
+height:30px;
+background-color:#3F3F3F;
+color : white;
+border:none;
+}
+
+#delmembtn{
+width:100px;
+height:30px;
+background-color:rgba(0,0,0,0);
+color : skyblue;
+border: 1px solid skyblue;
+font-weight:bold;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+position: absolute;
+top:35px;
+left:780px;
+}
+
+#delmembtn:hover{
 width:100px;
 height:30px;
 background-color:#3F3F3F;
@@ -361,8 +385,13 @@ MemberDAO dao = new MemberDAO();
 		<h1 id="nameArea"><%= mem.getmName()%>님</h1><h4 id="idArea"><%=mem.getmId()%></h4>
 		<h4 id="nickArea"><%=mem.getNickname()%></h4>
 		<a href="<%=path%>/memupdate.do">
-		<button>회원정보수정</button>
+		<button id="uptmembtn">회원정보수정</button>
 		</a>
+		
+		<a href="<%=path%>/memupdate.do">
+		<button id="delmembtn">회원탈퇴</button>
+		</a>
+		
 		<hr id="memberHr1">
 		<h1 id="memberLvArea">회원레벨:LV<%=mem.getmLevel()%></h1>
 		<h1 id="fanPower">덕력지수<br>&nbsp <%=mem.getmManiaQuot()%>점</h1>
