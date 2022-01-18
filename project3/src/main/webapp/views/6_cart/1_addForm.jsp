@@ -109,8 +109,8 @@ input{
 			<colgroup>
 				<col width="30%">
 			</colgroup>
-					<tr><th>제품 이름</th><td><input type="text" name="cartKey" ></td></tr>
-					<tr><th>날짜</th><td><input type="text" name="cartDate"></td></tr>
+					<tr><th>카트키</th><td><input type="text" name="cartKey" ></td></tr>
+					<tr><th>카트담은날짜</th><td><input type="text" name="cartDate"></td></tr>
 					<tr><th>수량</th><td><input type="text" name="cartCnt"></td></tr>
 					<tr><th>가격</th><td><input type="text" name="cartPrice"></td></tr>
 					<tr><th>회원키</th><td><input type="text" name="mKey" value="<%=mKey%>"></td></tr>

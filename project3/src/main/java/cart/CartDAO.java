@@ -108,11 +108,42 @@ public class CartDAO {
 	
 	
 	//고유번호로 조회//
-	public CartVO searchKey(int officialKey) {
+	public ArrayList<CartVO> searchKey(int officialKey) {
 		ArrayList<CartVO> searchlist = new ArrayList<CartVO>();
 		String sql = "SELECT *\r\n" + 
 					"FROM CartT\r\n" + 
 					"WHERE officialKey=? ";
+		try {
+			setConn();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, officialKey);
+			
+			rs = pstmt.executeQuery();
+			while( rs.next() ) {
+				CartVO off = new CartVO(
+						rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getInt(4),
+						rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),
+						rs.getInt(9), rs.getInt(10));
+				
+				searchlist.add(off);
+			}
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			if(rs!=null) rs = null; // 강제로 자원해제..
+			if(pstmt!=null) pstmt = null;
+			if(con!=null) con = null;
+		}
+		return searchlist;
+	}
+	
+	public CartVO searchKey02(int officialKey) {
+		ArrayList<CartVO> searchlist = new ArrayList<CartVO>();
+		String sql = "SELECT *\r\n" + 
+				"FROM CartT\r\n" + 
+				"WHERE officialKey=? ";
 		try {
 			setConn();
 			pstmt = con.prepareStatement(sql);

@@ -53,7 +53,14 @@ public class CartController extends HttpServlet {
 		CartVO oftVO = new CartVO();
 		
 		if (action == null || action.equals("/list.do")) {
-			oftList = CartService.list();
+			String mKeyS = request.getParameter("mKey");
+			int mKey = 0;
+			if (mKeyS != null) {
+				mKey = Integer.parseInt(mKeyS);
+			}
+			;
+			
+			oftList = CartService.list(mKey);
 			request.setAttribute("oftList", oftList);
 			nextPage = "/views/6_cart/0_list.jsp";
 			
@@ -150,7 +157,7 @@ public class CartController extends HttpServlet {
 			}
 			;
 			
-			oftVO = CartService.view(cartKey);
+			oftVO= CartService.view(cartKey);
 			request.setAttribute("oftVO", oftVO);
 			nextPage = "/views/6_cart/3_detail.jsp";
 
@@ -265,7 +272,14 @@ public class CartController extends HttpServlet {
 			
 			
 		} else {
-			oftList = CartService.list();
+			String mKeyS = request.getParameter("mKey");
+			int mKey = 0;
+			if (mKeyS != null) {
+				mKey = Integer.parseInt(mKeyS);
+			}
+			;
+			
+			oftList = CartService.list(mKey);
 			request.setAttribute("oftList", oftList);
 
 			nextPage = "/views/6_cart/0_list.jsp";		

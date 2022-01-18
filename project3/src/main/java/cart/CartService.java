@@ -14,8 +14,8 @@ public class CartService {
 		cartVO = new CartVO();
 	};
 
-	public ArrayList<CartVO> list(){
-		ArrayList<CartVO> thelist = cartDAO.Alllist();
+	public ArrayList<CartVO> list(int cartKey){
+		ArrayList<CartVO> thelist = cartDAO.searchKey(cartKey);
 		return thelist;
 	};
 
@@ -23,8 +23,9 @@ public class CartService {
 		cartDAO.insert(off);
 	};
 	
-	public CartVO view(int officialKey){
-		return cartDAO.searchKey(officialKey);
+	public CartVO view(int cartKey){
+		CartVO thelist = cartDAO.searchKey02(cartKey);
+		return thelist;
 		
 	}
 
