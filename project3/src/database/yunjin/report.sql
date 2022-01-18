@@ -1,3 +1,5 @@
+DROP TABLE report;
+
 CREATE TABLE Report(
 	repKey	NUMBER PRIMARY key,
 	repReason	VARCHAR2(100),

@@ -23,7 +23,7 @@ SET filepath='lec10.png'
 WHERE filekey=210;
 
 
-INSERT INTO attachedfile VALUES (201, '그림1', 'project3', 'jpg', '24mb', sysdate);
+INSERT INTO attachedfile VALUES (1, '그림1', 'project3', 'jpg', '24mb', sysdate);
 
 INSERT INTO attachedfile VALUES (206, '강의', 'l06.jpg', 'jpg', '2mb', sysdate);
 INSERT INTO attachedfile VALUES (207, '강의', 'l07.jpg', 'jpg', '2mb', sysdate);

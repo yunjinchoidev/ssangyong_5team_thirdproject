@@ -1,3 +1,5 @@
+DROP TABLE potter;
+
 CREATE TABLE potter(
 	harryKey	NUMBER PRIMARY key,
 	harryCharacter	VARCHAR2(100),

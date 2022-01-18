@@ -1,5 +1,6 @@
 DELETE FROM fvorderTT;
 DROP TABLE fvorderTT;
+
 CREATE TABLE fvorderTT(
 	orderKey NUMBER PRIMARY KEY,
 	sellerId VARCHAR2(100),

@@ -21,7 +21,7 @@ CREATE TABLE Board(
 SELECT max(boPostKey)
 FROM Board;
 
-INSERT INTO board values (1, 201, 201, 201, '홍길동',
+INSERT INTO board values (1, 1, 1, 201, '홍길동',
 			'abcd', 'a@naver.com', sysdate, '제목1', sysdate, '123.123.123', 
 			500, 0, '콘텐츠1');
 INSERT INTO board values (2, 201, 201, 201, '홍길동',

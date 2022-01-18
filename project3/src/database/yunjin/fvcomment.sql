@@ -12,3 +12,5 @@ CREATE TABLE fvComment(
 	commGoodNum	NUMBER,
 	commHateNum	NUMBER
 );
+
+SELECT * FROM FVCOMMENT f ;

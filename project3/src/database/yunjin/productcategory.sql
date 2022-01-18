@@ -8,14 +8,12 @@ CREATE TABLE productCategory(
 
 SELECT * FROM productCategory;
 
-INSERT INTO productCategory VALUES (0, '반지', '반지의제왕', '악세사리', '공용');
-INSERT INTO productCategory VALUES (1, '반지', '반지의제왕', '악세사리', '공용');
-INSERT INTO productCategory VALUES (201, '반지', '반지의제왕', '악세사리', '공용');
-INSERT INTO productCategory VALUES (401, '반지', '반지의제왕', '악세사리', '공용');
-INSERT INTO productCategory VALUES (501, '렌탈', '반지의제왕', '악세사리', '공용');
-INSERT INTO productCategory VALUES (601, '1:1 거래', '반지의제왕', '악세사리', '공용');
-INSERT INTO productCategory VALUES (701, '강의', '반지의제왕', '악세사리', '공용');
-INSERT INTO productCategory VALUES (801, '스토리매매', '반지의제왕', '악세사리', '공용');
-INSERT INTO productCategory VALUES (701, '강의', '반지의제왕', '악세사리', '공용');
+INSERT INTO productCategory VALUES (1, '공식반지', '반지의제왕', '악세사리', '공용');
+INSERT INTO productCategory VALUES (2, '공식마블', '마블', '마블', '공용');
+INSERT INTO productCategory VALUES (3, '공식해리포터', '해리포터', '해리포터', '공용');
+INSERT INTO productCategory VALUES (4, '렌탈', '반지의제왕', '악세사리', '공용');
+INSERT INTO productCategory VALUES (5, '1:1 거래', '반지의제왕', '악세사리', '공용');
+INSERT INTO productCategory VALUES (6, '강의', '반지의제왕', '악세사리', '공용');
+INSERT INTO productCategory VALUES (7, '스토리매매', '반지의제왕', '악세사리', '공용');
 
 COMMIT;
