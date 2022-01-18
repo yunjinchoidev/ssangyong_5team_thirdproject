@@ -18,3 +18,6 @@ FROM officialStoreT;
 
 
 ALTER TABLE officialstoreT RENAME COLUMN officialnventory TO officialInventory;
+
+
+INSERT INTO officialStoreT VALUES (0, NULL,NULL,NULL,NULL,NULL,NULL,NULL); 

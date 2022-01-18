@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" isELIgnored="false"
+	pageEncoding="UTF-8" import="literacyContest.*"
 	import="java.util.ArrayList"
-	import="board.*"
-	import="yunjinTest.*"%>
+	import="yunjinTest.*"
+	import="login.*"%>
 <%
 request.setCharacterEncoding("utf-8");
 %>
@@ -15,10 +15,21 @@ request.setCharacterEncoding("utf-8");
 <head>
 <meta charset="UTF-8">
 <title>신춘문예</title>
+</script>
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 <style>
-#btn {
+.tbdtab {
+	width: 600px;
+	height: 300px;
+	font-size: 40px;
+	text-decoration: none;
+	color: black;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+#contebtn {
 	width: 400px;
 	height: 80px;
 	font-size: 40px;
@@ -27,31 +38,32 @@ request.setCharacterEncoding("utf-8");
 	margin-bottom: 30px;
 }
 
-#newtab {
-	width: 1700px;
+.tbdaddtab {
+	width: 1400px;
 	height: 600px;
 	border: 3px solid yellow;
 	margin: 0 auto;
 	font-size: 20px;
 	margin-top: 50px;
 	color: white;
-	text-align: left;
-
+	text-align: center;
 }
-
-.tab table, .tab td, .tab tr, .tab th {
+.tbdaddtab tr{
+	height: 60px;
+}
+.tbdaddtab table, .tbdaddtab td, .tbdaddtab tr, .tbdaddtab th {
 	border: 3px solid yellow;
-	text-decoration: none;
 }
 
-
-
-
-input {
-	width: 500px;
+input{
+	width:500px;
 	height: 60px;
 	font-size: 30px;
 	text-align: center;
+}
+
+.conlisttab td {
+	height: 50px;
 }
 
 #seachcon {
@@ -63,16 +75,6 @@ input {
 	background-color: white;
 	border: 2px solid yellow;
 }
-
-.g{
-	text-decoration: none;
-	color: red;
-}
-
-.g:hover{
-	color:white;
-}
-
 </style>
 </head>
 <body>
@@ -81,11 +83,13 @@ input {
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
+
 	<!-- S헤더 삽입 -->
 	<jsp:include page="/views/10_Store/menu.jsp">
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
+
 <%
 			String mid =(String) session.getAttribute("ID");
 			System.out.println(mid);
@@ -97,27 +101,27 @@ input {
 			System.out.println(mKey);
 			
 		%>
-
 	<div class="contents">
 		<div class="cards">
-			<p>상세 글 보기</p>
-
-				<table id="newtab" border="1">
-					<colgroup>
-						<td width="30%">
-						<td width="70%">
-					</colgroup>
-					<tr><th>공식스토어 고유번호</th><td>${oftVO.officialKey}</td></tr>
-					<tr><th>제품 이름</th><td>${oftVO.officialPname}</td></tr>
-					<tr><th>설명</th><td>${oftVO.officialExplain}</td></tr>
-					<tr><th>재고</th><td>${oftVO.officialInventory}</td></tr>
-					<tr><th>할인률</th><td>${oftVO.officialDiscount}</td></tr>
-					<tr><th>상품분류번호</th><td>${oftVO.proCateKey}</td></tr>
-					<tr><th>파일번호</th><td>${oftVO.fileKey}</td></tr>
+			<p>글쓰기</p>
+			<form action="${contextPath }/cart/add.do" enctype="multipart/form-data"> 
+			<table align="center" class="tbdaddtab">
+			<colgroup>
+				<col width="30%">
+			</colgroup>
+					<tr><th>제품 이름</th><td><input type="text" name="cartKey" ></td></tr>
+					<tr><th>날짜</th><td><input type="text" name="cartDate"></td></tr>
+					<tr><th>수량</th><td><input type="text" name="cartCnt"></td></tr>
+					<tr><th>가격</th><td><input type="text" name="cartPrice"></td></tr>
+					<tr><th>회원키</th><td><input type="text" name="mKey" value="<%=mKey%>"></td></tr>
+					<tr><th>공식스토어</th><td><input type="text" name="officialKey"></td></tr>
+					<tr><th>렌탈</th><td><input type="text" name="rentalKey"></td></tr>
+					<tr><th>1:1거래</th><td><input type="text" name="cusKey"></td></tr>
+					<tr><th>강의?</th><td><input type="text" name="lecKey"></td></tr>
+					<tr><th>스토리매매?</th><td><input type="text" name="requKey"></td></tr>
 					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
-					<button onclick="location.href='${contextPath}/cart/addForm.do?officialKey=${oftVO.officialKey}'">장바구니 담기</button>
-					<button>주문하기</button>
 			</table>
+			</form>
 
 
 		</div>

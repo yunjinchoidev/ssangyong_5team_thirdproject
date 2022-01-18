@@ -88,7 +88,6 @@ input {
 				자유게시판>
 
 				<a href="${contextPath}/board/addForm.do">글쓰기</a>
-				<a href="${contextPath}/board/addForm2.do">글쓰기</a>
 
 
 

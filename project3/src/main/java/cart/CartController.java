@@ -52,156 +52,201 @@ public class CartController extends HttpServlet {
 		ArrayList<CartVO> oftList = new ArrayList<CartVO>();
 		CartVO oftVO = new CartVO();
 		
-		
 		if (action == null || action.equals("/list.do")) {
 			oftList = CartService.list();
 			request.setAttribute("oftList", oftList);
-
-			nextPage = "/views/5_LordOfRing/5_lordshop/0_list.jsp";
-
-			
+			nextPage = "/views/6_cart/0_list.jsp";
 			
 		} else if (action.equals("/list.do")) {
 		//	oftList = CartService.list();
 			request.setAttribute("oftList", oftList);
-
-			nextPage = "/views/5_LordOfRing/5_lordshop/0_list.jsp";
+			nextPage = "/views/6_cart/0_list.jsp";
 
 		} else if (action.equals("/addForm.do")) {
-			nextPage = "/views/5_LordOfRing/5_lordshop/1_addForm.jsp";
+			nextPage = "/views/6_cart/1_addForm.jsp";
+			
+			
 			
 		} else if (action.equals("/add.do")) {
+			String cartKeyS = request.getParameter("cartKey");
+			int cartKey = 0;
+			if (cartKeyS != null) {
+				cartKey = Integer.parseInt(cartKeyS);
+			}
+			;
+			String cartCntS = request.getParameter("cartCnt");
+			int cartCnt = 0;
+			if (cartCntS != null) {
+				cartCnt = Integer.parseInt(cartCntS);
+			}
+			;
+			String cartPriceS = request.getParameter("cartPrice");
+			int cartPrice = 0;
+			if (cartPriceS != null) {
+				cartPrice = Integer.parseInt(cartPriceS);
+			}
+			;
+			String mKeyS = request.getParameter("mKey");
+			int mKey = 0;
+			if (mKeyS != null) {
+				mKey = Integer.parseInt(mKeyS);
+			}
+			;
 			String officialKeyS = request.getParameter("officialKey");
 			int officialKey = 0;
 			if (officialKeyS != null) {
 				officialKey = Integer.parseInt(officialKeyS);
 			}
 			;
-
-			String officialPname = request.getParameter("officialPname");
-			if (officialPname == null)
-				officialPname = "";
-			
-			String officialExplain = request.getParameter("officialExplain");
-			if (officialExplain == null)
-				officialExplain = "";
-			
-			
-			
-			
-			String officialInventoryS = request.getParameter("officialInventory");
-			int officialInventory = 0;
-			if (officialInventoryS != null) {
-				officialInventory = Integer.parseInt(officialInventoryS);
+			String rentalKeyS = request.getParameter("rentalKey");
+			int rentalKey = 0;
+			if (rentalKeyS != null) {
+				rentalKey = Integer.parseInt(rentalKeyS);
 			}
 			;
-			String officialDiscountS = request.getParameter("officialDiscount");
-			int officialDiscount = 0;
-			if (officialDiscountS != null) {
-				officialDiscount = Integer.parseInt(officialDiscountS);
+			String cusKeyS = request.getParameter("cusKey");
+			int cusKey = 0;
+			if (cusKeyS != null) {
+				cusKey = Integer.parseInt(cusKeyS);
 			}
 			;
-			String ProCateKeyS = request.getParameter("proCateKey");
-			int ProCateKey = 0;
-			if (ProCateKeyS != null) {
-				ProCateKey = Integer.parseInt(ProCateKeyS);
+			String lecKeyS = request.getParameter("lecKey");
+			int lecKey = 0;
+			if (lecKeyS != null) {
+				lecKey = Integer.parseInt(lecKeyS);
 			}
 			;
+			String requKeyS = request.getParameter("requKey");
+			int requKey = 0;
+			if (requKeyS != null) {
+				requKey = Integer.parseInt(requKeyS);
+			}
+			;
+			
 
-			String fileKey = request.getParameter("fileKey");
-			if (fileKey == null)
-				fileKey = "";
+			CartVO off = new CartVO(
+					cartKey,
+					"",
+					cartCnt,
+					cartPrice,
+					mKey,
+					officialKey,
+					rentalKey,
+					cusKey,
+					lecKey,
+					requKey);
 
-			/*CartVO off = new CartVO(
-					officialKey, officialPname, officialExplain, 
-					"", officialInventory, officialDiscount,
-					ProCateKey, fileKey);
 
-
-			CartService.add(off);*/
+			CartService.add(off);
 			
 			nextPage="/cart/list.do";
 
+			
 		} else if (action.equals("/view.do")) {
-			String officialKeyS = request.getParameter("officialKey");
-			int officialKey = 0;
-			if (officialKeyS != null) {
-				officialKey = Integer.parseInt(officialKeyS);
+			String cartKeyS = request.getParameter("cartKey");
+			int cartKey = 0;
+			if (cartKeyS != null) {
+				cartKey = Integer.parseInt(cartKeyS);
 			}
 			;
 			
-			oftVO = CartService.view(officialKey);
+			oftVO = CartService.view(cartKey);
 			request.setAttribute("oftVO", oftVO);
-			nextPage = "/views/5_LordOfRing/5_lordshop/3_detail.jsp";
+			nextPage = "/views/6_cart/3_detail.jsp";
 
 			
 			
 			
 		} else if (action.equals("/modForm.do")) {
-			String officialKeyS = request.getParameter("officialKey");
-			int officialKey = 0;
-			if (officialKeyS != null) {
-				officialKey = Integer.parseInt(officialKeyS);
+			String cartKeyS = request.getParameter("cartKey");
+			int cartKey = 0;
+			if (cartKeyS != null) {
+				cartKey = Integer.parseInt(cartKeyS);
 			}
 			;
 			
-			oftVO = CartService.view(officialKey);
+			oftVO = CartService.view(cartKey);
 			request.setAttribute("oftVO", oftVO);
-			nextPage = "/views/5_LordOfRing/5_lordshop/2_modForm.jsp";
+			nextPage = "/views/6_cart/2_modForm.jsp";
 			
 
 		} else if (action.equals("/mod.do")) {
 
+			
+			String cartKeyS = request.getParameter("cartKey");
+			int cartKey = 0;
+			if (cartKeyS != null) {
+				cartKey = Integer.parseInt(cartKeyS);
+			}
+			;
+			String cartCntS = request.getParameter("cartCnt");
+			int cartCnt = 0;
+			if (cartCntS != null) {
+				cartCnt = Integer.parseInt(cartCntS);
+			}
+			;
+			String cartPriceS = request.getParameter("cartPrice");
+			int cartPrice = 0;
+			if (cartPriceS != null) {
+				cartPrice = Integer.parseInt(cartPriceS);
+			}
+			;
+			String mKeyS = request.getParameter("mKey");
+			int mKey = 0;
+			if (mKeyS != null) {
+				mKey = Integer.parseInt(mKeyS);
+			}
+			;
 			String officialKeyS = request.getParameter("officialKey");
 			int officialKey = 0;
 			if (officialKeyS != null) {
 				officialKey = Integer.parseInt(officialKeyS);
 			}
 			;
-
-			String officialPname = request.getParameter("officialPname");
-			if (officialPname == null)
-				officialPname = "";
-			
-			String officialExplain = request.getParameter("officialExplain");
-			if (officialExplain == null)
-				officialExplain = "";
-			
-			
-			
-			
-			String officialInventoryS = request.getParameter("officialInventory");
-			int officialInventory = 0;
-			if (officialInventoryS != null) {
-				officialInventory = Integer.parseInt(officialInventoryS);
+			String rentalKeyS = request.getParameter("rentalKey");
+			int rentalKey = 0;
+			if (rentalKeyS != null) {
+				rentalKey = Integer.parseInt(rentalKeyS);
 			}
 			;
-			String officialDiscountS = request.getParameter("officialDiscount");
-			int officialDiscount = 0;
-			if (officialDiscountS != null) {
-				officialDiscount = Integer.parseInt(officialDiscountS);
+			String cusKeyS = request.getParameter("cusKey");
+			int cusKey = 0;
+			if (cusKeyS != null) {
+				cusKey = Integer.parseInt(cusKeyS);
 			}
 			;
-			String ProCateKeyS = request.getParameter("proCateKey");
-			int ProCateKey = 0;
-			if (ProCateKeyS != null) {
-				ProCateKey = Integer.parseInt(ProCateKeyS);
+			String lecKeyS = request.getParameter("lecKey");
+			int lecKey = 0;
+			if (lecKeyS != null) {
+				lecKey = Integer.parseInt(lecKeyS);
 			}
 			;
+			String requKeyS = request.getParameter("requKey");
+			int requKey = 0;
+			if (requKeyS != null) {
+				requKey = Integer.parseInt(requKeyS);
+			}
+			;
+			
+			
+			
 
-			String fileKey = request.getParameter("fileKey");
-			if (fileKey == null)
-				fileKey = "";
-
-			/*CartVO oft = new CartVO(
-					officialKey, officialPname, officialExplain, 
-					"", officialInventory, officialDiscount,
-					ProCateKey, fileKey);
+			CartVO off = new CartVO(
+					cartKey,
+					"",
+					cartCnt,
+					cartPrice,
+					mKey,
+					officialKey,
+					rentalKey,
+					cusKey,
+					lecKey,
+					requKey);
 
 			
 
-			CartService.mod(oft);
-			request.setAttribute("oft", oft);*/
+			CartService.mod(off);
+			request.setAttribute("oft", off);
 			
 			
 			nextPage="/cart/list.do";
@@ -214,15 +259,16 @@ public class CartController extends HttpServlet {
 				officialKey = Integer.parseInt(officialKeyS);
 			}
 			;
-
 			CartService.del(officialKey);
 			nextPage = "/cart/list.do";
-
+			
+			
+			
 		} else {
 			oftList = CartService.list();
 			request.setAttribute("oftList", oftList);
 
-			nextPage = "/views/5_LordOfRing/5_lordshop/0_list.jsp";		
+			nextPage = "/views/6_cart/0_list.jsp";		
 			}
 		
 		RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);

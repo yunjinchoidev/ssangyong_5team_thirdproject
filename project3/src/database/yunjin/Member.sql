@@ -44,10 +44,15 @@ SELECT * FROM dual;
 
 
 
+INSERT into Member (mKey, mId, mPass, mName, mEmail, mreg, mGender, mManiaQuot, mJoinDate, mAuthNum, mCash, mPoint, mLevel, mEmailWhether, mAddress, mState, mBlocKList, mSellerRate, mGiftLevel, mUnderFifteen, mGiftDoneExist, mGiftDoneCnt, mMyGift, mIp) values (1, 'himan', '7777', 'Robbyn', 'gdumbarton9@about.me', 19931004, 'F', 99, '2021/7/30', 10,6097, 1092, 94, 0, '3720 Delladonna Place', 0, 'Gracie', 100, 10, 0, 1, 10, 'music', '106.213.46.112')
 
 
 
 
+
+SELECT mKey
+FROM MEMBER
+WHERE mid=?;
 
 
 

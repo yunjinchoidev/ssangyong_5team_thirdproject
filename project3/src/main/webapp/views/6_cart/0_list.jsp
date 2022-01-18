@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"
 	import="attachedFileTest.*"
 	import="officialStoreTest.*"
-	import="yunjinTest.*"
 	%>
 <%
 request.setCharacterEncoding("utf-8");
@@ -32,16 +31,6 @@ request.setCharacterEncoding("utf-8");
 	border: 3px solid yellow;
 	display: inline-block;
 	margin: 20px;
-	text-decoration: none;
-}
-
-.lordshopchild a{
-	text-decoration: none;
-	color : white;
-}
-
-.lordshopchild a:hover{
-	color : red;
 }
 
 
@@ -59,25 +48,15 @@ request.setCharacterEncoding("utf-8");
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
-		<%
-			String mid =(String) session.getAttribute("ID");
-			System.out.println(mid);
-			
-			MemberDAO dao = new MemberDAO();
-			int mKey = dao.searchId(mid);
-			
-			System.out.println("########################");
-			System.out.println(mKey);
-			
-		%>
+
 
 	<div class="contents">
 		<div class="cards">
-				<h1> Absolute Ring ship</h1>
-				<p> 엄선된 물건들이 있습니다.<br>
-				 마음껏 둘러보십시오</p>
+				<h1> 장바구니</h1>
+				<p>이 곳은 당신의 물건을 담을 수 있는<br>
+				장바구니 입니다.</p>
 				 
-				 <button onclick="location.href='${contextPath}/oft/addForm.do'">물건 추가</button>
+				 <button onclick="location.href='${contextPath}/cart/addForm.do'">물건 추가</button>
 				 
 				 <hr style="border:3px solid yellow;">
 					<div class="lordshopwrap">
@@ -91,18 +70,16 @@ request.setCharacterEncoding("utf-8");
 					<c:when test="${!empty oftList}">
 						<c:forEach var="oftList" items="${oftList}" varStatus="oftNum">
 							<div class="lordshopchild"> 
-								재고 : ${oftList.officialInventory }<br>
-								물건명 : ${oftList.officialPname }<br>
-								할인률 : ${oftList.officialDiscount }<br>
-								할인률 : ${oftList.proCateKey }<br>
-								<a href="${contextPath }/oft/view.do?officialKey=${oftList.officialKey}">상품 자세히 보기</a>
-								<a href="${contextPath }/oft/del.do?officialKey=${oftList.officialKey}">상품 삭제</a>
-								<a href="${contextPath }/oft/modForm.do?officialKey=${oftList.officialKey}">상품 수정</a>
+								재고 : ${oftList.cartKey }<br>
+								물건명 : ${oftList.cartCnt }<br>
+								<a href="${contextPath }/cart/view.do?officialKey=${oftList.cartKey}">상품 자세히 보기</a>
+								<a href="${contextPath }/cart/del.do?officialKey=${oftList.cartKey}">상품 삭제</a>
+								<a href="${contextPath }/cart/modForm.do?officialKey=${oftList.cartKey}">상품 수정</a>
 							</div>
 						</c:forEach>
 					</c:when>
 				</c:choose>
-				</div>
+				</dv>
 		</div>
 	</div>
 

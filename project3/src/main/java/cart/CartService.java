@@ -4,36 +4,36 @@ import java.util.ArrayList;
 
 
 public class CartService {
-	OfficialStoreTestDAO officialStoreTestDAO;
-	OfficialStoreTestVO officialStoreTestVO;
+	CartDAO cartDAO;
+	CartVO cartVO;
 	
 	public CartService() {
 		super();
 		// TODO Auto-generated constructor stub
-		officialStoreTestDAO = new OfficialStoreTestDAO();
-		officialStoreTestVO = new OfficialStoreTestVO();
+		cartDAO = new CartDAO();
+		cartVO = new CartVO();
 	};
 
-	public ArrayList<OfficialStoreTestVO> list(){
-		ArrayList<OfficialStoreTestVO> thelist = officialStoreTestDAO.Alllist();
+	public ArrayList<CartVO> list(){
+		ArrayList<CartVO> thelist = cartDAO.Alllist();
 		return thelist;
 	};
 
-	public void add(OfficialStoreTestVO off){
-		officialStoreTestDAO.insert(off);
+	public void add(CartVO off){
+		cartDAO.insert(off);
 	};
 	
-	public OfficialStoreTestVO view(int officialKey){
-		return officialStoreTestDAO.searchKey(officialKey);
+	public CartVO view(int officialKey){
+		return cartDAO.searchKey(officialKey);
 		
 	}
 
-	public void mod(OfficialStoreTestVO off){
-		officialStoreTestDAO.update(off);
+	public void mod(CartVO off){
+		cartDAO.update(off);
 		
 	}
 	public void del (int officialKey){
-		officialStoreTestDAO.delete(officialKey);
+		cartDAO.delete(officialKey);
 		
 	}
 	

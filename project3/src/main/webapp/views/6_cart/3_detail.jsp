@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"
 	import="java.util.ArrayList"
-	import="board.*"
-	import="yunjinTest.*"%>
+	import="board.*"%>
 <%
 request.setCharacterEncoding("utf-8");
 %>
@@ -86,17 +85,6 @@ input {
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
-<%
-			String mid =(String) session.getAttribute("ID");
-			System.out.println(mid);
-			
-			MemberDAO dao = new MemberDAO();
-			int mKey = dao.searchId(mid);
-			
-			System.out.println("########################");
-			System.out.println(mKey);
-			
-		%>
 
 	<div class="contents">
 		<div class="cards">
@@ -115,7 +103,7 @@ input {
 					<tr><th>상품분류번호</th><td>${oftVO.proCateKey}</td></tr>
 					<tr><th>파일번호</th><td>${oftVO.fileKey}</td></tr>
 					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
-					<button onclick="location.href='${contextPath}/cart/addForm.do?officialKey=${oftVO.officialKey}'">장바구니 담기</button>
+					<button onclick="location.href='${contextPath}'">장바구니 담기</button>
 					<button>주문하기</button>
 			</table>
 

@@ -10,3 +10,4 @@ CREATE TABLE storyrequestT(
 	fileKey	varchar2(100) CONSTRAINT stotyrequestT_fileKey_fk REFERENCES attachedfileTest(fileKey)
 );
 
+INSERT INTO storyrequestT VALUES (0, NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL); 

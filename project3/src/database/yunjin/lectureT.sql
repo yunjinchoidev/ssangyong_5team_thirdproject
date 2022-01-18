@@ -13,6 +13,10 @@ CREATE TABLE lectureT(
 );
 
 
+INSERT INTO lectureT VALUES (0, NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL); 
+
+
+
 SELECT * FROM lectureT ORDER BY lecKey;
 
 DROP table lecture;

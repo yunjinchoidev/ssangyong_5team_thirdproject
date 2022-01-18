@@ -55,15 +55,12 @@ public class BoardController extends HttpServlet {
 			request.setAttribute("bdList", bdList);
 			nextPage="/views/2_Service/5_totalboard/0_list.jsp";
 			
-			
 		}else if(action.equals("/listBd.do")){
 			bdList=boardService.listBd();
 			request.setAttribute("bdList", bdList);
 			nextPage="/views/2_Service/5_totalboard/0_list.jsp";
 	
 		}else if(action.equals("/addForm.do")){
-			nextPage="/views/2_Service/5_totalboard/1_addForm.jsp";
-		}else if(action.equals("/addForm2.do")){
 			nextPage="/views/2_Service/5_totalboard/1_addForm.jsp";
 			
 			
