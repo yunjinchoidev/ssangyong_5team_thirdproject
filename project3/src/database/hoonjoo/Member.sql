@@ -24,7 +24,7 @@ CREATE TABLE Member (
 	MGIFTDONECNT NUMBER,
 	MGIFTDONEEXIST varchar(2),
 	MMYGIFT VARCHAR2(200),
-	MIP VARCHAR2(50),
+	MIP VARCHAR2(50)
 	CONSTRAINT MEMBER_PK PRIMARY KEY (MKEY)
 );
 
@@ -74,5 +74,22 @@ INSERT INTO MEMBER (mkey, mid, mpass, mname, memail, phonenum,mreg, nickname,mge
 				(SELECT NVL(MAX(mkey)+1,1) FROM MEMBER),?,?,?
 				,?,?,?,?,
 				?, sysdate, 0,?,'없음', 0.0, 0, '192.100.0.0',0,0,0,0,'N');
+			
+
+SELECT mid
+FROM MEMBER
+WHERE MNAME ='홍길동'
+AND MREG ='1234561234567';
+
+SELECT mid,mpass
+FROM MEMBER
+WHERE mid = 'himan' 
+AND MNAME ='홍길동'
+AND MREG ='1234561234567';
+
+UPDATE member 
+SET mpass = '2222'
+WHERE mid = 'himan';
+
 
 

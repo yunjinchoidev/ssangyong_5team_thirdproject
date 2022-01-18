@@ -31,6 +31,7 @@ public class MemberVO {
 	private int mGiftDoneCnt;
 	private String mMyGift;
 	private String mIp;
+	private Date uptdate;
 	public MemberVO() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -38,7 +39,7 @@ public class MemberVO {
 	public MemberVO(int mKey, String mId, String mPass, String mName, String mEmail, String phonenum, String mReg,
 			String nickname, String mGender, int mManiaQuot, Date mJoinDate, int mAuthNum, int mCash, int mPoint,
 			int mLevel, char mEmailWhether, String mAddress, char mState, String mBlockList, double mSellerRate,
-			int mGiftLevel, char mUnderFifteen, String mGiftDoneExist, int mGiftDoneCnt, String mMyGift, String mIp) {
+			int mGiftLevel, char mUnderFifteen, String mGiftDoneExist, int mGiftDoneCnt, String mMyGift, String mIp, Date uptdate) {
 		super();
 		this.mKey = mKey;
 		this.mId = mId;
@@ -66,6 +67,7 @@ public class MemberVO {
 		this.mGiftDoneCnt = mGiftDoneCnt;
 		this.mMyGift = mMyGift;
 		this.mIp = mIp;
+		this.uptdate = uptdate;
 	}
 	
 	
@@ -124,6 +126,25 @@ public class MemberVO {
 		this.mGiftDoneCnt = mGiftDoneCnt;
 		
 	}
+	
+	// 아이디 찾기
+	public MemberVO(String mId) {
+		this.mId = mId;
+	}
+	
+	// 비밀번호 찾기
+		public MemberVO(String mId, String mPass) {
+			this.mId = mId;
+			this.mPass = mPass;
+		}
+	
+	// 비밀번호 변경
+		public MemberVO(String mPass, Date mJoinDate) {
+			this.mPass = mPass;
+			this.mJoinDate = mJoinDate;
+		}
+		
+	
 	
 	public int getmKey() {
 		return mKey;
@@ -280,6 +301,12 @@ public class MemberVO {
 	}
 	public void setmIp(String mIp) {
 		this.mIp = mIp;
+	}
+	public Date getuptdate() {
+		return uptdate;
+	}
+	public void setuptdate(Date uptdate) {
+		this.uptdate = uptdate;
 	}
 	
 	

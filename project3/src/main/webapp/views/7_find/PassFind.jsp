@@ -84,6 +84,12 @@ position: absolute;
 left:60px;
 }
 
+#passdiv{
+position: absolute;
+left:1200px;
+top:500px;
+}
+
 #footer{
 position:absolute;
 width:100%;
@@ -101,8 +107,8 @@ top:800px;
 $(document).ready(function() {
 	$('#confirmBtn').on("click", function(){
 		Swal.fire({
-			  title: 'ID찾기',
-			  text: "ID를 찾으시겠습니까?",
+			  title: '비밀번호찾기',
+			  text: "비밀번호를 찾으시겠습니까?",
 			  icon: 'confirm',
 			  showCancelButton: true,
 			  confirmButtonColor: '#3085d6',
@@ -112,31 +118,25 @@ $(document).ready(function() {
 			}).then((result) => {
 			  if (result.value) {
 	              $('form').submit();
+	              passPopup();
 			  }
 			})
 	});
 	
-	$("#cancelBtn").click(function () {
-        Swal.fire({
-            icon: 'confirm',
-            title: '회원가입 취소',
-            text: '취소하시겠습니까?',
-            showCancelButton: true,
-			  confirmButtonColor: '#3085d6',
-			  cancelButtonColor: '#d33',
-			  confirmButtonText: '확인',
-			  cancelButtonText: '취소'
-        }).then((result) => {
-			  if (result.value) {
-				  location.replace('../3_login/Login.jsp');
-			  }
-			  
-			})
-    });
+	function passPopup(){
+		
+		window.open('views/7_find/PassFindResult.jsp','비밀번호 찾기','width=500, height=300');
 
+	}
+	
 });
 </script>
+<%
+String path = request.getContextPath();
 
+String rpass = (String) request.getAttribute("rpass");
+String rid = (String) request.getAttribute("rid");
+%>
 </head>
 <body>
 <jsp:include page="/views/common/commonheader.jsp">
@@ -149,7 +149,7 @@ $(document).ready(function() {
 	<form>
 		<table>
 			<tr><th>ID</th>
-			<td><input type="text" name="name" placeholder="ID를 입력해주세요" size="26"></td>
+			<td><input type="text" name="id" placeholder="ID를 입력해주세요" size="26"></td>
 			</tr>
 			
 			<tr><th>이름</th>
@@ -161,13 +161,26 @@ $(document).ready(function() {
 			<input type="text" name="numsecond" style="width:125px;"></td>
 			</tr>
 		</table>
+		</form>
 		<br>
 		<div id="btnDiv">
+		<a href="<%=path%>/login.do">
 		<button id="cancelBtn" type= "button" style="position:absolute;left:80px;">취소</button>
+		</a>
 		<button type="button" id="confirmBtn">확인</button>
 		</div>
-	</form>
+	
 </div>
+
+<%if(rpass!=null) {
+session.setAttribute("rpass", rpass);
+session.setAttribute("rid", rid);%>
+<%}%>
+
+<div id="passdiv">
+<%if(rpass==null){%>
+<h2 style="color:red;">정보를 확인해주세요.</h2>
+<%} %>
 
 <div id="footer">
 	<!-- S푸터 삽입 -->

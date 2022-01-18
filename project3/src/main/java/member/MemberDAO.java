@@ -683,6 +683,156 @@ public class MemberDAO {
 	      }
 	   }
 	   
+	// ID찾기
+		public ArrayList<MemberVO> findid(String name, String reg) {
+			
+			ArrayList<MemberVO> findid = new ArrayList<MemberVO>();
+			
+			try {
+				setConn();
+				String sql = "SELECT mid\r\n"
+						+ "FROM MEMBER\r\n"
+						+ "WHERE MNAME ='"+name+"'\r\n"
+						+ "AND MREG ='"+reg+"'";
+				pstmt = con.prepareStatement(sql);
+				rs = pstmt.executeQuery(sql);
+				
+				int row=1;
+				while(rs.next()) {
+					findid.add(new MemberVO(rs.getString(1)));
+					System.out.println(row+++"행");
+					System.out.print(rs.getString(1)+"\t");// select를 통해서 데이터 순서로 1부터
+					
+								
+				}
+				rs.close();
+				pstmt.close();
+				con.close();
+			} catch (SQLException e) {
+				System.out.println("회원정보리스트:"+e.getMessage());
+				
+				if(rs!=null) {
+					try {
+						rs.close();
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				
+				if(pstmt!=null) {
+					try {
+						pstmt.close();
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				
+				if(con!=null) {
+					try {
+						con.close();
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+			}
+			return findid;
+		}
+		
+		// 비밀번호 찾기
+				public ArrayList<MemberVO> findpass(String id, String name, String reg) {
+					
+					ArrayList<MemberVO> findpass = new ArrayList<MemberVO>();
+					
+					try {
+						setConn();
+						String sql = "SELECT mid,mpass\r\n"
+								+ "FROM MEMBER\r\n"
+								+ "WHERE mid = '"+id+"' \r\n"
+								+ "AND MNAME ='"+name+"'\r\n"
+								+ "AND MREG ='"+reg+"'";
+						pstmt = con.prepareStatement(sql);
+						rs = pstmt.executeQuery(sql);
+						
+						int row=1;
+						while(rs.next()) {
+							findpass.add(new MemberVO(rs.getString(1),rs.getString(2)));
+							System.out.println(row+++"행");
+							System.out.print(rs.getString(1)+"\t");// select를 통해서 데이터 순서로 1부터
+							System.out.print(rs.getString(2)+"\t");// select를 통해서 데이터 순서로 1부터
+										
+						}
+						rs.close();
+						pstmt.close();
+						con.close();
+					} catch (SQLException e) {
+						System.out.println("비밀번호찾기 select:"+e.getMessage());
+						
+						if(rs!=null) {
+							try {
+								rs.close();
+							} catch (SQLException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+						}
+						
+						if(pstmt!=null) {
+							try {
+								pstmt.close();
+							} catch (SQLException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+						}
+						
+						if(con!=null) {
+							try {
+								con.close();
+							} catch (SQLException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+						}
+					}
+					return findpass;
+				}
+				
+				// 비밀번호 변경
+				   public void updatePass(MemberVO member, String id) {
+				      try {
+				         setConn();
+				         con.setAutoCommit(false);
+				       
+				         String sql ="UPDATE member \r\n"
+				         		+ "SET mpass =? \r\n"
+				         		+ "WHERE mid = '"+id+"'";
+				               
+				               pstmt = con.prepareStatement(sql);
+				               pstmt.setString(1, member.getmPass());
+				               
+				               pstmt.executeUpdate();
+				               con.commit();
+				               pstmt.close();
+				               con.close();
+				               
+				      } catch (SQLException e) {
+				         // TODO Auto-generated catch block
+				         System.out.println("비밀번호 변경 수정 예외:"+e.getMessage());
+				         try {
+				            con.rollback();
+				         } catch (SQLException e1) {
+				            // TODO Auto-generated catch block
+				            e1.printStackTrace();
+				         }
+				         closeRsc();
+				      }catch(Exception e) {
+				         System.out.println("일반 예외"+e.getMessage());
+				      }
+				   }
+	   
 	// 메인
 	public static void main(String[] args) {
 		

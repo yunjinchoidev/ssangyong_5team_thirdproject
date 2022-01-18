@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%request.setCharacterEncoding("utf-8"); %>
@@ -85,6 +86,12 @@ position: absolute;
 left:60px;
 }
 
+#iddiv{
+position: absolute;
+left:1200px;
+top:500px;
+}
+
 #footer{
 position:absolute;
 width:100%;
@@ -112,32 +119,27 @@ $(document).ready(function() {
 			}).then((result) => {
 			  if (result.value) {
 	              $('form').submit();
+	              idPopup();
 			  }
 			})
 	});
 	
-	$("#cancelBtn").click(function () {
-        Swal.fire({
-            icon: 'confirm',
-            title: '회원가입 취소',
-            text: '취소하시겠습니까?',
-            showCancelButton: true,
-			  confirmButtonColor: '#3085d6',
-			  cancelButtonColor: '#d33',
-			  confirmButtonText: '확인',
-			  cancelButtonText: '취소'
-        }).then((result) => {
-			  if (result.value) {
-				  location.replace('../3_login/Login.jsp');
-			  }
-			  
-			})
-    });
+	function idPopup(){
+		
+		window.open('views/7_find/IdFindResult.jsp','아이디 찾기','width=500, height=300');
 
+	}
+	
 });
 
 </script>
 </head>
+<%
+String path = request.getContextPath();
+
+String rid = (String) request.getAttribute("rid");
+String rid2 = "당신의 ID는 검색되지 않았습니다";
+%>
 <body>
 
 <jsp:include page="/views/common/commonheader.jsp">
@@ -147,7 +149,7 @@ $(document).ready(function() {
 
 <h1>FantasyVillage ID찾기</h1>
 <div id="findId">
-	<form>
+	<form method="post">
 		<table>
 			<tr><th>이름</th>
 			<td><input type="text" name="name" placeholder="이름을 입력해주세요" size="26"></td>
@@ -158,12 +160,25 @@ $(document).ready(function() {
 			<input type="text" name="numsecond" style="width:125px;"></td>
 			</tr>
 		</table>
+		</form>
 		<br>
 		<div id="btnDiv">
+		<a href="<%=path%>/login.do">
 		<button id="cancelBtn" type= "button" style="position:absolute;left:80px;">취소</button>
+		</a>
 		<button type="button" id="confirmBtn">확인</button>
 		</div>
-	</form>
+	
+	
+</div>
+<%if(rid!=null) {
+session.setAttribute("rid", rid);%>
+<%}%>
+
+<div id="iddiv">
+<%if(rid==null){%>
+<h2 style="color:red;">정보를 확인해주세요.</h2>
+<%} %>
 </div>
 
 <div id="footer">
