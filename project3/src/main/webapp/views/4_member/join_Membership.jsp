@@ -160,7 +160,6 @@ if(!id.equals("") && !pass.equals("") && !name.equals("") && !numfirst.equals(""
 			<table>
 				<!-- ID 입력 -->
 				<tr><th>ID</th><td><input type="text" name="id" size="26" placeholder="아이디를 입력해주세요"></td>
-				<td><button type="button">확인</button></td>
 				</tr>
 				<!-- 비밀번호 입력 -->
 				<tr><th>Password</th><td><input type="text" size="26" name="pass" placeholder="비밀번호를 입력해주세요"></td></tr>
@@ -169,13 +168,12 @@ if(!id.equals("") && !pass.equals("") && !name.equals("") && !numfirst.equals(""
 				<!-- 주민등록번호 입력 -->
 				<tr><th>주민등록번호</th>
 				<td><input type="text" name="numfirst" maxlength="6" size="8"> - 
-				<input type="text" name="numsecond" size="10"></td>
+				<input type="text" name="numsecond" size="9"></td>
 				</tr>
 				<!-- 전화번호 입력 -->
 				<tr><th>전화번호</th><td><input type="text" size="26" name="phonenum" placeholder="-없이 숫자만 입력 해주세요"></td></tr>
 				<!-- 닉네임 입력 -->
 				<tr><th>닉네임</th><td><input type="text" size="26" name="nickname" placeholder="닉네임을 입력 해주세요"></td>
-				<td><button type="button">확인</button></td>
 				</tr>
 				<!-- 주소 입력 -->
 				<tr><th>주소</th><td><input type="text" size="26" name="address" placeholder="주소를 입력 해주세요"></td></tr>

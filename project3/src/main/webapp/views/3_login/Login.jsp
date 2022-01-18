@@ -200,18 +200,18 @@ try{
 </div>
 <div id = "loginForm">
 	<form method="post">
-		<img src="./img/user.png" id="userImg" width="55px" height="54px" style="background-color:lightgray;
+		<img src="views/3_login/img/user.png" id="userImg" width="55px" height="54px" style="background-color:lightgray;
 		position:relative; top:22px; left:5px;">
 		<input type=text name = id placeholder="아이디를 입력해주세요" style="width:250px;height:49px;">
 		<br><br>
-		<img src="./img/key.png" width="55px" height="54px" style="background-color:lightgray;
+		<img src="views/3_login/img/key.png" width="55px" height="54px" style="background-color:lightgray;
 		position:relative; top:22px; left:5px;">
 		<input type=text name = pass placeholder="비밀번호를 입력해주세요" style="width:250px;height:49px;">
 		<br><br>
 		<div id = "btn">
 		<a href="<%=path%>/findid.do"><button type="button" id="idbtn">아이디 찾기</button></a>
 		<button type="button" id="loginbtn">로그인</button>
-		<a href="../7_find/PassFind.jsp"><button type="button" id ="passbtn">비밀번호 찾기</button></a>>
+		<a href="<%=path%>/findpass.do"><button type="button" id ="passbtn">비밀번호 찾기</button></a>>
 		</div>
 	</form>
 	</div>	

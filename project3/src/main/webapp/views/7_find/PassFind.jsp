@@ -181,6 +181,7 @@ session.setAttribute("rid", rid);%>
 <%if(rpass==null){%>
 <h2 style="color:red;">정보를 확인해주세요.</h2>
 <%} %>
+</div>
 
 <div id="footer">
 	<!-- S푸터 삽입 -->
