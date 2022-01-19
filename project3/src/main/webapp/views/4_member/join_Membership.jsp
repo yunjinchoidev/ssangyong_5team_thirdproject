@@ -79,15 +79,12 @@ String path = request.getContextPath();
 
 String status = (String)request.getAttribute("status");
 %>
-
-<script type="text/javascript" 
-  src="${path}/a00_com/jquery-3.6.0.js"></script>
   
 <script>
 $().ready(function(){
 	
 	var status = "<%=status%>";
-	var query = $("form").serialize();
+	var form = $('#form').serialize();
 	
 	// 이메일 select Box 직접 입력 선택 시 함수
 	$("#seldirect").hide();
@@ -106,19 +103,52 @@ $().ready(function(){
 			$.ajax({
 				url:'${pageContext.request.contextPath}/member.do',
 				type:'post',
-				data:query,
+				data:form,
 				dataType:'json',
-				success:function(data){
-					if(status=="success"){
-			      	 	alert('회원가입이 완료되었습니다');
-			      	 	location.href="<%=path%>/login.do";
-					 }
+				complete:function(data){
+					if($("[name=id]").val()==""){
+						alert('아이디를 입력해주세요');
+						return false;
+					}else if($("[name=pass]").val()==""){
+						alert('비밀번호를 입력해주세요');
+						return false;
+					}else if($("[name=name]").val()==""){
+						alert('이름을 입력해주세요');
+						return false;
+					}else if($("[name=numfirst]").val()==""){
+						alert('주민번호 앞자리를 입력해주세요');
+						return false;
+					}else if($("[name=numsecond]").val()==""){
+						alert('주민번호 뒷자리를 입력해주세요');
+						return false;
+					}else if($("[name=phonenum]").val()==""){
+						alert('전화번호를 입력해주세요');
+						return false;
+					}else if($("[name=phonenum]").val()==""){
+						alert('전화번호를 입력해주세요');
+						return false;
+					}else if($("[name=nickname]").val()==""){
+						alert('닉네임 입력해주세요');
+						return false;
+					}else if($("[name=address]").val()==""){
+						alert('주소를 입력해주세요');
+						return false;
+					}else if($("[name=addfirst]").val()==""){
+						alert('이메일을 입력해주세요');
+						return false;
+					}else{
+			      		alert("회원가입이 완료되었습니다");
+			      		location.href="<%=path%>/login.do";
+					}
+					
 				}
 				
 			});
 			 
 			 
        }
+		
+		
 	
 	});
 	
@@ -137,7 +167,7 @@ $().ready(function(){
 	<hr>
 	</div>
 	<div id="inputMember">
-		<form method="post" onsubmit="return comjoin()">
+		<form method="post" id="form">
 			<table>
 				<!-- ID 입력 -->
 				<tr><th>ID</th><td><input type="text" name="id" size="26" placeholder="아이디를 입력해주세요"></td>
@@ -179,7 +209,7 @@ $().ready(function(){
 			<a href="<%=path%>/login.do">
 			<button id="canclebtn" type= "button" style="position:absolute;left:80px;">취소</button>
 			</a>
-			<button type="button" id="joinBtn" style="position:absolute;left:220px;">회원가입</button>	
+			<button type="submit" id="joinBtn" style="position:absolute;left:220px;">회원가입</button>	
 		</form>
 		
 	</div>

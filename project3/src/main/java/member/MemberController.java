@@ -59,8 +59,14 @@ public class MemberController extends HttpServlet {
 			if(!id.equals("") && !pass.equals("") && !name.equals("") && !numfirst.equals("") && !numsecond.equals("") 
 					&& !phonenum.equals("") && !nickname.equals("") && !addfirst.equals("") && !addsecond.equals("")
 					&&!email.equals("")) {
+				
+				status="success";
+				System.out.println("회원가입 상태:"+status);
+				request.setAttribute("status", status);
+				
 				dao.insertMember(new MemberVO(id,pass,name,email,
 									phonenum,reg,nickname,gender,address));
+				
 				
 				// 가입 시 해리포터 정보 초기화
 				dao.insertPotter(null);
@@ -71,9 +77,7 @@ public class MemberController extends HttpServlet {
 				// 가입 시 반지의제왕 정보 초기화
 				dao.insertLord(null);
 				
-				status="success";
-				System.out.println("회원가입 상태:"+status);
-				request.setAttribute("status", status);
+				
 			}else {
 				status="fail";
 				System.out.println("회원가입 상태:"+status);
