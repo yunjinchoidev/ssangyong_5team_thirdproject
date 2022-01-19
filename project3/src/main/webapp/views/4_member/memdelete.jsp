@@ -116,36 +116,35 @@ top:800px;
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<%
+// 컨트롤러에서 받아온 DB의 id, pass
+String path = request.getContextPath();
+
+String sessionid = (String)session.getAttribute("ID");
+String sessionpass = (String)session.getAttribute("PASSWORD");
+
+String status = (String)request.getAttribute("status");
+%>
+
 <script>
 
+var status = "<%=status%>";
+
 $(document).ready(function() {
-	$('#loginbtn').on("click", function(){
-		Swal.fire({
-			  title: '로그인',
-			  text: "로그인 하시겠습니까?",
-			  icon: 'confirm',
-			  showCancelButton: true,
-			  confirmButtonColor: '#3085d6',
-			  cancelButtonColor: '#d33',
-			  confirmButtonText: '확인',
-			  cancelButtonText: '취소'
-			}).then((result) => {
-			  if (result.value) {
-	              $('form').submit();
-	          
-			  }
-			})
+	$("#delbtn").click(function(){
+		$("form").submit();
+		if(confirm("정말 회원탈퇴 하시겠습니까?")==true){
+			if(status=="success"){
+				alert("회원탈퇴 되었습니다");
+			}
+		}else{
+			return false;
+		}
 	});
 
 });
 
 </script>
-
-<%
-// 컨트롤러에서 받아온 DB의 id, pass
-String path = request.getContextPath();
-
-%>
 	
 <body>
 <jsp:include page="/views/common/commonheader.jsp">
@@ -165,10 +164,14 @@ String path = request.getContextPath();
 		<tr><th>아이디</th><td><input type=text name = id placeholder="아이디를 입력해주세요" style="width:250px;height:49px;"></td></tr>
 		<tr><th>비밀번호</th><td><input type=text name = pass placeholder="비밀번호를 입력해주세요" style="width:250px;height:49px;"></td></tr>
 		</table>
+		<input type="hidden" name="sid" value="<%=sessionid%>">
+		<input type="hidden" name="spass" value="<%=sessionpass%>">
 		</form>
 		<div id = "btn">
 		<button type="button" id="delbtn">회원탈퇴</button>
+		<a href="<%=path%>/mypage.do">
 		<button type="button" id="canclebtn">취소</button>
+		</a>
 		</div>
 
 	</div>	

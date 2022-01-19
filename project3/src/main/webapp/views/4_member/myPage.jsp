@@ -388,7 +388,7 @@ MemberDAO dao = new MemberDAO();
 		<button id="uptmembtn">회원정보수정</button>
 		</a>
 		
-		<a href="<%=path%>/memupdate.do">
+		<a href="<%=path%>/memdelete.do">
 		<button id="delmembtn">회원탈퇴</button>
 		</a>
 		

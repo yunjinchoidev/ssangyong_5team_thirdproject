@@ -832,7 +832,134 @@ public class MemberDAO {
 				         System.out.println("일반 예외"+e.getMessage());
 				      }
 				   }
+				   
+				   // 회원탈퇴 멤버
+				   public void deleteMember(String id, String pass) {
+					      try {
+					         setConn();
+					         con.setAutoCommit(false);
+					         String sql = "DELETE FROM MEMBER\r\n"
+					         		+ "WHERE mid = '"+id+"'"
+					         		+ "AND mpass = '"+pass+"'";
+					         
+					         pstmt = con.prepareStatement(sql);
+					         pstmt.executeUpdate();
+					         con.commit();
+					         pstmt.close();
+					         con.close();
+					         
+					      } catch (SQLException e) {
+					         // TODO Auto-generated catch block
+					         System.out.println("회원탈퇴 예외"+e.getMessage());
+					         try {
+					            con.rollback();
+					         } catch (SQLException e1) {
+					            // TODO Auto-generated catch block
+					            e1.printStackTrace();
+					         }
+					         closeRsc();
+					      }catch(Exception e) {
+					         System.out.println("일반 예외"+e.getMessage());
+					      }
+					   }
+				   
+				// 회원탈퇴 멤버(해리포터)
+				   public void deletePotter(String id, String pass) {
+					      try {
+					         setConn();
+					         con.setAutoCommit(false);
+					         String sql = "DELETE FROM potter\r\n"
+					         		+ "WHERE mkey = (SELECT mkey\r\n"
+					         		+ "FROM MEMBER\r\n"
+					         		+ "WHERE mid = '"+id+"'\r\n"
+					         		+ "AND mpass = '"+pass+"')";
+					         
+					         pstmt = con.prepareStatement(sql);
+					         pstmt.executeUpdate();
+					         con.commit();
+					         pstmt.close();
+					         con.close();
+					         
+					      } catch (SQLException e) {
+					         // TODO Auto-generated catch block
+					         System.out.println("회원탈퇴(해리포터) 예외"+e.getMessage());
+					         try {
+					            con.rollback();
+					         } catch (SQLException e1) {
+					            // TODO Auto-generated catch block
+					            e1.printStackTrace();
+					         }
+					         closeRsc();
+					      }catch(Exception e) {
+					         System.out.println("일반 예외"+e.getMessage());
+					      }
+					   }
+				   
+				// 회원탈퇴 멤버(마블)
+				   public void deletemarvle(String id, String pass) {
+					      try {
+					         setConn();
+					         con.setAutoCommit(false);
+					         String sql = "DELETE FROM marvel\r\n"
+					         		+ "WHERE mkey = (SELECT mkey\r\n"
+					         		+ "FROM MEMBER\r\n"
+					         		+ "WHERE mid = '"+id+"'\r\n"
+					         		+ "AND mpass = '"+pass+"')";
+					         
+					         pstmt = con.prepareStatement(sql);
+					         pstmt.executeUpdate();
+					         con.commit();
+					         pstmt.close();
+					         con.close();
+					         
+					      } catch (SQLException e) {
+					         // TODO Auto-generated catch block
+					         System.out.println("회원탈퇴(해리포터) 예외"+e.getMessage());
+					         try {
+					            con.rollback();
+					         } catch (SQLException e1) {
+					            // TODO Auto-generated catch block
+					            e1.printStackTrace();
+					         }
+					         closeRsc();
+					      }catch(Exception e) {
+					         System.out.println("일반 예외"+e.getMessage());
+					      }
+					   }
+				   
+				// 회원탈퇴 멤버(반지의 제왕)
+				   public void deletelord(String id, String pass) {
+					      try {
+					         setConn();
+					         con.setAutoCommit(false);
+					         String sql = "DELETE FROM lord\r\n"
+					         		+ "WHERE mkey = (SELECT mkey\r\n"
+					         		+ "FROM MEMBER\r\n"
+					         		+ "WHERE mid = '"+id+"'\r\n"
+					         		+ "AND mpass = '"+pass+"')";
+					         
+					         pstmt = con.prepareStatement(sql);
+					         pstmt.executeUpdate();
+					         con.commit();
+					         pstmt.close();
+					         con.close();
+					         
+					      } catch (SQLException e) {
+					         // TODO Auto-generated catch block
+					         System.out.println("회원탈퇴(해리포터) 예외"+e.getMessage());
+					         try {
+					            con.rollback();
+					         } catch (SQLException e1) {
+					            // TODO Auto-generated catch block
+					            e1.printStackTrace();
+					         }
+					         closeRsc();
+					      }catch(Exception e) {
+					         System.out.println("일반 예외"+e.getMessage());
+					      }
+					   }
 	   
+				   
 	// 메인
 	public static void main(String[] args) {
 		

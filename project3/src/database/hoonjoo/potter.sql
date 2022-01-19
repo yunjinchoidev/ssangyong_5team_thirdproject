@@ -22,7 +22,10 @@ INSERT INTO potter(HARRYKEY, harrycharacter, harrydomioty
 
 			
 DELETE FROM potter
-WHERE mkey=1;
+WHERE mkey = (SELECT mkey
+FROM MEMBER
+WHERE mid = 'himan'
+AND mpass = '7777');
 
 UPDATE potter
 SET harrycharacter='해리포터'

@@ -16,7 +16,9 @@ VALUES ((SELECT NVL(MAX(MARVELKEY)+1,1) FROM MARVEL),'미지정','미지정','�
 (SELECT NVL(MAX(mkey)+1,1)FROM MARVEL));
 
 DELETE FROM marvel
-WHERE mkey=2;
+WHERE mkey = (SELECT mkey
+FROM MEMBER
+);
 
 UPDATE marvel
 SET MARVELCHARACTER='아이언맨'
