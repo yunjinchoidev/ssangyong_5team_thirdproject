@@ -334,6 +334,36 @@ public class BoardDAO {
 			closeRsc();
 		}
 	}
+	/* 조회수 증가 */
+	public void updateview(BoardVO b) {
+		String sql = "update Board\r\n"
+				+ "			SET BoViews= ?\r\n"
+				+ "		   where BoPostKey = ?";
+		
+		try {
+			setConn();
+			con.setAutoCommit(false);
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, b.getBoViews()+1);
+			pstmt.setInt(2, b.getBoPostKey());
+			
+			System.out.println("조회수 증가 처리");
+			
+			pstmt.executeUpdate();
+			con.commit();
+			pstmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			try {
+				con.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			closeRsc();
+		}
+	}
 
 	/* 삭제 */
 	public void deleteBd(int boPostKey) {
@@ -368,13 +398,13 @@ public class BoardDAO {
 			BoardDAO dao = new BoardDAO();
 
 			//dao.maxBdKey();
-			/*	
-			dao.insertBd(new BoardVO(
-					13, 201, 201, 201, "홍길동", 
+				
+			/*dao.insertBd(new BoardVO(
+					13, 1, 1, 1, "홍길동", 
 					"비밀번호1", "a@A", "2021/1/14", "제목", "2021/12/01",
 					"192.312.31", 1, 0, "콘텐츠1",0));
 			
-			
+			/*
 			dao.updateBd(new BoardVO(
 					11, 201, 201, 201, "홍길동1(수정1)", 
 					"비밀번호1", "a@A", "2021/1/14", "제목", "2021/12/01",
@@ -383,12 +413,15 @@ public class BoardDAO {
 			//System.out.println(dao.searchBdKey(10).getBoPostKey());
 			//System.out.println(dao.searchBdTitle("8").getBoPostKey());
 			
-			for(BoardVO b : dao.listBd()) {
-				System.out.println("게시글 번호" + b.getBoPostKey()+"입력일 : "+b.getBoTitle());
-			}
+			//for(BoardVO b : dao.listBd()) {
+			//	System.out.println("게시글 번호" + b.getBoPostKey()+"입력일 : "+b.getBoTitle());
+			//}
 			
-			dao.searchBdTitle("최윤진");
-		
+			//dao.searchBdTitle("최윤진");
+			/*dao.updateview(new BoardVO(
+					13, 1, 1, 1, "홍길동", 
+					"비밀번호1", "a@A", "2021/1/14", "제목", "2021/12/01",
+					"192.312.31", 1, 0, "콘텐츠1",0));*/
 			
 			
 			

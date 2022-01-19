@@ -64,6 +64,8 @@ public class CartController extends HttpServlet {
 			request.setAttribute("oftList", oftList);
 			nextPage = "/views/6_cart/0_list.jsp";
 			
+			
+			
 		} else if (action.equals("/list.do")) {
 		//	oftList = CartService.list();
 			request.setAttribute("oftList", oftList);
@@ -71,9 +73,9 @@ public class CartController extends HttpServlet {
 
 		} else if (action.equals("/addForm.do")) {
 			nextPage = "/views/6_cart/1_addForm.jsp";
+			
 		} else if (action.equals("/addFormRent.do")) {
 			nextPage = "/views/6_cart/1_addFormRent.jsp";
-			
 			
 			
 		} else if (action.equals("/add.do")) {
@@ -273,6 +275,14 @@ public class CartController extends HttpServlet {
 			
 			
 			
+		} else if (action.equals("/addGoodsInCart.do")){
+			String mKeyS = request.getParameter("mKey");
+			int mKey = 0;
+			if (mKeyS != null) {
+				mKey = Integer.parseInt(mKeyS);
+			}
+			;
+				
 		} else {
 			String mKeyS = request.getParameter("mKey");
 			int mKey = 0;

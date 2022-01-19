@@ -2,6 +2,7 @@ package fvOrder;
 
 import talentGive.*;
 import talentTake.*;
+import yunjinTest.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,7 +34,7 @@ public class FvOrderController extends HttpServlet {
 	FvOrderService FvOrderService = new FvOrderService();
 	FvOrderDAO FvOrderDAO = new FvOrderDAO();
 	FvOrderVO FvOrderVO = new FvOrderVO();
-
+	MemberDAO memberDAO = new MemberDAO();
 
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
@@ -82,18 +83,12 @@ public class FvOrderController extends HttpServlet {
 			}
 			;
 
-			
-			
-
 			String sellerId = request.getParameter("sellerId");
 			if (sellerId == null)
 				sellerId = "";
 			String installType = request.getParameter("installType");
 			if (installType == null)
 				installType = "";
-			
-			
-			
 			
 			
 			
@@ -108,6 +103,34 @@ public class FvOrderController extends HttpServlet {
 			String payType = request.getParameter("payType");
 			if (payType == null)
 				payType = "";
+			
+			
+			String mKeyS = request.getParameter("mKey");
+			int mKey = 0;
+			if (mKeyS != null) {
+				mKey = Integer.parseInt(mKeyS);
+			}
+			;
+			
+			int mypo= memberDAO.searchPoint(mKey);
+			System.out.println("mypo"+mypo);
+			System.out.println("mKey"+mKey);
+			System.out.println("orderPrice"+orderPrice);
+			System.out.println("payType: "+payType);
+			
+			int go=1;
+			
+			if(payType=="go") {
+				mypo = mypo - orderPrice;
+				System.out.println("이제 결제합니다~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			};
+
+			System.out.println("mypo"+mypo);
+			
+			memberDAO.updatePoint(mKey,mypo);
+			System.out.println("계산후mypo"+mypo);
+			
+			
 			String orderEmail = request.getParameter("orderEmail");
 			if (orderEmail == null)
 				orderEmail = "";
@@ -125,13 +148,6 @@ public class FvOrderController extends HttpServlet {
 			
 			
 			
-			
-			String mKeyS = request.getParameter("mKey");
-			int mKey = 0;
-			if (mKeyS != null) {
-				mKey = Integer.parseInt(mKeyS);
-			}
-			;
 			
 			
 			

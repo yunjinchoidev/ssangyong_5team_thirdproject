@@ -46,7 +46,6 @@ function check() {
 
 .conlisttab {
 	width: 1400px;
-	height: 600px;
 	border: 3px solid yellow;
 	margin: 0 auto;
 	font-size: 20px;

@@ -80,8 +80,6 @@ public class BoardController extends HttpServlet {
 
 		} else if (action.equals("/addForm.do")) {
 			nextPage = "/views/2_Service/1_talent/1_addForm.jsp";
-		} else if (action.equals("/addForm2.do")) {
-			nextPage = "/views/2_Service/1_talent/1_addForm.jsp";
 
 		} else if (action.equals("/add.do")) {
 			String boPostKeyS = request.getParameter("boPostKey");
@@ -165,7 +163,7 @@ public class BoardController extends HttpServlet {
 			;
 			boardVO = boardService.viewBd(boPostKey);
 			request.setAttribute("boardVO", boardVO);
-			nextPage = "/views/2_Service/5_totalboard/3_detail.jsp";
+			nextPage = "/views/2_Service/1_talent/3_detail.jsp";
 
 		} else if (action.equals("/modForm.do")) {
 			String boPostKeyS = request.getParameter("boPostKey");

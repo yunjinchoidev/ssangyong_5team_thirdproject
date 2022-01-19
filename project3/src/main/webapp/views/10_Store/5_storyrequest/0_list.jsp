@@ -33,7 +33,30 @@ request.setCharacterEncoding("utf-8");
 	margin: 20px;
 }
 
+button{
+width:150px;
+height:50px;
+background-color:rgba(0,0,0,0);
+color : skyblue;
+border: 1px solid skyblue;
+font-weight:bold;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
 
+button:hover{
+width:150px;
+height:50px;
+background-color:#3F3F3F;
+color : white;
+border:none;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
 </style>
 </head>
 <body>

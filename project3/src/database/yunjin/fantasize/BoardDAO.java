@@ -1,4 +1,4 @@
-package myfantastic;
+package fantasize;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import org.apache.catalina.tribes.membership.cloud.InsecureStreamProvider;
+
+import lordBoard.BoardVO;
 
 
 
@@ -88,7 +90,7 @@ public class BoardDAO {
 				+ "	boContent,\r\n"
 				+ "	LEVEL\r\n"
 				+ "FROM board\r\n"
-				+ "WHERE boCateKey=3"
+				+ "WHERE boCateKey=2"
 				+ "START WITH PARENTNO=0\r\n"
 				+ "CONNECT BY PRIOR bopostkey=PARENTNO\r\n"
 				+ "ORDER BY bopostkey";
@@ -135,7 +137,7 @@ public class BoardDAO {
 		String sql = "SELECT *\r\n" + 
 				"FROM Board\r\n" + 
 				"WHERE boTitle like '%'||?||'%' "+
-				"and boCateKey=3";
+				"and boCateKey=2";
 		System.out.println(boTitle+"제목으로 검색 실행");
 		try {
 			setConn();
@@ -177,7 +179,7 @@ public class BoardDAO {
 		String sql = "SELECT *\r\n" + 
 					"FROM Board\r\n" + 
 					"WHERE boPostKey=? "+
-					"and boCateKey=3";
+					"and boCateKey=2";
 		try {
 			setConn();
 			pstmt = con.prepareStatement(sql);
@@ -213,7 +215,8 @@ public class BoardDAO {
 	private int maxBdKey() {
 		int there=0;
 		String sql = "SELECT max(boPostKey)\r\n" + 
-				"FROM Board\r\n";
+				"FROM Board\r\n"+
+				"where boCateKey=2";
 		System.out.println("최고 번호 조회");
 		try {
 			setConn();
@@ -248,7 +251,7 @@ public class BoardDAO {
 	public void insertBd(BoardVO ins) {
 		int A = maxBdKey();
 		
-		String sql="INSERT INTO Board VALUES (?,?,?,3,?,?,?,to_date(sysdate,'YYYY/MM/DD'),?,to_date(null,'YYYY/MM/DD'),?,?,?,?)";
+		String sql="INSERT INTO Board VALUES (?,?,?,2,?,?,?,to_date(sysdate,'YYYY/MM/DD'),?,to_date(null,'YYYY/MM/DD'),?,?,?,?)";
 		
 		try {
 			setConn();
@@ -369,19 +372,19 @@ public class BoardDAO {
 		// TODO Auto-generated method stub
 			BoardDAO dao = new BoardDAO();
 
-			dao.maxBdKey();
-			
+			//dao.maxBdKey();
+				
 			dao.insertBd(new BoardVO(
-					1, 1, 1, 3, "홍길동", 
-					"비밀번호1", "a@A", "3031/1/14", "제목", "3031/12/01",
+					3, 1, 1, 2, "홍길동", 
+					"비밀번호1", "a@A", "2021/1/14", "제목", "2021/12/01",
 					"192.312.31", 1, 0, "콘텐츠1",0));
 			
 			
-			dao.updateBd(new BoardVO(
-					3031, 1, 1, 3, "홍길동1(수정1)", 
-					"비밀번호1", "a@A", "3031/1/14", "제목", "3031/12/01",
+			/*dao.updateBd(new BoardVO(
+					11, 201, 201, 201, "홍길동1(수정1)", 
+					"비밀번호1", "a@A", "2021/1/14", "제목", "2021/12/01",
 					"192.312.31", 1, 0, "콘텐츠1",0));
-			
+			*/
 			//System.out.println(dao.searchBdKey(36).getBoPostKey());
 			//System.out.println(dao.searchBdTitle("8").getBoPostKey());
 			

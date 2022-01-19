@@ -1,4 +1,4 @@
-package lordMeeting;
+package fantasize;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,7 +24,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 /**
  * Servlet implementation class BoardController
  */
-@WebServlet(name = "lordMeeting", urlPatterns = { "/lordMeeting/*" })
+@WebServlet(name = "fantasize", urlPatterns = { "/fantasize/*" })
 public class BoardController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private static String BOARD_IMAGE_REPO = "C:\\board\\board_image";
@@ -53,16 +53,16 @@ public class BoardController extends HttpServlet {
 		if(action==null || action.equals("/list.do")) {
 			bdList=boardService.listBd();
 			request.setAttribute("bdList", bdList);
-			nextPage="/views/5_LordOfRing/2_lordMeeting/0_list.jsp";
+			nextPage="/views/2_Service/2_fantasize/0_list.jsp";
 			
 			
 		}else if(action.equals("/listBd.do")){
 			bdList=boardService.listBd();
 			request.setAttribute("bdList", bdList);
-			nextPage="/views/5_LordOfRing/2_lordMeeting/0_list.jsp";
+			nextPage="/views/2_Service/2_fantasize/0_list.jsp";
 	
 		}else if(action.equals("/addForm.do")){
-			nextPage="/views/5_LordOfRing/2_lordMeeting/1_addForm.jsp";
+			nextPage="/views/2_Service/2_fantasize/1_addForm.jsp";
 			
 		}else if(action.equals("/add.do")){
 			String boPostKeyS = request.getParameter("boPostKey"); 
@@ -101,21 +101,21 @@ public class BoardController extends HttpServlet {
 			
 			boardDAO.insertBd(b);
 			
-			nextPage="/lordMeeting/listBd.do";
+			nextPage="/fantasize/listBd.do";
 			
 		}else if(action.equals("/view.do")){
 			String boPostKeyS = request.getParameter("boPostKey"); 
 			int boPostKey=0; if(boPostKeyS!=null) {boPostKey=Integer.parseInt(boPostKeyS);};
 			boardVO = boardService.viewBd(boPostKey);
 			request.setAttribute("boardVO", boardVO);
-			nextPage="/views/5_LordOfRing/2_lordMeeting/3_detail.jsp";
+			nextPage="/views/2_Service/5_totalboard/3_detail.jsp";
 			
 		}else if(action.equals("/modForm.do")) {
 			String boPostKeyS = request.getParameter("boPostKey"); 
 			int boPostKey=0; if(boPostKeyS!=null) {boPostKey=Integer.parseInt(boPostKeyS);};
 			boardVO = boardService.viewBd(boPostKey);
 			request.setAttribute("boardVO", boardVO);
-			nextPage="/views/5_LordOfRing/2_lordMeeting/2_modForm.jsp";
+			nextPage="/views/2_Service/2_fantasize/2_modForm.jsp";
 			
 			
 			
@@ -156,7 +156,7 @@ public class BoardController extends HttpServlet {
 			
 			boardService.modBd(b);
 			
-			nextPage="/lordMeeting/listBd.do";
+			nextPage="/fantasize/listBd.do";
 			
 			
 			
@@ -166,12 +166,12 @@ public class BoardController extends HttpServlet {
 			int boPostKey=0; if(boPostKeyS!=null) {boPostKey=Integer.parseInt(boPostKeyS);};
 			
 			boardDAO.deleteBd(boPostKey);
-			nextPage = "/lordMeeting/list.do";
+			nextPage = "/fantasize/list.do";
 		
 		}else {
 			bdList=boardService.listBd();
 			request.setAttribute("bdList", bdList);
-			nextPage="/views/5_LordOfRing/2_lordMeeting/0_list.jsp";
+			nextPage="/views/2_Service/2_fantasize/0_list.jsp";
 			
 		}	
 		RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);

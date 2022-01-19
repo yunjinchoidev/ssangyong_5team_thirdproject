@@ -31,9 +31,39 @@ request.setCharacterEncoding("utf-8");
 	border: 3px solid yellow;
 	display: inline-block;
 	margin: 20px;
+	
 }
 
+.lordshopchild a{
+	text-decoration: none;
+	color : red;
+	
+}
 
+button{
+width:150px;
+height:50px;
+background-color:rgba(0,0,0,0);
+color : skyblue;
+border: 1px solid skyblue;
+font-weight:bold;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
+
+button:hover{
+width:150px;
+height:50px;
+background-color:#3F3F3F;
+color : white;
+border:none;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
 </style>
 </head>
 <body>
@@ -77,9 +107,9 @@ request.setCharacterEncoding("utf-8");
 								온라인여부 : ${oftList.leconlineavail }<br>
 								난이도 : ${oftList.lecdifficulty }<br>
 								내용 : ${oftList.leccontents }<br>
-								평점 : ${oftList.lecscore }<br>
-								<a href="${contextPath }/lecture/view.do?lecKey=${oftList.lecKey}">상품 자세히 보기</a>
-								<a href="${contextPath }/lecture/del.do?lecKey=${oftList.lecKey}">상품 삭제</a>
+								평점 : ${oftList.lecscore }<br><br>
+								<a href="${contextPath }/lecture/view.do?lecKey=${oftList.lecKey}">상품 자세히 보기</a><br>
+								<a href="${contextPath }/lecture/del.do?lecKey=${oftList.lecKey}">상품 삭제</a><br>
 								<a href="${contextPath }/lecture/modForm.do?lecKey=${oftList.lecKey}">상품 수정</a>
 							</div>
 						</c:forEach>

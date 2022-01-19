@@ -73,6 +73,30 @@ input{
 	background-color: white;
 	border: 2px solid yellow;
 }
+button{
+width:150px;
+height:50px;
+background-color:rgba(0,0,0,0);
+color : skyblue;
+border: 1px solid skyblue;
+font-weight:bold;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
+
+button:hover{
+width:150px;
+height:50px;
+background-color:#3F3F3F;
+color : white;
+border:none;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
 </style>
 </head>
 <body>
@@ -98,13 +122,13 @@ input{
 				<col width="30%">
 			</colgroup>
 				
-					<tr><th>제품 키</th><td><input type="text" name="rentalKey" ></td></tr>
+					<tr><th>제품 키</th><td><input type="text" name="rentalKey"></td></tr>
 					<tr><th>렌탈 제품 이름</th><td><input type="text" name="rentalPname" ></td></tr>
-					<tr><th>기간</th><td><input type="text" name="rentalterm" ></td></tr>
+					<tr><th>기간</th><td><input type="text" name="rentalterm" placeholder="일 수 입력"></td></tr>
 					<tr><th>설명</th><td><input type="text" name="rentalExplain"></td></tr>
-					<tr><th>시작</th><td><input type="text" name="rentalStartDayS"></td></tr>
-					<tr><th>끝</th><td><input type="text" name="rentalEndDayS"></td></tr>
-					<tr><th>제품 분류</th><td><input type="text" name="proCateKey"></td></tr>
+					<tr><th>시작</th><td><input type="text" name="rentalStartDayS" placeholder="YYYY/MM/DD"></td></tr>
+					<tr><th>끝</th><td><input type="text" name="rentalEndDayS" placeholder="YYYY/MM/DD"></td></tr>
+					<tr><th>제품 분류</th><td><input type="text" name="proCateKey" value="4"></td></tr>
 					<tr><th>파일번호</th><td><input type="file" name="fileKey"></td></tr>
 					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
 			</table>

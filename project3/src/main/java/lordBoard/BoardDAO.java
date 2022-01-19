@@ -88,7 +88,7 @@ public class BoardDAO {
 				+ "	boContent,\r\n"
 				+ "	LEVEL\r\n"
 				+ "FROM board\r\n"
-				+ "WHERE boCateKey=303"
+				+ "WHERE boCateKey=8"
 				+ "START WITH PARENTNO=0\r\n"
 				+ "CONNECT BY PRIOR bopostkey=PARENTNO\r\n"
 				+ "ORDER BY bopostkey";
@@ -135,7 +135,7 @@ public class BoardDAO {
 		String sql = "SELECT *\r\n" + 
 				"FROM Board\r\n" + 
 				"WHERE boTitle like '%'||?||'%' "+
-				"and boCateKey=303";
+				"and boCateKey=8";
 		System.out.println(boTitle+"제목으로 검색 실행");
 		try {
 			setConn();
@@ -177,7 +177,7 @@ public class BoardDAO {
 		String sql = "SELECT *\r\n" + 
 					"FROM Board\r\n" + 
 					"WHERE boPostKey=? "+
-					"and boCateKey=303";
+					"and boCateKey=8";
 		try {
 			setConn();
 			pstmt = con.prepareStatement(sql);
@@ -248,7 +248,7 @@ public class BoardDAO {
 	public void insertBd(BoardVO ins) {
 		int A = maxBdKey();
 		
-		String sql="INSERT INTO Board VALUES (?,?,?,?,?,?,?,to_date(sysdate,'YYYY/MM/DD'),?,to_date(null,'YYYY/MM/DD'),?,?,?,?)";
+		String sql="INSERT INTO Board VALUES (?,?,?,8,?,?,?,to_date(sysdate,'YYYY/MM/DD'),?,to_date(null,'YYYY/MM/DD'),?,?,?,?)";
 		
 		try {
 			setConn();
@@ -259,15 +259,14 @@ public class BoardDAO {
 			pstmt.setInt(1,A);
 			pstmt.setInt(2, ins.getmKey());
 			pstmt.setInt(3, ins.getFileKey());
-			pstmt.setInt(4, ins.getBoCateKey());
-			pstmt.setString(5, ins.getBoWriter());
-			pstmt.setString(6, ins.getBoWriterPass());
-			pstmt.setString(7, ins.getBoWriterEmail());
-			pstmt.setString(8, ins.getBoTitle());
-			pstmt.setString(9, ins.getBoWriterIp());
-			pstmt.setInt(10, ins.getBoViews());
-			pstmt.setInt(11, ins.getBoParentNO());
-			pstmt.setString(12, ins.getBoContent());
+			pstmt.setString(4, ins.getBoWriter());
+			pstmt.setString(5, ins.getBoWriterPass());
+			pstmt.setString(6, ins.getBoWriterEmail());
+			pstmt.setString(7, ins.getBoTitle());
+			pstmt.setString(8, ins.getBoWriterIp());
+			pstmt.setInt(9, ins.getBoViews());
+			pstmt.setInt(10, ins.getBoParentNO());
+			pstmt.setString(11, ins.getBoContent());
 			
 			System.out.println(ins.getBoPostKey()+":: 번글 insert완료");
 			pstmt.executeUpdate();
@@ -373,13 +372,13 @@ public class BoardDAO {
 			dao.maxBdKey();
 			
 			dao.insertBd(new BoardVO(
-					30323, 201, 201, 303, "홍길동", 
+					30323, 1, 1, 8, "홍길동", 
 					"비밀번호1", "a@A", "3031/1/14", "제목", "3031/12/01",
 					"192.312.31", 1, 0, "콘텐츠1",0));
 			
 			
 			dao.updateBd(new BoardVO(
-					3031, 201, 201, 303, "홍길동1(수정1)", 
+					3031, 1, 1, 8, "홍길동1(수정1)", 
 					"비밀번호1", "a@A", "3031/1/14", "제목", "3031/12/01",
 					"192.312.31", 1, 0, "콘텐츠1",0));
 			

@@ -32,19 +32,43 @@ request.setCharacterEncoding("utf-8");
 	border: 3px solid yellow;
 	display: inline-block;
 	margin: 20px;
+	font-size: 20px;
 	
 }
 
 .lordshopchild a{
 text-decoration: none;
-color: white;
+color: red;
 }
 .lordshopchild a:hover{
 	color : red;
 	background-color: green;
 }
 
+button{
+width:150px;
+height:50px;
+background-color:rgba(0,0,0,0);
+color : skyblue;
+border: 1px solid skyblue;
+font-weight:bold;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
 
+button:hover{
+width:150px;
+height:50px;
+background-color:#3F3F3F;
+color : white;
+border:none;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
 </style>
 </head>
 <body>
@@ -84,7 +108,6 @@ color: white;
 				 
 				 <button onclick="location.href='${contextPath}/rental/addForm.do'">물건 추가</button>
 				 
-				 <hr style="border:3px solid yellow;">
 					<div class="lordshopwrap">
 				<c:choose>
 					<c:when test="${empty oftList}">
@@ -96,15 +119,14 @@ color: white;
 					<c:when test="${!empty oftList}">
 						<c:forEach var="oftList" items="${oftList}" varStatus="rentNum">
 							<div class="lordshopchild"> 
+								<br>
 								상품명 : ${oftList.rentalPname }<br>
-								기간 : ${oftList.rentalterm }일<br>
 								시작일 : ${oftList.rentalStartDayS }<br>
 								마감일 : ${oftList.rentalEndDayS }<br>
 								분류 : ${oftList.proCateKey }<br>
-								파일 : ${oftList.fileKey }<br>
 								가격 : ${oftList.rentPrice }<br>
-								<a href="${contextPath }/rental/view.do?rentalKey=${oftList.rentalKey}">상품 자세히 보기</a>
-								<a href="${contextPath }/rental/del.do?rentalKey=${oftList.rentalKey}">상품 삭제</a>
+								<a href="${contextPath }/rental/view.do?rentalKey=${oftList.rentalKey}">상품 자세히 보기</a><br>
+								<a href="${contextPath }/rental/del.do?rentalKey=${oftList.rentalKey}">상품 삭제</a><br>
 								<a href="${contextPath }/rental/modForm.do?rentalKey=${oftList.rentalKey}">상품 수정</a>
 							</div>
 						</c:forEach>

@@ -92,14 +92,13 @@ input{
 	<div class="contents">
 		<div class="cards">
 			<p>글쓰기</p>
-			<form action="${contextPath }/fantasize/add.do" enctype="multipart/form-data"> 
+			<form action="${contextPath }/talent/add.do" enctype="multipart/form-data"> 
 			<table align="center" class="tbdaddtab">
 			<colgroup>
 				<col width="30%">
 			</colgroup>
 					<tr><th>회원 고유번호</th><td><input type="text" name="mKey"></td></tr>
 					<tr><th>파일 일련번호</th><td><input type="text" name="fileKey" ></td></tr>
-					<tr><th>카테고리 고유코드</th><td><input type="text" name="boCateKey"></td></tr>
 					<tr><th>작성자</th><td><input type="text" name="boWriter"></td></tr>
 					<tr><th>비밀번호</th><td><input type="text" name="boWriterPass"></td></tr>
 					<tr><th>이메일</th><td><input type="text" name="boWriterEmail"></td></tr>

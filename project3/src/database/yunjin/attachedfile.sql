@@ -34,6 +34,7 @@ INSERT INTO attachedfile VALUES (210, '강의', 'l10.jpg', 'jpg', '2mb', sysdate
 COMMIT;
 
 INSERT INTO Attachedfile VALUES (1,'1','1','1','1', to_date('1111/11/11','YYYY/MM/DD'));
+INSERT INTO Attachedfile VALUES (2,'1','1','1','1', to_date('1111/11/11','YYYY/MM/DD'));
 
 SELECT filepath
 FROM attachedfile

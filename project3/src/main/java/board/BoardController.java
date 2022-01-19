@@ -107,6 +107,7 @@ public class BoardController extends HttpServlet {
 			String boPostKeyS = request.getParameter("boPostKey"); 
 			int boPostKey=0; if(boPostKeyS!=null) {boPostKey=Integer.parseInt(boPostKeyS);};
 			boardVO = boardService.viewBd(boPostKey);
+			boardDAO.updateview(boardVO);
 			request.setAttribute("boardVO", boardVO);
 			nextPage="/views/2_Service/5_totalboard/3_detail.jsp";
 			

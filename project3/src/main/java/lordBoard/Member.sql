@@ -1,6 +1,3 @@
-DELETE FROM  Member;
-DROP TABLE  Member;
-
 CREATE TABLE Member (
 	MKEY NUMBER NOT NULL,
 	MID VARCHAR2(100),
@@ -94,78 +91,5 @@ UPDATE member
 SET mpass = '2222'
 WHERE mid = 'himan';
 
-INSERT INTO MEMBER VALUES (
-2,
-NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)
 
 
-
-
-INSERT INTO Member VALUES(
-	1,
-	'himan',
-	'7777',
-	'최윤진',
-	'cyj000@naver.com',
-	'01011111111',
-	'1111111111111',
-	'판타지덕후',
-	'남',
-	1,
-	sysdate,
-	1,
-	10000,
-	10000,
-	20,
-	'1',
-	'서울',
-	'1',
-	'블랙',
-	1.1,
-	10,
-	'1',
-	2,
-	'1',
-	'1',
-	'100.1.1'
-);
-
-INSERT INTO Member VALUES(
-	2,
-	'admin',
-	'7777',
-	'관리자',
-	'admin@naver.com',
-	'01011111111',
-	'1111111111111',
-	'판타지덕후',
-	'남',
-	1,
-	sysdate,
-	2,
-	10000,
-	10000,
-	20,
-	'1',
-	'서울',
-	'1',
-	'블랙',
-	1.1,
-	10,
-	'1',
-	2,
-	'1',
-	'1',
-	'100.1.1'
-);
-
-DELETE FROM MEMBER
-WHERE mKey=2;
-
-SELECT *
-FROM MEMBER;
-
-
-UPDATE MEMBER
-SET mpoint = 300000
-WHERE mKey=1;

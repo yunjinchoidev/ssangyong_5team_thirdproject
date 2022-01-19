@@ -112,8 +112,8 @@ input {
 					<tr><th>내용</th><td>${boardVO.boContent}</td></tr>
 					<tr><th>레벨</th><td>${boardVO.level}</td></tr>
 					<tr><th>돌아가기</th><td></td></tr>
-					<tr><td colspan="2"><a href="${contextPath}/fantasize/modForm.do?boPostKey=${boardVO.boPostKey }" class="g">글 수정하기</a></td></tr>
-					<tr><td colspan="2"><a href="${contextPath}/fantasize/del.do?boPostKey=${boardVO.boPostKey }" class="g">글 삭제하기 </a></td></tr>
+					<tr><td colspan="2"><a href="${contextPath}/talent/modForm.do?boPostKey=${boardVO.boPostKey }" class="g">글 수정하기</a></td></tr>
+					<tr><td colspan="2"><a href="${contextPath}/talent/del.do?boPostKey=${boardVO.boPostKey }" class="g">글 삭제하기 </a></td></tr>
 
 			</table>
 

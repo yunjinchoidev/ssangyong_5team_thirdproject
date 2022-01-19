@@ -611,6 +611,36 @@ public class MemberDAO {
 	   }
 	   
 	   
+		public void updatePoint(int mKey, int point) {
+			String sql = "update Member\r\n"
+					+ "			SET mpoint=?\r\n"
+					+ "		   where mKey = ?";
+			
+			try {
+				setConn();
+				con.setAutoCommit(false);
+				pstmt = con.prepareStatement(sql);
+				
+				pstmt.setInt(1, point);
+				pstmt.setInt(2, mKey);
+				
+				System.out.println(mKey + "키를 가지고 있는 사람의 포인트는 이제 "+point+"입니다.");
+				
+				pstmt.executeUpdate();
+				con.commit();
+				pstmt.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				try {
+					con.rollback();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+				closeRsc();
+			}
+		}
+	   
 	// 회원정보 수정 마블
 	   public void updateMarvel(MarvelVO marvelupt, String id, String pass) {
 	      try {
@@ -725,15 +755,84 @@ public class MemberDAO {
 		return num;
 	}
 	   
+	   
+	   
+	   public int searchAuth(String mid){
+		   int num=0;
+		   ArrayList<MemberVO> memberlist = new ArrayList<MemberVO>();
+		   String sql = "SELECT *\r\n"
+				   + "FROM MEMBER\r\n"
+				   + "WHERE mid=?";
+		   
+		   try {
+			   setConn();
+			   
+			   pstmt = con.prepareStatement(sql);
+			   pstmt.setString(1, mid);
+			   rs = pstmt.executeQuery();
+			   
+			   while(rs.next()) {
+				   memberlist.add(new MemberVO(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getString(4)
+						   ,rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),
+						   rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12)));
+				   num=rs.getInt(12);
+			   }
+			   
+			   rs.close();
+			   pstmt.close();
+			   con.close();
+		   } catch (SQLException e) {
+			   // TODO Auto-generated catch block
+			   System.out.println("sql예외:"+e.getMessage());
+			   
+			   closeRsc();
+		   }
+		   return num;
+	   }
+	   
+	   
+	   public int searchPoint(int mKey){
+		   int num=0;
+		   ArrayList<MemberVO> memberlist = new ArrayList<MemberVO>();
+		   String sql = "SELECT *\r\n"
+				   + "FROM MEMBER\r\n"
+				   + "WHERE mKey=?";
+		   
+		   try {
+			   setConn();
+			   
+			   pstmt = con.prepareStatement(sql);
+			   pstmt.setInt(1, mKey);
+			   rs = pstmt.executeQuery();
+			   
+			   while(rs.next()) {
+				   memberlist.add(new MemberVO(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getString(4)
+						   ,rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),
+						   rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12)));
+				   num=rs.getInt(14);
+			   }
+			   
+			   rs.close();
+			   pstmt.close();
+			   con.close();
+		   } catch (SQLException e) {
+			   // TODO Auto-generated catch block
+			   System.out.println("sql예외:"+e.getMessage());
+			   
+			   closeRsc();
+		   }
+		   return num;
+	   }
+	   
 	// 메인
 	public static void main(String[] args) {
 		MemberDAO dao = new MemberDAO();
 		
-		System.out.println(dao.searchId("himan"));
-		
-		//for(MemberVO m : dao.searchId("himan"))
-		//	System.out.println(m.getmId()+"::"+m.getmKey()+":::"+m.getmBlockList());
-
+		//System.out.println(dao.searchId("himan"));
+		//System.out.println(dao.searchAuth("himan"));
+		//System.out.println(dao.searchAuth("admin"));
+		//System.out.println(dao.searchPoint(1));
+		dao.updatePoint(1, 100000);
 	}	
 	
 	// 자원해제 공통 메서드 선언..

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="literacyContest.*"
+	import="talentTake.*"
 	import="java.util.ArrayList"%>
 <%
 request.setCharacterEncoding("utf-8");
@@ -89,25 +90,44 @@ input{
 	<!-- E헤더 삽입 -->
 
 
+	<%
+						int talenKey=0;
+						String talenKeyS = request.getParameter("talenKey");
+						if(talenKeyS!=null) {talenKey=Integer.parseInt(talenKeyS);}; 
+						String talenYouWant = request.getParameter("talenYouWant"); if(talenYouWant==null) {talenYouWant="";};
+						String talenChildPer = request.getParameter("talenChildPer"); if(talenChildPer==null) {talenChildPer="";};
+						String talenDate = request.getParameter("talenDate"); if(talenDate==null) {talenDate="";};
+						String talenLoc = request.getParameter("talenLoc"); if(talenLoc==null) {talenLoc="";};
+						String tatime = request.getParameter("tatime"); if(tatime==null) {tatime="";};
+						
+						int mKey=0;
+						String mKeyS = request.getParameter("mKey");
+						if(mKeyS!=null) {mKey=Integer.parseInt(mKeyS);}; 
+						
+						
+						TalentTakeDAO dao = new TalentTakeDAO();
+						TalentTakeVO ta = new TalentTakeVO(talenKey, talenYouWant, talenChildPer, talenDate, talenLoc,mKey);
+						
+						dao.insertTalentDonationVO(ta);
+						
+						
+			%>
+
+
 	<div class="contents">
 		<div class="cards">
 			<p>글쓰기</p>
-			<form action="${contextPath }/fantasize/add.do" enctype="multipart/form-data"> 
+			<form enctype="multipart/form-data"> 
 			<table align="center" class="tbdaddtab">
 			<colgroup>
 				<col width="30%">
 			</colgroup>
-					<tr><th>회원 고유번호</th><td><input type="text" name="mKey"></td></tr>
-					<tr><th>파일 일련번호</th><td><input type="text" name="fileKey" ></td></tr>
-					<tr><th>카테고리 고유코드</th><td><input type="text" name="boCateKey"></td></tr>
-					<tr><th>작성자</th><td><input type="text" name="boWriter"></td></tr>
-					<tr><th>비밀번호</th><td><input type="text" name="boWriterPass"></td></tr>
-					<tr><th>이메일</th><td><input type="text" name="boWriterEmail"></td></tr>
-					<tr><th>제목</th><td><input type="text" name="boTitle"></td></tr>
-					<tr><th>ip주소</th><td><input type="text" name="boWriterIp"></td></tr>
-					<tr><th>조회수</th><td><input type="text" name="boViews"></td></tr>
-					<tr><th>부모글번호</th><td><input type="text" name="ParentNO"></td></tr>
-					<tr><th>내용</th><td><input type="text" name="boContent"></td></tr>
+					<tr><th>신청번호</th><td><input type="text" name="talenKey"></td></tr>
+					<tr><th>아이가 원하는 재능</th><td><input type="text" name="talenYouWant" ></td></tr>
+					<tr><th>아이의 성격</th><td><input type="text" name="talenChildPer"></td></tr>
+					<tr><th>원하는 날짜</th><td><input type="text" name="talenDate"></td></tr>
+					<tr><th>지역</th><td><input type="text" name="talenLoc"></td></tr>
+					<tr><th>회원키</th><td><input type="text" name="mKey"></td></tr>
 					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
 			</table>
 			</form>

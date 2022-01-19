@@ -99,7 +99,7 @@ input{
 			</colgroup>
 					<tr><th>회원 고유번호</th><td><input type="text" name="mKey"></td></tr>
 					<tr><th>파일 일련번호</th><td><input type="text" name="fileKey" ></td></tr>
-					<tr><th>카테고리 고유코드</th><td><input type="text" name="boCateKey"></td></tr>
+					<tr><th>카테고리 고유코드</th><td><input type="text" name="boCateKey" value="2"></td></tr>
 					<tr><th>작성자</th><td><input type="text" name="boWriter"></td></tr>
 					<tr><th>비밀번호</th><td><input type="text" name="boWriterPass"></td></tr>
 					<tr><th>이메일</th><td><input type="text" name="boWriterEmail"></td></tr>

@@ -101,7 +101,7 @@ input{
 					<tr><th>설명</th><td><input type="text" name="officialExplain"></td></tr>
 					<tr><th>재고</th><td><input type="text" name="officialInventory"></td></tr>
 					<tr><th>할인률</th><td><input type="text" name="officialDiscount"></td></tr>
-					<tr><th>상품분류번호</th><td><input type="text" name="proCateKey"></td></tr>
+					<tr><th>상품분류번호</th><td><input type="text" name="proCateKey" value="5"></td></tr>
 					<tr><th>파일번호</th><td><input type="file" name="fileKey"></td></tr>
 					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
 			</table>

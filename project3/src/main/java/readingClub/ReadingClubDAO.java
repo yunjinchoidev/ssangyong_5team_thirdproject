@@ -308,7 +308,7 @@ public class ReadingClubDAO {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 			ReadingClubDAO dao = new ReadingClubDAO();
-			//dao.insertrc(new ReadingClubVO(4, "클럽1", 1, "2021/01/15", 3, 2000, "내용1", 201, 201));
+			dao.insertrc(new ReadingClubVO(4, "클럽1", 1, "2021/01/15", 3, 2000, "내용1", 1, 1));
 			//dao.updatelt(new ReadingClubVO(2, "클럽2", 1, "2021/01/15", 3, 2000, "내용1", 201, 201));
 			//dao.updatelt(new ReadingClubVO(3, "클럽3", 1, "2021/01/15", 3, 2000, "내용1", 201, 201));
 			//dao.updatelt(new ReadingClubVO(4, "클럽4", 1, "2021/01/15", 3, 2000, "내용1", 201, 201));

@@ -73,6 +73,11 @@ input {
 	color:white;
 }
 
+button{
+	width: 300px;
+	height: 100px;
+	font-size: 40px;
+}
 </style>
 </head>
 <body>
@@ -101,7 +106,8 @@ input {
 	<div class="contents">
 		<div class="cards">
 			<p>상세 글 보기</p>
-
+			<button onclick="location.href='${contextPath}/cart/addForm.do?officialKey=${oftVO.officialKey}'">장바구니 담기</button>
+					<button>주문하기</button>
 				<table id="newtab" border="1">
 					<colgroup>
 						<td width="30%">
@@ -114,9 +120,7 @@ input {
 					<tr><th>할인률</th><td>${oftVO.officialDiscount}</td></tr>
 					<tr><th>상품분류번호</th><td>${oftVO.proCateKey}</td></tr>
 					<tr><th>파일번호</th><td>${oftVO.fileKey}</td></tr>
-					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
-					<button onclick="location.href='${contextPath}/cart/addForm.do?officialKey=${oftVO.officialKey}'">장바구니 담기</button>
-					<button>주문하기</button>
+				
 			</table>
 
 

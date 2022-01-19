@@ -15,6 +15,9 @@ request.setCharacterEncoding("utf-8");
 <head>
 <meta charset="UTF-8">
 <title>신춘문예</title>
+<script type="text/javascript">
+
+
 </script>
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">

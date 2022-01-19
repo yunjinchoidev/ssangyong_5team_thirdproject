@@ -86,7 +86,7 @@ input {
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 
-<%
+	<%
 			String mid =(String) session.getAttribute("ID");
 			System.out.println(mid);
 			
@@ -95,9 +95,6 @@ input {
 			
 			System.out.println("########################");
 			System.out.println(mKey);
-			
-		
-			
 		%>
 
 

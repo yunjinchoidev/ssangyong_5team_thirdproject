@@ -93,6 +93,7 @@ input{
 		<div class="cards">
 			<p>글쓰기</p>
 			<form action="${contextPath }/oft/add.do" enctype="multipart/form-data"> 
+			<input type="submit" value="등록하기">
 			<table align="center" class="tbdaddtab">
 			<colgroup>
 				<col width="30%">
@@ -101,9 +102,8 @@ input{
 					<tr><th>설명</th><td><input type="text" name="officialExplain"></td></tr>
 					<tr><th>재고</th><td><input type="text" name="officialInventory"></td></tr>
 					<tr><th>할인률</th><td><input type="text" name="officialDiscount"></td></tr>
-					<tr><th>상품분류번호</th><td><input type="text" name="proCateKey"></td></tr>
+					<tr><th>상품분류번호</th><td><input type="text" name="proCateKey" value="1"></td></tr>
 					<tr><th>파일번호</th><td><input type="file" name="fileKey"></td></tr>
-					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
 			</table>
 			</form>
 

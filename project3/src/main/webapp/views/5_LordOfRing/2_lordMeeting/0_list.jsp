@@ -31,7 +31,7 @@ request.setCharacterEncoding("utf-8");
 	height: 600px;
 	border: 3px solid yellow;
 	margin: 0 auto;
-	font-size: 10px;
+	font-size: 20px;
 	margin-top: 50px;
 	color: white;
 	text-align: left;
@@ -95,16 +95,8 @@ input {
 					<th>파일 일련번호</th>
 					<th>카테고리 고유코드</th>
 					<th>작성자</th>
-					<th>비밀번호</th>
-					<th>이메일</th>
-					<th>작성일자</th>
 					<th>제목</th>
-					<th>수정일자</th>
-					<th>ip주소</th>
 					<th>조회수</th>
-					<th>부모글번호</th>
-					<th>내용</th>
-					<th>레벨</th>
 				</tr>
 
 				<c:choose>
@@ -123,9 +115,6 @@ input {
 								<td>${bdList.fileKey }</td>
 								<td>${bdList.boCateKey }</td>
 								<td>${bdList.boWriter }</td>
-								<td>${bdList.boWriterPass }</td>
-								<td>${bdList.boWriterEmail }</td>
-								<td>${bdList.boPostDateS }</td>
 								<td><span style="padding-left: 20px"></span> <c:choose>
 										<c:when test="${bdList.level>1 }">
 											<c:forEach begin="1" end="${bdList.level }" step="1">
@@ -133,18 +122,13 @@ input {
 
 											</c:forEach>
 											<span style="font-size: 20px;">[답변]</span>
-<a href="${contextPath}/lordMeeting/view.do?boPostKey=${bdList.boPostKey}" class="g">${bdList.boPostKey}</a>
+<a href="${contextPath}/lordMeeting/view.do?boPostKey=${bdList.boPostKey}" class="g">${bdList.boTitle}</a>
 										</c:when>
 										<c:otherwise>
-											<a href="${contextPath}/lordMeeting/view.do?boPostKey=${bdList.boPostKey}" class="g">${bdList.boPostKey}</a>
+											<a href="${contextPath}/lordMeeting/view.do?boPostKey=${bdList.boPostKey}" class="g">${bdList.boTitle}</a>
 										</c:otherwise>
 									</c:choose></td>
-								<td>${bdList.boModifyDateS }</td>
-								<td>${bdList.boWriterIp }</td>
 								<td>${bdList.boViews }</td>
-								<td>${bdList.boParentNO }</td>
-								<td>${bdList.boContent}</td>
-								<td>${bdList.level}</td>
 
 							</tr>
 						</c:forEach>

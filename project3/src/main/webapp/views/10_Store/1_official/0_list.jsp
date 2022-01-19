@@ -33,19 +33,185 @@ request.setCharacterEncoding("utf-8");
 	display: inline-block;
 	margin: 20px;
 	text-decoration: none;
+	font-size: 30px;
 }
 
 .lordshopchild a{
 	text-decoration: none;
-	color : white;
+	color : red;
+	font-size: 20px;
 }
 
 .lordshopchild a:hover{
 	color : red;
 }
 
+.lordshopwrap{
+	width: 1200px;
+	height: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
 
+.lordshopchild{
+	width: 300px;
+	height: 300px;
+	border: 3px solid yellow;
+	display: inline-block;
+	margin: 20px;
+}
+
+body{
+background-color: #111111;
+}
+
+h1{
+text-align:center;
+color:white;
+}
+
+button{
+width:150px;
+height:50px;
+background-color:rgba(0,0,0,0);
+color : skyblue;
+border: 1px solid skyblue;
+font-weight:bold;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
+
+button:hover{
+width:150px;
+height:50px;
+background-color:#3F3F3F;
+color : white;
+border:none;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
+
+/* 좌측 메뉴바 영역 */
+#menubar{
+position: fixed;
+top:350px;
+left:150px;
+width:200px;
+height:400px;
+border: solid grey;
+}
+
+/* 지팡이 메뉴 버튼 */
+#menustaff{
+position:absolute;
+left:20px;
+}
+
+/* 빗자루 메뉴 버튼 */
+#menustick{
+position: absolute;
+left:20px;
+top: 200px;
+}
+
+/* 유니폼 메뉴 버튼 */
+#menuuniform{
+position: absolute;
+left:20px;
+top: 320px;
+}
+
+/* 상품 영역 */
+#product{
+position: absolute;
+top: 300px;
+left: 500px;
+width:1200px;
+height:800px;
+}
+
+/* 님부스2000 */
+#broom1{
+position: absolute;
+top:100px;
+left:100px;
+}
+
+#prod1Info{
+position: absolute;
+width:200px;
+top:350px;
+left:150px;
+color:white;
+}
+
+/* 님부스2001 */
+#prod2{
+position:absolute;
+top:0px;
+left:400px;
+}
+
+#broom2{
+position: absolute;
+top:100px;
+left:100px;
+}
+
+#prod2Info{
+position: absolute;
+width:200px;
+top:350px;
+left:150px;
+color:white;
+}
+
+/* 파이어볼트 */
+#prod3{
+position:absolute;
+top:0px;
+left:800px;
+}
+
+#broom3{
+position: absolute;
+top:100px;
+left:100px;
+}
+
+#prod3Info{
+position: absolute;
+width:200px;
+top:350px;
+left:150px;
+color:white;
+}
+
+
+#footer{
+position:absolute;
+width:100%;
+top:1000px;
+}
 </style>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	function go(a){
+		if(a==2)
+			{
+		location.href='${contextPath}/oft/addForm.do';
+			}else{
+				alert("권한이 없습니다.");
+				
+			}
+	};
+</script>
 </head>
 <body>
 	<!-- S헤더 삽입 -->
@@ -59,12 +225,33 @@ request.setCharacterEncoding("utf-8");
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
+	
+	<script>
+AOS.init();
+</script>
+
+<script>
+
+</script>
+<div id="menubar">
+<h1>메뉴</h1>
+<a href="/project3/views/9_Marvel/2_Marvelshop/accessories.jsp">
+<button type="button" id="menustaff">마블</button>
+</a>
+<a href="/project3/views/8_HarryPotter/2_store/store_broom.jsp">
+<button type="button" id="menustick">해리포터</button>
+</a>
+<a href="${contextPath }/oftLord/list.do"></a>
+<button type="button" id="menuuniform">반지의제왕</button>	
+</div>
+	
 		<%
 			String mid =(String) session.getAttribute("ID");
 			System.out.println(mid);
 			
 			MemberDAO dao = new MemberDAO();
 			int mKey = dao.searchId(mid);
+			int authNum = dao.searchAuth(mid);
 			
 			System.out.println("########################");
 			System.out.println(mKey);
@@ -77,9 +264,7 @@ request.setCharacterEncoding("utf-8");
 				<p> 엄선된 물건들이 있습니다.<br>
 				 마음껏 둘러보십시오</p>
 				 
-				 <button onclick="location.href='${contextPath}/oft/addForm.do'">물건 추가</button>
-				 
-				 <hr style="border:3px solid yellow;">
+				 <input type="button" value="물건 추가" onclick="go(<%=authNum%>)">
 					<div class="lordshopwrap">
 				<c:choose>
 					<c:when test="${empty oftList}">
@@ -91,12 +276,13 @@ request.setCharacterEncoding("utf-8");
 					<c:when test="${!empty oftList}">
 						<c:forEach var="oftList" items="${oftList}" varStatus="oftNum">
 							<div class="lordshopchild"> 
-								재고 : ${oftList.officialInventory }<br>
+							
 								물건명 : ${oftList.officialPname }<br>
-								할인률 : ${oftList.officialDiscount }<br>
-								할인률 : ${oftList.proCateKey }<br>
-								<a href="${contextPath }/oft/view.do?officialKey=${oftList.officialKey}">상품 자세히 보기</a>
-								<a href="${contextPath }/oft/del.do?officialKey=${oftList.officialKey}">상품 삭제</a>
+									재고 : ${oftList.officialInventory }<br>
+								할인률 : ${oftList.officialDiscount }%<br>
+								제품 분류 : ${oftList.proCateKey }<br>
+								<a href="${contextPath }/oft/view.do?officialKey=${oftList.officialKey}">상품 자세히 보기</a><br>
+								<a href="${contextPath }/oft/del.do?officialKey=${oftList.officialKey}">상품 삭제</a><br>
 								<a href="${contextPath }/oft/modForm.do?officialKey=${oftList.officialKey}">상품 수정</a>
 							</div>
 						</c:forEach>

@@ -15,9 +15,20 @@ request.setCharacterEncoding("utf-8");
 <head>
 <meta charset="UTF-8">
 <title>신춘문예</title>
-</script>
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
+	
+<script>
+$(document).ready(function() { 
+	
+		$("#test").submit(function() {
+			alert("test");
+			alert("로딩 완료"); 
+			});
+	
+});
+</script>	
+	
 <style>
 .tbdtab {
 	width: 600px;
@@ -103,8 +114,23 @@ input{
 		%>
 	<div class="contents">
 		<div class="cards">
-			<p>글쓰기</p>
-			<form action="${contextPath }/cart/add.do" enctype="multipart/form-data"> 
+			<p>장바구니담기</p>
+			<a href="#" onclick="go()">팝업 출력</a>
+			<script>
+				function go(<%=mKey%>){
+					$.ajax({
+						type:"post",
+						async:false,
+						url:"${contextPath}/cart/addGoodsInCart.do",
+						data : {mKey:mKey},
+						success: function(data){
+							window.open("","Go");
+						}
+					});
+				}
+			</script>
+			
+			<form action="${contextPath }/cart/add.do" enctype="multipart/form-data" id="test"> 
 			<table align="center" class="tbdaddtab">
 			<colgroup>
 				<col width="30%">
@@ -119,7 +145,7 @@ input{
 					<tr><th>1:1거래</th><td><input type="text" name="cusKey"></td></tr>
 					<tr><th>강의?</th><td><input type="text" name="lecKey"></td></tr>
 					<tr><th>스토리매매?</th><td><input type="text" name="requKey"></td></tr>
-					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
+					<tr><td colspan="2"><input type="submit" value="제출하기" ></td></tr>
 			</table>
 			</form>
 

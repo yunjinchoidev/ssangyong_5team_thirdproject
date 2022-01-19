@@ -31,19 +31,42 @@ request.setCharacterEncoding("utf-8");
 	border: 3px solid yellow;
 	display: inline-block;
 	margin: 20px;
-	
+	font-size: 20px;
 }
 
 .lordshopchild a{
 text-decoration: none;
-color: white;
+color: red;
 }
 .lordshopchild a:hover{
 	color : red;
 	background-color: green;
 }
 
+button{
+width:150px;
+height:50px;
+background-color:rgba(0,0,0,0);
+color : skyblue;
+border: 1px solid skyblue;
+font-weight:bold;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
 
+button:hover{
+width:150px;
+height:50px;
+background-color:#3F3F3F;
+color : white;
+border:none;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
 </style>
 </head>
 <body>
@@ -79,17 +102,13 @@ color: white;
 						<c:forEach var="oftList" items="${oftList}" varStatus="rentNum">
 							<div class="lordshopchild"> 
 								고객번호 : ${oftList.cusKey }<br>
-								상품명 : ${oftList.cusPname }일<br>
-								설명 : ${oftList.cusExplain }<br>
-								등록일 : ${oftList.cusRegDateS }<br>
-								수정일 : ${oftList.cusModiDateS }<br>
+								상품명 : ${oftList.cusPname }<br>
 								재고 : ${oftList.cusStock }<br>
 								할인률 : ${oftList.cusDiscount }<br>
-								고객번호 : ${oftList.mKey }<br>
-								상품분류 : ${oftList.proCateKey }<br>
-								파일키 : ${oftList.fileKey }<br>
-								<a href="${contextPath }/custom/view.do?cusKey=${oftList.cusKey}">상품 자세히 보기</a>
-								<a href="${contextPath }/custom/del.do?cusKey=${oftList.cusKey}">상품 삭제</a>
+								파는사람 : ${oftList.mKey }<br>
+								상품분류 : ${oftList.proCateKey }<br><br>
+								<a href="${contextPath }/custom/view.do?cusKey=${oftList.cusKey}">상품 자세히 보기</a><br>
+								<a href="${contextPath }/custom/del.do?cusKey=${oftList.cusKey}">상품 삭제</a><br>
 								<a href="${contextPath }/custom/modForm.do?cusKey=${oftList.cusKey}">상품 수정</a>
 							</div>
 						</c:forEach>

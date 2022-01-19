@@ -110,7 +110,7 @@ input{
 			<p>글쓰기</p>
 			
 			<form action="${contextPath }/order/add.do" enctype="multipart/form-data"> 
-			
+			<input type="hidden" name="mKey" value="<%=mKey %>">
 			<table align="center" class="tbdaddtab">
 			<colgroup>
 				<col width="30%">
@@ -118,13 +118,14 @@ input{
 					<tr><th>판매자</th><td><input type="text" name="sellerId" value="판타지빌리지"></td></tr>
 					<tr><th>할부</th><td><input type="text" name="installType" value="0"></td></tr>
 					<tr><th>가격</th><td><input type="text" name="orderPrice" value="<%=cartPrice%>"></td></tr>
-					<tr><th>결제유형</th><td><input type="text" name="payType" value="일시불"></td></tr>
+					<tr><th>결제유형</th><td><input type="text" name="payType"></td></tr>
+					
 					<tr><th>이메일주소</th><td><input type="text" name="orderEamil"></td></tr>
 					<tr><th>카드 유형</th><td><input type="text" name="cardType" value="신용카드"></td></tr>
 					<tr><th>장바구니 번호</th><td><input type="text" name="cartKey" value="<%=cartKey %>"></td></tr>
 					<tr><th>회원 키</th><td><input type="text" name="mKey" value="<%=mKey%>"></td></tr>
 					<tr><th>주문상태</th><td><input type="text" name="orderstatus"></td></tr>
-					<tr><td colspan="2"><input type="submit" value="제출하기"></td></tr>
+					<tr><td colspan="2"><input type="submit" value="결제하기"></td></tr>
 			</table>
 			</form>
 

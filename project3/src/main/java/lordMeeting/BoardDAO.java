@@ -88,7 +88,7 @@ public class BoardDAO {
 				+ "	boContent,\r\n"
 				+ "	LEVEL\r\n"
 				+ "FROM board\r\n"
-				+ "WHERE boCateKey=304"
+				+ "WHERE boCateKey=9"
 				+ "START WITH PARENTNO=0\r\n"
 				+ "CONNECT BY PRIOR bopostkey=PARENTNO\r\n"
 				+ "ORDER BY bopostkey";
@@ -135,7 +135,7 @@ public class BoardDAO {
 		String sql = "SELECT *\r\n" + 
 				"FROM Board\r\n" + 
 				"WHERE boTitle like '%'||?||'%' "+
-				"and boCateKey=304";
+				"and boCateKey=9";
 		System.out.println(boTitle+"제목으로 검색 실행");
 		try {
 			setConn();
@@ -177,7 +177,7 @@ public class BoardDAO {
 		String sql = "SELECT *\r\n" + 
 					"FROM Board\r\n" + 
 					"WHERE boPostKey=? "+
-					"and boCateKey=304";
+					"and boCateKey=9";
 		try {
 			setConn();
 			pstmt = con.prepareStatement(sql);
@@ -259,7 +259,7 @@ public class BoardDAO {
 			pstmt.setInt(1,A);
 			pstmt.setInt(2, ins.getmKey());
 			pstmt.setInt(3, ins.getFileKey());
-			pstmt.setInt(4, ins.getBoCateKey());
+			pstmt.setInt(4,9 );
 			pstmt.setString(5, ins.getBoWriter());
 			pstmt.setString(6, ins.getBoWriterPass());
 			pstmt.setString(7, ins.getBoWriterEmail());
