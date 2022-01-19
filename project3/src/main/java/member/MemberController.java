@@ -49,6 +49,8 @@ public class MemberController extends HttpServlet {
 		String email=addfirst+"@"+addsecond;
 		String gender=request.getParameter("gender");
 		
+		String status = "init";
+		
 		
 		MemberDAO dao = new MemberDAO();
 		
@@ -68,7 +70,15 @@ public class MemberController extends HttpServlet {
 				
 				// 가입 시 반지의제왕 정보 초기화
 				dao.insertLord(null);
-			}	
+				
+				status="success";
+				System.out.println("회원가입 상태:"+status);
+				request.setAttribute("status", status);
+			}else {
+				status="fail";
+				System.out.println("회원가입 상태:"+status);
+				request.setAttribute("status", status);
+			}
 		}
 			
 	

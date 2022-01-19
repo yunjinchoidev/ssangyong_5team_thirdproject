@@ -72,8 +72,19 @@ top:900px;
 <script src="/javaexp/a00_com/jquery-3.6.0.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
+</head>
+<%
+String path = request.getContextPath();
+
+String status = (String)request.getAttribute("status");
+%>
+
 <script>
 $().ready(function(){
+	
+	var status = "<%=status%>";
+	
 	// 이메일 select Box 직접 입력 선택 시 함수
 	$("#seldirect").hide();
 	$("#addsecond").change(function(){
@@ -87,20 +98,13 @@ $().ready(function(){
 	})
 	
 	$('#joinBtn').on("click", function(){
-		Swal.fire({
-			  title: '회원가입',
-			  text: "회원가입 하시겠습니까?",
-			  type: 'confirm',
-			  showCancelButton: true,
-			  confirmButtonColor: '#3085d6',
-			  cancelButtonColor: '#d33',
-			  confirmButtonText: '확인',
-			  cancelButtonText: '취소'
-			}).then((result) => {
-			  if (result.value) {
-	              $('form').submit();
-			  }
-			})
+		if(confirm("회원가입 하시겠습니까?")==true){
+			 if(status=="success"){
+          	 	alert('회원가입이 완료되었습니다');
+          	 	location.href="login.do";
+			 }
+       }
+	
 	});
 	
 	
@@ -108,43 +112,6 @@ $().ready(function(){
 });
 
 </script>
-</head>
-<%
-String path = request.getContextPath();
-
-String id=request.getParameter("id");
-String pass=request.getParameter("pass");
-String name=request.getParameter("name");
-String numfirst = request.getParameter("numfirst");
-String numsecond = request.getParameter("numsecond");
-String reg = numfirst+numsecond;
-String phonenum=request.getParameter("phonenum");
-String nickname=request.getParameter("nickname");
-String addfirst=request.getParameter("addfirst");
-String addsecond=request.getParameter("addsecond");
-String address=request.getParameter("address");
-String email=addfirst+"@"+addsecond;
-String gender=request.getParameter("gender");
-
-
-
-
-try {
-if(id!=null){
-if(!id.equals("") && !pass.equals("") && !name.equals("") && !numfirst.equals("") && !numsecond.equals("") 
-		&& !phonenum.equals("") && !nickname.equals("") && !addfirst.equals("") && !addsecond.equals("")
-		&&!email.equals("")) {
-	
-	out.println("<script>alert('계정이 등록 되었습니다');history.back();</script>");
-		
-}else {
-	out.println("<script>alert('회원가입 실패 !입력된 정보를 확인해주세요');</script>");
-}
-}
-}catch(Exception e){
-	out.println("<script>alert('회원가입 실패 !입력된 정보를 확인해주세요');</script>");
-}
-%>
 <body>
 	<jsp:include page="/views/common/commonheader.jsp">
 		<jsp:param name="name" value="go" />
@@ -198,7 +165,7 @@ if(!id.equals("") && !pass.equals("") && !name.equals("") && !numfirst.equals(""
 			<a href="<%=path%>/login.do">
 			<button id="canclebtn" type= "button" style="position:absolute;left:80px;">취소</button>
 			</a>
-			<button type="button" id="joinBtn" style="position:absolute;left:220px;">회원가입</button>	
+			<button type="submit" id="joinBtn" style="position:absolute;left:220px;">회원가입</button>	
 		</form>
 		
 	</div>
