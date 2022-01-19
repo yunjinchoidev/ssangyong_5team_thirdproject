@@ -132,15 +132,21 @@ var status = "<%=status%>";
 
 $(document).ready(function() {
 	$("#delbtn").click(function(){
-		$("form").submit();
 		if(confirm("정말 회원탈퇴 하시겠습니까?")==true){
-			if(status=="success"){
-				alert("회원탈퇴 되었습니다");
-			}
+			$("form").submit();
 		}else{
 			return false;
 		}
 	});
+	
+	function comalert(){
+		if(status=="success"){
+			alert('회원탈퇴 되었습니다');
+			location.href="<%=path%>/logout.do";
+		}else{
+			alert('정보를 확인해주세요');
+		}
+	};
 
 });
 
@@ -159,7 +165,7 @@ $(document).ready(function() {
 </div>
 </div>
 <div id = "loginForm">
-	<form method="post">
+	<form method="post" onsubmit="comalert();">
 		<table>
 		<tr><th>아이디</th><td><input type=text name = id placeholder="아이디를 입력해주세요" style="width:250px;height:49px;"></td></tr>
 		<tr><th>비밀번호</th><td><input type=text name = pass placeholder="비밀번호를 입력해주세요" style="width:250px;height:49px;"></td></tr>

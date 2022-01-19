@@ -57,7 +57,7 @@ body {
 
 /* 최우측 최상단 메뉴 */
 .headermenu01 {
-   width: 320px;
+   width: 380px;
    height: 50px;
    display: inline-block;
    margin-right: 30px;
@@ -144,11 +144,53 @@ body {
 	width: 240px;
 	height: 50px;
 }
+
+#logoutbtn{
+width:80px;
+height:30px;
+background-color:rgba(0,0,0,0);
+color : skyblue;
+border: 1px solid skyblue;
+font-weight:bold;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+position: absolute;
+left:1800px;
+top:15px;
+}
+
+#logoutbtn:hover{
+width:80px;
+height:30px;
+background-color:#3F3F3F;
+color : white;
+border:none;
+}
 </style>
+
+</head>
+<%
+String sid = (String)session.getAttribute("ID"); 
+String path = request.getContextPath();
+%>
+
 <script type="text/javascript">
    
+$(document).ready(function() {
+	$("#logoutbtn").click(function(){
+		if(confirm("로그아웃 하시겠습니까?")==true){
+			location.href= "<%=path%>/logout.do";
+		}else{
+			return false;
+		}
+	});
+});
+
+
 </script>
-</head>
+
 <body>
 
    <header>
@@ -159,6 +201,10 @@ body {
                <div class="headermenuwrap">
                   <div class="headermenu01">
                      <ul>
+                     	<%if(sid==null){ %>
+                     	<%}else{ %>
+                     	<li><button id="logoutbtn">로그아웃</button></li>
+                     	<%} %>
                         <li><a href="${contextPath }/talent/list.do">서비스</a></li>
                         <li><a href="${contextPath}/oft/list.do">스토어</a></li>
                         <li><a href="/project3/views/11_Event/1_contest/0_default.jsp">이벤트</a></li>
@@ -166,8 +212,13 @@ body {
                   </div>
                   <br>
                   <div class="headermenu02">
-                     <a href="/project3/views/3_login/Login.jsp"><img
+                  	 <%if(sid==null){ %>
+                     <a href="<%=path %>/login.do"><img
                         src="/project3/views/Media/account3.png" id="account"></a> 
+                     <%}else{%>
+                    	 <a href="<%=path %>/mypage.do"><img
+                                 src="/project3/views/Media/account3.png" id="account"></a> 
+                     <% }%>   
                         <a href="${contextPath }/cart/list.do"><img
                         src="/project3/views/Media/shopping-cart2.png" id="shoppingcart"></a>
                   </div>

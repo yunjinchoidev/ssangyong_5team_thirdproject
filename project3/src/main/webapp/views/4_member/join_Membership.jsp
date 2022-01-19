@@ -80,10 +80,14 @@ String path = request.getContextPath();
 String status = (String)request.getAttribute("status");
 %>
 
+<script type="text/javascript" 
+  src="${path}/a00_com/jquery-3.6.0.js"></script>
+  
 <script>
 $().ready(function(){
 	
 	var status = "<%=status%>";
+	var query = $("form").serialize();
 	
 	// 이메일 select Box 직접 입력 선택 시 함수
 	$("#seldirect").hide();
@@ -99,14 +103,24 @@ $().ready(function(){
 	
 	$('#joinBtn').on("click", function(){
 		if(confirm("회원가입 하시겠습니까?")==true){
-			 if(status=="success"){
-          	 	alert('회원가입이 완료되었습니다');
-          	 	location.href="login.do";
-			 }
+			$.ajax({
+				url:'${pageContext.request.contextPath}/member.do',
+				type:'post',
+				data:query,
+				dataType:'json',
+				success:function(data){
+					if(status=="success"){
+			      	 	alert('회원가입이 완료되었습니다');
+			      	 	location.href="<%=path%>/login.do";
+					 }
+				}
+				
+			});
+			 
+			 
        }
 	
 	});
-	
 	
 	
 });
@@ -123,7 +137,7 @@ $().ready(function(){
 	<hr>
 	</div>
 	<div id="inputMember">
-		<form method="post">
+		<form method="post" onsubmit="return comjoin()">
 			<table>
 				<!-- ID 입력 -->
 				<tr><th>ID</th><td><input type="text" name="id" size="26" placeholder="아이디를 입력해주세요"></td>
@@ -165,7 +179,7 @@ $().ready(function(){
 			<a href="<%=path%>/login.do">
 			<button id="canclebtn" type= "button" style="position:absolute;left:80px;">취소</button>
 			</a>
-			<button type="submit" id="joinBtn" style="position:absolute;left:220px;">회원가입</button>	
+			<button type="button" id="joinBtn" style="position:absolute;left:220px;">회원가입</button>	
 		</form>
 		
 	</div>
