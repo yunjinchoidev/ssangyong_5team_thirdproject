@@ -1,18 +1,14 @@
 package officialStoreTest;
 
-import talentGive.*;
-import talentTake.*;
-
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.Servlet;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,6 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import com.google.gson.Gson;
+
 
 /**
  * Servlet implementation class BoardController
@@ -69,6 +67,21 @@ public class OfficialStoreTestController extends HttpServlet {
 
 		} else if (action.equals("/addForm.do")) {
 			nextPage = "/views/10_Store/1_official/1_addForm.jsp";
+			
+		} else if (action.equals("/oftAjax.do")) {
+			String officialPname = request.getParameter("officialPname"); if(officialPname==null) officialPname="";
+			
+			
+			Gson gson = new Gson();
+			
+			String deptJson = gson.toJson(officialStoreTestDAO.Search01(officialPname));
+			System.out.println(deptJson);
+			
+			response.setCharacterEncoding("utf-8");
+			response.setContentType("text/html; charset=utf-8");
+			PrintWriter out = response.getWriter();
+			out.print(deptJson);
+			
 			
 		} else if (action.equals("/add.do")) {
 			String officialKeyS = request.getParameter("officialKey");

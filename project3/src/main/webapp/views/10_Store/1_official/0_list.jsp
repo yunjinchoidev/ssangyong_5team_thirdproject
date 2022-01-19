@@ -197,20 +197,84 @@ position:absolute;
 width:100%;
 top:1000px;
 }
+
+input[name=pname]{
+	width:400px;
+	height: 50px;
+	text-align: center;
+	font-size: 60px;
+}
+
+#searchoffbar p{
+	text-align: center;
+	font-size: 40px;
+}
+
+#show{
+margin : 0 auto;
+margin-top: 30px;
+margin-bottom: 30px;
+color : white;
+border : 3px solid white;
+width : 600px;
+}
+
+
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-	function go(a){
-		if(a==2)
-			{
-		location.href='${contextPath}/oft/addForm.do';
-			}else{
-				alert("권한이 없습니다.");
-				
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	$("#schBtn").click(function(){
+	});
+		
+	
+	$("[name=officialPname]").on("keyup",function(){
+		console.log($("form").serialize());
+		$.ajax({
+			url:"${contextPath}/deptAjax.do",
+			data:"officialPname="+$("[name=officialPname]").val(),
+			dataType:"json",
+			success:function(dList){
+				var listTxt="";
+				$.each(dList,function(idx, dept){
+					console.log(idx+":"+dept)
+					listTxt+="<tr><td>"+dept.officialPname+"</td><td>"+dept.officialInventory+"</td></tr>";
+				});
+				$("#show").html(listTxt);
 			}
+		});
+	});
+	
+	
+	
+	function go(qStr){
+		//alert("ajax DB데이터 가져오기");
+		$.ajax({
+			url:"${contextPath}/deptAjax.do",
+			dataType:"json",
+			data : qStr,
+			success:function(data){
+				var deptList = data;
+				console.log(data);
+				var listTxt = "";
+				// $.each(배열, function(index, 단위데이터){})
+				$.each(deptList,function(idx, dept){
+					console.log(idx+":"+dept)
+					listTxt+="<tr><td>"+dept.officialPname+"</td><td>"+dept.officialPname+"</td>"+
+						"<td>"+dept.officialPname+"</td></tr>";
+				});
+				$("h3").append(", 건수:"+deptList.length);
+				$("#show").html(listTxt);
+			}
+		});
 	};
+			
+			
+});
 </script>
 </head>
 <body>
@@ -230,9 +294,7 @@ top:1000px;
 AOS.init();
 </script>
 
-<script>
 
-</script>
 <div id="menubar">
 <h1>메뉴</h1>
 <a href="/project3/views/9_Marvel/2_Marvelshop/accessories.jsp">
@@ -260,6 +322,14 @@ AOS.init();
 
 	<div class="contents">
 		<div class="cards">
+		<form id="searchoffbar">
+			<input type="text" name="officialPname"> <input type="submit" value="검색">
+		</form>
+		<table id="show">
+			<tr><td>물건명</td><td>재고</td></tr>
+		</table>
+		
+		
 				<h1> Absolute Ring ship</h1>
 				<p> 엄선된 물건들이 있습니다.<br>
 				 마음껏 둘러보십시오</p>
