@@ -12,8 +12,15 @@ CREATE TABLE potter(
 	mKey NUMBER CONSTRAINT harrypotter_mKey_fk REFERENCES member (mKey)
 );
 
+INSERT INTO potter(HARRYKEY, harrycharacter, harrydomioty
+, harrymagiclevel, harrybirth, harrymagic, harryheight,harryweight,mkey) VALUES(
+7,'미지정','미지정',
+'0','미지정','미지정',0,0,7);
 
-\
+SELECT * FROM POTTER;
+SELECT * FROM MEMBER;
+
+
 DROP TABLE POTTER;
 
 SELECT * FROM potter;

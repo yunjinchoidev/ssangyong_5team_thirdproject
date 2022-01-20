@@ -23,3 +23,12 @@ VALUES ((SELECT NVL(MAX(lordKey)+1,1) FROM lord),'미지정','미지정'
 DELETE FROM lord
 WHERE mkey=2;
 
+SELECT * FROM lord;
+
+INSERT INTO lord(lordKey, lordCharacter, lordTribe, lordPaciBattle,
+lordloc,lordHeight,lordWeight,mKey) 
+VALUES (7,'미지정','미지정'
+,'미지정','미지정',0,0,7);
+
+
+
