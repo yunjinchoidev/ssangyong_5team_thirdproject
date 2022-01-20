@@ -143,7 +143,7 @@ $().ready(function() {
 				data:form,
 				dataType:'json',
 				complete:function(data){
-					if(status=="success")){
+					if(status=="success"){
 						alert('회원탈퇴 완료');
 						location.href="<%=path%>/logout.do";
 					}else{
