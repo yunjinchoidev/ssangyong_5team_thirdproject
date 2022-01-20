@@ -123,32 +123,43 @@ String path = request.getContextPath();
 String sessionid = (String)session.getAttribute("ID");
 String sessionpass = (String)session.getAttribute("PASSWORD");
 
-String status = (String)request.getAttribute("status");
+String status = (String) request.getAttribute("status");
+
 %>
 
 <script>
-
 var status = "<%=status%>";
 
-$(document).ready(function() {
-	$("#delbtn").click(function(){
-		if(confirm("정말 회원탈퇴 하시겠습니까?")==true){
-			$("form").submit();
-		}else{
-			return false;
-		}
-	});
+$().ready(function() {
 	
-	function comalert(){
-		if(status=="success"){
-			alert('회원탈퇴 되었습니다');
-			location.href="<%=path%>/logout.do";
+	var form = $('#form').serialize();
+	
+	
+	$("#delbtn").on("click",function(){
+		if(confirm("회원탈퇴 하시겠습니까?")==true){
+			$.ajax({
+				url:'${pageContext.request.contextPath}/memdelete.do',
+				type:'post',
+				data:form,
+				dataType:'json',
+				complete:function(data){
+					if(status=="success"){
+						alert('회원탈퇴 완료');
+						location.href="<%=path%>/logout.do";
+					}else{
+						alert('정보를 확인해주세요');
+					}
+				}
+			});
+			
 		}else{
-			alert('정보를 확인해주세요');
+			return;
 		}
-	};
-
+		
+	});
 });
+
+
 
 </script>
 	
@@ -165,22 +176,23 @@ $(document).ready(function() {
 </div>
 </div>
 <div id = "loginForm">
-	<form method="post" onsubmit="comalert();">
+	<form method="post" id="form">
 		<table>
-		<tr><th>아이디</th><td><input type=text name = id placeholder="아이디를 입력해주세요" style="width:250px;height:49px;"></td></tr>
-		<tr><th>비밀번호</th><td><input type=text name = pass placeholder="비밀번호를 입력해주세요" style="width:250px;height:49px;"></td></tr>
+		<tr><th>아이디</th><td><input type="text" name="id" placeholder="아이디를 입력해주세요" style="width:250px;height:49px;"></td></tr>
+		<tr><th>비밀번호</th><td><input type="text" name="pass" placeholder="비밀번호를 입력해주세요" style="width:250px;height:49px;"></td></tr>
 		</table>
 		<input type="hidden" name="sid" value="<%=sessionid%>">
 		<input type="hidden" name="spass" value="<%=sessionpass%>">
-		</form>
 		<div id = "btn">
-		<button type="button" id="delbtn">회원탈퇴</button>
+		<button type="submit" id="delbtn">회원탈퇴</button>
 		<a href="<%=path%>/mypage.do">
 		<button type="button" id="canclebtn">취소</button>
 		</a>
 		</div>
-
-	</div>	
+		</form>
+		
+	</div>
+		
 	
 	
 	<div id="footer">

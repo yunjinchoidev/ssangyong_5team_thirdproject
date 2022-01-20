@@ -1,6 +1,7 @@
 package member;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -40,21 +41,21 @@ public class MemDeleteController extends HttpServlet {
 		
 		MemberDAO dao = new MemberDAO();
 		
+			
 		if(id!=null && pass!=null) {
 			if(id.equals(sid) && pass.equals(spass)) {
-				System.out.println(status);
+				status="success";
+				request.setAttribute("status", status);
 				dao.deletePotter(sid, spass);
 				dao.deletemarvle(sid, spass);
 				dao.deletelord(sid, spass);
 				dao.deleteMember(sid, spass);
-				status = "success";
-				request.setAttribute("status", status);
 			}
 		}else {
 			status = "fail";
 			request.setAttribute("status", status);
+			
 		}
-		
 		
 		String page="views\\4_member\\memdelete.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(page);

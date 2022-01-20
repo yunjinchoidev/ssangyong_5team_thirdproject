@@ -47,19 +47,19 @@ left:725px;
 #giftForm{
 position: absolute;
 top:600px;
-left:790px;
+left:820px;
 }
 
 #mychar{
 position: absolute;
 top:750px;
-left:710px;
+left:740px;
 }
 
 #canclebtn{
 position: absolute;
 top:1000px;
-left:780px;
+left:820px;
 width:100px;
 height:30px;
 background-color:rgba(0,0,0,0);
@@ -83,7 +83,7 @@ border:none;
 #completebtn{
 position: absolute;
 top:1000px;
-left:920px;
+left:960px;
 width:100px;
 height:30px;
 background-color:rgba(0,0,0,0);
@@ -115,9 +115,20 @@ top:1200px;
 </style>
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<%
+// 컨트롤러에서 받아온 DB의 id, pass
+String path = request.getContextPath();
 
+String sessionid = (String)session.getAttribute("ID");
+String sessionpass = (String)session.getAttribute("PASSWORD");
+
+String status = (String) request.getAttribute("status");
+
+%>
 <script type="text/javascript">
 $().ready(function(){
+	var form = $('#form').serialize();
+	
 	// 이메일 select Box 직접 입력 선택 시 함수
 	$("#seldirect").hide();
 	$("#addsecond").change(function(){
@@ -128,26 +139,9 @@ $().ready(function(){
 			$("#addsecond").show();
 			$("#seldirect").hide();
 		}	
-	})
-	
-	$('#completebtn').on("click", function(){
-		Swal.fire({
-			  title: '회원정보수정',
-			  text: "회원정보를 수정 하시겠습니까?",
-			  icon: 'confirm',
-			  showCancelButton: true,
-			  confirmButtonColor: '#3085d6',
-			  cancelButtonColor: '#d33',
-			  confirmButtonText: '확인',
-			  cancelButtonText: '취소'
-			}).then((result) => {
-			  if (result.value) {
-	              $('form').submit();
-	              alert('정보가 수정되었습니다');
-			  }
-			  
-			})
 	});
+	
+	
 	
 	 $("#canclebtn").click(function () {
          Swal.fire({
@@ -166,15 +160,58 @@ $().ready(function(){
 			  
 			})
      });
+	 
+	 $('#completebtn').on("click", function(){
+			if(confirm("회원정보를 수정 하시겠습니까?")==true){
+				$.ajax({
+					url:'${pageContext.request.contextPath}/memupdate.do',
+					type:'post',
+					data:form,
+					dataType:'json',
+					complete:function(data){
+						if($("[name=nickname]").val()==""){
+							alert('닉네임 입력해주세요');
+							return false;
+						}else if($("[name=addfirst]").val()==""){
+							alert('이메일을 입력해주세요');
+							return false;
+						}else if($("[name=phone]").val()==""){
+							alert('전화번호를 입력해주세요');
+							return false;
+						}else if($("[name=address]").val()==""){
+							alert('주소를 입력해주세요');
+							return false;
+						}else if($("[name=gifttext1]").val()==""){
+							alert('재능을 입력해주세요');
+							return false;
+						}else if($("[name=potterchar]").val()==""){
+							alert('해리포터 캐릭터를 입력해주세요');
+							return false;
+						}else if($("[name=marvelchar]").val()==""){
+							alert('마블 캐릭터를 입력해주세요');
+							return false;
+						}else if($("[name=lordchar]").val()==""){
+							alert('반지의제왕 캐릭터를 입력해주세요');
+							return false;
+						}else{
+				      		alert("회원정보 수정이 완료되었습니다");
+				      		location.href="<%=path%>/mypage.do";
+						}
+						
+					}
+					
+				});
+				 
+				 
+	       }
+			
+			
+		
+		});
 	
 });
 </script>
 </head>
-<%
-String id = (String) session.getAttribute("ID");
-String pass = (String) session.getAttribute("PASSWORD");
-%>
-
 <body>
 	
 	<jsp:include page="/views/common/commonheader.jsp">
@@ -185,7 +222,7 @@ String pass = (String) session.getAttribute("PASSWORD");
 	<div id="title">
 	<h1>FantasyVillage 회원정보 수정</h1>
 	</div>
-	<form>
+	<form id="form">
 	<div id="updateForm">
 		<table>
 			<tr><th>닉네임</th>
@@ -218,7 +255,6 @@ String pass = (String) session.getAttribute("PASSWORD");
 			<h2 align="center">나의 재능</h2>
 			<table>
 				<tr><td><input type="text" name="gifttext1"></td></tr>
-				<tr><td><input type="text" name="gifttext2"></td></tr>
 			</table>
 		</div>
 		
@@ -242,9 +278,9 @@ String pass = (String) session.getAttribute("PASSWORD");
 		
 		<div id="btn">
 			<button type="button" id="canclebtn">취소</button>
-			<button type="button" id="completebtn">완료</button>
-			<input type="hidden" name=sessionid value=<%=id %>>
-			<input type="hidden" name=sessionpass value=<%=pass %>>
+			<button type="submit" id="completebtn">완료</button>
+			<input type="hidden" name=sessionid value=<%=sessionid %>>
+			<input type="hidden" name=sessionpass value=<%=sessionpass %>>
 		</div>
 	</form>
 	
