@@ -963,7 +963,6 @@ public class MemberDAO {
 	// 메인
 	public static void main(String[] args) {
 		
-		
 	}	
 	
 	// 자원해제 공통 메서드 선언..

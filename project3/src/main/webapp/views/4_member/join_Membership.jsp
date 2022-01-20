@@ -69,7 +69,7 @@ top:900px;
 }
 </style>
 
-<script src="/javaexp/a00_com/jquery-3.6.0.js"></script>
+<script src="/project3/a00_com/jquery-3.6.0.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 

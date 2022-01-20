@@ -12,6 +12,8 @@ CREATE TABLE potter(
 	mKey NUMBER CONSTRAINT harrypotter_mKey_fk REFERENCES member (mKey)
 );
 
+
+\
 DROP TABLE POTTER;
 
 SELECT * FROM potter;
@@ -21,6 +23,8 @@ INSERT INTO potter(HARRYKEY, harrycharacter, harrydomioty
 (SELECT NVL(MAX(harrykey)+1,1) FROM POTTER),'미지정','미지정',
 '0','미지정','미지정',0,0,(SELECT NVL(MAX(mkey)+1,1) FROM POTTER));
 
+
+se
 
 			
 DELETE FROM potter
