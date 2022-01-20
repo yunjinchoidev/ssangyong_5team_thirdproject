@@ -33,6 +33,10 @@ CREATE TABLE Member (
 
 SELECT * FROM MEMBER;
 
+UPDATE MEMBER
+SET mpass='8888'
+WHERE mkey=7;
+
 DELETE from board;
 
 DELETE FROM MEMBER;
@@ -107,9 +111,9 @@ NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,
 
 
 INSERT INTO Member VALUES(
-	1,
-	'himan',
-	'7777',
+	6,
+	'a',
+	'a',
 	'최윤진',
 	'cyj000@naver.com',
 	'01011111111',

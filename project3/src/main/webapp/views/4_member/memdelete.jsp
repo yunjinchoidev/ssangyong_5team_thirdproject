@@ -113,7 +113,7 @@ top:800px;
 </style>
 
 
-<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="/project3/a00_com/jquery-3.6.0.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <%
@@ -143,7 +143,7 @@ $().ready(function() {
 				data:form,
 				dataType:'json',
 				complete:function(data){
-					if(status=="success"){
+					if(status=="success")){
 						alert('회원탈퇴 완료');
 						location.href="<%=path%>/logout.do";
 					}else{
