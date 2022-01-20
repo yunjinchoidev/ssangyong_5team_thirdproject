@@ -128,7 +128,7 @@ RAVENCLAW
 </div>
 
 <div id="btnDiv">
-<a href="main.jsp">
+<a href="views/8_HarryPotter/main.jsp">
 <button id="../mainBtn">메인화면</button>
 </a>
 <br>
