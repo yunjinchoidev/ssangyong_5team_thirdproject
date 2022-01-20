@@ -264,13 +264,19 @@ public class CartController extends HttpServlet {
 
 			
 		} else if (action.equals("/del.do")) {
-			String officialKeyS = request.getParameter("officialKey");
-			int officialKey = 0;
-			if (officialKeyS != null) {
-				officialKey = Integer.parseInt(officialKeyS);
+			String cartKeyS = request.getParameter("cartKey");
+			int cartKey = 0;
+			if (cartKeyS != null) {
+				cartKey = Integer.parseInt(cartKeyS);
 			}
 			;
-			CartService.del(officialKey);
+			CartService.del(cartKey);
+			nextPage = "/cart/list.do";
+			
+			
+			
+		} else if (action.equals("/zero.do")) {
+			CartDAO.deleteAll();
 			nextPage = "/cart/list.do";
 			
 			

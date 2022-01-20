@@ -14,7 +14,9 @@ request.setCharacterEncoding("utf-8");
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
+<script src="/project3/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
+
+
 <link rel="stylesheet" type="text/css"
 	href="/project3/views/CSS/commoncss.css">
 <style>
@@ -23,6 +25,7 @@ request.setCharacterEncoding("utf-8");
 	height: 1200px;
 	margin: 0 auto;
 	padding: 20px;
+	font-size: 30px;
 }
 
 .lordshopchild{
@@ -31,6 +34,10 @@ request.setCharacterEncoding("utf-8");
 	border: 3px solid yellow;
 	display: inline-block;
 	margin: 20px;
+}
+.lordshopchild a{
+	color:red;
+	text-decoration: none;
 }
 
 
@@ -44,22 +51,14 @@ request.setCharacterEncoding("utf-8");
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 
-	<!-- S헤더 삽입 -->
-	<jsp:include page="/views/10_Store/menu.jsp">
-		<jsp:param name="name" value="go" />
-	</jsp:include>
-	<!-- E헤더 삽입 -->
 
 
 	<div class="contents">
 		<div class="cards">
 				<h1> 장바구니</h1>
-				<p>이 곳은 당신의 물건을 담을 수 있는<br>
-				장바구니 입니다.</p>
 				 
 				 <button onclick="location.href='${contextPath}/cart/addForm.do'">물건 추가</button>
-				 
-				 <hr style="border:3px solid yellow;">
+				 <button onclick="location.href='${contextPath}/order/list.do'">결제 페이지로 이동</button>
 					<div class="lordshopwrap">
 				<c:choose>
 					<c:when test="${empty oftList}">
@@ -72,9 +71,9 @@ request.setCharacterEncoding("utf-8");
 						<c:forEach var="oftList" items="${oftList}" varStatus="oftNum">
 							<div class="lordshopchild"> 
 								재고 : ${oftList.cartKey }<br>
-								물건명 : ${oftList.cartCnt }<br>
-								<a href="${contextPath }/cart/del.do?cartKey=${oftList.cartKey}">상품 삭제</a>
-								<a href="${contextPath }/cart/modForm.do?cartKey=${oftList.cartKey}">상품 수정</a>
+								가격 : ${oftList.cartPrice }<br>
+								<a href="${contextPath }/cart/del.do?cartKey=${oftList.cartKey}">장바구니에서 삭제</a><br>
+								<a href="${contextPath }/cart/modForm.do?cartKey=${oftList.cartKey}">상품 수정</a><br>
 								<a href="${contextPath }/order/addForm.do?cartKey=${oftList.cartKey}&cartPrice=${oftList.cartPrice}">결제하기</a>
 							</div>
 						</c:forEach>

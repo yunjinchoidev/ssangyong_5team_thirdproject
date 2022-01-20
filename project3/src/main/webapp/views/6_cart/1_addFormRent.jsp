@@ -87,11 +87,6 @@ input{
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 
-	<!-- S헤더 삽입 -->
-	<jsp:include page="/views/10_Store/menu.jsp">
-		<jsp:param name="name" value="go" />
-	</jsp:include>
-	<!-- E헤더 삽입 -->
 
 <%
 			String mid =(String) session.getAttribute("ID");
@@ -109,7 +104,7 @@ input{
 		%>
 	<div class="contents">
 		<div class="cards">
-			<p>글쓰기</p>
+			<p>장바구니 담기</p>
 			<form action="${contextPath }/cart/add.do" enctype="multipart/form-data"> 
 			<table align="center" class="tbdaddtab">
 			<colgroup>

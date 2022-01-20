@@ -32,6 +32,11 @@ request.setCharacterEncoding("utf-8");
 	border: 3px solid yellow;
 	display: inline-block;
 	margin: 20px;
+	font-size: 20px; 
+}
+.lordshopchild a{
+	color : red;
+	text-decoration: none
 }
 
 
@@ -44,11 +49,6 @@ request.setCharacterEncoding("utf-8");
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 
-	<!-- S헤더 삽입 -->
-	<jsp:include page="/views/10_Store/menu.jsp">
-		<jsp:param name="name" value="go" />
-	</jsp:include>
-	<!-- E헤더 삽입 -->
 <%
 			String mid =(String) session.getAttribute("ID");
 			System.out.println(mid);
@@ -68,7 +68,6 @@ request.setCharacterEncoding("utf-8");
 				<h1> 당신의 주문</h1>
 				 
 				 <button onclick="location.href='${contextPath}/order/addForm.do'">주문서</button>
-				 <hr style="border:3px solid yellow;">
 					<div class="lordshopwrap">
 				<c:choose>
 					<c:when test="${empty oftList}">
@@ -84,8 +83,8 @@ request.setCharacterEncoding("utf-8");
 								주문일 : ${oftList.orderDateS }<br>
 								가격 : ${oftList.orderPrice }<br>
 								아이디 : ${oftList.orderKey }<br>
-								<a href="${contextPath }/order/del.do?cartKey=${oftList.orderKey}">주문 삭제</a>
-								<a href="${contextPath }/order/modForm.do?cartKey=${oftList.orderKey}">주문 수정</a>
+								<a href="${contextPath }/order/del.do?orderKey=${oftList.orderKey}">주문 삭제</a><br>
+								<a href="${contextPath }/order/modForm.do?orderKey=${oftList.orderKey}">주문 수정</a>
 							</div>
 						</c:forEach>
 					</c:when>

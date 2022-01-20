@@ -334,7 +334,21 @@ AOS.init();
 				<p> 엄선된 물건들이 있습니다.<br>
 				 마음껏 둘러보십시오</p>
 				 
-				 <input type="button" value="물건 추가" onclick="go(<%=authNum%>)">
+				 <input type="button" value="물건 추가" onclick="gogo(<%=authNum%>); gogogo();">
+				 <script>
+				 function gogo(a){
+				 	if(a==2){
+				 		confirm("물건을 추가하시겠습니까?");
+				 	}
+				 	if(a==1){
+				 		alert("권한이 없습니다.");
+				 	}
+				 	
+				 }
+				 function gogogo(){
+					 location.href='/project3/oft/addForm.do'
+				 }
+				 </script>
 					<div class="lordshopwrap">
 				<c:choose>
 					<c:when test="${empty oftList}">

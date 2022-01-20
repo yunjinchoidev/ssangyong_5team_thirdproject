@@ -321,6 +321,31 @@ public class CartDAO {
 		}
 	}
 	
+	/*장바구니 비우기*/
+	public void deleteAll() {
+		String sql = "delete \r\n"
+				+ "from CartT \r\n";
+		try {
+			setConn();
+			// 자동커밋 방지
+			con.setAutoCommit(false);
+			pstmt = con.prepareStatement(sql);
+			pstmt.executeUpdate();
+			con.commit();
+			pstmt.close(); 
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			try {
+				con.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			closeRsc();
+		}
+	}
+	
 	
 	
 	

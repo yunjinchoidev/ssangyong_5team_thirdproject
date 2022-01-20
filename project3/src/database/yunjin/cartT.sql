@@ -15,7 +15,7 @@ CREATE TABLE cartT(
 
 
 
-SELECT * FROM cart;
+SELECT * FROM CARTT;
 
 DROP TABLE cartT;
 
@@ -23,7 +23,8 @@ DROP TABLE cartT;
 from member m, lecture l, cart c
   where m.mKey=c.mKey and c.lecKey=l.lecKey;
  
- 
+DELETE FROM cartT
+WHERE cartKey=4;
  
  
 

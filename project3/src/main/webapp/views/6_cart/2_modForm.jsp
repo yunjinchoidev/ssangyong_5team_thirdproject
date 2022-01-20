@@ -81,12 +81,6 @@ input{
 		<jsp:param name="name" value="go" />
 	</jsp:include>
 	<!-- E헤더 삽입 -->
-	<!-- S헤더 삽입 -->
-	<jsp:include page="/views/10_Store/menu.jsp">
-		<jsp:param name="name" value="go" />
-	</jsp:include>
-	<!-- E헤더 삽입 -->
-
 
 	<div class="contents">
 		<div class="cards">

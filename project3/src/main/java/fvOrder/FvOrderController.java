@@ -118,17 +118,12 @@ public class FvOrderController extends HttpServlet {
 			System.out.println("orderPrice"+orderPrice);
 			System.out.println("payType: "+payType);
 			
-			int go=1;
 			
-			if(payType=="go") {
+			if(payType.equals("point")) {
 				mypo = mypo - orderPrice;
-				System.out.println("이제 결제합니다~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+				System.out.println("포인트로 결제");
 			};
-
-			System.out.println("mypo"+mypo);
-			
 			memberDAO.updatePoint(mKey,mypo);
-			System.out.println("계산후mypo"+mypo);
 			
 			
 			String orderEmail = request.getParameter("orderEmail");

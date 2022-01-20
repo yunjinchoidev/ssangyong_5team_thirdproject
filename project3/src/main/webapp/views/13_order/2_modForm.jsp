@@ -91,21 +91,14 @@ input{
 	<div class="contents">
 		<div class="cards">
 			<p>글 수정하기</p>
-			<form action="${contextPath }/oft/mod.do" enctype="multipart/form-data"> 
+			<form action="${contextPath }/order/mod.do" enctype="multipart/form-data"> 
 			<table align="center" class="tbdaddtab">
 			<colgroup>
 				<col width="30%">
 			</colgroup>
-					<tr><th>상품 공식 번호</th><td><input type="text" name="officialKey" value="${oftVO.officialKey}"></td></tr>
-					
-					
-					<tr><th>상품 설명</th><td><input type="text" name="officialExplain" value="${oftVO.officialExplain}"></td></tr>
-							<tr><th>상품명</th><td><input type="text" name="officialPname" value="${oftVO.officialPname}"></td></tr>
+					<tr><th>주문번호</th><td><input type="text" name="orderKey" value="${oftVO.orderKey}"></td></tr>
+					<tr><th>주문상태</th><td><input type="text" name="orderStatus" value="${oftVO.orderStatus}"></td></tr>
 		
-					<tr><th>재고</th><td><input type="text" name="officialInventory" value="${oftVO.officialInventory}"></td></tr>
-					<tr><th>할인률</th><td><input type="text" name="officialDiscount" value="${oftVO.officialDiscount}"></td></tr>
-					<tr><th>상품분류코드</th><td><input type="text" name="proCateKey" value="${oftVO.proCateKey}"> </td></tr>
-					<tr><th>파일</th><td><input type="file" name="fileKey" value="${oftVO.fileKey}"></td></tr>
 					<tr><td colspan="2"><input type="submit" value="제출하기" ></td></tr>
 			</table>
 			</form>
