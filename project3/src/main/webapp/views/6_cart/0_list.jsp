@@ -58,7 +58,7 @@ request.setCharacterEncoding("utf-8");
 				<h1> 장바구니</h1>
 				 
 				 <button onclick="location.href='${contextPath}/cart/addForm.do'">물건 추가</button>
-				 <button onclick="location.href='${contextPath}/order/list.do'">결제 페이지로 이동</button>
+				 <button onclick="location.href='${contextPath}/order/list.do'">주문 리스트로 이동</button>
 					<div class="lordshopwrap">
 				<c:choose>
 					<c:when test="${empty oftList}">
@@ -70,8 +70,9 @@ request.setCharacterEncoding("utf-8");
 					<c:when test="${!empty oftList}">
 						<c:forEach var="oftList" items="${oftList}" varStatus="oftNum">
 							<div class="lordshopchild"> 
-								재고 : ${oftList.cartKey }<br>
+								장바구니 번호 : ${oftList.cartKey }<br>
 								가격 : ${oftList.cartPrice }<br>
+								수량 : ${oftList.cartCnt }<br>
 								<a href="${contextPath }/cart/del.do?cartKey=${oftList.cartKey}">장바구니에서 삭제</a><br>
 								<a href="${contextPath }/cart/modForm.do?cartKey=${oftList.cartKey}">상품 수정</a><br>
 								<a href="${contextPath }/order/addForm.do?cartKey=${oftList.cartKey}&cartPrice=${oftList.cartPrice}">결제하기</a>

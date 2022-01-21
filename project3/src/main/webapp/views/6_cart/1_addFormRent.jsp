@@ -101,6 +101,12 @@ input{
 			String rentalKey = request.getParameter("rentalKey");
 			if(rentalKey==null) rentalKey="";
 			
+			int rentPrice = 0;
+			String rentPriceS = request.getParameter("rentPrice");
+			if(rentPriceS!=null){
+				rentPrice = Integer.parseInt(rentPriceS);
+			}
+			
 		%>
 	<div class="contents">
 		<div class="cards">
@@ -111,9 +117,8 @@ input{
 				<col width="30%">
 			</colgroup>
 					<tr><th>카트키</th><td><input type="text" name="cartKey" disabled ></td></tr>
-					<tr><th>카트담은날짜</th><td><input type="text" name="cartDate"></td></tr>
 					<tr><th>수량</th><td><input type="text" name="cartCnt"></td></tr>
-					<tr><th>가격</th><td><input type="text" name="cartPrice"></td></tr>
+					<tr><th>가격</th><td><input type="text" name="cartPrice" value=<%=rentPrice %>></td></tr>
 					<tr><th>회원키</th><td><input type="text" name="mKey" value="<%=mKey%>"></td></tr>
 					<tr><th>공식스토어</th><td><input type="text" name="officialKey" value="0" disabled></td></tr>
 					<tr><th>렌탈</th><td><input type="text" name="rentalKey" value="<%=rentalKey%>"></td></tr>

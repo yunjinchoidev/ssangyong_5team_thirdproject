@@ -50,3 +50,6 @@ INSERT INTO attachedfile VALUES (306, '이달의판타지6', 'mf06.png', 'png', 
 INSERT INTO attachedfile VALUES (307, '이달의판타지7', 'mf07.png', 'png', '2mb', sysdate);
 INSERT INTO attachedfile VALUES (308, '이달의판타지8', 'mf08.png', 'png', '2mb', sysdate);
 INSERT INTO attachedfile VALUES (309, '이달의판타지9', 'mf09.png', 'png', '2mb', sysdate);
+
+
+SELECT * FROM ATTACHEDFILE a ;

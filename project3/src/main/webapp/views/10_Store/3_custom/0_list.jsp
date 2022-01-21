@@ -85,11 +85,10 @@ border-bottom-right-radius: 5px;
 
 	<div class="contents">
 		<div class="cards">
-				<h1> 렌탈 상점</h1>
+				<h1> 1:1 매매 상점</h1>
 				 
 				 <button onclick="location.href='${contextPath}/custom/addForm.do'">물건 추가</button>
 				 
-				 <hr style="border:3px solid yellow;">
 					<div class="lordshopwrap">
 				<c:choose>
 					<c:when test="${empty oftList}">

@@ -39,7 +39,7 @@ request.setCharacterEncoding("utf-8");
 
 }
 
-.tab table, .tab td, .tab tr, .tab th {
+.newtab table, .newtab td, .newtab tr, .newtab th {
 	border: 3px solid yellow;
 	text-decoration: none;
 }

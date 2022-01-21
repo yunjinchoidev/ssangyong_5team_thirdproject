@@ -97,21 +97,15 @@ input{
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 
-<%
+			<%
 			String mid =(String) session.getAttribute("ID");
-			System.out.println(mid);
 			
 			MemberDAO dao = new MemberDAO();
 			int mKey = dao.searchId(mid);
 			
-			System.out.println("########################");
-			System.out.println(mKey);
-			
 			String cartKey = request.getParameter("cartKey");
 			String cartPrice = request.getParameter("cartPrice");
-			
-			
-		%>
+			%>
 	<div class="contents">
 		<div class="cards">
 			<p>주문 정보 작성</p>

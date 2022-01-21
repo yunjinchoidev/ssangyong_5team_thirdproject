@@ -14,8 +14,8 @@ public class CartService {
 		cartVO = new CartVO();
 	};
 
-	public ArrayList<CartVO> list(int cartKey){
-		ArrayList<CartVO> thelist = cartDAO.searchKey(cartKey);
+	public ArrayList<CartVO> list(){
+		ArrayList<CartVO> thelist = cartDAO.Alllist();
 		return thelist;
 	};
 

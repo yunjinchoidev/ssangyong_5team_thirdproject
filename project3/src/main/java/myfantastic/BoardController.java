@@ -111,7 +111,7 @@ public class BoardController extends HttpServlet {
 			int boPostKey=0; if(boPostKeyS!=null) {boPostKey=Integer.parseInt(boPostKeyS);};
 			boardVO = boardService.viewBd(boPostKey);
 			request.setAttribute("boardVO", boardVO);
-			nextPage="/views/2_Service/5_totalboard/3_detail.jsp";
+			nextPage="/views/2_Service/3_myfantastic/3_detail.jsp";
 			
 		}else if(action.equals("/modForm.do")) {
 			String boPostKeyS = request.getParameter("boPostKey"); 

@@ -326,7 +326,7 @@ AOS.init();
 			<input type="text" name="officialPname"> <input type="submit" value="검색">
 		</form>
 		<table id="show">
-			<tr><td>물건명</td><td>재고</td></tr>
+			<tr><th>물건명</th><th>재고</th></tr>
 		</table>
 		
 		
@@ -342,11 +342,12 @@ AOS.init();
 				 	}
 				 	if(a==1){
 				 		alert("권한이 없습니다.");
+				 		location.href='/project3/oft/list.do';
 				 	}
 				 	
 				 }
 				 function gogogo(){
-					 location.href='/project3/oft/addForm.do'
+					 location.href='/project3/oft/list.do'
 				 }
 				 </script>
 					<div class="lordshopwrap">

@@ -124,6 +124,7 @@ border-bottom-right-radius: 5px;
 				
 					<tr><th>제품 키</th><td><input type="text" name="rentalKey"></td></tr>
 					<tr><th>렌탈 제품 이름</th><td><input type="text" name="rentalPname" ></td></tr>
+					<tr><th>가격</th><td><input type="text" name="rentPrice" ></td></tr>
 					<tr><th>기간</th><td><input type="text" name="rentalterm" placeholder="일 수 입력"></td></tr>
 					<tr><th>설명</th><td><input type="text" name="rentalExplain"></td></tr>
 					<tr><th>시작</th><td><input type="text" name="rentalStartDayS" placeholder="YYYY/MM/DD"></td></tr>

@@ -31,10 +31,10 @@ request.setCharacterEncoding("utf-8");
 	height: 600px;
 	border: 3px solid yellow;
 	margin: 0 auto;
-	font-size: 20px;
+	font-size: 30px;
 	margin-top: 50px;
 	color: white;
-	text-align: left;
+	text-align: center;
 }
 
 .newtab table, .newtab td, .newtab tr, .newtab th {

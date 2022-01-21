@@ -31,10 +31,10 @@ request.setCharacterEncoding("utf-8");
 	height: 600px;
 	border: 3px solid yellow;
 	margin: 0 auto;
-	font-size: 20px;
+	font-size: 30px;
 	margin-top: 50px;
 	color: white;
-	text-align: left;
+	text-align: center;
 }
 
 .newtab table, .newtab td, .newtab tr, .newtab th {
@@ -121,10 +121,10 @@ input {
 
 											</c:forEach>
 											<span style="font-size: 20px;">[답변]</span>
-<a href="${contextPath}/board/view.do?boPostKey=${bdList.boPostKey}" class="g">${bdList.boPostKey}</a>
+<a href="${contextPath}/board/view.do?boPostKey=${bdList.boPostKey}" class="g">${bdList.boTitle}</a>
 										</c:when>
 										<c:otherwise>
-											<a href="${contextPath}/lordBoard/view.do?boPostKey=${bdList.boPostKey}" class="g">${bdList.boPostKey}</a>
+											<a href="${contextPath}/lordBoard/view.do?boPostKey=${bdList.boPostKey}" class="g">${bdList.boTitle}</a>
 										</c:otherwise>
 									</c:choose></td>
 								<td>${bdList.boViews }</td>

@@ -111,8 +111,7 @@ public class CartDAO {
 	public ArrayList<CartVO> searchKey(int officialKey) {
 		ArrayList<CartVO> searchlist = new ArrayList<CartVO>();
 		String sql = "SELECT *\r\n" + 
-					"FROM CartT\r\n" + 
-					"WHERE officialKey=? ";
+					"FROM CartT\r\n";
 		try {
 			setConn();
 			pstmt = con.prepareStatement(sql);
@@ -177,7 +176,7 @@ public class CartDAO {
 		int there=0;
 		String sql = "SELECT max(cartKey)\r\n" + 
 				"FROM CartT\r\n";
-		System.out.println("최고 번호 조회");
+		System.out.println("최고 번호 구하기");
 		try {
 			setConn();
 			pstmt = con.prepareStatement(sql);

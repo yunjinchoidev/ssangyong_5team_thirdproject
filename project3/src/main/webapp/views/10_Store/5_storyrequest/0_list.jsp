@@ -31,6 +31,11 @@ request.setCharacterEncoding("utf-8");
 	border: 3px solid yellow;
 	display: inline-block;
 	margin: 20px;
+	font-size: 20px;
+}
+.lordshopchild a{
+	color : red;
+	text-decoration: none;
 }
 
 button{
@@ -81,7 +86,6 @@ border-bottom-right-radius: 5px;
 				 
 				 <button onclick="location.href='${contextPath}/story/addForm.do'">물건 추가</button>
 				 
-				 <hr style="border:3px solid yellow;">
 					<div class="lordshopwrap">
 				<c:choose>
 					<c:when test="${empty oftList}">
@@ -92,13 +96,14 @@ border-bottom-right-radius: 5px;
 					
 					<c:when test="${!empty oftList}">
 						<c:forEach var="oftList" items="${oftList}" varStatus="oftNum">
-							<div class="lordshopchild"> 
+							<div class="lordshopchild"> <br>
 								고유번호 : ${oftList.requKey}<br>
+								가격 : ${oftList.requPrice}<br>
 								제목 : ${oftList.requTitle }<br>
 								내용 : ${oftList.requContents}<br>
-								가격 : ${oftList.requPrice}<br>
-								<a href="${contextPath }/story/view.do?requKey=${oftList.requKey}">상품 자세히 보기</a>
-								<a href="${contextPath }/story/del.do?requKey=${oftList.requKey}">상품 삭제</a>
+								<br>
+								<a href="${contextPath }/story/view.do?requKey=${oftList.requKey}">상품 자세히 보기</a><br>
+								<a href="${contextPath }/story/del.do?requKey=${oftList.requKey}">상품 삭제</a><br>
 								<a href="${contextPath }/story/modForm.do?requKey=${oftList.requKey}">상품 수정</a>
 							</div>
 						</c:forEach>

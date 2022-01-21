@@ -88,7 +88,6 @@ border-bottom-right-radius: 5px;
 				 
 				 <button onclick="location.href='${contextPath}/lecture/addForm.do'">물건 추가</button>
 				 
-				 <hr style="border:3px solid yellow;">
 					<div class="lordshopwrap">
 				<c:choose>
 					<c:when test="${empty oftList}">

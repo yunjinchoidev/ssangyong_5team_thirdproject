@@ -136,28 +136,12 @@ $().ready(function() {
 	
 	
 	$("#delbtn").on("click",function(){
-		if(confirm("회원탈퇴 하시겠습니까?")==true){
-			$.ajax({
-				url:'${pageContext.request.contextPath}/memdelete.do',
-				type:'post',
-				data:form,
-				dataType:'json',
-				complete:function(data){
-					if(status=="success"){
-						alert('회원탈퇴 완료');
-						location.href="<%=path%>/logout.do";
-					}else{
-						alert('정보를 확인해주세요');
-					}
-				}
-			});
-			
-		}else{
-			return;
-		}
-		
+		if(confirm("회원탈퇴 하시겠습니까?")){
+			alert("탈퇴되었습니다.");	
+		};		
 	});
-});
+	
+	});
 
 
 

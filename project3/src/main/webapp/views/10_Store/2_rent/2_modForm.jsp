@@ -87,7 +87,6 @@ input{
 	</jsp:include>
 	<!-- E헤더 삽입 -->
 
-
 	<div class="contents">
 		<div class="cards">
 			<p>글 수정하기</p>
@@ -96,22 +95,18 @@ input{
 			<colgroup>
 				<col width="30%">
 			</colgroup>
-			
-				<tr><th>제품 키</th><td><input type="text" name="rentalKey" value="${oftVO.rentalKey }"></td></tr>
+					<tr><th>제품 키</th><td><input type="text" name="rentalKey" value="${oftVO.rentalKey }"></td></tr>
 					<tr><th>렌탈 제품 이름</th><td><input type="text" name="rentalPname" value="${oftVO.rentalPname }" ></td></tr>
+					<tr><th>가격</th><td><input type="text" name="rentPrice" value="${oftVO.rentPrice }" ></td></tr>
 					<tr><th>기간</th><td><input type="text" name="rentalterm" value="${oftVO.rentalterm }"></td></tr>
 					<tr><th>설명</th><td><input type="text" name="rentalExplain" value="${oftVO.rentalExplain}"> </td></tr>
 					<tr><th>시작</th><td><input type="text" name="rentalStartDayS" value="${oftVO.rentalStartDayS }"></td></tr>
 					<tr><th>끝</th><td><input type="text" name="rentalEndDayS" value="${oftVO.rentalEndDayS }"></td></tr>
 					<tr><th>제품 분류</th><td><input type="text" name="proCateKey" value="${oftVO.proCateKey }"></td></tr>
 					<tr><th>파일번호</th><td><input type="file" name="fileKey" value="${oftVO.fileKey }"></td></tr>
-					<tr><th>가격</th><td><input type="text" name="rentPrice" value="${oftVO.rentPrice }"></td></tr>
 					<tr><td colspan="2"><input type="submit" value="제출하기" value=""></td></tr>
-			
 			</table>
 			</form>
-
-
 		</div>
 	</div>
 

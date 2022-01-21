@@ -112,19 +112,19 @@ border-bottom-right-radius: 5px;
 				<c:choose>
 					<c:when test="${empty oftList}">
 						<div>
-							<td colspan="16">등록된 글이 없습니다.</td>
+							등록된 글이 없습니다.
 						</div>
 					</c:when>
 					
 					<c:when test="${!empty oftList}">
 						<c:forEach var="oftList" items="${oftList}" varStatus="rentNum">
-							<div class="lordshopchild"> 
-								<br>
+							<div class="lordshopchild"> <br>
 								상품명 : ${oftList.rentalPname }<br>
+								가격 : ${oftList.rentPrice }<br>
 								시작일 : ${oftList.rentalStartDayS }<br>
 								마감일 : ${oftList.rentalEndDayS }<br>
 								분류 : ${oftList.proCateKey }<br>
-								가격 : ${oftList.rentPrice }<br>
+								
 								<a href="${contextPath }/rental/view.do?rentalKey=${oftList.rentalKey}">상품 자세히 보기</a><br>
 								<a href="${contextPath }/rental/del.do?rentalKey=${oftList.rentalKey}">상품 삭제</a><br>
 								<a href="${contextPath }/rental/modForm.do?rentalKey=${oftList.rentalKey}">상품 수정</a>

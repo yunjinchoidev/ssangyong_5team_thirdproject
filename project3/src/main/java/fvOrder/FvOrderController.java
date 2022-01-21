@@ -57,7 +57,6 @@ public class FvOrderController extends HttpServlet {
 		if (action == null || action.equals("/list.do")) {
 			oftList = FvOrderService.list();
 			request.setAttribute("oftList", oftList);
-
 			nextPage = "/views/13_order/0_list.jsp";
 
 			
@@ -208,14 +207,15 @@ public class FvOrderController extends HttpServlet {
 
 			
 		} else if (action.equals("/del.do")) {
-			String officialKeyS = request.getParameter("officialKey");
-			int officialKey = 0;
-			if (officialKeyS != null) {
-				officialKey = Integer.parseInt(officialKeyS);
+			String orderKeyS = request.getParameter("orderKey");
+			int orderKey = 0;
+			if (orderKeyS != null) {
+				orderKey = Integer.parseInt(orderKeyS);
 			}
 			;
+			
 
-			FvOrderService.del(officialKey);
+			FvOrderService.del(orderKey);
 			nextPage = "/order/list.do";
 
 		} else {

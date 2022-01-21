@@ -31,14 +31,15 @@ request.setCharacterEncoding("utf-8");
 	height: 600px;
 	border: 3px solid yellow;
 	margin: 0 auto;
-	font-size: 20px;
+	font-size: 30px;
 	margin-top: 50px;
 	color: white;
 	text-align: left;
+	text-align: center;
 
 }
 
-.tab table, .tab td, .tab tr, .tab th {
+.newtab table, .newtab td, .newtab tr, .newtab th {
 	border: 3px solid yellow;
 	text-decoration: none;
 }
@@ -101,11 +102,9 @@ input {
 	<div class="contents">
 		<div class="cards">
 			<p>상세 글 보기</p>
-<button onclick="location.href='${contextPath}/cart/addFormRent.do?rentalKey=${oftVO.rentalKey}'">장바구니 담기</button>
-				<form action="${contextPath}/cart/addFormRent.do?rentalKey=${oftVO.rentalKey}">
-				<input type="hidden" name="rentalKey" value="${rentalKey}">
-				</form>
-					<button>주문하기</button>
+			<button onclick="location.href='${contextPath}/cart/addFormRent.do?rentalKey=${oftVO.rentalKey}&rentPrice=${oftVO.rentPrice }'" class="rb">장바구니 담기</button>
+			<button>주문하기</button>	
+				
 				<table id="newtab" border="1">
 					<colgroup>
 						<td width="30%">
